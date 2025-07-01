@@ -1,183 +1,228 @@
-import { Button } from "@/components/ui/button"
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import {
-  Users,
-  UserCheck,
-  Calendar,
-  FileText,
-  ArrowRight,
-  CheckCircle,
-  Clock,
-  Award,
-  Lightbulb,
-  AlertTriangle,
-} from "lucide-react"
-import ScrollAnimation from "@/components/scroll-animation"
+import { ArrowRight, CheckCircle } from "lucide-react"
 import Image from "next/image"
+import { useState } from "react"
+import ScrollAnimation from "@/components/scroll-animation"
+import FAQ from "@/components/faq"
 
 export default function HRSolutionsPage() {
+  const [activeFeature, setActiveFeature] = useState(0)
+
+  const faqs = [
+    {
+      question: "What HR processes can you automate?",
+      answer:
+        "We can automate recruitment workflows, employee onboarding, time tracking, performance reviews, leave management, payroll processing, and compliance reporting. Our solutions integrate with existing HR systems for seamless operations.",
+    },
+    {
+      question: "How long does HR system implementation take?",
+      answer:
+        "Implementation typically takes 4-8 weeks depending on complexity. This includes system setup, data migration, staff training, and testing. We provide full support throughout the process.",
+    },
+    {
+      question: "Is employee data secure with your HR solutions?",
+      answer:
+        "Yes, we implement enterprise-grade security including data encryption, secure access controls, GDPR compliance, and regular security audits. Employee data privacy and security are our top priorities.",
+    },
+    {
+      question: "Can you integrate with our existing HR software?",
+      answer:
+        "Our HR solutions integrate with most major HR platforms including BambooHR, Workday, ADP, and custom systems. We use APIs and secure data connections for seamless integration.",
+    },
+    {
+      question: "What ROI can we expect from HR automation?",
+      answer:
+        "Most clients see 40-60% reduction in HR administrative time, 50% faster hiring processes, and improved employee satisfaction. ROI typically ranges from 200-400% within the first year.",
+    },
+  ]
+
+  const caseStudies = [
+    {
+      client: "Tech Startup - Austin, TX",
+      challenge: "Manual HR processes causing delays in hiring and employee management",
+      solution: "Implemented automated recruitment system with AI-powered candidate screening and digital onboarding",
+      results: "50% faster hiring process, 80% reduction in paperwork, improved candidate experience",
+      timeframe: "6 weeks",
+      image: "/images/hr-management-illustration.webp",
+    },
+    {
+      client: "Manufacturing Company - Detroit, MI",
+      challenge: "Complex time tracking and compliance reporting across multiple locations",
+      solution: "Digital time tracking system with automated compliance reporting and performance analytics",
+      results: "90% reduction in time tracking errors, automated compliance reports, 30% improvement in productivity",
+      timeframe: "8 weeks",
+      image: "/images/team-collaboration-online.webp",
+    },
+  ]
+
+  const hrFeatures = [
+    {
+      title: "Recruitment & Onboarding",
+      description: "Streamline your hiring process with automated workflows",
+      image: "/images/hr-management-illustration.webp",
+      benefits: ["50% faster hiring", "Automated screening", "Digital onboarding", "Candidate tracking"],
+    },
+    {
+      title: "Employee Management",
+      description: "Centralized employee data with self-service portals",
+      image: "/images/team-collaboration-online.webp",
+      benefits: ["Centralized database", "Self-service access", "Document management", "Performance tracking"],
+    },
+    {
+      title: "Time & Attendance",
+      description: "Automated time tracking and attendance management",
+      image: "/images/digital-marketing-workspace.webp",
+      benefits: ["Digital time tracking", "Automated reports", "Leave management", "Compliance tracking"],
+    },
+  ]
+
+  const hrPackages = [
+    {
+      name: "HR Starter",
+      description: "Perfect for small teams",
+      features: [
+        "Up to 25 employees",
+        "Basic HR tools",
+        "Time tracking",
+        "Employee database",
+        "Email support",
+        "3 months support",
+      ],
+      popular: false,
+      cta: "Start HR Automation",
+      offer: "FREE HR audit ($500 value)",
+    },
+    {
+      name: "HR Professional",
+      description: "Ideal for growing companies",
+      features: [
+        "Up to 100 employees",
+        "Advanced HR features",
+        "Performance management",
+        "Automated workflows",
+        "Priority support",
+        "6 months support",
+      ],
+      popular: true,
+      cta: "Scale HR Operations",
+      offer: "FREE system integration ($1000 value)",
+    },
+    {
+      name: "HR Enterprise",
+      description: "For large organizations",
+      features: [
+        "Unlimited employees",
+        "Full HR suite",
+        "Advanced analytics",
+        "Custom integrations",
+        "Dedicated support",
+        "12 months support",
+      ],
+      popular: false,
+      cta: "Transform HR",
+      offer: "FREE custom development ($2000 value)",
+    },
+  ]
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-20 bg-transparent">
       {/* Hero Section */}
       <ScrollAnimation>
         <section className="py-20 bg-transparent">
           <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <Badge className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] text-white border-0 mb-6">
-                  👥 HR Solutions
-                </Badge>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                    Smart HR
-                  </span>
-                  <br />
-                  <span className="text-gray-900 dark:text-white">Management</span>
-                </h1>
-                <h2 className="text-3xl md:text-4xl font-semibold mb-6 text-gray-900 dark:text-white">
-                  Streamline HR Operations, Reduce Costs by 60%, Improve Employee Satisfaction
-                </h2>
-                <div className="flex items-center mb-4">
-                  <span className="text-yellow-500 mr-2">4.9★ Rating</span>
-                  <span className="text-gray-600 dark:text-gray-300">|</span>
-                  <span className="ml-2 text-gray-600 dark:text-gray-300">150+ HR Systems Optimized</span>
-                </div>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                  Streamline your human resources with intelligent automation, digital workflows, and data-driven
-                  insights that improve employee experience and operational efficiency. Designed specifically for small
-                  to medium-sized businesses.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="calendly-button pulse-animation"
-                  >
-                    Get HR Assessment
-                    <ArrowRight className="h-5 w-5" />
-                  </a>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full"
-                  >
-                    View HR Solutions
-                  </Button>
-                </div>
-              </div>
-              <ScrollAnimation animation="fadeInRight" delay={200}>
-                <div className="relative">
-                  <Image
-                    src="/images/team-collaboration.webp"
-                    alt="HR Solutions"
-                    width={600}
-                    height={500}
-                    className="rounded-2xl"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#8B5CF6]/20 to-transparent rounded-2xl"></div>
-                </div>
-              </ScrollAnimation>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Is This You? Problem Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Is This</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">You?</span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Common HR challenges we solve for SMBs
+            <div className="text-center mb-12">
+              <Badge className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white border-0 mb-6">
+                👥 HR Solutions
+              </Badge>
+              <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
+                  Smart HR Management
+                </span>
+                <br />
+                <span className="text-gray-900 dark:text-white">That Scales With You</span>
+              </h1>
+              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
+                Streamline your human resources with intelligent automation, digital workflows, and data-driven insights
+                that improve employee experience and operational efficiency.
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  icon: Clock,
-                  title: "Time-Consuming Manual Processes",
-                  description: "Manual HR tasks are eating up valuable time and resources.",
-                },
-                {
-                  icon: AlertTriangle,
-                  title: "Compliance & Legal Risks",
-                  description: "Navigating complex HR regulations and avoiding costly legal issues.",
-                },
-                {
-                  icon: Users,
-                  title: "High Employee Turnover",
-                  description: "Struggling to retain top talent and reduce employee churn.",
-                },
-                {
-                  icon: Lightbulb,
-                  title: "Lack of HR Insights",
-                  description: "Missing clear HR metrics and data-driven insights for decision-making.",
-                },
-              ].map((problem, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="border-0 hover-lift">
-                    <CardContent className="p-8">
-                      <div className="w-16 h-16 bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] rounded-xl flex items-center justify-center mb-6">
-                        <problem.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{problem.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400">{problem.description}</p>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://calendly.com/mhdigitalsolutionsus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300"
+                  aria-label="Get HR automation consultation"
+                >
+                  Get HR Assessment
+                  <ArrowRight className="h-5 w-5 ml-2" />
+                </a>
+                <a
+                  href="/case-studies"
+                  className="inline-flex items-center justify-center px-8 py-4 border-2 border-[#4F46E5] text-[#4F46E5] hover:bg-[#4F46E5] hover:text-white rounded-full transition-all duration-300"
+                  aria-label="View HR automation case studies"
+                >
+                  View Case Studies
+                </a>
+              </div>
             </div>
           </div>
         </section>
       </ScrollAnimation>
 
-      {/* Our Solution - 5 Step Process */}
+      {/* Case Studies Section */}
       <ScrollAnimation>
         <section className="py-20 bg-transparent">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Our</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Solution
+                <span className="text-gray-900 dark:text-white">HR Automation</span>{" "}
+                <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
+                  Success Stories
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                A streamlined 5-step process to transform your HR
-              </p>
+              <p className="text-xl text-gray-600 dark:text-gray-300">Real results from real businesses</p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-              {[
-                { step: 1, title: "HR Assessment", description: "In-depth analysis of your current HR processes." },
-                { step: 2, title: "System Design", description: "Customized HR system design tailored to your needs." },
-                { step: 3, title: "Implementation", description: "Seamless implementation of your new HR system." },
-                {
-                  step: 4,
-                  title: "Training",
-                  description: "Comprehensive training for your team to maximize system use.",
-                },
-                {
-                  step: 5,
-                  title: "Optimization",
-                  description: "Ongoing optimization to ensure continuous improvement.",
-                },
-              ].map((process, index) => (
+            <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+              {caseStudies.map((study, index) => (
                 <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="border-0 text-center hover-lift">
-                    <CardContent className="p-8">
-                      <div className="text-2xl font-bold bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent mb-2">
-                        Step {process.step}
+                  <Card className="glass border-0 hover-lift overflow-hidden">
+                    <div className="relative h-48">
+                      <Image
+                        src={study.image || "/placeholder.svg"}
+                        alt={`${study.client} HR automation case study results`}
+                        fill
+                        className="object-cover"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+                      <div className="absolute bottom-4 left-4">
+                        <Badge className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white">
+                          {study.timeframe} Results
+                        </Badge>
                       </div>
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{process.title}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{process.description}</div>
+                    </div>
+                    <CardContent className="p-8">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{study.client}</h3>
+
+                      <div className="space-y-4">
+                        <div>
+                          <h4 className="font-semibold text-red-600 mb-2">Challenge:</h4>
+                          <p className="text-gray-600 dark:text-gray-400">{study.challenge}</p>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-blue-600 mb-2">Solution:</h4>
+                          <p className="text-gray-600 dark:text-gray-400">{study.solution}</p>
+                        </div>
+
+                        <div>
+                          <h4 className="font-semibold text-green-600 mb-2">Results:</h4>
+                          <p className="text-gray-600 dark:text-gray-400 font-medium">{study.results}</p>
+                        </div>
+                      </div>
                     </CardContent>
                   </Card>
                 </ScrollAnimation>
@@ -187,344 +232,182 @@ export default function HRSolutionsPage() {
         </section>
       </ScrollAnimation>
 
-      {/* HR Services */}
+      {/* Interactive Features Section */}
       <ScrollAnimation>
         <section className="py-20 bg-transparent">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
                 <span className="text-gray-900 dark:text-white">Comprehensive</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
                   HR Solutions
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                From recruitment to performance management, we digitize and optimize your entire HR workflow
-              </p>
             </div>
 
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: UserCheck,
-                  title: "Recruitment & Onboarding",
-                  description: "Streamline hiring processes with automated workflows and digital onboarding",
-                  features: [
-                    "Applicant tracking system",
-                    "Digital onboarding workflows",
-                    "Background check automation",
-                    "Interview scheduling tools",
-                  ],
-                  color: "from-[#8B5CF6] to-[#F472B6]",
-                },
-                {
-                  icon: Users,
-                  title: "Employee Management",
-                  description: "Centralized employee data management with self-service portals",
-                  features: [
-                    "Employee database management",
-                    "Self-service employee portals",
-                    "Document management",
-                    "Organizational charts",
-                  ],
-                  color: "from-[#F472B6] to-[#FF7600]",
-                },
-                {
-                  icon: Calendar,
-                  title: "Time & Attendance",
-                  description: "Automated time tracking and attendance management systems",
-                  features: ["Digital time tracking", "Attendance monitoring", "Leave management", "Shift scheduling"],
-                  color: "from-[#FF7600] to-[#00F5FF]",
-                },
-                {
-                  icon: Award,
-                  title: "Performance Management",
-                  description: "Digital performance reviews and goal tracking systems",
-                  features: [
-                    "Performance review automation",
-                    "Goal setting and tracking",
-                    "360-degree feedback",
-                    "Performance analytics",
-                  ],
-                  color: "from-[#00F5FF] to-[#8B5CF6]",
-                },
-                {
-                  icon: FileText,
-                  title: "Payroll & Benefits",
-                  description: "Automated payroll processing and benefits administration",
-                  features: [
-                    "Automated payroll processing",
-                    "Benefits enrollment",
-                    "Tax compliance",
-                    "Expense management",
-                  ],
-                  color: "from-[#8B5CF6] to-[#00F5FF]",
-                },
-                {
-                  icon: Clock,
-                  title: "HR Analytics",
-                  description: "Data-driven insights for better HR decision making",
-                  features: [
-                    "Employee analytics dashboard",
-                    "Turnover analysis",
-                    "Performance metrics",
-                    "Predictive insights",
-                  ],
-                  color: "from-[#F472B6] to-[#8B5CF6]",
-                },
-              ].map((service, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className={`service-card-${(index % 6) + 1} border-0 hover-lift`}>
-                    <CardContent className="p-8">
-                      <div
-                        className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6`}
-                      >
-                        <service.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-sm">
-                            <CheckCircle className="h-4 w-4 text-[#8B5CF6] mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-400">{feature}</span>
-                          </li>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              {/* Feature Navigation */}
+              <div className="space-y-4">
+                {hrFeatures.map((feature, index) => (
+                  <Card
+                    key={index}
+                    className={`cursor-pointer transition-all border-0 ${
+                      activeFeature === index
+                        ? "bg-gradient-to-r from-[#4F46E5]/10 to-[#7C3AED]/10 border-l-4 border-l-[#4F46E5]"
+                        : "bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm hover:bg-white/90 dark:hover:bg-gray-700/90"
+                    }`}
+                    onClick={() => setActiveFeature(index)}
+                  >
+                    <CardContent className="p-6">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">{feature.title}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 mb-4">{feature.description}</p>
+                      <div className="grid grid-cols-2 gap-2">
+                        {feature.benefits.map((benefit, benefitIndex) => (
+                          <div key={benefitIndex} className="flex items-center text-sm">
+                            <CheckCircle className="h-4 w-4 text-[#4F46E5] mr-2" />
+                            <span className="text-gray-600 dark:text-gray-400">{benefit}</span>
+                          </div>
                         ))}
-                      </ul>
+                      </div>
                     </CardContent>
                   </Card>
-                </ScrollAnimation>
-              ))}
+                ))}
+              </div>
+
+              {/* Feature Display */}
+              <div>
+                <Image
+                  src={hrFeatures[activeFeature].image || "/placeholder.svg"}
+                  alt={`${hrFeatures[activeFeature].title} - HR automation feature illustration`}
+                  width={600}
+                  height={400}
+                  className="rounded-2xl shadow-lg w-full h-auto"
+                />
+              </div>
             </div>
           </div>
         </section>
       </ScrollAnimation>
 
-      {/* Social Proof Section */}
+      {/* HR Packages */}
       <ScrollAnimation>
         <section className="py-20 bg-transparent">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Don't Just Take Our</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Word For It
+                <span className="text-gray-900 dark:text-white">HR Packages</span>{" "}
+                <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
+                  That Scale
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                See how we've helped other businesses like yours
-              </p>
+              <p className="text-xl text-gray-600 dark:text-gray-300">Choose the package that fits your team size</p>
             </div>
 
-            <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
-              <ScrollAnimation delay={100}>
-                <Card className="border-0 hover-lift">
-                  <CardContent className="p-8">
-                    <div className="mb-4">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                        Mark Stevens from TechStart Inc
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        "Thanks to MH Digital Solutions, we achieved a 60% reduction in HR admin time and a 40%
-                        improvement in employee satisfaction."
-                      </p>
+            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+              {hrPackages.map((plan, index) => (
+                <Card
+                  key={index}
+                  className={`relative ${plan.popular ? "border-2 border-[#4F46E5] scale-105 shadow-2xl" : "shadow-lg"} glass`}
+                >
+                  {plan.popular && (
+                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                      <Badge className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white px-4 py-1">
+                        Most Popular
+                      </Badge>
                     </div>
+                  )}
+                  <CardContent className="p-8">
+                    <div className="text-center mb-6">
+                      <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
+                      <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{plan.description}</p>
+                    </div>
+
+                    <div className="bg-green-50 dark:bg-green-900/20 p-4 rounded-lg mb-6">
+                      <p className="text-sm font-semibold text-green-700 dark:text-green-300">🎁 {plan.offer}</p>
+                    </div>
+
+                    <ul className="space-y-3 mb-8">
+                      {plan.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-start">
+                          <CheckCircle className="h-5 w-5 text-[#4F46E5] mr-3 mt-0.5 flex-shrink-0" />
+                          <span>{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+
+                    <a
+                      href="https://calendly.com/mhdigitalsolutionsus"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
+                        plan.popular
+                          ? "bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] hover:opacity-90 text-white"
+                          : "bg-gray-100 hover:bg-gray-200 text-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
+                      }`}
+                      aria-label={`Get started with ${plan.name} HR package`}
+                    >
+                      {plan.cta}
+                    </a>
+
+                    <p className="text-xs text-center text-gray-500 mt-4">
+                      No setup fees • Cancel anytime • 30-day money-back guarantee
+                    </p>
                   </CardContent>
                 </Card>
-              </ScrollAnimation>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Results Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">HR</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Impact
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">Measurable improvements in HR efficiency</p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { metric: "70%", label: "Time Savings", description: "Reduction in HR administrative tasks" },
-                { metric: "85%", label: "Employee Satisfaction", description: "Improvement in HR service delivery" },
-                { metric: "50%", label: "Faster Hiring", description: "Reduction in time-to-hire" },
-                { metric: "90%", label: "Compliance Rate", description: "Improvement in regulatory compliance" },
-              ].map((result, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="glass border-0 text-center hover-lift">
-                    <CardContent className="p-8">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent mb-2">
-                        {result.metric}
-                      </div>
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{result.label}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{result.description}</div>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
               ))}
             </div>
-          </div>
-        </section>
-      </ScrollAnimation>
 
-      {/* Pricing Structure Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Simple & Transparent</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Pricing
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Choose the plan that best fits your needs
+            <div className="text-center mt-12">
+              <p className="text-lg text-gray-600 dark:text-gray-300 mb-4">
+                Need a custom HR solution for your unique business needs?
               </p>
-            </div>
-
-            <div className="grid md:grid-cols-1 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "HR Optimization",
-                  price: "$2,497/mo",
-                  description: "Optimize your existing HR processes",
-                  features: ["HR Assessment", "System Design", "Implementation"],
-                },
-                {
-                  title: "Complete HR Solution",
-                  price: "$4,997/mo",
-                  description: "End-to-end HR solution for your business",
-                  features: ["All Optimization features", "Training", "Ongoing Support"],
-                  popular: true,
-                },
-                {
-                  title: "Enterprise HR",
-                  price: "$7,997/mo",
-                  description: "Custom HR solution for large organizations",
-                  features: ["All Complete HR features", "Dedicated Account Manager", "Custom Integrations"],
-                },
-              ].map((plan, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card
-                    className={`border-0 hover-lift ${plan.popular ? "bg-gradient-to-br from-purple-50 to-pink-50" : ""}`}
-                  >
-                    <CardContent className="p-8">
-                      <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{plan.title}</h3>
-                      <div className="text-xl text-gray-600 dark:text-gray-400 mb-4">{plan.price}</div>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6">{plan.description}</p>
-                      <ul className="space-y-2">
-                        {plan.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-sm">
-                            <CheckCircle className="h-4 w-4 text-[#8B5CF6] mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-400">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <Button className="w-full mt-4 bg-[#8B5CF6] text-white hover:bg-[#F472B6]">Get Started</Button>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
+              <a
+                href="https://calendly.com/mhdigitalsolutionsus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-3 border-2 border-[#4F46E5] text-[#4F46E5] hover:bg-[#4F46E5] hover:text-white rounded-full transition-all duration-300"
+                aria-label="Schedule custom HR consultation"
+              >
+                Get Custom HR Plan
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
             </div>
           </div>
         </section>
       </ScrollAnimation>
 
       {/* FAQ Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Frequently Asked</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Questions
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Everything you need to know about our HR solutions
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-1 lg:grid-cols-1 gap-8">
-              {[
-                {
-                  question: "What types of businesses do you work with?",
-                  answer:
-                    "We specialize in providing HR solutions for small to medium-sized businesses across various industries.",
-                },
-                {
-                  question: "How long does it take to implement a new HR system?",
-                  answer:
-                    "The implementation timeline varies depending on the complexity of your needs, but we strive to make the process as efficient as possible.",
-                },
-                {
-                  question: "Do you offer ongoing support and training?",
-                  answer:
-                    "Yes, we provide comprehensive training and ongoing support to ensure you get the most out of your HR system.",
-                },
-              ].map((faq, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="border-0 hover-lift">
-                    <CardContent className="p-8">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{faq.question}</h3>
-                      <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+      <FAQ
+        title="HR Solutions Questions Answered"
+        subtitle="Everything you need to know about our HR automation services"
+        faqs={faqs}
+      />
 
       {/* CTA Section */}
       <ScrollAnimation>
         <section className="py-20 bg-transparent">
           <div className="container mx-auto px-6">
-            <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/10 via-[#F472B6]/10 to-[#FF7600]/10"></div>
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Ready to</span>{" "}
-                  <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                    Transform
-                  </span>
-                  <br />
-                  <span className="text-gray-900 dark:text-white">Your HR Operations?</span>
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Let's digitize your HR processes and create efficient workflows that improve employee experience and
-                  business outcomes
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="calendly-button"
-                  >
-                    Get HR Assessment
-                    <ArrowRight className="h-5 w-5" />
-                  </a>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full"
-                  >
-                    View HR Case Studies
-                  </Button>
-                </div>
-              </div>
+            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-12 text-center border border-white/20">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+                <span className="text-gray-900 dark:text-white">Ready to Transform</span>{" "}
+                <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
+                  Your HR Operations?
+                </span>
+              </h2>
+              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
+                Let's digitize your HR processes and create efficient workflows that improve employee experience and
+                reduce administrative burden.
+              </p>
+              <a
+                href="https://calendly.com/mhdigitalsolutionsus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 text-lg"
+                aria-label="Get HR assessment worth $500"
+              >
+                Get HR Assessment ($500 Value)
+                <ArrowRight className="h-5 w-5 ml-2" />
+              </a>
             </div>
           </div>
         </section>

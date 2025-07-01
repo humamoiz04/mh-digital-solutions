@@ -1,290 +1,181 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, ArrowLeft, Clock, Share2, BookOpen, Heart } from "lucide-react"
+import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, ArrowRight } from "lucide-react"
 import Link from "next/link"
 import ScrollAnimation from "@/components/scroll-animation"
 import Image from "next/image"
-import { notFound } from "next/navigation"
+import type { Metadata } from "next"
 
-// This would typically come from a database or CMS
-const blogPostData: Record<string, any> = {
-  "future-of-ai-business-automation": {
-    title: "The Future of AI in Business Automation: Trends and Predictions for 2024",
-    excerpt:
-      "Discover how artificial intelligence is revolutionizing business processes and what it means for your company's future growth.",
-    content: `
-      <p>Artificial Intelligence (AI) has moved from science fiction to business reality, transforming how companies operate, make decisions, and serve customers. As we advance through 2024, the integration of AI in business automation is not just a competitive advantage—it's becoming a necessity for survival in the digital economy.</p>
-
-      <h2>The Current State of AI in Business</h2>
-      <p>Today's businesses are leveraging AI across multiple touchpoints:</p>
-      <ul>
-        <li><strong>Customer Service:</strong> AI-powered chatbots handle 80% of routine inquiries</li>
-        <li><strong>Sales Processes:</strong> Predictive analytics identify high-value prospects</li>
-        <li><strong>Operations:</strong> Automated workflows reduce manual tasks by 60%</li>
-        <li><strong>Decision Making:</strong> Data-driven insights inform strategic choices</li>
-      </ul>
-
-      <h2>Emerging Trends in AI Automation</h2>
-      <p>Several key trends are shaping the future of AI in business automation:</p>
-
-      <h3>1. Hyper-Personalization at Scale</h3>
-      <p>AI systems are becoming increasingly sophisticated at understanding individual customer preferences and behaviors. This enables businesses to deliver personalized experiences to millions of customers simultaneously, something that was impossible with traditional methods.</p>
-
-      <h3>2. Predictive Maintenance and Operations</h3>
-      <p>Manufacturing and service industries are using AI to predict equipment failures before they occur, reducing downtime by up to 50% and maintenance costs by 25%.</p>
-
-      <h3>3. Intelligent Document Processing</h3>
-      <p>AI-powered document processing is revolutionizing how businesses handle paperwork, contracts, and compliance documentation, reducing processing time from hours to minutes.</p>
-
-      <h2>The Impact on Different Industries</h2>
-      <p>AI automation is creating transformative changes across various sectors:</p>
-
-      <h3>Healthcare</h3>
-      <p>AI is streamlining patient care, from automated appointment scheduling to predictive health analytics that can identify potential health issues before symptoms appear.</p>
-
-      <h3>Financial Services</h3>
-      <p>Banks and financial institutions are using AI for fraud detection, risk assessment, and automated trading, processing millions of transactions with unprecedented accuracy.</p>
-
-      <h3>Retail and E-commerce</h3>
-      <p>AI-driven inventory management, dynamic pricing, and personalized product recommendations are helping retailers optimize their operations and increase sales.</p>
-
-      <h2>Challenges and Considerations</h2>
-      <p>While the benefits of AI automation are significant, businesses must also navigate several challenges:</p>
-
-      <h3>Data Privacy and Security</h3>
-      <p>As AI systems process vast amounts of data, ensuring privacy and security becomes paramount. Companies must implement robust data governance frameworks.</p>
-
-      <h3>Workforce Transformation</h3>
-      <p>AI automation will change job roles rather than simply eliminate them. Businesses need to invest in reskilling and upskilling their workforce.</p>
-
-      <h3>Ethical AI Implementation</h3>
-      <p>Ensuring AI systems are fair, transparent, and unbiased is crucial for maintaining customer trust and regulatory compliance.</p>
-
-      <h2>Predictions for 2024 and Beyond</h2>
-      <p>Looking ahead, we can expect to see:</p>
-      <ul>
-        <li>AI becoming more accessible to small and medium businesses</li>
-        <li>Integration of AI with IoT devices for smarter automation</li>
-        <li>Advanced natural language processing enabling more intuitive human-AI interactions</li>
-        <li>AI-driven sustainability initiatives helping businesses reduce their environmental impact</li>
-      </ul>
-
-      <h2>Getting Started with AI Automation</h2>
-      <p>For businesses looking to implement AI automation, the key is to start small and scale gradually:</p>
-      <ol>
-        <li><strong>Identify Pain Points:</strong> Focus on areas where automation can have immediate impact</li>
-        <li><strong>Choose the Right Tools:</strong> Select AI solutions that integrate well with existing systems</li>
-        <li><strong>Train Your Team:</strong> Ensure your workforce is prepared for the transition</li>
-        <li><strong>Measure and Optimize:</strong> Continuously monitor performance and refine your approach</li>
-      </ol>
-
-      <h2>Conclusion</h2>
-      <p>The future of AI in business automation is bright and full of possibilities. Companies that embrace these technologies today will be better positioned to thrive in tomorrow's digital economy. The question isn't whether to adopt AI automation, but how quickly and effectively you can implement it to drive your business forward.</p>
-    `,
-    author: "Alex Johnson",
-    authorBio:
-      "Alex is a leading AI strategist and business consultant with over 10 years of experience helping companies implement cutting-edge technology solutions.",
-    date: "December 15, 2024",
-    readTime: "8 min read",
-    category: "AI & Technology",
-    categoryColor: "from-[#8B5CF6] to-[#00F5FF]",
-    image: "/images/ai-automation.webp",
-    tags: ["AI", "Automation", "Business Strategy", "Future Trends", "Digital Transformation"],
-    relatedPosts: [
-      "building-brand-identity-digital-age",
-      "web-performance-optimization-guide",
-      "roi-driven-digital-marketing-strategies",
-    ],
-  },
-  "building-brand-identity-digital-age": {
-    title: "Building Brand Identity in the Digital Age",
-    excerpt:
-      "Learn the essential strategies for creating a compelling brand identity that resonates with modern consumers.",
-    content: `
-      <p>In today's hyper-connected digital landscape, building a strong brand identity is more crucial—and more challenging—than ever before. With countless touchpoints across digital platforms, businesses must create cohesive, memorable brand experiences that cut through the noise and connect with their target audience.</p>
-
-      <h2>Understanding Modern Brand Identity</h2>
-      <p>Brand identity in the digital age extends far beyond a logo and color scheme. It encompasses:</p>
-      <ul>
-        <li>Visual elements (logo, typography, color palette)</li>
-        <li>Voice and tone across all communications</li>
-        <li>Digital presence and user experience</li>
-        <li>Values and mission alignment</li>
-        <li>Customer interaction patterns</li>
-      </ul>
-
-      <h2>The Digital-First Approach</h2>
-      <p>Today's brands must be designed with digital platforms in mind from the ground up. This means considering how your brand will appear across:</p>
-      <ul>
-        <li>Social media platforms</li>
-        <li>Mobile applications</li>
-        <li>Email communications</li>
-        <li>Website interfaces</li>
-        <li>Digital advertising</li>
-      </ul>
-
-      <h2>Key Strategies for Digital Brand Building</h2>
-
-      <h3>1. Consistency Across All Touchpoints</h3>
-      <p>Maintain visual and messaging consistency across all digital platforms. This includes using the same color schemes, fonts, and tone of voice whether customers encounter your brand on social media, your website, or in email communications.</p>
-
-      <h3>2. Authentic Storytelling</h3>
-      <p>Modern consumers crave authenticity. Share your brand's story, values, and mission in a way that resonates with your audience's values and aspirations.</p>
-
-      <h3>3. Interactive Brand Experiences</h3>
-      <p>Create opportunities for customers to interact with your brand through polls, quizzes, user-generated content campaigns, and interactive website elements.</p>
-
-      <h2>The Role of Social Media in Brand Identity</h2>
-      <p>Social media platforms have become the primary battleground for brand awareness and engagement. Each platform requires a tailored approach while maintaining brand consistency:</p>
-
-      <h3>Instagram</h3>
-      <p>Focus on visual storytelling with high-quality images and videos that reflect your brand aesthetic.</p>
-
-      <h3>LinkedIn</h3>
-      <p>Emphasize thought leadership and professional expertise to build credibility in your industry.</p>
-
-      <h3>TikTok</h3>
-      <p>Embrace creativity and trends while staying true to your brand voice and values.</p>
-
-      <h2>Measuring Brand Identity Success</h2>
-      <p>Track these key metrics to measure the effectiveness of your brand identity efforts:</p>
-      <ul>
-        <li>Brand awareness and recognition</li>
-        <li>Social media engagement rates</li>
-        <li>Website traffic and time on site</li>
-        <li>Customer sentiment analysis</li>
-        <li>Brand mention frequency and context</li>
-      </ul>
-
-      <h2>Common Pitfalls to Avoid</h2>
-      <p>When building your digital brand identity, avoid these common mistakes:</p>
-      <ul>
-        <li>Inconsistent messaging across platforms</li>
-        <li>Copying competitors instead of finding your unique voice</li>
-        <li>Neglecting mobile optimization</li>
-        <li>Ignoring customer feedback and sentiment</li>
-        <li>Focusing solely on aesthetics without substance</li>
-      </ul>
-
-      <h2>The Future of Brand Identity</h2>
-      <p>As technology continues to evolve, brand identity will need to adapt to new platforms and interaction methods, including:</p>
-      <ul>
-        <li>Voice interfaces and smart speakers</li>
-        <li>Augmented and virtual reality experiences</li>
-        <li>AI-powered personalization</li>
-        <li>Sustainable and socially responsible branding</li>
-      </ul>
-
-      <h2>Conclusion</h2>
-      <p>Building a strong brand identity in the digital age requires a strategic, multi-faceted approach that prioritizes consistency, authenticity, and customer engagement. By focusing on these core principles and staying adaptable to new technologies and platforms, businesses can create lasting brand connections that drive growth and loyalty.</p>
-    `,
-    author: "Sarah Chen",
-    authorBio:
-      "Sarah is a creative director and brand strategist with 8 years of experience helping businesses build compelling digital brand identities.",
-    date: "December 12, 2024",
-    readTime: "6 min read",
-    category: "Branding",
-    categoryColor: "from-[#F472B6] to-[#FF7600]",
-    image: "/images/content-marketing.webp",
-    tags: ["Branding", "Digital Marketing", "Strategy", "Social Media", "Brand Identity"],
-    relatedPosts: [
-      "future-of-ai-business-automation",
-      "roi-driven-digital-marketing-strategies",
-      "customer-experience-digital-era",
-    ],
-  },
-}
-
-interface PageProps {
+interface BlogPostPageProps {
   params: {
     slug: string
   }
 }
 
-export default function BlogPostPage({ params }: PageProps) {
-  const post = blogPostData[params.slug]
+export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
+  // In a real app, you'd fetch the blog post data here
+  return {
+    title: "How AI Automation is Revolutionizing Small Business Operations in 2024 | MH Digital Solutions",
+    description:
+      "Discover the latest AI automation trends that are helping small businesses reduce costs by 70% while improving efficiency and customer satisfaction. Expert insights and real case studies.",
+    keywords:
+      "AI automation, small business, cost reduction, efficiency, business operations, automation tools, digital transformation",
+    alternates: {
+      canonical: `https://www.mhdigitalsolution.com/blog/${params.slug}`,
+    },
+    openGraph: {
+      title: "How AI Automation is Revolutionizing Small Business Operations in 2024",
+      description:
+        "Discover how AI automation is helping small businesses reduce costs by 70% while improving efficiency.",
+      images: ["/images/ai-automation.webp"],
+      type: "article",
+    },
+  }
+}
 
-  if (!post) {
-    notFound()
+export default function BlogPostPage({ params }: BlogPostPageProps) {
+  // In a real app, you'd fetch this data based on the slug
+  const post = {
+    title: "How AI Automation is Revolutionizing Small Business Operations in 2024",
+    author: "Mohammad Hassan",
+    date: "December 15, 2024",
+    readTime: "8 min read",
+    category: "AI & Automation",
+    image: "/images/ai-automation.webp",
+    content: `
+      <p>In today's rapidly evolving business landscape, small businesses are discovering that AI automation isn't just for tech giants anymore. With costs decreasing and accessibility increasing, AI-powered solutions are becoming essential tools for competitive advantage.</p>
+
+      <h2>The Current State of AI Automation for Small Businesses</h2>
+      <p>Recent studies show that <strong>70% of small businesses that implement AI automation see significant cost reductions within the first six months</strong>. According to <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-state-of-ai-in-2023" target="_blank" rel="noopener noreferrer">McKinsey's State of AI 2023 report<span class="sr-only"> (opens in new tab)</span></a>, these aren't just incremental improvements – we're talking about transformative changes that fundamentally alter how businesses operate.</p>
+
+      <p>At <a href="/services/ai-automation">MH Digital Solutions, our AI automation services</a> have helped over 200 businesses implement these game-changing technologies, resulting in an average of 60% reduction in manual tasks and 300% improvement in operational efficiency.</p>
+
+      <h2>Key Areas Where AI is Making an Impact</h2>
+      
+      <h3>1. Customer Service Automation</h3>
+      <p>AI chatbots and virtual assistants are handling up to 80% of routine customer inquiries, freeing up human staff for more complex tasks. This not only reduces labor costs but also provides 24/7 customer support. Our <a href="/services/digital-marketing">comprehensive digital marketing strategies</a> often include AI-powered customer service solutions that integrate seamlessly with your existing workflows.</p>
+
+      <h3>2. Process Optimization</h3>
+      <p>Machine learning algorithms are identifying inefficiencies in business processes that humans might miss, leading to streamlined operations and reduced waste. For businesses looking to optimize their operations, our <a href="/services/business-consulting">business consulting services</a> include process automation assessments.</p>
+
+      <h3>3. Predictive Analytics</h3>
+      <p>Small businesses are now using AI to predict customer behavior, inventory needs, and market trends with remarkable accuracy. According to <a href="https://www.salesforce.com/resources/articles/predictive-analytics/" target="_blank" rel="noopener noreferrer">Salesforce's research on predictive analytics<span class="sr-only"> (opens in new tab)</span></a>, businesses using AI-driven insights see 73% faster decision-making processes.</p>
+
+      <h2>Real-World Success Stories</h2>
+      <p>Consider the case of a small manufacturing company in Huntsville, AL, that implemented AI-powered quality control systems through our automation services. They reduced defect rates by 85% and cut inspection time in half, resulting in annual savings of over $200,000.</p>
+
+      <p>Another client, a healthcare practice with multiple locations, implemented our AI-powered chatbot solution and saw an 80% reduction in routine phone inquiries, allowing their staff to focus on patient care rather than appointment scheduling.</p>
+
+      <h2>Getting Started with AI Automation</h2>
+      <p>The key to successful AI implementation is starting small and scaling gradually. Begin with one process, measure results, and expand from there. Most importantly, choose solutions that integrate well with your existing systems.</p>
+
+      <p>For businesses ready to explore AI automation, we recommend starting with a comprehensive audit of your current processes. Our team can help identify the best opportunities for automation in your specific industry and business model.</p>
+
+      <h2>The Future of AI in Small Business</h2>
+      <p>Looking ahead, <a href="https://www.gartner.com/en/newsroom/press-releases/2023-10-11-gartner-says-by-2026-organizations-that-operationalize-ai-transparency-trust-and-security-will-see-50-percent-better-business-outcomes" target="_blank" rel="noopener noreferrer">Gartner predicts<span class="sr-only"> (opens in new tab)</span></a> that by 2026, organizations that operationalize AI will see 50% better business outcomes. This isn't just about efficiency – it's about survival in an increasingly competitive marketplace.</p>
+
+      <h2>Conclusion</h2>
+      <p>AI automation is no longer a luxury for small businesses – it's becoming a necessity for survival in an increasingly competitive marketplace. The businesses that embrace these technologies now will have a significant advantage over those that wait.</p>
+
+      <p>Ready to explore how AI automation can transform your business? <a href="/services/ai-automation">Learn more about our AI automation services</a> or <a href="https://calendly.com/mhdigitalsolutionsus" target="_blank" rel="noopener noreferrer">schedule a free consultation</a> to discuss your specific needs.</p>
+    `,
+    tags: ["AI Automation", "Small Business", "Cost Reduction", "Efficiency", "Business Growth"],
   }
 
+  const relatedPosts = [
+    {
+      id: "seo-strategies-2024",
+      title: "10 SEO Strategies That Will Dominate Search Rankings in 2024",
+      image: "/images/digital-marketing.webp",
+      category: "SEO",
+      excerpt: "Discover the latest SEO techniques that are driving organic traffic growth for businesses worldwide.",
+    },
+    {
+      id: "social-media-roi",
+      title: "Measuring Social Media ROI: Advanced Analytics for Business Growth",
+      image: "/images/digital-marketing-team.png",
+      category: "Social Media",
+      excerpt: "Learn how to track and measure the real impact of your social media marketing efforts.",
+    },
+  ]
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16 bg-transparent">
+      {/* Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            headline: post.title,
+            author: {
+              "@type": "Person",
+              name: post.author,
+            },
+            datePublished: "2024-12-15",
+            dateModified: "2024-12-15",
+            image: `https://www.mhdigitalsolution.com${post.image}`,
+            publisher: {
+              "@type": "Organization",
+              name: "MH Digital Solutions",
+              logo: {
+                "@type": "ImageObject",
+                url: "https://www.mhdigitalsolution.com/images/mh-logo.webp",
+              },
+            },
+            mainEntityOfPage: {
+              "@type": "WebPage",
+              "@id": `https://www.mhdigitalsolution.com/blog/${params.slug}`,
+            },
+          }),
+        }}
+      />
+
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className="py-20">
+        <section className="py-20 bg-transparent">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-              <Link href="/blog" className="inline-flex items-center text-[#8B5CF6] hover:text-[#F472B6] mb-6">
+              <Link
+                href="/blog"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
+                aria-label="Return to blog homepage"
+              >
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Blog
               </Link>
 
-              <Badge className={`bg-gradient-to-r ${post.categoryColor} text-white border-0 mb-4`}>
+              <Badge className="mb-4 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 border-0">
                 {post.category}
               </Badge>
 
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
-                {post.title}
-              </h1>
+              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">{post.title}</h1>
 
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 leading-relaxed">{post.excerpt}</p>
-
-              <div className="flex items-center justify-between mb-8">
-                <div className="flex items-center space-x-6">
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`w-12 h-12 bg-gradient-to-r ${post.categoryColor} rounded-full flex items-center justify-center`}
-                    >
-                      <span className="text-white font-bold">
-                        {post.author
-                          .split(" ")
-                          .map((n: string) => n[0])
-                          .join("")}
-                      </span>
-                    </div>
-                    <div>
-                      <div className="font-semibold text-gray-900 dark:text-white">{post.author}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{post.date}</div>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4 text-gray-600 dark:text-gray-400">
-                    <div className="flex items-center space-x-1">
-                      <Clock className="h-4 w-4" />
-                      <span className="text-sm">{post.readTime}</span>
-                    </div>
-                    <div className="flex items-center space-x-1">
-                      <BookOpen className="h-4 w-4" />
-                      <span className="text-sm">Article</span>
-                    </div>
-                  </div>
+              <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400 mb-8">
+                <div className="flex items-center">
+                  <User className="h-4 w-4 mr-1" />
+                  {post.author}
                 </div>
-
-                <div className="flex items-center space-x-2">
-                  <Button size="sm" variant="ghost" className="glass">
-                    <Heart className="h-4 w-4 mr-1" />
-                    Like
-                  </Button>
-                  <Button size="sm" variant="ghost" className="glass">
-                    <Share2 className="h-4 w-4 mr-1" />
-                    Share
-                  </Button>
+                <div className="flex items-center">
+                  <Calendar className="h-4 w-4 mr-1" />
+                  {post.date}
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-1" />
+                  {post.readTime}
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
 
-      {/* Featured Image */}
-      <ScrollAnimation>
-        <section className="py-10">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="relative h-96 rounded-2xl overflow-hidden">
-                <Image src={post.image || "/placeholder.svg"} alt={post.title} fill className="object-cover" />
-                <div className={`absolute inset-0 bg-gradient-to-t ${post.categoryColor} opacity-30`}></div>
+              <div className="relative h-96 mb-8 rounded-2xl overflow-hidden">
+                <Image
+                  src={post.image || "/placeholder.svg"}
+                  alt="AI automation transforming small business operations with robotic process automation and machine learning"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
@@ -293,77 +184,146 @@ export default function BlogPostPage({ params }: PageProps) {
 
       {/* Article Content */}
       <ScrollAnimation>
-        <section className="py-20">
+        <section className="py-12 bg-transparent">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
               <div className="grid lg:grid-cols-4 gap-12">
                 {/* Main Content */}
                 <div className="lg:col-span-3">
-                  <Card className="glass border-0">
-                    <CardContent className="p-8 lg:p-12">
-                      <div
-                        className="prose prose-lg max-w-none text-gray-700 dark:text-gray-300 prose-headings:text-gray-900 dark:prose-headings:text-white prose-a:text-[#8B5CF6] hover:prose-a:text-[#F472B6]"
-                        dangerouslySetInnerHTML={{ __html: post.content }}
-                      />
-                    </CardContent>
-                  </Card>
-                </div>
-
-                {/* Sidebar */}
-                <div className="lg:col-span-1">
-                  <div className="sticky top-24 space-y-6">
-                    {/* Author Info */}
-                    <Card className="glass border-0">
-                      <CardContent className="p-6">
-                        <h3 className="font-semibold text-gray-900 dark:text-white mb-3">About the Author</h3>
-                        <div className="flex items-center space-x-3 mb-4">
-                          <div
-                            className={`w-12 h-12 bg-gradient-to-r ${post.categoryColor} rounded-full flex items-center justify-center`}
-                          >
-                            <span className="text-white font-bold">
-                              {post.author
-                                .split(" ")
-                                .map((n: string) => n[0])
-                                .join("")}
-                            </span>
-                          </div>
-                          <div>
-                            <div className="font-semibold text-gray-900 dark:text-white">{post.author}</div>
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">{post.authorBio}</p>
-                      </CardContent>
-                    </Card>
+                  <div className="glass p-8 rounded-2xl">
+                    <div
+                      className="prose prose-lg max-w-none dark:prose-invert prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
+                      dangerouslySetInnerHTML={{ __html: post.content }}
+                    />
 
                     {/* Tags */}
-                    <Card className="glass border-0">
-                      <CardContent className="p-6">
-                        <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Tags</h3>
-                        <div className="flex flex-wrap gap-2">
-                          {post.tags.map((tag: string, index: number) => (
-                            <Badge key={index} className="glass text-gray-700 dark:text-gray-300 border-0">
-                              {tag}
-                            </Badge>
-                          ))}
-                        </div>
-                      </CardContent>
-                    </Card>
+                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                      <h4 className="font-semibold mb-4 text-gray-900 dark:text-white">Tags:</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {post.tags.map((tag, index) => (
+                          <Badge key={index} variant="secondary">
+                            {tag}
+                          </Badge>
+                        ))}
+                      </div>
+                    </div>
 
-                    {/* CTA */}
-                    <Card className="glass border-0">
-                      <CardContent className="p-6 text-center">
-                        <h3 className="font-semibold text-gray-900 dark:text-white mb-3">Need Expert Help?</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mb-4">
-                          Get personalized advice from our experts
-                        </p>
+                    {/* Share */}
+                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+                      <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+                        <Share2 className="h-4 w-4 mr-2" />
+                        Share Article
+                      </Button>
+                    </div>
+
+                    {/* Call to Action */}
+                    <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg">
+                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                        Ready to Implement AI Automation in Your Business?
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300 mb-4">
+                        Our AI automation experts can help you identify the best opportunities for automation in your
+                        business and implement solutions that deliver real ROI.
+                      </p>
+                      <div className="flex flex-col sm:flex-row gap-4">
                         <a
                           href="https://calendly.com/mhdigitalsolutionsus"
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="calendly-button w-full justify-center"
+                          className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
                         >
-                          Schedule Consultation
+                          Get Free AI Consultation
+                          <ArrowRight className="ml-2 h-4 w-4" />
                         </a>
+                        <Link
+                          href="/services/ai-automation"
+                          className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg transition-all duration-300"
+                        >
+                          Learn About Our AI Services
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Sidebar */}
+                <div className="lg:col-span-1">
+                  <div className="sticky top-24 space-y-8">
+                    {/* Table of Contents */}
+                    <Card className="glass border-0">
+                      <CardContent className="p-6">
+                        <h4 className="font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
+                          <BookOpen className="h-4 w-4 mr-2" />
+                          Table of Contents
+                        </h4>
+                        <nav className="space-y-2 text-sm">
+                          <a
+                            href="#current-state"
+                            className="block text-gray-600 dark:text-gray-400 hover:text-blue-600"
+                          >
+                            Current State of AI Automation
+                          </a>
+                          <a href="#key-areas" className="block text-gray-600 dark:text-gray-400 hover:text-blue-600">
+                            Key Areas of Impact
+                          </a>
+                          <a
+                            href="#success-stories"
+                            className="block text-gray-600 dark:text-gray-400 hover:text-blue-600"
+                          >
+                            Real-World Success Stories
+                          </a>
+                          <a
+                            href="#getting-started"
+                            className="block text-gray-600 dark:text-gray-400 hover:text-blue-600"
+                          >
+                            Getting Started
+                          </a>
+                        </nav>
+                      </CardContent>
+                    </Card>
+
+                    {/* Author Bio */}
+                    <Card className="glass border-0">
+                      <CardContent className="p-6">
+                        <h4 className="font-semibold mb-4 text-gray-900 dark:text-white">About the Author</h4>
+                        <div className="flex items-center mb-3">
+                          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mr-3">
+                            <span className="text-white font-bold">MH</span>
+                          </div>
+                          <div>
+                            <div className="font-medium text-gray-900 dark:text-white">{post.author}</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">CEO & Founder</div>
+                          </div>
+                        </div>
+                        <p className="text-sm text-gray-600 dark:text-gray-400">
+                          Digital marketing expert with 10+ years of experience helping businesses grow through
+                          innovative AI automation strategies and digital transformation.
+                        </p>
+                      </CardContent>
+                    </Card>
+
+                    {/* Related Services */}
+                    <Card className="glass border-0">
+                      <CardContent className="p-6">
+                        <h4 className="font-semibold mb-4 text-gray-900 dark:text-white">Related Services</h4>
+                        <div className="space-y-3">
+                          <Link
+                            href="/services/ai-automation"
+                            className="block p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
+                          >
+                            <div className="font-medium text-blue-600">AI & Automation</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">
+                              Streamline operations with AI
+                            </div>
+                          </Link>
+                          <Link
+                            href="/services/business-consulting"
+                            className="block p-3 rounded-lg bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors"
+                          >
+                            <div className="font-medium text-purple-600">Business Consulting</div>
+                            <div className="text-sm text-gray-600 dark:text-gray-400">Strategic business guidance</div>
+                          </Link>
+                        </div>
                       </CardContent>
                     </Card>
                   </div>
@@ -376,86 +336,39 @@ export default function BlogPostPage({ params }: PageProps) {
 
       {/* Related Posts */}
       <ScrollAnimation>
-        <section className="py-20">
+        <section className="py-20 bg-transparent">
           <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-3xl font-bold mb-8">
-                <span className="text-gray-900 dark:text-white">Related</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Articles
-                </span>
-              </h2>
-
-              <div className="grid md:grid-cols-3 gap-6">
-                {post.relatedPosts.slice(0, 3).map((relatedSlug: string, index: number) => {
-                  const relatedPost = blogPostData[relatedSlug]
-                  if (!relatedPost) return null
-
-                  return (
-                    <Card key={relatedSlug} className="blog-card border-0 hover-lift">
-                      <CardContent className="p-0">
-                        <div className="relative h-32">
-                          <Image
-                            src={relatedPost.image || "/placeholder.svg"}
-                            alt={relatedPost.title}
-                            fill
-                            className="object-cover"
-                          />
-                          <div
-                            className={`absolute inset-0 bg-gradient-to-t ${relatedPost.categoryColor} opacity-50`}
-                          ></div>
-                        </div>
-                        <div className="p-4">
-                          <Badge className="text-xs mb-2 glass text-gray-700 dark:text-gray-300 border-0">
-                            {relatedPost.category}
-                          </Badge>
-                          <h3 className="font-semibold text-gray-900 dark:text-white mb-2 line-clamp-2 text-sm">
-                            {relatedPost.title}
-                          </h3>
-                          <Link href={`/blog/${relatedSlug}`}>
-                            <Button size="sm" variant="ghost" className="text-[#8B5CF6] hover:text-[#F472B6] p-0">
-                              Read More <ArrowRight className="ml-1 h-3 w-3" />
-                            </Button>
-                          </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  )
-                })}
+              <h3 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Related Articles</h3>
+              <div className="grid md:grid-cols-2 gap-8">
+                {relatedPosts.map((relatedPost, index) => (
+                  <Card key={relatedPost.id} className="glass border-0 hover:scale-105 transition-all duration-300">
+                    <CardContent className="p-0">
+                      <div className="relative h-48 overflow-hidden rounded-t-lg">
+                        <Image
+                          src={relatedPost.image || "/placeholder.svg"}
+                          alt={`${relatedPost.title} - ${relatedPost.category} insights`}
+                          fill
+                          className="object-cover"
+                        />
+                        <Badge className="absolute top-4 left-4 bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-gray-200 border-0">
+                          {relatedPost.category}
+                        </Badge>
+                      </div>
+                      <div className="p-6">
+                        <h4 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{relatedPost.title}</h4>
+                        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{relatedPost.excerpt}</p>
+                        <Link href={`/blog/${relatedPost.id}`}>
+                          <Button variant="ghost" className="w-full justify-between">
+                            Read Article
+                            <ArrowLeft className="h-4 w-4 rotate-180" />
+                          </Button>
+                        </Link>
+                      </div>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Newsletter CTA */}
-      <ScrollAnimation>
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <Card className="glass border-0 rounded-2xl">
-                <CardContent className="p-8 text-center">
-                  <h2 className="text-2xl font-bold mb-4">
-                    <span className="text-gray-900 dark:text-white">Enjoyed this article?</span>{" "}
-                    <span className="bg-gradient-to-r from-[#FF7600] to-[#8B5CF6] bg-clip-text text-transparent">
-                      Get more insights
-                    </span>
-                  </h2>
-                  <p className="text-gray-600 dark:text-gray-300 mb-6">
-                    Subscribe to our newsletter for the latest articles and insights delivered to your inbox
-                  </p>
-                  <div className="flex flex-col sm:flex-row gap-4 justify-center max-w-md mx-auto">
-                    <input
-                      type="email"
-                      placeholder="Enter your email"
-                      className="flex-1 px-4 py-2 glass rounded-full border-0 focus:outline-none focus:ring-2 focus:ring-[#8B5CF6] text-gray-900 dark:text-white placeholder-gray-500"
-                    />
-                    <Button className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] hover:opacity-90 text-white border-0 rounded-full">
-                      Subscribe
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
             </div>
           </div>
         </section>

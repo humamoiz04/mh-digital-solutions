@@ -1,243 +1,233 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Mail, Phone, MapPin, Clock, ArrowRight } from "lucide-react"
+import { Mail, Phone, MapPin, Clock } from "lucide-react"
+import ContactForm from "@/components/contact-form"
+import FAQ from "@/components/faq"
 import ScrollAnimation from "@/components/scroll-animation"
-import HubSpotForm from "@/components/hubspot-form"
 
 export default function ContactPage() {
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: "Email Us",
-      details: "hello@mhdigitalsolutions.com",
-      description: "Send us an email anytime",
-      color: "from-[#FF7600] to-[#F472B6]",
-    },
-    {
-      icon: Phone,
-      title: "Call Us",
-      details: "+1 (757) 550-4040",
-      description: "Mon-Fri from 9am to 6pm EST",
-      color: "from-[#8B5CF6] to-[#00F5FF]",
-    },
-    {
-      icon: MapPin,
-      title: "Location",
-      details: "United States",
-      description: "Serving clients nationwide",
-      color: "from-[#F472B6] to-[#8B5CF6]",
-    },
-    {
-      icon: Clock,
-      title: "Response Time",
-      details: "Within 24 hours",
-      description: "We respond to all inquiries quickly",
-      color: "from-[#00F5FF] to-[#FF7600]",
-    },
-  ]
-
   const faqs = [
     {
-      question: "How long does it take to see results?",
+      question: "How quickly will you respond to my inquiry?",
       answer:
-        "Results vary by service, but most clients see initial improvements within 30-90 days. SEO typically takes 3-6 months for significant results, while PPC and social media can show results within weeks.",
+        "We typically respond to all inquiries within 24 hours during business days. For urgent matters, please call us directly for immediate assistance.",
     },
     {
-      question: "Do you work with small businesses?",
+      question: "Do you work with clients internationally?",
       answer:
-        "We specialize in helping small and medium-sized businesses grow their digital presence. We offer scalable solutions that fit various budgets and business sizes.",
+        "Yes, we work with clients worldwide. Our digital services can be delivered remotely, and we use video conferencing and collaboration tools to maintain effective communication regardless of location.",
     },
     {
-      question: "What's included in your digital marketing services?",
+      question: "What information should I include in my initial inquiry?",
       answer:
-        "Our services include strategy development, implementation, ongoing optimization, detailed reporting, and regular consultations. Each package is customized to your specific needs and goals.",
+        "To help us respond most effectively, please include details about your project or needs, your timeline, budget range if applicable, and any specific questions you have. The more information you provide, the better we can tailor our response.",
     },
     {
-      question: "Can you help with website redesign?",
+      question: "Can I schedule a call before committing to your services?",
       answer:
-        "Yes, we offer complete website redesign and development services. We focus on creating user-friendly, mobile-responsive websites that convert visitors into customers.",
+        "We offer free initial consultations to discuss your needs and determine if we're a good fit. You can use our online scheduling tool to book a convenient time for a call.",
     },
   ]
 
   return (
-    <div className="min-h-screen pt-16">
+    <div className="section-transparent pt-32">
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className="py-20">
-          <div className="container mx-auto px-6 text-center">
-            <Badge className="bg-gradient-to-r from-[#FF7600] to-[#F472B6] text-white border-0 mb-6">
-              💬 Get In Touch
-            </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              <span className="text-gray-900 dark:text-white">Let's</span>{" "}
-              <span className="bg-gradient-to-r from-[#FF7600] to-[#8B5CF6] bg-clip-text text-transparent">
-                Connect
-              </span>
+        <section className="section-transparent pb-20">
+          <div className="max-w-7xl mx-auto px-6 text-center">
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-[#8B5CF6] via-[#F472B6] to-[#FF7600] bg-clip-text text-transparent">
+              Get In Touch
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Ready to transform your business? Get in touch with our team of digital marketing experts and let's
-              discuss how we can help you achieve your goals
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
+              Ready to transform your digital presence? Let's discuss your project and create something amazing
+              together.
             </p>
           </div>
         </section>
       </ScrollAnimation>
 
-      {/* Contact Info Cards */}
+      {/* Contact Form & Info */}
       <ScrollAnimation>
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {contactInfo.map((info, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className={`service-card-${(index % 4) + 1} border-0 hover-lift text-center`}>
-                    <CardContent className="p-6">
-                      <div
-                        className={`w-16 h-16 bg-gradient-to-r ${info.color} rounded-full flex items-center justify-center mx-auto mb-4`}
-                      >
-                        <info.icon className="h-8 w-8 text-white" />
+        <section className="section-transparent py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
+              {/* Contact Form */}
+              <div className="lg:col-span-2">
+                <Card className="glass-card border-0">
+                  <CardContent className="p-8">
+                    <h2 className="text-3xl font-bold mb-6 bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
+                      Send Us a Message
+                    </h2>
+                    <ContactForm />
+                  </CardContent>
+                </Card>
+              </div>
+
+              {/* Contact Information */}
+              <div className="space-y-8">
+                <Card className="glass-card border-0">
+                  <CardContent className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Contact Information</h3>
+                    <div className="space-y-6">
+                      <div className="flex items-start space-x-4">
+                        <Mail className="w-6 h-6 text-[#8B5CF6] mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-gray-800 dark:text-white">Email</h4>
+                          <p className="text-gray-600 dark:text-gray-300">info@mhdigitalsolution.com</p>
+                          <p className="text-gray-600 dark:text-gray-300">support@mhdigitalsolution.com</p>
+                        </div>
                       </div>
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-2">{info.title}</h3>
-                      <p className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{info.details}</p>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{info.description}</p>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
+
+                      <div className="flex items-start space-x-4">
+                        <Phone className="w-6 h-6 text-[#8B5CF6] mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-gray-800 dark:text-white">Phone</h4>
+                          <p className="text-gray-600 dark:text-gray-300">+1 (555) 123-4567</p>
+                          <p className="text-gray-600 dark:text-gray-300">+1 (555) 987-6543</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-4">
+                        <MapPin className="w-6 h-6 text-[#8B5CF6] mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-gray-800 dark:text-white">Address</h4>
+                          <p className="text-gray-600 dark:text-gray-300">123 Digital Street</p>
+                          <p className="text-gray-600 dark:text-gray-300">Tech City, TC 12345</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-start space-x-4">
+                        <Clock className="w-6 h-6 text-[#8B5CF6] mt-1" />
+                        <div>
+                          <h4 className="font-semibold text-gray-800 dark:text-white">Business Hours</h4>
+                          <p className="text-gray-600 dark:text-gray-300">Monday - Friday: 9:00 AM - 6:00 PM</p>
+                          <p className="text-gray-600 dark:text-gray-300">Saturday: 10:00 AM - 4:00 PM</p>
+                          <p className="text-gray-600 dark:text-gray-300">Sunday: Closed</p>
+                        </div>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="glass-card border-0">
+                  <CardContent className="p-8">
+                    <h3 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Connect With Us</h3>
+                    <div className="flex space-x-4">
+                      <a
+                        href="#"
+                        className="w-10 h-10 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] flex items-center justify-center"
+                        aria-label="Facebook"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-white"
+                        >
+                          <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                      </a>
+                      <a
+                        href="#"
+                        className="w-10 h-10 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] flex items-center justify-center"
+                        aria-label="Twitter"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-white"
+                        >
+                          <path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path>
+                        </svg>
+                      </a>
+                      <a
+                        href="#"
+                        className="w-10 h-10 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] flex items-center justify-center"
+                        aria-label="LinkedIn"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-white"
+                        >
+                          <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                          <rect x="2" y="9" width="4" height="12"></rect>
+                          <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                      </a>
+                      <a
+                        href="#"
+                        className="w-10 h-10 rounded-full bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] flex items-center justify-center"
+                        aria-label="Instagram"
+                      >
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="20"
+                          height="20"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-white"
+                        >
+                          <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                      </a>
+                    </div>
+                  </CardContent>
+                </Card>
+              </div>
             </div>
           </div>
         </section>
       </ScrollAnimation>
 
-      {/* Contact Form Section */}
+      {/* Map Section */}
       <ScrollAnimation>
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-start">
-              <div>
-                <h2 className="text-4xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Send Us a</span>{" "}
-                  <span className="bg-gradient-to-r from-[#FF7600] to-[#8B5CF6] bg-clip-text text-transparent">
-                    Message
-                  </span>
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                  Fill out the form below and we'll get back to you within 24 hours. Let's discuss your project and how
-                  we can help you achieve your digital marketing goals.
-                </p>
-
-                <div className="space-y-6">
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#FF7600] to-[#F472B6] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">1</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Free Consultation</h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        We'll analyze your current situation and provide initial recommendations
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#8B5CF6] to-[#00F5FF] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">2</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Custom Strategy</h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        We'll create a tailored digital marketing strategy for your business
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start space-x-4">
-                    <div className="w-8 h-8 bg-gradient-to-r from-[#F472B6] to-[#8B5CF6] rounded-full flex items-center justify-center flex-shrink-0 mt-1">
-                      <span className="text-white text-sm font-bold">3</span>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 dark:text-white mb-1">Implementation</h4>
-                      <p className="text-gray-600 dark:text-gray-400">
-                        We'll execute the strategy and provide ongoing optimization
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="glass p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-                  Start Your Digital Transformation
-                </h3>
-                <HubSpotForm />
-              </div>
-            </div>
+        <section className="section-transparent py-20">
+          <div className="max-w-7xl mx-auto px-6">
+            <Card className="glass-card border-0 overflow-hidden">
+              <CardContent className="p-0">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387193.3059353029!2d-74.25986548248684!3d40.69714941932609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sca!4v1623252321665!5m2!1sen!2sca"
+                  width="100%"
+                  height="450"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                  title="MH Digital Solution Location"
+                ></iframe>
+              </CardContent>
+            </Card>
           </div>
         </section>
       </ScrollAnimation>
 
       {/* FAQ Section */}
-      <ScrollAnimation>
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Frequently Asked</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Questions
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Get answers to common questions about our services
-              </p>
-            </div>
-
-            <div className="max-w-3xl mx-auto space-y-6">
-              {faqs.map((faq, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="glass border-0">
-                    <CardContent className="p-6">
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{faq.question}</h3>
-                      <p className="text-gray-600 dark:text-gray-400">{faq.answer}</p>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* CTA Section */}
-      <ScrollAnimation>
-        <section className="py-20">
-          <div className="container mx-auto px-6">
-            <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#FF7600]/10 via-[#F472B6]/10 to-[#8B5CF6]/10"></div>
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Ready to</span>{" "}
-                  <span className="bg-gradient-to-r from-[#FF7600] to-[#8B5CF6] bg-clip-text text-transparent">
-                    Get Started
-                  </span>
-                  ?
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Schedule a free consultation and let's discuss how we can help transform your digital presence
-                </p>
-                <a
-                  href="https://calendly.com/mhdigitalsolutionsus"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="calendly-button"
-                >
-                  Schedule Free Consultation
-                  <ArrowRight className="h-5 w-5" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+      <FAQ title="Contact FAQ" subtitle="Common questions about contacting us" faqs={faqs} />
     </div>
   )
 }

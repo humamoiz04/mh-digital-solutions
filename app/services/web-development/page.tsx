@@ -1,82 +1,128 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Code, Smartphone, Palette, ArrowRight, CheckCircle, Zap, Shield, Star, Award } from "lucide-react"
+import {
+  ArrowRight,
+  Code,
+  Smartphone,
+  ShoppingCart,
+  CheckCircle,
+  Globe,
+  Settings,
+  Users,
+  BarChart3,
+  Shield,
+} from "lucide-react"
 import ScrollAnimation from "@/components/scroll-animation"
 import Image from "next/image"
-import HubSpotForm from "@/components/hubspot-form"
+import FAQ from "@/components/faq"
+import Testimonials from "@/components/testimonials"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Custom Web Development Services | Responsive Design & E-commerce Solutions",
+  description:
+    "Professional web development services for businesses of all sizes. Custom websites, e-commerce platforms, and responsive designs that drive results. Get your free consultation today!",
+  keywords:
+    "web development, custom website design, e-commerce development, responsive web design, business website, web application development",
+}
 
 export default function WebDevelopmentPage() {
+  const faqs = [
+    {
+      question: "How much does a custom business website cost in Huntsville, AL?",
+      answer:
+        "Custom website design pricing in Huntsville ranges from $2,500 for small business websites to $15,000+ for enterprise solutions. Our small business website packages start at $2,997 and include responsive design, SEO optimization, and content management. Enterprise web development budgets typically range from $10,000-$50,000 depending on complexity and integrations.",
+    },
+    {
+      question: "How long does it take to build an e-commerce website?",
+      answer:
+        "E-commerce website development timeline typically ranges from 6-12 weeks for standard online stores. A fast e-commerce site launch can be achieved in 4-6 weeks for simpler stores, while complex multi-vendor platforms may take 12-16 weeks. We provide detailed project timelines during our initial consultation.",
+    },
+    {
+      question: "What is responsive web design and why is it important for mobile users?",
+      answer:
+        "Responsive design ensures your website adapts perfectly to all screen sizes - desktop, tablet, and mobile. Mobile-friendly website benefits include better user experience, higher search rankings (Google's mobile-first indexing), and increased conversions. With 60%+ of web traffic coming from mobile devices, responsive design is essential for modern websites.",
+    },
+    {
+      question: "Can you integrate my website with existing CRM or ERP systems?",
+      answer:
+        "Yes, we specialize in CRM integration web development and ERP website connections. We provide custom API integration services for popular systems like Salesforce, HubSpot, Microsoft Dynamics, SAP, and others. This enables seamless data flow between your website and business systems.",
+    },
+    {
+      question: "Do you provide ongoing website maintenance and support?",
+      answer:
+        "Yes, we offer comprehensive website maintenance packages starting at $297/month. Our ongoing website support services include security updates, content updates, performance monitoring, backup management, and technical support. Post-launch web support ensures your website stays secure, fast, and up-to-date.",
+    },
+  ]
+
+  const testimonials = [
+    {
+      text: "Our new e-commerce website increased online sales by 300% in the first 6 months. The design is beautiful and the checkout process is seamless.",
+      name: "Jennifer Martinez",
+      position: "E-commerce Manager",
+      company: "Fashion Boutique",
+      rating: 5,
+    },
+    {
+      text: "They built our complex B2B platform with multiple integrations. The project was delivered on time and exceeded our expectations.",
+      name: "David Chen",
+      position: "CTO",
+      company: "TechStart Solutions",
+      rating: 5,
+    },
+  ]
+
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className="py-20 bg-transparent relative overflow-hidden">
+        <section className="py-20 section-gradient-1">
           <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <Badge className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] text-white border-0 mb-6">
-                  💻 Web Development Experts
+                <Badge className="mb-6 bg-gradient-to-r from-[#00f5ff] to-[#8b5cf6] text-white border-0">
+                  💻 Expert Web Development
                 </Badge>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                  <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                    Custom Websites
+                <h1 className="text-5xl md:text-6xl font-bold mb-6">
+                  <span className="bg-gradient-to-r from-[#00f5ff] to-[#8b5cf6] bg-clip-text text-transparent">
+                    Custom Web Development
                   </span>
                   <br />
-                  <span className="text-gray-900 dark:text-white">That Convert Visitors</span>
-                  <br />
-                  <span className="text-gray-900 dark:text-white">Into Customers</span>
+                  <span className="text-white">That Drives Business Growth</span>
                 </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-lg">
-                  We help <strong>small businesses and e-commerce stores</strong> build high-performance websites that
-                  load 400% faster, convert better, and drive real business growth.
+                <p className="text-xl text-gray-300 mb-8">
+                  Professional web development services for businesses of all sizes. From responsive websites to complex
+                  e-commerce platforms, we create digital experiences that convert visitors into customers.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
                     href="https://calendly.com/mhdigitalsolutionsus"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="calendly-button pulse-animation"
+                    className="calendly-button"
                   >
-                    Get Website Consultation
-                    <ArrowRight className="h-5 w-5" />
+                    Get Free Consultation
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#00F5FF] text-[#00F5FF] hover:bg-[#00F5FF] hover:text-white rounded-full"
+                    className="border-2 border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff] hover:text-black rounded-full"
                   >
                     View Portfolio
                   </Button>
                 </div>
-
-                {/* Trust Indicators */}
-                <div className="flex items-center gap-6 mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                  <div className="flex items-center gap-2">
-                    <div className="flex">
-                      {[...Array(5)].map((_, i) => (
-                        <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                      ))}
-                    </div>
-                    <span className="text-sm font-medium">4.9/5 Rating</span>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <Award className="h-5 w-5 text-[#00F5FF]" />
-                    <span className="text-sm font-medium">200+ Websites Built</span>
-                  </div>
-                </div>
               </div>
-
-              <ScrollAnimation animation="fadeInRight" delay={200}>
+              <ScrollAnimation>
                 <div className="relative">
                   <Image
-                    src="/images/business-analytics.png"
-                    alt="Web Development Services"
+                    src="/images/web-development-optimized.webp"
+                    alt="Custom Web Development Services"
                     width={600}
                     height={400}
                     className="rounded-2xl shadow-2xl"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#00F5FF]/10 to-transparent rounded-2xl"></div>
                 </div>
               </ScrollAnimation>
             </div>
@@ -84,116 +130,128 @@ export default function WebDevelopmentPage() {
         </section>
       </ScrollAnimation>
 
-      {/* Is This You? Problem Section */}
+      {/* Why Professional Web Development Section */}
       <ScrollAnimation>
-        <section className="py-20 bg-transparent dark:bg-red-950/20">
+        <section className="py-20 section-gradient-2">
           <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold mb-6 text-red-600 dark:text-red-400">Is This You?</h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-12">
-                These website problems are costing you customers every day...
+            <div className="text-center mb-16">
+              <h2 className="text-4xl font-bold mb-6">
+                <span className="text-white">Why Professional Web Development is</span>{" "}
+                <span className="bg-gradient-to-r from-[#f472b6] to-[#00f5ff] bg-clip-text text-transparent">
+                  Essential for Your Business
+                </span>
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Your website is often the first impression customers have of your business. Professional development
+                ensures it makes the right impact.
               </p>
+            </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                  <div className="text-6xl mb-4">🐌</div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Slow Loading Website</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Your site takes forever to load, causing visitors to leave before they see your content
-                  </p>
-                </div>
-                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                  <div className="text-6xl mb-4">📱</div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Not Mobile-Friendly</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Your website looks terrible on phones and tablets where most traffic comes from
-                  </p>
-                </div>
-                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                  <div className="text-6xl mb-4">🎨</div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">Outdated Design</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Your website looks like it's from 2010 and doesn't build trust with modern customers
-                  </p>
-                </div>
-                <div className="text-center p-6 bg-white dark:bg-gray-800 rounded-xl shadow-lg">
-                  <div className="text-6xl mb-4">📞</div>
-                  <h3 className="font-bold text-gray-900 dark:text-white mb-2">No Clear Call-to-Action</h3>
-                  <p className="text-gray-600 dark:text-gray-400 text-sm">
-                    Visitors don't know what to do next or how to contact you for business
-                  </p>
-                </div>
-              </div>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: Users,
+                  title: "First Impressions Matter",
+                  description:
+                    "94% of first impressions are design-related. Professional websites build trust instantly",
+                  stat: "94% Impact",
+                },
+                {
+                  icon: Smartphone,
+                  title: "Mobile-First World",
+                  description: "60%+ of web traffic comes from mobile devices. Responsive design is no longer optional",
+                  stat: "60%+ Mobile Traffic",
+                },
+                {
+                  icon: BarChart3,
+                  title: "Conversion Optimization",
+                  description:
+                    "Well-designed websites convert 2-3x better than poorly designed ones through strategic UX",
+                  stat: "3x Better Conversions",
+                },
+              ].map((benefit, index) => (
+                <ScrollAnimation key={index}>
+                  <Card className="glass-card hover-lift">
+                    <CardContent className="p-8 text-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-[#00f5ff] to-[#8b5cf6] rounded-xl flex items-center justify-center mb-6 mx-auto">
+                        <benefit.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4">{benefit.title}</h3>
+                      <p className="text-gray-300 mb-4">{benefit.description}</p>
+                      <div className="text-2xl font-bold bg-gradient-to-r from-[#00f5ff] to-[#8b5cf6] bg-clip-text text-transparent">
+                        {benefit.stat}
+                      </div>
+                    </CardContent>
+                  </Card>
+                </ScrollAnimation>
+              ))}
             </div>
           </div>
         </section>
       </ScrollAnimation>
 
-      {/* Our Solution: Clear Path to Results */}
+      {/* Our Web Development Process */}
       <ScrollAnimation>
-        <section className="py-20 bg-transparent">
+        <section className="py-20 section-gradient-3">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Our Solution:</span>{" "}
-                <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                  Websites That Work
+                <span className="text-white">Our Proven</span>{" "}
+                <span className="bg-gradient-to-r from-[#00f5ff] to-[#ff7600] bg-clip-text text-transparent">
+                  Web Development Process
                 </span>
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                Our proven 5-step development process that creates high-converting websites
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                A systematic approach that ensures your website is delivered on time, on budget, and exceeds
+                expectations
               </p>
             </div>
 
             <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-5 gap-8">
+              <div className="space-y-12">
                 {[
                   {
                     step: "01",
-                    icon: Palette,
-                    title: "Discovery & Design",
-                    description: "Research your audience and create stunning designs that convert",
-                    color: "from-[#00F5FF] to-[#8B5CF6]",
+                    title: "Discovery & Strategy",
+                    description: "Understanding your business goals, target audience, and technical requirements",
+                    color: "from-[#00f5ff] to-[#8b5cf6]",
                   },
                   {
                     step: "02",
-                    icon: Code,
-                    title: "Development",
-                    description: "Build your website with clean code and modern technologies",
-                    color: "from-[#8B5CF6] to-[#F472B6]",
+                    title: "Design & Prototyping",
+                    description: "Creating wireframes, mockups, and interactive prototypes for your approval",
+                    color: "from-[#8b5cf6] to-[#f472b6]",
                   },
                   {
                     step: "03",
-                    icon: Smartphone,
-                    title: "Mobile Optimization",
-                    description: "Ensure perfect functionality on all devices and screen sizes",
-                    color: "from-[#F472B6] to-[#FF7600]",
+                    title: "Development & Coding",
+                    description: "Building your website with clean, scalable code and modern technologies",
+                    color: "from-[#f472b6] to-[#ff7600]",
                   },
                   {
                     step: "04",
-                    icon: Zap,
-                    title: "Speed Optimization",
-                    description: "Optimize for lightning-fast loading speeds and SEO",
-                    color: "from-[#FF7600] to-[#00F5FF]",
+                    title: "Testing & Optimization",
+                    description: "Rigorous testing across devices, browsers, and performance optimization",
+                    color: "from-[#ff7600] to-[#22c55e]",
                   },
                   {
                     step: "05",
-                    icon: Shield,
                     title: "Launch & Support",
-                    description: "Launch your site and provide ongoing maintenance and updates",
-                    color: "from-[#00F5FF] to-[#8B5CF6]",
+                    description: "Smooth deployment and ongoing maintenance to ensure optimal performance",
+                    color: "from-[#22c55e] to-[#00f5ff]",
                   },
                 ].map((phase, index) => (
                   <ScrollAnimation key={index} delay={index * 100}>
-                    <div className="text-center">
+                    <div className="flex items-start space-x-8">
                       <div
-                        className={`w-20 h-20 bg-gradient-to-r ${phase.color} rounded-full flex items-center justify-center mx-auto mb-4`}
+                        className={`w-20 h-20 bg-gradient-to-r ${phase.color} rounded-full flex items-center justify-center flex-shrink-0`}
                       >
-                        <phase.icon className="h-10 w-10 text-white" />
+                        <span className="text-2xl font-bold text-white">{phase.step}</span>
                       </div>
-                      <div className="text-sm font-bold text-gray-500 mb-2">STEP {phase.step}</div>
-                      <h3 className="text-lg font-bold text-gray-900 dark:text-white mb-3">{phase.title}</h3>
-                      <p className="text-sm text-gray-600 dark:text-gray-400">{phase.description}</p>
+                      <div>
+                        <h3 className="text-2xl font-bold text-white mb-2">{phase.title}</h3>
+                        <p className="text-gray-400">{phase.description}</p>
+                      </div>
                     </div>
                   </ScrollAnimation>
                 ))}
@@ -203,368 +261,242 @@ export default function WebDevelopmentPage() {
         </section>
       </ScrollAnimation>
 
-      {/* Service-Specific Social Proof */}
+      {/* Web Development Solutions */}
       <ScrollAnimation>
-        <section className="py-20 bg-transparent bg-gradient-to-r from-[#00F5FF]/5 to-[#8B5CF6]/5">
+        <section className="py-20 section-gradient-4">
           <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto text-center">
-              <Badge className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] text-white border-0 mb-6">
-                ⭐ Client Success Story
-              </Badge>
-
-              <blockquote className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-8 leading-relaxed">
-                "Our new website from M&H Digital increased our{" "}
-                <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                  online sales by 400%
-                </span>{" "}
-                and loads 5x faster than our old site. Best investment we've made!"
-              </blockquote>
-
-              <div className="flex items-center justify-center gap-4">
-                <div className="w-16 h-16 bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] rounded-full flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">MC</span>
-                </div>
-                <div className="text-left">
-                  <div className="font-bold text-gray-900 dark:text-white">Mike Chen</div>
-                  <div className="text-gray-600 dark:text-gray-400">Owner, Elite Fitness</div>
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-3 gap-8 mt-12">
-                <div className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent mb-2">
-                    400%
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-400">Sales Increase</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent mb-2">
-                    5x
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-400">Faster Loading</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-4xl font-bold bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent mb-2">
-                    2 Weeks
-                  </div>
-                  <div className="text-gray-600 dark:text-gray-400">Project Completion</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Who Is This For */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent dark:bg-blue-950/20">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-12">
+            <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Perfect For</span>{" "}
-                <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                  These Businesses
+                <span className="text-white">Comprehensive</span>{" "}
+                <span className="bg-gradient-to-r from-[#ff7600] to-[#8b5cf6] bg-clip-text text-transparent">
+                  Web Development Solutions
                 </span>
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-8">
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {[
                 {
-                  title: "Small Business Owners",
-                  description: "Local businesses needing professional websites that attract and convert customers",
-                  icon: "🏪",
+                  icon: Globe,
+                  title: "Business Websites",
+                  description: "Professional websites that establish credibility and drive conversions",
+                  features: [
+                    "Responsive design",
+                    "SEO optimization",
+                    "Content management",
+                    "Contact forms",
+                    "Analytics integration",
+                  ],
                 },
                 {
-                  title: "E-commerce Stores",
-                  description: "Online retailers wanting high-converting websites that maximize sales",
-                  icon: "🛒",
+                  icon: ShoppingCart,
+                  title: "E-commerce Platforms",
+                  description: "Full-featured online stores that maximize sales and customer experience",
+                  features: [
+                    "Product catalogs",
+                    "Secure payments",
+                    "Inventory management",
+                    "Order tracking",
+                    "Customer accounts",
+                  ],
                 },
                 {
-                  title: "Service Professionals",
-                  description: "Consultants, contractors, and service providers showcasing their expertise",
-                  icon: "💼",
+                  icon: Code,
+                  title: "Web Applications",
+                  description: "Custom web apps that streamline business processes and improve efficiency",
+                  features: [
+                    "Custom functionality",
+                    "Database integration",
+                    "User authentication",
+                    "API development",
+                    "Cloud deployment",
+                  ],
                 },
-              ].map((target, index) => (
-                <Card key={index} className="text-center p-8">
-                  <div className="text-6xl mb-4">{target.icon}</div>
-                  <h3 className="text-xl font-bold mb-4">{target.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-400">{target.description}</p>
-                </Card>
+                {
+                  icon: Smartphone,
+                  title: "Mobile-First Design",
+                  description: "Websites optimized for mobile devices and touch interactions",
+                  features: [
+                    "Touch-friendly interface",
+                    "Fast loading times",
+                    "Offline capabilities",
+                    "App-like experience",
+                    "Cross-platform compatibility",
+                  ],
+                },
+                {
+                  icon: Settings,
+                  title: "CMS Development",
+                  description: "Easy-to-manage content systems that put you in control",
+                  features: [
+                    "WordPress development",
+                    "Custom CMS solutions",
+                    "Content workflows",
+                    "User permissions",
+                    "SEO tools",
+                  ],
+                },
+                {
+                  icon: Shield,
+                  title: "Security & Performance",
+                  description: "Robust security measures and optimization for peak performance",
+                  features: [
+                    "SSL certificates",
+                    "Security monitoring",
+                    "Performance optimization",
+                    "Regular backups",
+                    "Uptime monitoring",
+                  ],
+                },
+              ].map((solution, index) => (
+                <ScrollAnimation key={index} delay={index * 100}>
+                  <Card className={`service-card-${(index % 6) + 1} border-0 hover-lift`}>
+                    <CardContent className="p-8">
+                      <div className="w-16 h-16 bg-gradient-to-r from-[#00f5ff] to-[#8b5cf6] rounded-xl flex items-center justify-center mb-6">
+                        <solution.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-bold text-white mb-4">{solution.title}</h3>
+                      <p className="text-gray-300 mb-6">{solution.description}</p>
+                      <ul className="space-y-2">
+                        {solution.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center text-sm">
+                            <CheckCircle className="h-4 w-4 text-[#00f5ff] mr-2 flex-shrink-0" />
+                            <span className="text-gray-400">{feature}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+                  </Card>
+                </ScrollAnimation>
               ))}
             </div>
           </div>
         </section>
       </ScrollAnimation>
 
-      {/* Pricing Packages */}
+      {/* Web Development for Every Business */}
       <ScrollAnimation>
-        <section className="py-20 bg-transparent">
+        <section className="py-20 section-gradient-5">
           <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Website Packages That</span>{" "}
-                <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                  Drive Results
-                </span>
+                <span className="bg-gradient-to-r from-[#22c55e] to-[#a855f7] bg-clip-text text-transparent">
+                  Web Development
+                </span>{" "}
+                <span className="text-white">for Every Business Size</span>
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Choose your perfect website solution. All packages include hosting and support.
-              </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {[
-                {
-                  name: "Professional",
-                  price: "$2,997",
-                  period: "",
-                  description: "Perfect for small businesses and service providers",
-                  badge: "Most Popular",
-                  features: [
-                    "5-page custom website",
-                    "Mobile-responsive design",
-                    "Contact forms and maps",
-                    "Basic SEO optimization",
-                    "1 year hosting included",
-                    "SSL certificate",
-                    "Email support",
-                  ],
-                  popular: true,
-                  cta: "Start Your Website",
-                },
-                {
-                  name: "E-commerce",
-                  price: "$4,997",
-                  period: "",
-                  description: "Complete online store solution for retailers",
-                  badge: "Best for Sales",
-                  features: [
-                    "Full e-commerce website",
-                    "Payment gateway integration",
-                    "Inventory management",
-                    "Product catalog (up to 100)",
-                    "Order management system",
-                    "Advanced SEO optimization",
-                    "Priority support",
-                  ],
-                  popular: false,
-                  cta: "Launch Your Store",
-                },
-                {
-                  name: "Enterprise",
-                  price: "$7,997",
-                  period: "",
-                  description: "Custom solution for growing businesses",
-                  badge: "Maximum Features",
-                  features: [
-                    "Unlimited pages",
-                    "Custom functionality",
-                    "Advanced integrations",
-                    "Multi-user management",
-                    "Custom analytics dashboard",
-                    "Performance optimization",
-                    "Dedicated project manager",
-                  ],
-                  popular: false,
-                  cta: "Get Custom Quote",
-                },
-              ].map((plan, index) => (
-                <Card
-                  key={index}
-                  className={`relative ${plan.popular ? "border-2 border-[#00F5FF] scale-105 shadow-2xl" : "shadow-lg"}`}
-                >
-                  {plan.popular && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] text-white px-4 py-1">
-                        {plan.badge}
-                      </Badge>
-                    </div>
-                  )}
+            <div className="grid lg:grid-cols-2 gap-12">
+              <ScrollAnimation>
+                <Card className="glass-card hover-lift">
                   <CardContent className="p-8">
-                    <div className="text-center mb-6">
-                      <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
-                      <div className="mb-4">
-                        <span className="text-sm text-gray-500">Starting at</span>
-                        <div>
-                          <span className="text-4xl font-bold">{plan.price}</span>
-                          <span className="text-gray-600 dark:text-gray-400">{plan.period}</span>
-                        </div>
-                      </div>
-                      <p className="text-gray-600 dark:text-gray-400 text-sm">{plan.description}</p>
+                    <div className="flex items-center mb-6">
+                      <Users className="h-8 w-8 text-[#22c55e] mr-4" />
+                      <h3 className="text-2xl font-bold text-white">For Small Businesses</h3>
                     </div>
-
-                    <ul className="space-y-3 mb-8">
-                      {plan.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start">
-                          <CheckCircle className="h-5 w-5 text-[#00F5FF] mr-3 mt-0.5 flex-shrink-0" />
-                          <span>{feature}</span>
+                    <h4 className="text-xl font-semibold text-[#22c55e] mb-4">
+                      Professional Websites That Compete with Enterprise
+                    </h4>
+                    <p className="text-gray-300 mb-6">
+                      Affordable web development solutions that give small businesses a professional online presence
+                      without breaking the budget.
+                    </p>
+                    <ul className="space-y-3">
+                      {[
+                        "Starting at $2,997 for complete websites",
+                        "Mobile-responsive design included",
+                        "SEO optimization built-in",
+                        "Easy content management",
+                        "Social media integration",
+                        "Local business optimization",
+                      ].map((feature, index) => (
+                        <li key={index} className="flex items-center">
+                          <CheckCircle className="h-5 w-5 text-[#22c55e] mr-3 flex-shrink-0" />
+                          <span className="text-gray-300">{feature}</span>
                         </li>
                       ))}
                     </ul>
-
-                    <Button
-                      className={`w-full ${plan.popular ? "bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] hover:opacity-90" : ""}`}
-                      size="lg"
-                    >
-                      {plan.cta}
-                    </Button>
-
-                    <p className="text-xs text-center text-gray-500 mt-4">
-                      30-day money-back guarantee • Free revisions included
-                    </p>
                   </CardContent>
                 </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+              </ScrollAnimation>
 
-      {/* Service-Specific FAQ */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent dark:bg-gray-900/50">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Website Questions</span>{" "}
-                <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                  Answered
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Everything you need to know about our web development services
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto space-y-6">
-              {[
-                {
-                  question: "How long does it take to build a website?",
-                  answer:
-                    "Most websites are completed in 2-4 weeks depending on complexity. Simple business websites typically take 2 weeks, while e-commerce sites take 3-4 weeks. We'll give you an exact timeline during your consultation based on your specific requirements.",
-                },
-                {
-                  question: "Do you provide website hosting and maintenance?",
-                  answer:
-                    "Yes! All our packages include 1 year of hosting, SSL certificates, and basic maintenance. After the first year, hosting is just $20/month. We also offer ongoing maintenance plans for updates, security, and performance optimization.",
-                },
-                {
-                  question: "Will my website work on mobile devices?",
-                  answer:
-                    "All our websites are built mobile-first and are fully responsive. Your site will look perfect and function flawlessly on smartphones, tablets, and desktop computers. We test on all major devices before launch.",
-                },
-                {
-                  question: "Can I update the website content myself?",
-                  answer:
-                    "Yes! We build websites with user-friendly content management systems that allow you to easily update text, images, and basic content. We provide training and documentation to help you manage your site confidently.",
-                },
-                {
-                  question: "What if I need changes after the website is live?",
-                  answer:
-                    "We include 30 days of free minor revisions after launch. For larger changes or ongoing updates, we offer affordable maintenance packages. Most clients find our ongoing support plans very valuable for keeping their sites current and secure.",
-                },
-              ].map((faq, index) => (
-                <Card key={index} className="p-6 hover:shadow-lg transition-shadow">
-                  <h3 className="text-lg font-semibold mb-3 text-gray-900 dark:text-white">{faq.question}</h3>
-                  <p className="text-gray-600 dark:text-gray-400 leading-relaxed">{faq.answer}</p>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Contact Form Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className="text-4xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Get Your Free</span>{" "}
-                  <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                    Website Consultation
-                  </span>
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                  Ready to build a website that converts visitors into customers? Get a free consultation and project
-                  quote tailored to your business needs.
-                </p>
-                <div className="space-y-4">
-                  {[
-                    "Free website audit (if you have an existing site)",
-                    "Custom design mockup preview",
-                    "Detailed project timeline and pricing",
-                    "Strategy session for your business goals",
-                    "No pressure, no obligation consultation",
-                  ].map((item, index) => (
-                    <div key={index} className="flex items-center">
-                      <CheckCircle className="h-5 w-5 text-green-500 mr-3" />
-                      <span className="text-gray-700 dark:text-gray-300">{item}</span>
+              <ScrollAnimation>
+                <Card className="glass-card hover-lift">
+                  <CardContent className="p-8">
+                    <div className="flex items-center mb-6">
+                      <BarChart3 className="h-8 w-8 text-[#a855f7] mr-4" />
+                      <h3 className="text-2xl font-bold text-white">For Enterprises</h3>
                     </div>
-                  ))}
-                </div>
-              </div>
-              <div className="glass p-8 rounded-2xl">
-                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">Start Your Website Project</h3>
-                <HubSpotForm />
-              </div>
+                    <h4 className="text-xl font-semibold text-[#a855f7] mb-4">
+                      Scalable Solutions with Advanced Integrations
+                    </h4>
+                    <p className="text-gray-300 mb-6">
+                      Complex web applications and platforms that handle enterprise-level traffic, data, and
+                      integrations with existing business systems.
+                    </p>
+                    <ul className="space-y-3">
+                      {[
+                        "Custom web application development",
+                        "Enterprise system integrations",
+                        "Advanced security implementations",
+                        "Scalable cloud architecture",
+                        "Multi-site management",
+                        "Dedicated project management",
+                      ].map((feature, index) => (
+                        <li key={index} className="flex items-center">
+                          <CheckCircle className="h-5 w-5 text-[#a855f7] mr-3 flex-shrink-0" />
+                          <span className="text-gray-300">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </CardContent>
+                </Card>
+              </ScrollAnimation>
             </div>
           </div>
         </section>
       </ScrollAnimation>
 
-      {/* Final CTA Section */}
+      {/* Testimonials Section */}
+      <Testimonials testimonials={testimonials} />
+
+      {/* FAQ Section */}
+      <FAQ title="Web Development FAQ" subtitle="Common questions about our web development services" faqs={faqs} />
+
+      {/* CTA Section */}
       <ScrollAnimation>
-        <section className="py-20 bg-transparent">
+        <section className="py-20 section-gradient-1">
           <div className="container mx-auto px-6">
             <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#00F5FF]/10 via-[#8B5CF6]/10 to-[#F472B6]/10"></div>
+              <div className="absolute inset-0 bg-gradient-to-r from-[#00f5ff]/10 via-[#8b5cf6]/10 to-[#f472b6]/10"></div>
               <div className="relative z-10">
                 <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Ready to</span>{" "}
-                  <span className="bg-gradient-to-r from-[#00F5FF] to-[#8B5CF6] bg-clip-text text-transparent">
-                    Transform
+                  <span className="text-white">Ready to Build Your</span>{" "}
+                  <span className="bg-gradient-to-r from-[#00f5ff] to-[#8b5cf6] bg-clip-text text-transparent">
+                    Dream Website?
                   </span>
-                  <br />
-                  <span className="text-gray-900 dark:text-white">Your Online Presence?</span>
                 </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Join 200+ businesses that have transformed their online presence with our high-converting websites.
-                  Get your free consultation and see how we can help you grow.
+                <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                  Let's create a website that not only looks amazing but drives real business results and growth
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href="https://calendly.com/mhdigitalsolutionsus"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="calendly-button text-lg px-8 py-4"
+                    className="calendly-button"
                   >
-                    Get Free Website Consultation ($500 Value)
-                    <ArrowRight className="h-5 w-5" />
+                    Get Free Consultation
+                    <ArrowRight className="ml-2 h-5 w-5" />
                   </a>
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#00F5FF] text-[#00F5FF] hover:bg-[#00F5FF] hover:text-white rounded-full px-8"
+                    className="border-2 border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff] hover:text-black rounded-full"
                   >
-                    View Website Portfolio
+                    View Our Portfolio
                   </Button>
-                </div>
-
-                <div className="flex items-center justify-center gap-8 mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                  <div className="text-center">
-                    <div className="font-bold text-gray-900 dark:text-white">200+</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Websites Built</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-gray-900 dark:text-white">4.9★</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Client Rating</div>
-                  </div>
-                  <div className="text-center">
-                    <div className="font-bold text-gray-900 dark:text-white">2-4 Weeks</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Average Delivery</div>
-                  </div>
                 </div>
               </div>
             </div>
