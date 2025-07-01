@@ -10,29 +10,24 @@ import Testimonials from "@/components/testimonials"
 export default function EmailMarketingPage() {
   const faqs = [
     {
-      question: "How do you build email lists without being spammy?",
+      question: "How much do your email marketing services cost?",
       answer:
-        "We focus on permission-based marketing using lead magnets, opt-in forms, content upgrades, and valuable incentives. We never purchase email lists and always follow GDPR and CAN-SPAM compliance guidelines to build high-quality, engaged subscriber lists.",
+        "Our email marketing service costs vary depending on the scope of your project, the size of your email list, the complexity of automation, and the frequency of campaigns. We offer customized packages to fit different budgets and business needs. Contact us for a personalized quote after we understand your specific requirements.",
     },
     {
-      question: "What email marketing platforms do you work with?",
+      question: "What types of email campaigns do you manage (e.g., newsletters, automation, promotions)?",
       answer:
-        "We work with all major email marketing platforms including Mailchimp, Constant Contact, ConvertKit, ActiveCampaign, HubSpot, Klaviyo, and others. We'll recommend the best platform based on your needs, budget, and technical requirements.",
+        "We manage a comprehensive range of email campaigns, including regular newsletters to keep your audience informed, automated welcome series for new subscribers, drip campaigns for lead nurturing, promotional emails for sales and special offers, abandoned cart recovery sequences, re-engagement campaigns, and more. We tailor campaigns to your specific goals.",
     },
     {
-      question: "How often should we send emails to our subscribers?",
+      question: "How do you help build and manage our email list?",
       answer:
-        "Email frequency depends on your audience and content type. We typically recommend weekly newsletters, with additional promotional emails as needed. We test different frequencies to find the optimal balance that maximizes engagement without causing unsubscribes.",
+        "We employ ethical and effective strategies to build high-quality email lists, such as creating compelling lead magnets, optimizing opt-in forms on your website, and integrating with other marketing channels. For management, we focus on segmentation to ensure targeted messaging, list hygiene to remove inactive subscribers, and strict adherence to data privacy regulations like GDPR and CAN-SPAM.",
     },
     {
-      question: "What kind of open and click rates can we expect?",
+      question: "What is the typical ROI for email marketing?",
       answer:
-        "Average open rates vary by industry but typically range from 15-25%. Click rates usually range from 2-5%. However, we focus on more meaningful metrics like conversion rates, revenue per email, and list growth. Our clients typically see above-average performance through our optimization strategies.",
-    },
-    {
-      question: "Do you handle email design and copywriting?",
-      answer:
-        "Yes, we handle all aspects of email marketing including strategy, design, copywriting, automation setup, list management, and performance analysis. Our team includes experienced email designers and copywriters who create engaging, conversion-focused campaigns.",
+        "Email marketing consistently delivers one of the highest returns on investment (ROI) among all digital marketing channels, often cited as $38-$42 for every $1 spent. This high ROI is due to its direct communication, personalization capabilities, and ability to drive repeat purchases and customer loyalty. We focus on optimizing your campaigns to maximize this return.",
     },
   ]
 
@@ -95,7 +90,7 @@ export default function EmailMarketingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#00F5FF] text-[#00F5FF] hover:bg-[#00F5FF] hover:text-white rounded-full"
+                    className="border-2 border-[#00F5FF] text-[#00F5FF] hover:bg-[#00F5FF] hover:text-white rounded-full bg-transparent"
                   >
                     View Email Examples
                   </Button>
@@ -323,7 +318,7 @@ export default function EmailMarketingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#00F5FF] text-[#00F5FF] hover:bg-[#00F5FF] hover:text-white rounded-full"
+                    className="border-2 border-[#00F5FF] text-[#00F5FF] hover:bg-[#00F5FF] hover:text-white rounded-full bg-transparent"
                   >
                     View Email Examples
                   </Button>

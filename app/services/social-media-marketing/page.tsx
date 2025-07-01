@@ -10,29 +10,24 @@ import ScrollAnimation from "@/components/scroll-animation"
 export default function SocialMediaMarketingPage() {
   const faqs = [
     {
-      question: "Which social media platforms should my business be on?",
+      question: "How much do social media marketing services cost?",
       answer:
-        "The best platforms depend on your target audience and business type. We typically recommend starting with 2-3 platforms where your audience is most active. For B2B companies, LinkedIn and Twitter are often most effective. For B2C, Facebook, Instagram, and TikTok tend to perform well. We'll help you choose the right platforms based on your specific goals and audience.",
+        "Our social media marketing services are tailored to your specific needs, platforms, content requirements, and advertising budget. We offer various packages designed to provide flexibility and value, from basic content management to comprehensive campaigns including paid advertising. We'll discuss your goals and provide a transparent quote during a free consultation.",
     },
     {
-      question: "How often should we post on social media?",
+      question: "Which social media platforms are best for my type of business?",
       answer:
-        "Posting frequency varies by platform and audience. Generally, we recommend posting 1-2 times daily on Facebook and Instagram, 3-5 times daily on Twitter, and 1-2 times weekly on LinkedIn. Quality is more important than quantity - we focus on creating engaging, valuable content that resonates with your audience.",
+        "The ideal platforms depend on your industry, target audience, and business objectives. For B2B, LinkedIn and Twitter are often key. For B2C, Facebook, Instagram, and TikTok are typically more effective. We conduct thorough audience research to recommend the platforms where your potential customers are most active and engaged, ensuring your efforts are focused for maximum impact.",
     },
     {
-      question: "Do you create all the content or do we need to provide it?",
+      question: "Do you create social media content, or just manage campaigns?",
       answer:
-        "We handle all content creation including graphics, captions, hashtags, and posting schedules. However, we also welcome any content, photos, or ideas you'd like to share. We work collaboratively to ensure the content reflects your brand voice and business goals.",
+        "We offer a full spectrum of social media services, including comprehensive content creation. Our team handles everything from graphic design, video production, and copywriting to hashtag research and scheduling. We also provide active community management, engaging with your audience, and managing your ad campaigns to ensure a holistic and effective social media presence.",
     },
     {
-      question: "How do you measure social media success?",
+      question: "How do you measure social media marketing success?",
       answer:
-        "We track various metrics including follower growth, engagement rates, reach, website traffic from social media, lead generation, and conversions. Most importantly, we focus on metrics that align with your business goals, whether that's brand awareness, lead generation, or sales.",
-    },
-    {
-      question: "Can you help with social media advertising as well?",
-      answer:
-        "We offer comprehensive social media advertising services including Facebook Ads, Instagram Ads, LinkedIn Ads, and Twitter Ads. We can create targeted campaigns to amplify your organic content and reach new audiences with precision targeting.",
+        "We go beyond vanity metrics like likes and focus on tangible results that align with your business goals. We track key performance indicators (KPIs) such as engagement rate, follower growth, website traffic driven from social media, lead generation, conversion rates, and overall brand awareness. We provide detailed monthly reports to show your ROI and guide ongoing optimization.",
     },
   ]
 
@@ -95,7 +90,7 @@ export default function SocialMediaMarketingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full"
+                    className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full bg-transparent"
                   >
                     View Our Work
                   </Button>
@@ -159,7 +154,7 @@ export default function SocialMediaMarketingPage() {
                       <span>❌</span>
                     </div>
                   </div>
-                  <Button variant="outline" className="w-full" disabled>
+                  <Button variant="outline" className="w-full bg-transparent" disabled>
                     Their Package
                   </Button>
                 </CardContent>
@@ -224,7 +219,7 @@ export default function SocialMediaMarketingPage() {
                       <span>Limited</span>
                     </div>
                   </div>
-                  <Button variant="outline" className="w-full" disabled>
+                  <Button variant="outline" className="w-full bg-transparent" disabled>
                     Their Package
                   </Button>
                 </CardContent>
@@ -485,7 +480,7 @@ export default function SocialMediaMarketingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full"
+                    className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full bg-transparent"
                   >
                     View Our Work
                   </Button>

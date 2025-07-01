@@ -1,6 +1,7 @@
 "use client"
 import { Container, Typography, Grid, Card, CardContent, Button } from "@mui/material"
 import Link from "next/link"
+import FAQ from "@/components/faq" // Assuming FAQ component is available
 
 const DigitalMarketingPage = () => {
   const packages = [
@@ -36,6 +37,24 @@ const DigitalMarketingPage = () => {
         "Pay-Per-Click (PPC) Advertising (Large Budget)",
         "Dedicated Account Manager",
       ],
+    },
+  ]
+
+  const faqs = [
+    {
+      question: "How does an integrated digital marketing strategy work?",
+      answer:
+        "An integrated digital marketing strategy combines various online channels like SEO, PPC, social media, content marketing, and email marketing to create a cohesive and powerful presence. We ensure all elements work together, reinforcing your brand message and guiding customers through their journey, leading to maximum impact and efficiency.",
+    },
+    {
+      question: "What are the benefits of a holistic digital marketing approach?",
+      answer:
+        "A holistic approach ensures consistent messaging across all platforms, builds stronger brand recognition, and creates synergy between different marketing efforts. This leads to a more effective customer journey, higher engagement, better conversion rates, and ultimately, a significantly higher return on investment compared to managing channels in isolation.",
+    },
+    {
+      question: "What are the 4 digital strategies you implement for growth?",
+      answer:
+        "Our core digital strategies for growth typically involve: 1. **Attraction:** Drawing in target audiences through SEO and PPC. 2. **Engagement:** Building relationships via social media and content marketing. 3. **Conversion:** Turning leads into customers through optimized landing pages and email campaigns. 4. **Retention & Advocacy:** Fostering loyalty and encouraging referrals through ongoing engagement and excellent service.",
     },
   ]
 
@@ -89,6 +108,9 @@ const DigitalMarketingPage = () => {
           </Button>
         </Grid>
       </Grid>
+
+      {/* FAQ Section */}
+      <FAQ title="Digital Marketing FAQ" subtitle="Common questions about our digital marketing services" faqs={faqs} />
     </Container>
   )
 }

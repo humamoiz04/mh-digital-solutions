@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -24,6 +25,19 @@ export default function Footer() {
               <div className="group">
                 <div className="w-24 h-12 bg-gradient-to-r from-orange-500 to-orange-600 rounded-lg flex items-center justify-center opacity-70 hover:opacity-100 transition-all duration-300 group-hover:scale-110">
                   <span className="text-white font-bold text-xs">HubSpot</span>
+                </div>
+              </div>
+              <div className="group">
+                <div className="w-24 h-12 bg-gradient-to-r from-purple-500 to-purple-600 rounded-lg flex items-center justify-center opacity-70 hover:opacity-100 transition-all duration-300 group-hover:scale-110">
+                  <a href="[CLUTCH_PROFILE_URL]" target="_blank" rel="noopener noreferrer">
+                    <Image
+                      src="/images/clutch-verified.png"
+                      alt="Clutch Verified"
+                      width={96}
+                      height={48}
+                      crossOrigin="anonymous"
+                    />
+                  </a>
                 </div>
               </div>
               <div className="group">
@@ -79,7 +93,7 @@ export default function Footer() {
                   <a
                     href="tel:+17075822255"
                     className="hover:text-purple-600 transition-colors duration-200"
-                    aria-label="Call MH Digital Solutions at +1 707 582 2255"
+                    aria-label="Call MH Digital Solutions at +1 707 582-2255"
                   >
                     +1 (707) 582-2255
                   </a>

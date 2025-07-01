@@ -10,29 +10,24 @@ import Image from "next/image"
 const AIAutomationPage = () => {
   const aiAutomationFAQs = [
     {
-      question: "What is AI automation for small businesses?",
+      question: "Will AI replace digital marketing jobs or agencies?",
       answer:
-        "AI automation for small businesses involves using artificial intelligence tools to streamline repetitive tasks, improve efficiency, and reduce operational costs. This includes automated customer service chatbots, email marketing automation, data entry automation, and intelligent scheduling systems that help small businesses compete with larger enterprises while saving time and resources.",
+        "No, AI will not replace digital marketing jobs or agencies. Instead, it serves as a powerful tool that enhances human expertise, streamlines repetitive processes, and opens new opportunities for innovation. We leverage AI to automate mundane tasks, analyze vast datasets, and optimize campaigns, allowing our human experts to focus on high-level strategy, creativity, and client relationships. This positions our agency at the forefront of AI adoption, delivering superior results.",
     },
     {
-      question: "How can AI automation save my business money and improve efficiency?",
+      question: "What kind of business processes can AI automate?",
       answer:
-        "AI automation reduces labor costs by handling routine tasks 24/7, eliminates human errors that can be costly, speeds up processes significantly, and allows your team to focus on high-value activities. Studies show businesses can save 20-30% on operational costs while improving productivity by up to 40% through strategic AI implementation.",
+        "AI can automate a wide range of business processes, including customer service (via chatbots and virtual assistants), data entry and processing, lead qualification, personalized email marketing, social media scheduling and content generation (for internal use), ad campaign optimization, predictive analytics for sales forecasting, and inventory management. These automations lead to increased efficiency, reduced costs, and improved accuracy.",
     },
     {
-      question: "Is AI implementation expensive for small and medium-sized enterprises (SMEs)?",
+      question: "Is AI automation affordable for small and medium-sized businesses?",
       answer:
-        "Modern AI solutions are more affordable than ever. Our AI automation packages start at competitive rates and are designed specifically for SME budgets. The ROI typically pays for itself within 3-6 months through cost savings and efficiency gains. We offer scalable solutions that grow with your business.",
+        "Yes, AI automation is increasingly affordable and accessible for small and medium-sized businesses (SMBs). Modern AI tools and platforms offer scalable solutions that can be implemented without a massive upfront investment. We design our AI automation packages specifically with SMB budgets in mind, focusing on solutions that deliver a rapid return on investment through significant cost savings and efficiency gains.",
     },
     {
-      question: "What specific tasks can AI chatbots automate for customer service?",
+      question: "How long does it take to implement an AI solution?",
       answer:
-        "AI chatbots can handle customer inquiries 24/7, process orders and bookings, provide product recommendations, schedule appointments, handle returns and refunds, collect customer feedback, qualify leads, and escalate complex issues to human agents. This ensures consistent customer service while reducing response times.",
-    },
-    {
-      question: "How long does it take to develop and implement a custom AI solution?",
-      answer:
-        "Implementation timelines vary by complexity: Basic automation (chatbots, email automation) takes 2-4 weeks, Advanced workflows and integrations take 6-8 weeks, and Custom AI solutions take 8-12 weeks. We provide detailed project timelines and regular updates throughout the development process.",
+        "The implementation timeline for an AI solution varies depending on its complexity and integration requirements. Basic AI automations, such as a simple chatbot or email sequence, can be deployed within 2-4 weeks. More advanced workflows and integrations might take 6-8 weeks, while custom-developed AI solutions could range from 8-12 weeks. We provide a detailed project timeline and regular updates throughout the development and implementation process.",
     },
   ]
 
@@ -75,7 +70,11 @@ const AIAutomationPage = () => {
                     </Button>
                   </Link>
                   <Link href="/case-studies">
-                    <Button size="lg" variant="outline" className="glass border-white/30 text-white hover:bg-white/10">
+                    <Button
+                      size="lg"
+                      variant="outline"
+                      className="glass border-white/30 text-white hover:bg-white/10 bg-transparent"
+                    >
                       View Success Stories
                     </Button>
                   </Link>
@@ -387,7 +386,11 @@ const AIAutomationPage = () => {
                   </Button>
                 </Link>
                 <Link href="/case-studies">
-                  <Button size="lg" variant="outline" className="glass border-white/30 text-white hover:bg-white/10">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="glass border-white/30 text-white hover:bg-white/10 bg-transparent"
+                  >
                     View Success Stories
                   </Button>
                 </Link>

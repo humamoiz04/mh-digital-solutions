@@ -19,29 +19,24 @@ import Testimonials from "@/components/testimonials"
 export default function PPCAdvertisingPage() {
   const faqs = [
     {
-      question: "How much should I budget for PPC advertising?",
+      question: "How much does PPC advertising cost for businesses?",
       answer:
-        "PPC budgets vary widely based on your industry, competition, and goals. We typically recommend starting with at least $1,000-$3,000 per month for small businesses, with our management fee on top. We'll help you determine the optimal budget based on your specific market and objectives.",
+        "PPC advertising costs consist of two main components: your ad spend (the budget you allocate directly to platforms like Google or Meta) and our management fees. Ad spend varies widely based on your industry, competition, and goals. We'll work with you to determine an optimal budget and provide transparent pricing for our management services during a free consultation.",
     },
     {
-      question: "How quickly will I see results from PPC campaigns?",
+      question: "How quickly can I see results from a PPC campaign?",
       answer:
-        "Unlike SEO, PPC can deliver immediate results. You'll start seeing traffic and clicks as soon as your campaigns go live. However, it typically takes 2-4 weeks to optimize campaigns for best performance and 1-3 months to see consistent, profitable results.",
+        "One of the biggest advantages of PPC is its speed. You can start seeing immediate traffic and clicks as soon as your campaigns go live. While initial results are quick, it typically takes 2-4 weeks to optimize campaigns for peak performance and 1-3 months to achieve consistent, profitable ROI as we refine targeting and bids.",
     },
     {
-      question: "What platforms do you advertise on?",
+      question: "Which platforms do you manage PPC campaigns on (e.g., Google Ads, Meta Ads)?",
       answer:
-        "We manage campaigns across all major platforms including Google Ads, Microsoft Ads (Bing), Facebook Ads, Instagram Ads, LinkedIn Ads, Twitter Ads, and YouTube Ads. We'll recommend the best platforms based on where your target audience is most active.",
+        "We have expertise across all major PPC platforms. This includes Google Ads (Search, Display, Shopping, YouTube), Meta Ads (Facebook, Instagram), Microsoft Ads (Bing), LinkedIn Ads, and Twitter Ads. We'll recommend and manage campaigns on the platforms where your target audience is most active and where you can achieve the best results.",
     },
     {
-      question: "How do you measure PPC success?",
+      question: "How do you ensure positive ROI from PPC campaigns?",
       answer:
-        "We track key metrics including click-through rates (CTR), conversion rates, cost per click (CPC), cost per acquisition (CPA), return on ad spend (ROAS), and most importantly - the revenue and leads generated. You'll receive detailed monthly reports with actionable insights.",
-    },
-    {
-      question: "Do you provide landing page optimization?",
-      answer:
-        "Yes, we offer landing page optimization as part of our comprehensive PPC management. A well-optimized landing page is crucial for PPC success, and we'll ensure your pages are designed to convert traffic into leads and customers.",
+        "We ensure positive ROI through a data-driven approach focused on continuous optimization. This includes in-depth keyword research, precise audience targeting, compelling ad copy and creative, rigorous A/B testing, conversion tracking setup, and ongoing bid management. We constantly monitor performance metrics like CPA and ROAS to maximize your ad spend efficiency.",
     },
   ]
 

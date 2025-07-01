@@ -25,6 +25,8 @@ import {
   PenTool,
   Briefcase,
 } from "lucide-react"
+import ScrollAnimation from "@/components/scroll-animation"
+import FAQ from "@/components/faq"
 
 export const metadata: Metadata = {
   title: "Digital Marketing Services | MH Digital Solutions",
@@ -222,198 +224,254 @@ const processSteps = [
   },
 ]
 
+const faqs = [
+  {
+    question: "What does a digital marketing agency do exactly?",
+    answer:
+      "A digital marketing agency provides comprehensive online marketing services to help businesses grow their digital presence and revenue. We develop strategic marketing plans, execute campaigns across various channels (SEO, PPC, social media, email, content), analyze performance data, and continuously optimize for better results. Our approach combines strategy, creative execution, and data analysis to deliver measurable business growth.",
+  },
+  {
+    question: "What are the main types of digital marketing services you offer?",
+    answer:
+      "We offer a full suite of digital marketing services including: SEO (search engine optimization) for organic visibility, PPC advertising for immediate traffic, social media marketing for brand engagement, content marketing for thought leadership, email marketing for customer retention, web development for conversion optimization, AI automation for efficiency, business analytics for data-driven decisions, and strategic consulting for growth planning.",
+  },
+  {
+    question: "Is digital marketing difficult for businesses to implement themselves?",
+    answer:
+      "Digital marketing requires specialized expertise, advanced tools, and significant time investment to be effective. While basic tactics can be learned, successful digital marketing involves complex strategy development, technical implementation, continuous optimization, and staying current with rapidly changing algorithms and best practices. Most businesses find better ROI by partnering with experienced agencies who have the tools, expertise, and dedicated time to manage campaigns effectively.",
+  },
+  {
+    question: "Why is digital marketing so important for businesses today?",
+    answer:
+      "Digital marketing is essential because 80%+ of consumers research online before making purchases. It provides measurable results, precise targeting, cost-effective reach, and the ability to compete with larger competitors. Unlike traditional marketing, digital marketing offers real-time data, allows for quick adjustments, and provides detailed ROI tracking. Businesses without strong digital presence miss opportunities and lose market share to digitally-savvy competitors.",
+  },
+]
+
 export default function ServicesPage() {
   return (
     <div className="min-h-screen pt-16">
       {/* Hero Section */}
-      <section className="relative py-16 px-4 text-center bg-transparent">
-        <div className="max-w-4xl mx-auto">
-          <Badge className="mb-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white">
-            Full-Service Digital Agency
-          </Badge>
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-            Digital Marketing Services That Drive Results
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-3xl mx-auto">
-            From SEO and PPC to web development and AI automation, we provide comprehensive digital solutions that help
-            businesses grow and thrive in the digital landscape.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-            >
-              Get Free Consultation
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline">
-              View Our Work
-            </Button>
+      <ScrollAnimation>
+        <section className="relative py-16 px-4 text-center section-gradient-1">
+          <div className="max-w-4xl mx-auto">
+            <Badge className="mb-4 bg-gradient-to-r from-purple-500 to-pink-500 text-white">
+              Full-Service Digital Agency
+            </Badge>
+            <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
+              Digital Marketing Services That Drive Results
+            </h1>
+            <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
+              From SEO and PPC to web development and AI automation, we provide comprehensive digital solutions that
+              help businesses grow and thrive in the digital landscape.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a
+                href="https://calendly.com/mhdigitalsolutionsus"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="calendly-button"
+              >
+                Get Free Consultation
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+              <Button
+                size="lg"
+                variant="outline"
+                className="border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white rounded-full bg-transparent"
+              >
+                View Our Work
+              </Button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
       {/* Stats Section */}
-      <section className="py-12 px-4 bg-transparent">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map((stat, index) => (
-              <div key={index} className="text-center">
-                <div className="glass-card p-6 rounded-2xl hover-lift bg-[rgba(255,242,242,1)] bg-[rgba(254,237,237,1)] bg-cyan-50 border-solid text-green-50 text-green-50">
-                  <stat.icon className="h-8 w-8 mx-auto mb-4 text-purple-600" />
-                  <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
-                  <div className="text-gray-600 dark:text-gray-300">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* All Services Grid */}
-      <section className="py-16 px-4 bg-transparent">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Our Complete Service Portfolio</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Comprehensive digital marketing solutions tailored to your business needs
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {allServices.map((service, index) => (
-              <Card key={index} className="glass-card hover-lift group relative overflow-hidden">
-                <div className="absolute top-4 right-4 z-10">
-                  <Badge className={`bg-gradient-to-r ${service.color} text-white border-0`}>{service.offer}</Badge>
-                </div>
-                <div className="relative h-48 overflow-hidden rounded-t-lg">
-                  <Image
-                    src={service.image || "/placeholder.svg"}
-                    alt={service.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20`}></div>
-                </div>
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-2">
-                    <div
-                      className={`w-10 h-10 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center`}
-                    >
-                      <service.icon className="h-5 w-5 text-white" />
-                    </div>
-                    <CardTitle className="text-xl text-gray-900 dark:text-white">{service.title}</CardTitle>
-                  </div>
-                  <CardDescription className="text-gray-600 dark:text-gray-300">{service.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 mb-4">
-                    {service.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-sm text-gray-600 dark:text-gray-300">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="flex items-center justify-between mb-4">
-                    <span className="font-semibold text-purple-600">{service.price}</span>
-                  </div>
-                  <Button
-                    asChild
-                    className={`w-full bg-gradient-to-r ${service.color} hover:opacity-90 text-white border-0`}
-                  >
-                    <Link href={service.href}>
-                      Learn More
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Link>
-                  </Button>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Key Differentiators */}
-      <section className="py-16 px-4 bg-transparent">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Why Choose MH Digital Solutions?</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              What sets us apart from other digital marketing agencies
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {differentiators.map((item, index) => (
-              <div key={index} className="text-center">
-                <div className="glass-card p-8 rounded-2xl hover-lift">
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <item.icon className="h-8 w-8 text-white" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-4 text-gray-900 dark:text-white">{item.title}</h3>
-                  <p className="text-gray-600 dark:text-gray-300">{item.description}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Process Timeline */}
-      <section className="py-16 px-4 bg-transparent">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">Our Proven Process</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              How we deliver exceptional results for our clients
-            </p>
-          </div>
-
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transform -translate-y-1/2 hidden md:block"></div>
-
-            <div className="grid md:grid-cols-5 gap-6">
-              {processSteps.map((step, index) => (
-                <div key={index} className="text-center relative">
+      <ScrollAnimation>
+        <section className="py-12 px-4 section-gradient-2">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+              {stats.map((stat, index) => (
+                <div key={index} className="text-center">
                   <div className="glass-card p-6 rounded-2xl hover-lift">
-                    <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
-                      {step.step}
-                    </div>
-                    <h3 className="text-lg font-semibold mb-2 text-gray-900 dark:text-white">{step.title}</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">{step.description}</p>
+                    <stat.icon className="h-8 w-8 mx-auto mb-4 text-purple-400" />
+                    <div className="text-3xl font-bold text-white mb-2">{stat.value}</div>
+                    <div className="text-gray-300">{stat.label}</div>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
 
-      {/* CTA Section */}
-      <section className="py-16 px-4 bg-transparent text-cyan-50 text-cyan-50 text-cyan-50 text-cyan-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="glass-card p-12 rounded-3xl">
-            <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">Ready to Transform Your Business?</h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-              Join 500+ businesses that have accelerated their growth with our digital marketing services.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700"
-              >
-                Start Your Project Today
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button size="lg" variant="outline">
-                Schedule Free Consultation
-              </Button>
+      {/* All Services Grid */}
+      <ScrollAnimation>
+        <section className="py-16 px-4 section-gradient-3">
+          <div className="max-w-7xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 text-white">Our Complete Service Portfolio</h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Comprehensive digital marketing solutions tailored to your business needs
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {allServices.map((service, index) => (
+                <ScrollAnimation key={index} delay={index * 100}>
+                  <Card className="glass-card hover-lift group relative overflow-hidden">
+                    <div className="absolute top-4 right-4 z-10">
+                      <Badge className={`bg-gradient-to-r ${service.color} text-white border-0`}>{service.offer}</Badge>
+                    </div>
+                    <div className="relative h-48 overflow-hidden rounded-t-lg">
+                      <Image
+                        src={service.image || "/placeholder.svg"}
+                        alt={service.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-300"
+                      />
+                      <div className={`absolute inset-0 bg-gradient-to-t ${service.color} opacity-20`}></div>
+                    </div>
+                    <CardHeader>
+                      <div className="flex items-center gap-3 mb-2">
+                        <div
+                          className={`w-10 h-10 bg-gradient-to-r ${service.color} rounded-lg flex items-center justify-center`}
+                        >
+                          <service.icon className="h-5 w-5 text-white" />
+                        </div>
+                        <CardTitle className="text-xl text-white">{service.title}</CardTitle>
+                      </div>
+                      <CardDescription className="text-gray-300">{service.description}</CardDescription>
+                    </CardHeader>
+                    <CardContent>
+                      <ul className="space-y-2 mb-4">
+                        {service.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center text-sm text-gray-300">
+                            <CheckCircle className="h-4 w-4 text-green-400 mr-2" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="font-semibold text-purple-400">{service.price}</span>
+                      </div>
+                      <Button
+                        asChild
+                        className={`w-full bg-gradient-to-r ${service.color} hover:opacity-90 text-white border-0`}
+                      >
+                        <Link href={service.href}>
+                          Learn More
+                          <ArrowRight className="ml-2 h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </ScrollAnimation>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollAnimation>
+
+      {/* Key Differentiators */}
+      <ScrollAnimation>
+        <section className="py-16 px-4 section-gradient-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 text-white">Why Choose MH Digital Solutions?</h2>
+              <p className="text-xl text-gray-300">What sets us apart from other digital marketing agencies</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-6">
+              {differentiators.map((item, index) => (
+                <ScrollAnimation key={index} delay={index * 100}>
+                  <div className="text-center">
+                    <div className="glass-card p-8 rounded-2xl hover-lift">
+                      <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <item.icon className="h-8 w-8 text-white" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-4 text-white">{item.title}</h3>
+                      <p className="text-gray-300">{item.description}</p>
+                    </div>
+                  </div>
+                </ScrollAnimation>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollAnimation>
+
+      {/* Process Timeline */}
+      <ScrollAnimation>
+        <section className="py-16 px-4 section-gradient-5">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl font-bold mb-4 text-white">Our Proven Process</h2>
+              <p className="text-xl text-gray-300">How we deliver exceptional results for our clients</p>
+            </div>
+
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-purple-500 to-pink-500 transform -translate-y-1/2 hidden md:block"></div>
+
+              <div className="grid md:grid-cols-5 gap-6">
+                {processSteps.map((step, index) => (
+                  <ScrollAnimation key={index} delay={index * 100}>
+                    <div className="text-center relative">
+                      <div className="glass-card p-6 rounded-2xl hover-lift">
+                        <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold">
+                          {step.step}
+                        </div>
+                        <h3 className="text-lg font-semibold mb-2 text-white">{step.title}</h3>
+                        <p className="text-sm text-gray-300">{step.description}</p>
+                      </div>
+                    </div>
+                  </ScrollAnimation>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollAnimation>
+
+      {/* FAQ Section */}
+      <FAQ
+        title="Digital Marketing Services FAQ"
+        subtitle="Common questions about our digital marketing services"
+        faqs={faqs}
+      />
+
+      {/* CTA Section */}
+      <ScrollAnimation>
+        <section className="py-16 px-4 section-gradient-1">
+          <div className="max-w-4xl mx-auto text-center">
+            <div className="glass-card p-12 rounded-3xl">
+              <h2 className="text-4xl font-bold mb-6 text-white">Ready to Transform Your Business?</h2>
+              <p className="text-xl text-gray-300 mb-8">
+                Join 500+ businesses that have accelerated their growth with our digital marketing services.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <a
+                  href="https://calendly.com/mhdigitalsolutionsus"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="calendly-button"
+                >
+                  Start Your Project Today
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </a>
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white rounded-full bg-transparent"
+                >
+                  Schedule Free Consultation
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollAnimation>
     </div>
   )
 }

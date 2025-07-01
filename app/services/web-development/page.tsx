@@ -30,29 +30,24 @@ export const metadata: Metadata = {
 export default function WebDevelopmentPage() {
   const faqs = [
     {
-      question: "How much does a custom business website cost in Huntsville, AL?",
+      question: "How much does a custom business website cost?",
       answer:
-        "Custom website design pricing in Huntsville ranges from $2,500 for small business websites to $15,000+ for enterprise solutions. Our small business website packages start at $2,997 and include responsive design, SEO optimization, and content management. Enterprise web development budgets typically range from $10,000-$50,000 depending on complexity and integrations.",
+        "The cost of a custom website varies based on complexity, features, design, and integrations. Small business websites can start from $2,500, while more complex enterprise solutions can range from $10,000 to $50,000+. We offer different tiers and provide a detailed consultation to give you an accurate quote based on your specific needs.",
     },
     {
-      question: "How long does it take to build an e-commerce website?",
+      question: "How long does it take to develop a new website?",
       answer:
-        "E-commerce website development timeline typically ranges from 6-12 weeks for standard online stores. A fast e-commerce site launch can be achieved in 4-6 weeks for simpler stores, while complex multi-vendor platforms may take 12-16 weeks. We provide detailed project timelines during our initial consultation.",
+        "Our typical project timeline for a standard business website is 6-12 weeks. This includes discovery, design, development, testing, and launch. More complex e-commerce platforms or custom web applications may take longer, while simpler sites can be launched faster. We'll provide a clear timeline during our initial consultation.",
     },
     {
-      question: "What is responsive web design and why is it important for mobile users?",
+      question: "Do you provide website maintenance and security updates?",
       answer:
-        "Responsive design ensures your website adapts perfectly to all screen sizes - desktop, tablet, and mobile. Mobile-friendly website benefits include better user experience, higher search rankings (Google's mobile-first indexing), and increased conversions. With 60%+ of web traffic coming from mobile devices, responsive design is essential for modern websites.",
+        "Yes, we offer comprehensive website maintenance packages to ensure your site remains secure, fast, and up-to-date. Our services include regular security updates, performance monitoring, content updates, backup management, and technical support. This ongoing support is crucial for long-term website health and security.",
     },
     {
-      question: "Can you integrate my website with existing CRM or ERP systems?",
+      question: "Can you integrate our new website with our existing CRM/ERP systems?",
       answer:
-        "Yes, we specialize in CRM integration web development and ERP website connections. We provide custom API integration services for popular systems like Salesforce, HubSpot, Microsoft Dynamics, SAP, and others. This enables seamless data flow between your website and business systems.",
-    },
-    {
-      question: "Do you provide ongoing website maintenance and support?",
-      answer:
-        "Yes, we offer comprehensive website maintenance packages starting at $297/month. Our ongoing website support services include security updates, content updates, performance monitoring, backup management, and technical support. Post-launch web support ensures your website stays secure, fast, and up-to-date.",
+        "Absolutely. We specialize in integrating new websites with existing business systems like CRM (e.g., Salesforce, HubSpot) and ERP platforms (e.g., SAP, Microsoft Dynamics). Our custom API integration services ensure seamless data flow, streamline your operations, and enhance overall efficiency.",
     },
   ]
 
@@ -108,7 +103,7 @@ export default function WebDevelopmentPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff] hover:text-black rounded-full"
+                    className="border-2 border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff] hover:text-black rounded-full bg-transparent"
                   >
                     View Portfolio
                   </Button>
@@ -493,7 +488,7 @@ export default function WebDevelopmentPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff] hover:text-black rounded-full"
+                    className="border-2 border-[#00f5ff] text-[#00f5ff] hover:bg-[#00f5ff] hover:text-black rounded-full bg-transparent"
                   >
                     View Our Portfolio
                   </Button>

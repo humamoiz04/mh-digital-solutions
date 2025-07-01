@@ -10,29 +10,24 @@ import Testimonials from "@/components/testimonials"
 export default function ContentMarketingPage() {
   const faqs = [
     {
-      question: "What types of content do you create?",
+      question: "What types of content do you create for businesses?",
       answer:
-        "We create a wide variety of content including blog posts, articles, whitepapers, case studies, infographics, videos, podcasts, social media content, email newsletters, and more. We'll recommend the best content types based on your audience preferences and business goals.",
+        "We create a wide variety of content tailored to your business needs and audience, including SEO-optimized blog posts, in-depth articles, compelling website copy, engaging video scripts, informative whitepapers, detailed case studies, and effective email newsletters. Our goal is to produce content that resonates and drives action.",
     },
     {
-      question: "How do you ensure content aligns with our brand voice?",
+      question: "How does content marketing help my SEO efforts?",
       answer:
-        "We start with a comprehensive brand discovery process to understand your voice, tone, values, and messaging. We create detailed brand guidelines and style guides, and all content goes through our quality review process to ensure consistency with your brand identity.",
+        "Content marketing is fundamental to strong SEO. High-quality, relevant content helps you rank for target keywords, attracts organic traffic, and establishes your authority in your industry. It provides valuable material for link building and keeps your website fresh and engaging for both users and search engines, leading to improved visibility and search rankings.",
     },
     {
-      question: "How often should we publish new content?",
+      question: "How long does it take for content marketing to show results?",
       answer:
-        "Content frequency depends on your goals, audience, and resources. We typically recommend publishing 2-4 blog posts per month, weekly social media content, and monthly long-form content like whitepapers or case studies. We'll create a content calendar that's sustainable and effective for your business.",
+        "Content marketing is a long-term strategy. While you might see initial improvements in traffic and engagement within 3-6 months, significant results like strong organic rankings, consistent lead generation, and established thought leadership typically take 6-12 months or more. Consistency and ongoing optimization are key to sustained success.",
     },
     {
-      question: "How do you measure content marketing success?",
+      question: "Can you help us develop a content strategy tailored to our industry?",
       answer:
-        "We track various metrics including website traffic, time on page, social shares, lead generation, email subscribers, search rankings, and most importantly - conversions and revenue attributed to content. We provide detailed monthly reports showing how content contributes to your business goals.",
-    },
-    {
-      question: "Do you handle content distribution as well?",
-      answer:
-        "Yes, we handle complete content distribution across all relevant channels including your website, social media platforms, email newsletters, and third-party publications. We also help with content syndication and guest posting opportunities to maximize reach.",
+        "Absolutely. Our process begins with a deep dive into your industry, target audience, competitive landscape, and business goals. We develop a comprehensive content strategy that includes keyword research, content gap analysis, audience persona development, and a detailed content calendar, ensuring every piece of content is strategic and aligned with your objectives.",
     },
   ]
 
@@ -95,7 +90,7 @@ export default function ContentMarketingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full"
+                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full bg-transparent"
                   >
                     View Content Samples
                   </Button>
@@ -400,7 +395,7 @@ export default function ContentMarketingPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full"
+                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full bg-transparent"
                   >
                     View Content Samples
                   </Button>

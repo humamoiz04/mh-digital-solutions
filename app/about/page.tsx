@@ -359,7 +359,7 @@ export default function AboutPage() {
               {
                 name: "Farhan",
                 role: "CEO & Digital Strategy Director",
-                image: "/images/team/farhan-developer.webp",
+                image: "/images/team/mk-ceo.webp", 
                 expertise: "Digital Strategy, Business Growth, Team Leadership",
                 linkedin: "#",
                 bio: "10+ years leading digital transformation initiatives for Fortune 500 companies and startups.",
@@ -367,7 +367,7 @@ export default function AboutPage() {
               {
                 name: "MK",
                 role: "Lead Developer & Technical Architect",
-                image: "/images/team/mk-ceo.webp",
+                image: "/images/team/farhan-developer.webp",
                 expertise: "Full-Stack Development, AI Integration, Technical SEO",
                 linkedin: "#",
                 bio: "Expert in modern web technologies with a focus on performance and scalability.",

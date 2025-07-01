@@ -21,27 +21,22 @@ export default function SEOPage() {
     {
       question: "How long does it take to see SEO results?",
       answer:
-        "Most clients see initial improvements in 3-4 months, with significant results in 6-12 months. SEO is a long-term strategy - we typically see the biggest gains between months 6-18. However, technical fixes and local SEO improvements can show results much faster, sometimes within 30-60 days.",
+        "Most clients see initial improvements in 3-4 months, with significant results in 6-12 months. SEO is a long-term strategy - we typically see the biggest gains between months 6-18. However, technical fixes and local SEO improvements can show results much faster, sometimes within 30-60 days. The timeline depends on your industry competition, current website status, and the scope of optimization needed.",
     },
     {
-      question: "What makes your SEO approach different?",
+      question: "What is included in your SEO services package?",
       answer:
-        "We focus on sustainable, white-hat strategies that deliver long-term results. Our approach combines technical expertise, content marketing, and local SEO. Plus, you get direct access to your SEO specialist, monthly strategy calls, and transparent reporting.",
+        "Our comprehensive SEO packages include: technical SEO audits and fixes, on-page optimization (title tags, meta descriptions, content optimization), off-page link building from high-authority sites, comprehensive keyword research and strategy, content creation and optimization, local SEO optimization (Google My Business, citations), monthly performance reporting, and ongoing strategy adjustments based on results.",
     },
     {
-      question: "Do you work with both small businesses and enterprises?",
+      question: "Do you offer local SEO optimization for businesses in Huntsville, Alabama?",
       answer:
-        "Yes! We tailor our SEO strategies for businesses of all sizes. Small businesses get cost-effective local SEO solutions, while enterprises receive comprehensive, scalable SEO strategies with advanced analytics and multi-location optimization.",
+        "Yes, we specialize in local SEO optimization for businesses in Huntsville, Alabama and surrounding areas. Our local SEO services include Google My Business optimization, local citation building, location-based keyword targeting, local content creation, review management, and ensuring your business appears in local map results. We understand the Huntsville market and can help you dominate local search results.",
     },
     {
-      question: "What's included in your SEO audit?",
+      question: "How do you measure the success of an SEO campaign?",
       answer:
-        "Our comprehensive SEO audit includes technical analysis, keyword research, competitor analysis, content evaluation, backlink profile review, and local SEO assessment. You'll receive a detailed report with actionable recommendations.",
-    },
-    {
-      question: "How do you measure SEO success?",
-      answer:
-        "We track organic traffic growth, keyword rankings, local visibility, conversion rates, and most importantly - leads and revenue generated from SEO. You'll receive detailed monthly reports showing progress on all key metrics.",
+        "We track multiple KPIs to measure SEO success: organic traffic growth, keyword ranking improvements, local search visibility, conversion rates from organic traffic, lead quality and quantity, click-through rates, page load speeds, and most importantly - revenue generated from SEO efforts. You'll receive detailed monthly reports showing progress on all key metrics with actionable insights for continued improvement.",
     },
   ]
 
@@ -63,11 +58,11 @@ export default function SEOPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-transparent text-white">
+    <div className="min-h-screen pt-16">
       {/* Hero Section */}
       <ScrollAnimation>
-        <section className="section-padding section-gradient-1">
-          <div className="container mx-auto container-mobile">
+        <section className="py-20 section-gradient-1">
+          <div className="container mx-auto px-6">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
                 <Badge className="mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white border-0">
@@ -97,7 +92,7 @@ export default function SEOPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white rounded-full"
+                    className="border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white rounded-full bg-transparent"
                   >
                     View Success Stories
                   </Button>
@@ -106,7 +101,7 @@ export default function SEOPage() {
               <ScrollAnimation animation="fadeInRight" delay={200}>
                 <div className="relative">
                   <Image
-                    src="/images/analytics-growth.webp"
+                    src="/images/seo-analytics-optimized.webp"
                     alt="SEO Services - Search Engine Optimization"
                     width={600}
                     height={400}
@@ -122,8 +117,8 @@ export default function SEOPage() {
 
       {/* What is SEO Section */}
       <ScrollAnimation>
-        <section className="section-padding section-gradient-2">
-          <div className="container mx-auto container-mobile">
+        <section className="py-20 section-gradient-2">
+          <div className="container mx-auto px-6">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="text-white">What is SEO and How Can It</span>{" "}
@@ -171,8 +166,8 @@ export default function SEOPage() {
 
       {/* Our SEO Process */}
       <ScrollAnimation>
-        <section className="section-padding section-gradient-3">
-          <div className="container mx-auto container-mobile">
+        <section className="py-20 section-gradient-3">
+          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="text-white">Our Proven</span>{" "}
@@ -243,8 +238,8 @@ export default function SEOPage() {
 
       {/* Core SEO Solutions */}
       <ScrollAnimation>
-        <section className="section-padding section-gradient-4">
-          <div className="container mx-auto container-mobile">
+        <section className="py-20 section-gradient-4">
+          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="text-white">Our Core</span>{" "}
@@ -330,8 +325,8 @@ export default function SEOPage() {
 
       {/* Solutions for Different Business Sizes */}
       <ScrollAnimation>
-        <section className="section-padding section-gradient-5">
-          <div className="container mx-auto container-mobile">
+        <section className="py-20 section-gradient-5">
+          <div className="container mx-auto px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
                 <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
@@ -405,78 +400,16 @@ export default function SEOPage() {
         </section>
       </ScrollAnimation>
 
-      {/* Why Choose MH Digital */}
-      <ScrollAnimation>
-        <section className="section-padding section-gradient-1">
-          <div className="container mx-auto container-mobile">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="text-white">Why MH Digital Solutions is Your Ideal</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  SEO Partner
-                </span>
-              </h2>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  title: "Expert Certified SEO Specialists",
-                  description: "Our team holds advanced certifications and stays current with algorithm updates",
-                },
-                {
-                  title: "Proven Track Record",
-                  description: "500+ successful SEO projects with measurable results across all industries",
-                },
-                {
-                  title: "Transparent Reporting",
-                  description: "Monthly detailed reports showing exactly how your SEO investment is performing",
-                },
-                {
-                  title: "Dedicated Client Support",
-                  description: "Direct access to your SEO specialist with regular strategy calls and updates",
-                },
-              ].map((point, index) => (
-                <Card key={index} className="glass-card border-0 text-center">
-                  <CardContent className="p-6">
-                    <h3 className="text-lg font-bold text-white mb-3">{point.title}</h3>
-                    <p className="text-gray-400">{point.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Case Studies/Testimonials */}
-      <ScrollAnimation>
-        <section className="section-padding section-gradient-2">
-          <div className="container mx-auto container-mobile">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="text-white">Real Results:</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  SEO Success Stories
-                </span>
-              </h2>
-            </div>
-            <Testimonials testimonials={testimonials} />
-          </div>
-        </section>
-      </ScrollAnimation>
+      {/* Testimonials Section */}
+      <Testimonials testimonials={testimonials} />
 
       {/* FAQ Section */}
-      <FAQ
-        title="Frequently Asked Questions About Our SEO Services"
-        subtitle="Get answers to common SEO questions"
-        faqs={faqs}
-      />
+      <FAQ title="SEO Services FAQ" subtitle="Common questions about our SEO services" faqs={faqs} />
 
       {/* Final CTA */}
       <ScrollAnimation>
-        <section className="section-padding section-gradient-4">
-          <div className="container mx-auto container-mobile">
+        <section className="py-20 section-gradient-1">
+          <div className="container mx-auto px-6">
             <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-orange-500/10"></div>
               <div className="relative z-10">
@@ -503,7 +436,7 @@ export default function SEOPage() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className="border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white rounded-full px-8"
+                    className="border-2 border-purple-600 text-purple-400 hover:bg-purple-600 hover:text-white rounded-full px-8 bg-transparent"
                   >
                     View Our SEO Packages
                   </Button>
