@@ -357,17 +357,17 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
             {[
               {
-                name: "Farhan",
+                name: "MK",
                 role: "CEO & Digital Strategy Director",
-                image: "/images/team/mk-ceo.webp", 
+                image: "/images/team/farhan-developer.webp", 
                 expertise: "Digital Strategy, Business Growth, Team Leadership",
                 linkedin: "#",
                 bio: "10+ years leading digital transformation initiatives for Fortune 500 companies and startups.",
               },
               {
-                name: "MK",
+                name: "Farhan",
                 role: "Lead Developer & Technical Architect",
-                image: "/images/team/farhan-developer.webp",
+                image: "/images/team/mk-ceo.webp",
                 expertise: "Full-Stack Development, AI Integration, Technical SEO",
                 linkedin: "#",
                 bio: "Expert in modern web technologies with a focus on performance and scalability.",
