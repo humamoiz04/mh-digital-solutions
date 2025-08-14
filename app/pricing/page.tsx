@@ -1,501 +1,324 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { CheckCircle, ArrowRight, Star, Award, Shield, Clock } from "lucide-react"
-import ScrollAnimation from "@/components/scroll-animation"
-import FAQ from "@/components/faq"
-import type { Metadata } from "next"
-
-export const metadata: Metadata = {
-  title: "Transparent Pricing for Digital Marketing Services | MH Digital Solutions",
-  description:
-    "Clear, transparent pricing for all our digital marketing services. No hidden fees, no surprises. Choose from our SEO, PPC, web development, and marketing packages.",
-  keywords:
-    "digital marketing pricing, SEO packages, PPC management cost, web development pricing, transparent pricing",
-  alternates: {
-    canonical: "https://www.mhdigitalsolution.com/pricing",
-  },
-}
+import { Section } from "@/components/Section"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { CheckCircle, Award, Star } from "lucide-react"
+import Link from "next/link"
 
 export default function PricingPage() {
-  const pricingFaqs = [
+  const pricingPlans = [
     {
-      question: "Are there any setup fees or hidden costs?",
-      answer:
-        "No hidden fees! Our pricing is transparent and includes everything mentioned in your package. The only additional costs would be third-party services like domain registration, hosting, or advertising spend (for PPC campaigns), which we'll discuss upfront.",
-    },
-    {
-      question: "Do you require long-term contracts?",
-      answer:
-        "We offer both month-to-month and contract options. While we believe in the value of long-term partnerships for best results, we don't lock you into lengthy contracts. You can cancel most services with 30 days notice.",
-    },
-    {
-      question: "What payment methods do you accept?",
-      answer:
-        "We accept all major credit cards, bank transfers, and PayPal. For ongoing services, we typically set up automatic monthly billing for your convenience. We can also accommodate quarterly or annual payment schedules with discounts.",
-    },
-    {
-      question: "Do you offer refunds?",
-      answer:
-        "Yes! We offer a 30-day money-back guarantee for most of our services. If you're not satisfied with our work within the first 30 days, we'll provide a full refund. Specific terms vary by service type.",
-    },
-    {
-      question: "Can I upgrade or downgrade my package?",
-      answer:
-        "You can upgrade or downgrade your service package at any time. We'll prorate the charges and adjust your billing accordingly. We want to ensure you always have the right level of service for your needs.",
-    },
-    {
-      question: "What's included in the custom solutions?",
-      answer:
-        "Custom solutions are tailored to your specific needs and may include multiple services, advanced features, dedicated account management, and specialized strategies. Pricing varies based on scope and requirements.",
-    },
-  ]
-
-  const packages = [
-    {
-      category: "SEO Services",
-      plans: [
-        {
-          name: "Local SEO Starter",
-          price: "$997",
-          period: "/month",
-          description: "Perfect for small local businesses",
-          features: [
-            "Complete SEO audit & strategy",
-            "Google My Business optimization",
-            "Local keyword targeting (25 keywords)",
-            "On-page optimization (10 pages)",
-            "Local citation building",
-            "Monthly progress reports",
-            "Email support",
-          ],
-          popular: false,
-          bestFor: "Small local businesses, service providers",
-          cta: "Start Growing Locally",
-        },
-        {
-          name: "Business Growth SEO",
-          price: "$1,997",
-          period: "/month",
-          description: "Most popular for growing businesses",
-          features: [
-            "Everything in Starter, plus:",
-            "National keyword targeting (50 keywords)",
-            "Content creation (4 blog posts/month)",
-            "Technical SEO optimization",
-            "Link building campaign",
-            "Competitor analysis",
-            "Bi-weekly strategy calls",
-            "Priority support",
-          ],
-          popular: true,
-          bestFor: "Growing businesses, e-commerce stores",
-          cta: "Scale Your Business",
-        },
-        {
-          name: "Enterprise SEO",
-          price: "$4,997",
-          period: "/month",
-          description: "For businesses serious about domination",
-          features: [
-            "Everything in Growth, plus:",
-            "Unlimited keyword targeting",
-            "Advanced technical SEO",
-            "Content creation (8 blog posts/month)",
-            "Aggressive link building",
-            "Conversion rate optimization",
-            "Weekly strategy calls",
-            "Dedicated SEO manager",
-            "Custom reporting dashboard",
-          ],
-          popular: false,
-          bestFor: "Large businesses, enterprises",
-          cta: "Dominate Your Market",
-        },
+      name: "Launchpad",
+      tagline: "Get Found Fast – No Tech Skills Needed",
+      price: "$150",
+      frequency: "per week",
+      features: [
+        "5-page SEO-optimized website (mobile-friendly)",
+        "Free hosting for life with annual contract",
+        "1-month complimentary basic SEO",
+        "Google Business Profile Setup & Optimization",
+        "4 social media posts/month (platform of choice)",
+        "Social media content creation (images, flyers, videos)",
+        "Collaborative marketing efforts with local businesses",
+        "Monthly analytics reports & basic lead gen strategy",
       ],
+      buttonText: "Choose Launchpad",
+      highlight: false,
+      promoBadge: { text: "Starter Kit", icon: <Star className="h-4 w-4" /> },
+      targetAudience: {
+        title: "Who's This For?",
+        description:
+          "Ideal for new businesses, startups, and local ventures that need to establish a strong foundational online presence without a large budget.",
+        why: "This package provides everything you need to get discovered by local customers and build a professional digital footprint from scratch.",
+      },
+      successMetrics: {
+        avgIncrease: "150% increase in online visibility",
+        timeToResults: "Results within 30 days",
+        clientSatisfaction: "95% client satisfaction rate",
+      },
+      testimonial: {
+        text: "MH Digital Solution helped us launch our bakery online. We went from zero web presence to 50+ weekly inquiries!",
+        author: "Sarah M., Local Bakery Owner",
+      },
     },
     {
-      category: "PPC Advertising",
-      plans: [
-        {
-          name: "PPC Starter",
-          price: "$997",
-          period: "/month",
-          description: "Perfect for testing PPC waters",
-          features: [
-            "Google Ads management",
-            "Keyword research & setup",
-            "Ad copy creation (5 variations)",
-            "Landing page optimization",
-            "Monthly reporting",
-            "Email support",
-          ],
-          popular: false,
-          bestFor: "Small businesses, new to PPC",
-          cta: "Start PPC Campaigns",
-        },
-        {
-          name: "PPC Growth",
-          price: "$1,997",
-          period: "/month",
-          description: "Most popular for serious growth",
-          features: [
-            "Everything in Starter, plus:",
-            "Multi-platform management",
-            "Advanced audience targeting",
-            "A/B testing & optimization",
-            "Conversion tracking setup",
-            "Bi-weekly optimization calls",
-            "Priority support",
-          ],
-          popular: true,
-          bestFor: "Growing businesses, e-commerce",
-          cta: "Scale Your Ads",
-        },
-        {
-          name: "PPC Enterprise",
-          price: "$3,997",
-          period: "/month",
-          description: "Maximum advertising performance",
-          features: [
-            "Everything in Growth, plus:",
-            "Advanced automation setup",
-            "Custom audience development",
-            "Video ad creation",
-            "Shopping campaigns",
-            "Weekly strategy calls",
-            "Dedicated PPC manager",
-          ],
-          popular: false,
-          bestFor: "Large businesses, high ad spend",
-          cta: "Maximize ROI",
-        },
+      name: "Reignite",
+      tagline: "Fix What's Broken, Grow What Works",
+      price: "$250",
+      frequency: "per week",
+      features: [
+        "Website Redesign (UX/UI overhaul, faster load times)",
+        "SEO migration to preserve rankings",
+        "Technical SEO audit + backlink strategy",
+        "Monthly rank tracking (5 keywords)",
+        "Automated review requests (SMS/email)",
+        "Social media bio & link optimization",
+        "Local SEO & GMB optimization",
+        "Free 60-minute 'Growth Roadmap' call",
       ],
+      buttonText: "Choose Reignite",
+      highlight: true,
+      promoBadge: { text: "Most Popular", icon: <Award className="h-4 w-4" /> },
+      targetAudience: {
+        title: "Who's This For?",
+        description:
+          "Perfect for businesses with an existing but outdated website that's no longer driving results. For businesses that feel stagnant and need a digital reboot.",
+        why: "This plan is designed to fix underlying issues and breathe new life into your online presence, converting existing traffic into new leads and sales.",
+      },
+      successMetrics: {
+        avgIncrease: "300% increase in lead generation",
+        timeToResults: "Results within 60 days",
+        clientSatisfaction: "98% client satisfaction rate",
+      },
+      testimonial: {
+        text: "Our outdated website was costing us customers. After the redesign, our conversion rate tripled and we're booking 40% more appointments.",
+        author: "Mike R., HVAC Company Owner",
+      },
     },
     {
-      category: "Web Development",
-      plans: [
-        {
-          name: "Business Website",
-          price: "$2,997",
-          period: "one-time",
-          description: "Professional business website",
-          features: [
-            "Custom responsive design",
-            "Up to 10 pages",
-            "Contact forms",
-            "SEO optimization",
-            "SSL certificate",
-            "3 months support",
-          ],
-          popular: false,
-          bestFor: "Small businesses, service providers",
-          cta: "Get Your Website",
-        },
-        {
-          name: "E-commerce Store",
-          price: "$7,997",
-          period: "one-time",
-          description: "Complete online store solution",
-          features: [
-            "Everything in Business, plus:",
-            "E-commerce functionality",
-            "Payment gateway integration",
-            "Inventory management",
-            "Product catalog setup",
-            "6 months support",
-          ],
-          popular: true,
-          bestFor: "Online retailers, product businesses",
-          cta: "Launch Your Store",
-        },
-        {
-          name: "Custom Application",
-          price: "Custom Quote",
-          period: "",
-          description: "Tailored web applications",
-          features: [
-            "Custom functionality",
-            "Database integration",
-            "User authentication",
-            "API development",
-            "Ongoing maintenance",
-            "Dedicated support",
-          ],
-          popular: false,
-          bestFor: "Enterprises, unique requirements",
-          cta: "Get Custom Quote",
-        },
+      name: "ScaleUp",
+      tagline: "Hands-Free Growth with Expert Guidance",
+      price: "$999",
+      frequency: "per week",
+      features: [
+        "Includes all Launchpad features",
+        "Advanced SEO: Competitor gap analysis & content clusters",
+        "Local SEO citations (50+ directories)",
+        "Social Media Management: 1 post/day + 2 reels/shorts/month",
+        "Community engagement (comments/DMs)",
+        "Monthly performance report (traffic, leads, ROI)",
+        "Dedicated account manager (Slack/WhatsApp)",
+        "Quarterly strategy sessions",
       ],
+      buttonText: "Choose ScaleUp",
+      highlight: false,
+      promoBadge: { text: "Best Value", icon: <Star className="h-4 w-4" /> },
+      targetAudience: {
+        title: "Who's This For?",
+        description:
+          "For established businesses ready to aggressively grow their market share and are looking for a comprehensive, hands-off digital marketing solution.",
+        why: "This package provides a full-service team that handles everything from content creation to strategy, allowing you to focus on running your business.",
+      },
+      successMetrics: {
+        avgIncrease: "500% increase in organic traffic",
+        timeToResults: "Results within 90 days",
+        clientSatisfaction: "99% client satisfaction rate",
+      },
+      testimonial: {
+        text: "ScaleUp transformed our business. We've gone from 10 to 100+ leads per month and our revenue has doubled in just 6 months.",
+        author: "Jennifer L., Marketing Agency Owner",
+      },
     },
     {
-      category: "Digital Marketing",
-      plans: [
-        {
-          name: "Marketing Starter",
-          price: "$1,497",
-          period: "/month",
-          description: "Essential marketing services",
-          features: [
-            "Social media management (2 platforms)",
-            "Content creation (8 posts/month)",
-            "Basic email marketing",
-            "Monthly analytics report",
-            "Email support",
-          ],
-          popular: false,
-          bestFor: "Small businesses, startups",
-          cta: "Start Marketing",
-        },
-        {
-          name: "Marketing Growth",
-          price: "$2,997",
-          period: "/month",
-          description: "Comprehensive marketing solution",
-          features: [
-            "Everything in Starter, plus:",
-            "Multi-platform management (4 platforms)",
-            "Advanced content creation",
-            "Email automation sequences",
-            "Lead generation campaigns",
-            "Bi-weekly strategy calls",
-          ],
-          popular: true,
-          bestFor: "Growing businesses, B2B companies",
-          cta: "Accelerate Growth",
-        },
-        {
-          name: "Marketing Enterprise",
-          price: "$5,997",
-          period: "/month",
-          description: "Full-service marketing powerhouse",
-          features: [
-            "Everything in Growth, plus:",
-            "Omnichannel marketing",
-            "Advanced automation",
-            "Custom integrations",
-            "Dedicated marketing team",
-            "Weekly strategy sessions",
-          ],
-          popular: false,
-          bestFor: "Large businesses, enterprises",
-          cta: "Dominate Marketing",
-        },
+      name: "E-Commerce Pro",
+      tagline: "Turn Browsers Into Buyers",
+      price: "$1299",
+      frequency: "per week",
+      features: [
+        "Includes all ScaleUp features",
+        "Shopify/WooCommerce setup with 10 products",
+        "Checkout optimization (1-click upsells, trust badges)",
+        "2 product videos/month (TikTok/YouTube Shorts)",
+        "Influencer outreach to 5 micro-influencers/month",
+        "AI Automation: Chatbots for abandoned carts",
+        "Personalized email sequences",
       ],
+      buttonText: "Choose E-Commerce Pro",
+      highlight: false,
+      promoBadge: { text: "Top Tier", icon: <Star className="h-4 w-4" /> },
+      targetAudience: {
+        title: "Who's This For?",
+        description:
+          "Designed for online stores and businesses that are serious about increasing their sales and optimizing their entire digital storefront.",
+        why: "This plan is a complete solution for e-commerce, combining advanced marketing with technical optimizations to drive revenue and customer loyalty.",
+      },
+      successMetrics: {
+        avgIncrease: "400% increase in online sales",
+        timeToResults: "Results within 120 days",
+        clientSatisfaction: "97% client satisfaction rate",
+      },
+      testimonial: {
+        text: "Our e-commerce store was struggling. Now we're doing $50K+ monthly revenue with optimized funnels and automated marketing.",
+        author: "David K., E-commerce Store Owner",
+      },
+    },
+    {
+      name: "Marketing Automation Suite",
+      tagline: "Automate Your Success, Scale Your Leads",
+      price: "$1500",
+      frequency: "per month",
+      features: [
+        "Advanced email marketing automation",
+        "Custom CRM integration & management",
+        "Sales funnel design and implementation",
+        "Automated lead nurturing campaigns",
+        "Chatbot & AI integration for customer service",
+        "Monthly strategy & performance review",
+        "Onboarding and training for your team",
+      ],
+      buttonText: "Choose Automation Suite",
+      highlight: false,
+      promoBadge: { text: "For Modern Teams", icon: <Star className="h-4 w-4" /> },
+      targetAudience: {
+        title: "Who's This For?",
+        description:
+          "For businesses with an established sales team that needs to streamline their lead flow and automate their customer journey. Ideal for B2B services and SaaS companies.",
+        why: "This package turns your website into a 24/7 lead machine, freeing up your team's time while ensuring every lead is properly nurtured and followed up on.",
+      },
+      successMetrics: {
+        avgIncrease: "600% increase in qualified leads",
+        timeToResults: "Results within 45 days",
+        clientSatisfaction: "100% client satisfaction rate",
+      },
+      testimonial: {
+        text: "The automation suite saved us 30 hours per week and increased our lead quality by 400%. Our sales team is finally focused on closing deals.",
+        author: "Amanda T., SaaS Company CEO",
+      },
+    },
+    {
+      name: "Enterprise Partnership",
+      tagline: "Your Dedicated Digital Department",
+      price: "Custom",
+      frequency: "per month",
+      features: [
+        "Full-scope digital strategy & execution",
+        "Dedicated in-house team (SEO, PPC, Content, Dev)",
+        "Brand management and reputation monitoring",
+        "Comprehensive analytics and data modeling",
+        "Quarterly business reviews & roadmap planning",
+        "White-label services for internal use",
+        "24/7 priority support & on-demand consultations",
+      ],
+      buttonText: "Contact for Quote",
+      highlight: false,
+      promoBadge: { text: "Elite Service", icon: <Award className="h-4 w-4" /> },
+      targetAudience: {
+        title: "Who's This For?",
+        description:
+          "For large corporations and enterprise-level businesses seeking a long-term, strategic partner to manage all aspects of their digital presence.",
+        why: "This is a complete, custom-tailored solution that acts as your company's digital marketing department, providing unparalleled support and strategic oversight.",
+      },
+      successMetrics: {
+        avgIncrease: "Custom ROI based on goals",
+        timeToResults: "Strategic results within 6 months",
+        clientSatisfaction: "100% client retention rate",
+      },
+      testimonial: {
+        text: "Having MH Digital as our digital department has been game-changing. They've helped us scale from $1M to $10M in annual revenue.",
+        author: "Robert S., Fortune 500 Executive",
+      },
     },
   ]
 
   return (
-    <div className="min-h-screen pt-20 bg-transparent">
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            mainEntity: pricingFaqs.map((faq) => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer,
-              },
-            })),
-          }),
-        }}
-      />
-
-      {/* Hero Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6 text-center">
-            <Badge className="mb-6 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white">
-              💰 Transparent Pricing
-            </Badge>
-            <h1 className="text-5xl md:text-6xl font-bold mb-6">
-              Transparent Pricing for{" "}
-              <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
-                Clear Results
-              </span>
-            </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mb-8">
-              No hidden fees, no surprises. Choose from our proven packages designed to deliver measurable results for
-              your business.
-            </p>
-
-            {/* Trust Indicators */}
-            <div className="flex flex-wrap justify-center items-center gap-8 mt-12">
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="h-5 w-5 text-yellow-400 fill-current" />
-                  ))}
+    <div className="relative z-10">
+      <Section className="py-16 md:py-24">
+        <div className="text-center mb-12">
+          <h1 className="text-4xl font-bold text-foreground mb-4 gradient-text">Packages & Plans</h1>
+          <p className="text-lg text-muted-foreground">
+            Find the perfect plan to boost your digital presence and achieve your business goals.
+          </p>
+          <p className="text-sm text-muted-foreground mt-2">
+            "Organic Growth Engine: Where Your Business Scales Without the Ad Spend."
+          </p>
+        </div>
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {pricingPlans.map((plan, index) => (
+            <Card
+              key={index}
+              className={`glass-card flex flex-col relative ${plan.highlight ? "border-primary shadow-lg scale-105" : ""}`}
+            >
+              {plan.promoBadge && (
+                <div
+                  className={`absolute top-0 right-0 -mt-3 -mr-3 px-4 py-1 text-xs font-bold text-white rounded-full flex items-center gap-1 ${plan.highlight ? "bg-primary" : "bg-secondary"}`}
+                >
+                  {plan.promoBadge.icon}
+                  {plan.promoBadge.text}
                 </div>
-                <span className="text-sm font-medium">4.9/5 Client Rating</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Award className="h-5 w-5 text-[#4F46E5]" />
-                <span className="text-sm font-medium">500+ Successful Projects</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Shield className="h-5 w-5 text-green-600" />
-                <span className="text-sm font-medium">30-Day Money-Back Guarantee</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Clock className="h-5 w-5 text-blue-600" />
-                <span className="text-sm font-medium">24/7 Support Available</span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+              )}
+              <CardHeader className="text-center pb-4">
+                <CardTitle className="text-3xl font-bold text-foreground">{plan.name}</CardTitle>
+                <CardDescription className="text-sm text-muted-foreground mb-2">{plan.tagline}</CardDescription>
+                <CardDescription className="text-muted-foreground">
+                  <span className="text-5xl font-extrabold text-foreground">{plan.price}</span>
+                  <span className="text-lg text-muted-foreground"> {plan.frequency}</span>
+                </CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1 space-y-4">
+                <div className="border-t pt-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">{plan.targetAudience.title}</h3>
+                  <p className="text-sm text-muted-foreground">{plan.targetAudience.description}</p>
+                  <p className="text-sm text-muted-foreground mt-1">
+                    <strong>Why:</strong> {plan.targetAudience.why}
+                  </p>
+                </div>
 
-      {/* Package Tiers */}
-      {packages.map((category, categoryIndex) => (
-        <ScrollAnimation key={categoryIndex}>
-          <section className="py-20 bg-transparent">
-            <div className="container mx-auto px-6">
-              <div className="text-center mb-16">
-                <h2 className="text-4xl font-bold mb-4 text-gray-900 dark:text-white">{category.category}</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300">Choose the package that fits your needs</p>
-              </div>
+                <div className="border-t pt-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Success Metrics:</h3>
+                  <div className="space-y-1 text-sm">
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-muted-foreground">{plan.successMetrics.avgIncrease}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-muted-foreground">{plan.successMetrics.timeToResults}</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <CheckCircle className="h-4 w-4 text-green-500" />
+                      <span className="text-muted-foreground">{plan.successMetrics.clientSatisfaction}</span>
+                    </div>
+                  </div>
+                </div>
 
-              <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-                {category.plans.map((plan, index) => (
-                  <Card
-                    key={index}
-                    className={`relative ${plan.popular ? "border-2 border-[#4F46E5] scale-105 shadow-2xl" : "shadow-lg"} bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm`}
-                  >
-                    {plan.popular && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <Badge className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white px-4 py-1">
-                          Most Popular
-                        </Badge>
-                      </div>
-                    )}
-                    <CardContent className="p-8">
-                      <div className="text-center mb-6">
-                        <h3 className="text-2xl font-bold mb-2 text-gray-900 dark:text-white">{plan.name}</h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{plan.description}</p>
-                        <div className="mb-4">
-                          <span className="text-4xl font-bold text-[#4F46E5]">{plan.price}</span>
-                          {plan.period && <span className="text-gray-600 dark:text-gray-400">{plan.period}</span>}
-                        </div>
-                        <div className="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg">
-                          <p className="text-sm font-medium text-blue-700 dark:text-blue-300">
-                            <strong>Best for:</strong> {plan.bestFor}
-                          </p>
-                        </div>
-                      </div>
+                <div className="border-t pt-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">What's Included:</h3>
+                  <ul className="space-y-2">
+                    {plan.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-center gap-2 text-muted-foreground">
+                        <CheckCircle className="h-5 w-5 text-primary gradient-icon" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                      <ul className="space-y-3 mb-8">
-                        {plan.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-start">
-                            <CheckCircle className="h-5 w-5 text-[#4F46E5] mr-3 mt-0.5 flex-shrink-0" />
-                            <span className={feature.includes("Everything in") ? "font-semibold" : ""}>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-
-                      <a
-                        href="https://calendly.com/mhdigitalsolutionsus"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={`block w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
-                          plan.popular
-                            ? "bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] hover:opacity-90 text-white"
-                            : "bg-gray-100 hover:bg-gray-200 text-gray-900 dark:bg-gray-700 dark:hover:bg-gray-600 dark:text-white"
-                        }`}
-                        aria-label={`Get started with ${plan.name} package`}
-                      >
-                        {plan.cta}
-                      </a>
-
-                      <p className="text-xs text-center text-gray-500 mt-4">
-                        No setup fees • Cancel anytime • 30-day money-back guarantee
-                      </p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </section>
-        </ScrollAnimation>
-      ))}
-
-      {/* Custom Solutions CTA */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <Card className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-0 max-w-4xl mx-auto">
-              <CardContent className="p-12 text-center">
-                <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Need a Custom Plan?</h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                  Every business is unique. If our standard packages don't fit your specific needs, we'll create a
-                  custom solution tailored to your goals and budget.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white font-semibold rounded-full hover:opacity-90 transition-opacity"
-                  >
-                    Let's Talk Custom Solutions
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                  <a
-                    href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-3 border-2 border-[#4F46E5] text-[#4F46E5] hover:bg-[#4F46E5] hover:text-white rounded-full transition-all duration-300"
-                  >
-                    Get Custom Quote
-                  </a>
+                <div className="border-t pt-4">
+                  <h3 className="text-lg font-semibold text-foreground mb-2">Client Success:</h3>
+                  <blockquote className="text-sm text-muted-foreground italic">"{plan.testimonial.text}"</blockquote>
+                  <p className="text-xs text-muted-foreground mt-2">— {plan.testimonial.author}</p>
                 </div>
               </CardContent>
+              <CardFooter className="pt-4">
+                <Link href="/contact" className="w-full">
+                  <Button className="gradient-button w-full text-lg py-3">{plan.buttonText}</Button>
+                </Link>
+              </CardFooter>
             </Card>
-          </div>
-        </section>
-      </ScrollAnimation>
+          ))}
+        </div>
 
-      {/* Pricing FAQs */}
-      <FAQ
-        title="Pricing Questions Answered"
-        subtitle="Everything you need to know about our pricing and billing"
-        faqs={pricingFaqs}
-      />
-
-      {/* Final CTA */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-12 text-center relative overflow-hidden max-w-4xl mx-auto">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#4F46E5]/10 to-[#7C3AED]/10"></div>
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">
-                  Ready to{" "}
-                  <span className="bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] bg-clip-text text-transparent">
-                    Get Started?
-                  </span>
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Join 500+ businesses that trust us with their digital growth. Book a free consultation to discuss
-                  which package is right for you.
-                </p>
-                <a
-                  href="https://calendly.com/mhdigitalsolutionsus"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-[#4F46E5] to-[#7C3AED] text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 text-lg"
-                  aria-label="Book free consultation to discuss pricing"
-                >
-                  Book Your Free Consultation
-                  <ArrowRight className="h-5 w-5 ml-2" />
-                </a>
+        <div className="mt-16">
+          <Card className="glass-card p-8">
+            <h2 className="text-2xl font-bold text-foreground mb-6 text-center gradient-text">
+              Transparent Pricing, No Hidden Fees
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6 text-center">
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">No Setup Fees</h3>
+                <p className="text-sm text-muted-foreground">Get started immediately without any upfront costs</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Cancel Anytime</h3>
+                <p className="text-sm text-muted-foreground">No long-term contracts or cancellation penalties</p>
+              </div>
+              <div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Money-Back Guarantee</h3>
+                <p className="text-sm text-muted-foreground">30-day satisfaction guarantee on all packages</p>
               </div>
             </div>
-          </div>
-        </section>
-      </ScrollAnimation>
+          </Card>
+        </div>
+      </Section>
     </div>
   )
 }

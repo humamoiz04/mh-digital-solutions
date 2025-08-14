@@ -1,118 +1,305 @@
-"use client"
-import { Container, Typography, Grid, Card, CardContent, Button } from "@mui/material"
-import Link from "next/link"
-import FAQ from "@/components/faq" // Assuming FAQ component is available
+import { Section } from "@/components/Section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
+import { TrendingUp, Users, Target, Award, CheckCircle, ArrowRight } from "lucide-react"
+import Image from "next/image"
 
-const DigitalMarketingPage = () => {
-  const packages = [
-    {
-      name: "Basic Package",
-      description: "Ideal for startups and small businesses looking to establish an online presence.",
-      features: [
-        "Search Engine Optimization (SEO) Basics",
-        "Social Media Management (1 platform)",
-        "Email Marketing Setup",
-        "Basic Website Analytics",
-      ],
-    },
-    {
-      name: "Standard Package",
-      description: "Perfect for businesses aiming to grow their online reach and engagement.",
-      features: [
-        "Advanced SEO Strategies",
-        "Social Media Management (3 platforms)",
-        "Content Marketing (Blog Posts)",
-        "Detailed Website Analytics & Reporting",
-        "Pay-Per-Click (PPC) Advertising (Small Budget)",
-      ],
-    },
-    {
-      name: "Premium Package",
-      description: "Comprehensive solution for established businesses seeking maximum online impact and ROI.",
-      features: [
-        "Full-Scale SEO Optimization",
-        "Social Media Management (All Platforms)",
-        "Content Marketing (Blog Posts, eBooks, Infographics)",
-        "Advanced Analytics & Custom Reporting",
-        "Pay-Per-Click (PPC) Advertising (Large Budget)",
-        "Dedicated Account Manager",
-      ],
-    },
+export default function DigitalMarketingPage() {
+  const problems = [
+    "Low online visibility",
+    "Poor lead quality",
+    "Scattered marketing efforts lacking focus",
+    "Wasted marketing budget",
+    "Difficulty measuring ROI",
+  ]
+
+  const solutions = [
+    "Integrated digital marketing campaigns",
+    "Data-driven audience targeting",
+    "Multi-channel strategy coordination",
+    "Advanced analytics and tracking",
+    "Continuous optimization processes",
+  ]
+
+  const benefits = [
+    "Increased website traffic",
+    "Higher quality leads",
+    "Measurable growth in customer engagement",
+    "Better conversion rates",
+    "Improved brand awareness",
+    "Enhanced customer retention",
   ]
 
   const faqs = [
     {
-      question: "How does an integrated digital marketing strategy work?",
+      question: "What channels will you focus on for my business?",
       answer:
-        "An integrated digital marketing strategy combines various online channels like SEO, PPC, social media, content marketing, and email marketing to create a cohesive and powerful presence. We ensure all elements work together, reinforcing your brand message and guiding customers through their journey, leading to maximum impact and efficiency.",
+        "We analyze your target audience and business goals to determine the most effective channels, which may include SEO, PPC, social media, email marketing, and content marketing.",
     },
     {
-      question: "What are the benefits of a holistic digital marketing approach?",
+      question: "How do you measure campaign success?",
       answer:
-        "A holistic approach ensures consistent messaging across all platforms, builds stronger brand recognition, and creates synergy between different marketing efforts. This leads to a more effective customer journey, higher engagement, better conversion rates, and ultimately, a significantly higher return on investment compared to managing channels in isolation.",
+        "We track key metrics like website traffic, lead quality, conversion rates, cost per acquisition, and ROI using advanced analytics tools and custom dashboards.",
+    },
+  ]
+
+  const services = [
+    {
+      title: "Search Engine Optimization (SEO)",
+      description: "Improve your visibility on search engines and drive organic traffic.",
+      icon: "/images/seo-services-illustration.webp",
+      link: "/services/seo-services",
     },
     {
-      question: "What are the 4 digital strategies you implement for growth?",
-      answer:
-        "Our core digital strategies for growth typically involve: 1. **Attraction:** Drawing in target audiences through SEO and PPC. 2. **Engagement:** Building relationships via social media and content marketing. 3. **Conversion:** Turning leads into customers through optimized landing pages and email campaigns. 4. **Retention & Advocacy:** Fostering loyalty and encouraging referrals through ongoing engagement and excellent service.",
+      title: "Pay-Per-Click (PPC) Advertising",
+      description: "Targeted ad campaigns to generate immediate leads and sales.",
+      icon: "/images/ppc-advertising.webp",
+      link: "/services/ppc-advertising",
+    },
+    {
+      title: "Social Media Marketing",
+      description: "Build brand awareness and engage with your audience on popular platforms.",
+      icon: "/images/social-media-marketing.webp",
+      link: "/services/social-media-marketing",
+    },
+    {
+      title: "Content Marketing",
+      description: "Create valuable and engaging content to attract and retain customers.",
+      icon: "/images/content-marketing.webp",
+      link: "/services/content-marketing",
+    },
+    {
+      title: "Email Marketing",
+      description: "Nurture leads and build customer loyalty with effective email campaigns.",
+      icon: "/images/email-marketing-illustration.webp",
+      link: "/services/email-marketing",
+    },
+    {
+      title: "Lead Generation",
+      description: "Strategies to identify, attract, and convert potential customers.",
+      icon: "/images/lead-generation-funnel-illustration.webp",
+      link: "/services/lead-generation",
     },
   ]
 
   return (
-    <Container maxWidth="md" sx={{ mt: 4 }}>
-      <Typography variant="h3" component="h1" gutterBottom align="center">
-        Digital Marketing Services
-      </Typography>
-      <Typography variant="body1" paragraph align="center">
-        Boost your online presence and reach your target audience with our comprehensive digital marketing solutions.
-      </Typography>
+    <div className="relative z-10">
+      <Section glass>
+        <div className="space-y-16">
+          {/* Hero Section */}
+          <div className="text-center space-y-6">
+            <Badge variant="secondary" className="mb-4">
+              <TrendingUp className="h-4 w-4 mr-2" />
+              Digital Marketing
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+              Digital Marketing Services
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Drive brand awareness and lead generation through targeted digital channels tailored to your unique
+              business needs.
+            </p>
+          </div>
 
-      <Typography variant="h4" component="h2" gutterBottom sx={{ mt: 4 }}>
-        Our Packages
-      </Typography>
+          {/* Client Problems */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-4">
+                Common Marketing Challenges
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Problems that prevent businesses from reaching their full potential
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {problems.map((problem, index) => (
+                <Card key={index} className="glass-card border-red-200/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0" />
+                      <p className="text-muted-foreground">{problem}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
 
-      <Grid container spacing={3}>
-        {packages.map((pkg, index) => (
-          <Grid item xs={12} md={4} key={index}>
-            <Card>
+          {/* Our Solutions */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent mb-4">
+                Our Marketing Solutions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                We create integrated digital marketing campaigns combining SEO, PPC, social media, and analytics
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {solutions.map((solution, index) => (
+                <Card
+                  key={index}
+                  className="glass-card border-green-200/20 hover:border-green-300/30 transition-colors"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-muted-foreground">{solution}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Benefits */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+                Benefits You'll Experience
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="glass-card border-purple-200/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-4 w-4 text-white" />
+                      </div>
+                      <p className="font-medium">{benefit}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section glass className="py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Case Study: Retail Client Success</h2>
+            <p className="text-lg text-muted-foreground">
+              A retail client saw a 50% increase in online sales within 6 months after our comprehensive digital
+              marketing strategy implementation
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div>
+              <Image
+                src="/images/mobile-marketing-megaphone.webp"
+                alt="Digital marketing campaign with mobile focus"
+                width={500}
+                height={400}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Challenge</h3>
+                <p className="text-muted-foreground">
+                  A B2B SaaS startup needed to scale their lead generation efforts but was struggling with low-quality
+                  leads and poor conversion rates from their existing marketing channels.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Solution</h3>
+                <p className="text-muted-foreground">
+                  We developed a comprehensive digital marketing strategy combining SEO, PPC, content marketing, and
+                  social media to target decision-makers in their ideal customer profile.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Users className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-green-500">300%</CardTitle>
+              </CardHeader>
               <CardContent>
-                <Typography variant="h6" component="h3" gutterBottom>
-                  {pkg.name}
-                </Typography>
-                <Typography variant="body2" paragraph>
-                  {pkg.description}
-                </Typography>
-                <Typography variant="subtitle1">Features:</Typography>
-                <ul>
-                  {pkg.features.map((feature, i) => (
-                    <li key={i}>{feature}</li>
-                  ))}
-                </ul>
-                <Button component={Link} href="/pricing" variant="contained" color="primary">
-                  View Pricing
-                </Button>
+                <p className="text-sm text-muted-foreground">Lead Increase</p>
               </CardContent>
             </Card>
-          </Grid>
-        ))}
-      </Grid>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Target className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-blue-500">65%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Conversion Rate</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <TrendingUp className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-purple-500">180%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">ROI Improvement</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Award className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-orange-500">6 Months</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">To Full Results</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </Section>
 
-      <Typography variant="body2" align="center" sx={{ mt: 3, fontStyle: "italic" }}>
-        Starting from competitive rates - view full pricing details on our pricing page.
-      </Typography>
-
-      <Grid container justifyContent="center" sx={{ mt: 4 }}>
-        <Grid item>
-          <Button component={Link} href="/pricing" variant="contained" color="secondary">
-            View Pricing
-          </Button>
-        </Grid>
-      </Grid>
-
-      {/* FAQ Section */}
-      <FAQ title="Digital Marketing FAQ" subtitle="Common questions about our digital marketing services" faqs={faqs} />
-    </Container>
+      <Section glass>
+        <div className="text-center space-y-6 py-12">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Get Your Free Digital Marketing Strategy Session Today
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Ready to transform your digital presence? Let's create a custom marketing strategy for your business.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            >
+              Get Free Strategy Session
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button size="lg" variant="outline">
+              View Our Portfolio
+            </Button>
+          </div>
+        </div>
+      </Section>
+    </div>
   )
 }
-
-export default DigitalMarketingPage

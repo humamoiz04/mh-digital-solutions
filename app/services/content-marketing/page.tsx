@@ -1,410 +1,301 @@
+import { Section } from "@/components/Section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, PenTool, BookOpen, Video, CheckCircle, FileText, Mic } from "lucide-react"
-import ScrollAnimation from "@/components/scroll-animation"
+import { PenTool, Users, Target, Award, CheckCircle, ArrowRight, FileText } from "lucide-react"
 import Image from "next/image"
-import FAQ from "@/components/faq"
-import Testimonials from "@/components/testimonials"
 
 export default function ContentMarketingPage() {
-  const faqs = [
+  const services = [
     {
-      question: "What types of content do you create for businesses?",
-      answer:
-        "We create a wide variety of content tailored to your business needs and audience, including SEO-optimized blog posts, in-depth articles, compelling website copy, engaging video scripts, informative whitepapers, detailed case studies, and effective email newsletters. Our goal is to produce content that resonates and drives action.",
+      title: "Content Strategy Development",
+      description: "Crafting a roadmap for content creation that aligns with your business goals and audience needs.",
+      icon: "/images/strategy-consulting.webp",
     },
     {
-      question: "How does content marketing help my SEO efforts?",
-      answer:
-        "Content marketing is fundamental to strong SEO. High-quality, relevant content helps you rank for target keywords, attracts organic traffic, and establishes your authority in your industry. It provides valuable material for link building and keeps your website fresh and engaging for both users and search engines, leading to improved visibility and search rankings.",
+      title: "Blog Post Writing",
+      description: "Engaging and SEO-optimized blog posts to attract organic traffic and establish thought leadership.",
+      icon: "/images/blog-seo-strategy.webp",
     },
     {
-      question: "How long does it take for content marketing to show results?",
-      answer:
-        "Content marketing is a long-term strategy. While you might see initial improvements in traffic and engagement within 3-6 months, significant results like strong organic rankings, consistent lead generation, and established thought leadership typically take 6-12 months or more. Consistency and ongoing optimization are key to sustained success.",
+      title: "Website Copywriting",
+      description:
+        "Compelling and conversion-focused copy for your website pages, product descriptions, and landing pages.",
+      icon: "/images/web-development-illustration.webp",
     },
     {
-      question: "Can you help us develop a content strategy tailored to our industry?",
-      answer:
-        "Absolutely. Our process begins with a deep dive into your industry, target audience, competitive landscape, and business goals. We develop a comprehensive content strategy that includes keyword research, content gap analysis, audience persona development, and a detailed content calendar, ensuring every piece of content is strategic and aligned with your objectives.",
+      title: "Video Content Production",
+      description: "Creating engaging video content for social media, websites, and marketing campaigns.",
+      icon: "/images/content-marketing.webp",
+    },
+    {
+      title: "Infographics & Visual Content",
+      description: "Designing visually appealing infographics and other graphics to convey complex information simply.",
+      icon: "/images/ui-ux-design-illustration.webp",
+    },
+    {
+      title: "Content Distribution & Promotion",
+      description: "Strategically promoting your content across various channels to maximize reach and engagement.",
+      icon: "/images/digital-marketing-megaphone.webp",
     },
   ]
 
-  const testimonials = [
+  const problems = [
+    "Lack of engaging content",
+    "Inconsistent brand messaging",
+    "Poor content performance",
+    "Limited content distribution",
+    "Difficulty measuring content ROI",
+  ]
+
+  const solutions = [
+    "Strategic content planning",
+    "Multi-format content creation",
+    "SEO-optimized content development",
+    "Content distribution strategies",
+    "Performance tracking and optimization",
+  ]
+
+  const benefits = [
+    "Increased brand authority",
+    "Higher search engine rankings",
+    "Enhanced audience engagement",
+    "Improved lead generation",
+    "Better conversion rates",
+    "Stronger customer relationships",
+  ]
+
+  const faqs = [
     {
-      text: "Their content marketing strategy increased our organic traffic by 400% in 8 months. The quality of content and SEO optimization is exceptional. We're now ranking #1 for our target keywords.",
-      name: "Rachel Green",
-      position: "Marketing Manager",
-      company: "SaaS Startup",
-      rating: 5,
+      question: "What types of content do you create?",
+      answer:
+        "We create blog posts, articles, infographics, videos, social media content, whitepapers, case studies, and more based on your audience needs.",
     },
     {
-      text: "The blog content they create consistently generates 50+ qualified leads per month. Their understanding of our industry and ability to create valuable content is outstanding.",
-      name: "Michael Torres",
-      position: "Business Development Director",
-      company: "B2B Services",
-      rating: 5,
-    },
-    {
-      text: "Our content engagement rates improved by 300% after working with MH Digital. They really know how to create content that resonates with our audience and drives action.",
-      name: "Sarah Kim",
-      position: "Content Director",
-      company: "E-learning Platform",
-      rating: 5,
+      question: "How do you ensure content aligns with our brand?",
+      answer:
+        "We develop detailed brand guidelines and content strategies that reflect your unique voice, values, and messaging across all content pieces.",
     },
   ]
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <Badge className="mb-6 bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] text-white border-0">
-                  ✍️ Strategic Content Marketing
-                </Badge>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                    Content Marketing
-                  </span>
-                  <br />
-                  <span className="text-gray-900 dark:text-white">That Drives Results</span>
-                </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                  Create valuable, engaging content that attracts your ideal customers, builds trust, and drives
-                  conversions through strategic content marketing.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="calendly-button"
-                  >
-                    Get Content Strategy
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full bg-transparent"
-                  >
-                    View Content Samples
-                  </Button>
-                </div>
-              </div>
-              <ScrollAnimation animation="fadeInRight" delay={200}>
-                <div className="relative">
-                  <Image
-                    src="/images/content-marketing.webp"
-                    alt="Content Marketing Services"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-2xl"
-                  />
-                </div>
-              </ScrollAnimation>
-            </div>
+    <div className="relative z-10">
+      <Section glass>
+        <div className="space-y-16">
+          {/* Hero Section */}
+          <div className="text-center space-y-6">
+            <Badge variant="secondary" className="mb-4">
+              <PenTool className="h-4 w-4 mr-2" />
+              Content Marketing
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-orange-600 via-red-600 to-pink-600 bg-clip-text text-transparent">
+              Content Marketing Services
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Create valuable, engaging content that attracts your ideal audience and drives meaningful business
+              results.
+            </p>
           </div>
-        </section>
-      </ScrollAnimation>
 
-      {/* Content Marketing Services */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Comprehensive</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Content Solutions
-                </span>
+          {/* Problems Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-4">
+                Common Content Challenges
               </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                From strategy development to content creation and distribution, we handle every aspect of your content
-                marketing
+              <p className="text-lg text-muted-foreground">
+                Content issues that prevent businesses from connecting with their audience
               </p>
             </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: PenTool,
-                  title: "Content Strategy",
-                  description:
-                    "Comprehensive content strategies that align with your business goals and audience needs",
-                  features: [
-                    "Content audit & analysis",
-                    "Audience research & personas",
-                    "Content calendar planning",
-                    "SEO keyword integration",
-                    "Distribution strategy",
-                  ],
-                  color: "from-[#8B5CF6] to-[#F472B6]",
-                },
-                {
-                  icon: BookOpen,
-                  title: "Blog Writing",
-                  description:
-                    "High-quality, SEO-optimized blog content that educates your audience and drives organic traffic",
-                  features: [
-                    "SEO-optimized articles",
-                    "Industry expertise",
-                    "Engaging storytelling",
-                    "Call-to-action optimization",
-                    "Regular publishing schedule",
-                  ],
-                  color: "from-[#F472B6] to-[#00F5FF]",
-                },
-                {
-                  icon: FileText,
-                  title: "Long-form Content",
-                  description:
-                    "In-depth content pieces like whitepapers, eBooks, and case studies that establish thought leadership",
-                  features: [
-                    "Whitepapers & eBooks",
-                    "Case studies",
-                    "Industry reports",
-                    "Research-backed content",
-                    "Lead generation focus",
-                  ],
-                  color: "from-[#00F5FF] to-[#FF7600]",
-                },
-                {
-                  icon: Video,
-                  title: "Video Content",
-                  description:
-                    "Engaging video content that captures attention and communicates your message effectively",
-                  features: [
-                    "Explainer videos",
-                    "Product demonstrations",
-                    "Customer testimonials",
-                    "Educational content",
-                    "Social media videos",
-                  ],
-                  color: "from-[#FF7600] to-[#8B5CF6]",
-                },
-                {
-                  icon: Mic,
-                  title: "Podcast Production",
-                  description:
-                    "Professional podcast production services to help you reach audiences through audio content",
-                  features: [
-                    "Podcast strategy",
-                    "Episode planning",
-                    "Audio production",
-                    "Show notes creation",
-                    "Distribution management",
-                  ],
-                  color: "from-[#8B5CF6] to-[#F472B6]",
-                },
-                {
-                  icon: CheckCircle,
-                  title: "Content Optimization",
-                  description: "Continuous optimization of existing content to improve performance and search rankings",
-                  features: [
-                    "Content performance analysis",
-                    "SEO optimization",
-                    "Conversion optimization",
-                    "Content updates",
-                    "Repurposing strategies",
-                  ],
-                  color: "from-[#F472B6] to-[#00F5FF]",
-                },
-              ].map((service, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className={`service-card-${(index % 6) + 1} border-0 hover-lift`}>
-                    <CardContent className="p-8">
-                      <div
-                        className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6`}
-                      >
-                        <service.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-sm">
-                            <CheckCircle className="h-4 w-4 text-[#8B5CF6] mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-400">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Content Process */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Our Content</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Process
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                A proven methodology for creating content that engages your audience and drives business results
-              </p>
-            </div>
-
-            <div className="max-w-6xl mx-auto">
-              <div className="space-y-12">
-                {[
-                  {
-                    step: "01",
-                    title: "Strategy & Planning",
-                    description:
-                      "We start by understanding your audience, goals, and competitive landscape to develop a comprehensive content strategy.",
-                    color: "from-[#8B5CF6] to-[#F472B6]",
-                  },
-                  {
-                    step: "02",
-                    title: "Content Creation",
-                    description:
-                      "Our team of expert writers and creators develop high-quality content that aligns with your brand voice and objectives.",
-                    color: "from-[#F472B6] to-[#00F5FF]",
-                  },
-                  {
-                    step: "03",
-                    title: "Optimization & SEO",
-                    description:
-                      "We optimize all content for search engines and user experience to maximize visibility and engagement.",
-                    color: "from-[#00F5FF] to-[#FF7600]",
-                  },
-                  {
-                    step: "04",
-                    title: "Distribution & Promotion",
-                    description:
-                      "We distribute your content across all relevant channels and promote it to reach your target audience effectively.",
-                    color: "from-[#FF7600] to-[#8B5CF6]",
-                  },
-                  {
-                    step: "05",
-                    title: "Analysis & Optimization",
-                    description:
-                      "We continuously analyze performance metrics and optimize our strategy to improve results and ROI.",
-                    color: "from-[#8B5CF6] to-[#F472B6]",
-                  },
-                ].map((phase, index) => (
-                  <ScrollAnimation key={index} delay={index * 100}>
-                    <div className="flex items-start space-x-8">
-                      <div
-                        className={`w-20 h-20 bg-gradient-to-r ${phase.color} rounded-full flex items-center justify-center flex-shrink-0`}
-                      >
-                        <span className="text-2xl font-bold text-white">{phase.step}</span>
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{phase.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{phase.description}</p>
-                      </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {problems.map((problem, index) => (
+                <Card key={index} className="glass-card border-red-200/20 hover:scale-105 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0" />
+                      <p className="text-muted-foreground">{problem}</p>
                     </div>
-                  </ScrollAnimation>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Results Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Content Marketing</span>{" "}
-                <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                  Results
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Real performance metrics from our content marketing campaigns
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { metric: "400%", label: "Organic Traffic Growth", description: "Average increase in 8 months" },
-                { metric: "300%", label: "Engagement Increase", description: "Higher content engagement" },
-                { metric: "250%", label: "Lead Generation", description: "More qualified leads" },
-                { metric: "180%", label: "Brand Awareness", description: "Improved brand recognition" },
-              ].map((result, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="glass border-0 text-center hover-lift">
-                    <CardContent className="p-8">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent mb-2">
-                        {result.metric}
-                      </div>
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{result.label}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{result.description}</div>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
-        </section>
-      </ScrollAnimation>
 
-      {/* Testimonials Section */}
-      <Testimonials testimonials={testimonials} />
+          {/* Solutions Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent mb-4">
+                Our Content Solutions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Strategic content creation that drives engagement and conversions
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {solutions.map((solution, index) => (
+                <Card
+                  key={index}
+                  className="glass-card border-green-200/20 hover:border-green-300/30 transition-all hover:scale-105"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-muted-foreground">{solution}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
 
-      {/* FAQ Section */}
-      <FAQ title="Content Marketing FAQ" subtitle="Common questions about our content marketing services" faqs={faqs} />
+          {/* Benefits Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+                Benefits You'll Experience
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="glass-card border-purple-200/20 hover:scale-105 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-4 w-4 text-white" />
+                      </div>
+                      <p className="font-medium">{benefit}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQs Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="glass-card hover:scale-102 transition-transform">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      {/* Case Study Section */}
+      <Section glass className="py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Case Study: B2B SaaS Content Success</h2>
+            <p className="text-lg text-muted-foreground">
+              A B2B SaaS client increased organic traffic by 400% and generated 250% more qualified leads through
+              strategic content marketing
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div>
+              <Image
+                src="/images/content-marketing-blog.webp"
+                alt="Content marketing strategy with blog and social media"
+                width={500}
+                height={400}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Challenge</h3>
+                <p className="text-muted-foreground">
+                  Low brand awareness and difficulty generating qualified leads in a competitive B2B software market.
+                </p>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Solution</h3>
+                <p className="text-muted-foreground">
+                  Developed a comprehensive content strategy including thought leadership articles, case studies, and
+                  educational resources.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
+              <CardHeader>
+                <FileText className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-green-500">400%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Traffic Increase</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
+              <CardHeader>
+                <Target className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-blue-500">250%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Lead Generation</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
+              <CardHeader>
+                <Users className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-purple-500">85%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Engagement Rate</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
+              <CardHeader>
+                <Award className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-orange-500">6 Months</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">To Results</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </Section>
 
       {/* CTA Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-[#8B5CF6]/10 via-[#F472B6]/10 to-[#00F5FF]/10"></div>
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Ready to</span>{" "}
-                  <span className="bg-gradient-to-r from-[#8B5CF6] to-[#F472B6] bg-clip-text text-transparent">
-                    Create Content
-                  </span>
-                  <br />
-                  <span className="text-gray-900 dark:text-white">That Converts?</span>
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Let's develop a content marketing strategy that attracts your ideal customers and drives business
-                  growth
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="calendly-button"
-                  >
-                    Get Content Strategy
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-[#8B5CF6] text-[#8B5CF6] hover:bg-[#8B5CF6] hover:text-white rounded-full bg-transparent"
-                  >
-                    View Content Samples
-                  </Button>
-                </div>
-              </div>
-            </div>
+      <Section glass>
+        <div className="text-center space-y-6 py-12">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-orange-600 to-pink-600 bg-clip-text text-transparent">
+            Ready to Create Content That Converts?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Let's develop a content strategy that attracts your ideal customers and drives business growth.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-orange-600 to-pink-600 hover:from-orange-700 hover:to-pink-700 hover:scale-105 transition-transform"
+            >
+              Get Content Strategy Session
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button size="lg" variant="outline" className="hover:scale-105 transition-transform bg-transparent">
+              View Content Portfolio
+            </Button>
           </div>
-        </section>
-      </ScrollAnimation>
+        </div>
+      </Section>
     </div>
   )
 }

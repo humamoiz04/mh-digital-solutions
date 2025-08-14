@@ -1,406 +1,265 @@
-"use client"
-
+import { Section } from "@/components/Section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
-import FAQ from "@/components/faq"
-import { ArrowRight, Bot, Zap, Target, TrendingUp, Users, Building, Briefcase } from "lucide-react"
-import Link from "next/link"
+import { Target, Award, CheckCircle, ArrowRight, Bot, DollarSign, Clock } from "lucide-react"
 import Image from "next/image"
 
-const AIAutomationPage = () => {
-  const aiAutomationFAQs = [
+export default function AiAutomationPage() {
+  const problems = [
+    "Manual processes consuming valuable time and resources",
+    "Human errors affecting quality and consistency",
+    "Difficulty scaling operations without proportional cost increases",
+    "Lack of data-driven insights for strategic decision making",
+    "Repetitive tasks preventing focus on high-value activities",
+  ]
+
+  const solutions = [
+    "Intelligent process automation systems",
+    "AI-powered quality control and monitoring",
+    "Predictive analytics for business insights",
+    "Custom AI solutions for specific workflows",
+    "Machine learning models for optimization",
+  ]
+
+  const benefits = [
+    "50% reduction in operational costs",
+    "95% improvement in quality accuracy",
+    "24/7 automated operations",
+    "Scalable growth without linear cost increases",
+    "Enhanced decision-making capabilities",
+    "Improved employee productivity and satisfaction",
+  ]
+
+  const faqs = [
     {
-      question: "Will AI replace digital marketing jobs or agencies?",
+      question: "How long does AI implementation take?",
       answer:
-        "No, AI will not replace digital marketing jobs or agencies. Instead, it serves as a powerful tool that enhances human expertise, streamlines repetitive processes, and opens new opportunities for innovation. We leverage AI to automate mundane tasks, analyze vast datasets, and optimize campaigns, allowing our human experts to focus on high-level strategy, creativity, and client relationships. This positions our agency at the forefront of AI adoption, delivering superior results.",
+        "Implementation typically takes 3-6 months depending on complexity, with initial results visible within the first month.",
     },
     {
-      question: "What kind of business processes can AI automate?",
+      question: "Will AI replace our employees?",
       answer:
-        "AI can automate a wide range of business processes, including customer service (via chatbots and virtual assistants), data entry and processing, lead qualification, personalized email marketing, social media scheduling and content generation (for internal use), ad campaign optimization, predictive analytics for sales forecasting, and inventory management. These automations lead to increased efficiency, reduced costs, and improved accuracy.",
-    },
-    {
-      question: "Is AI automation affordable for small and medium-sized businesses?",
-      answer:
-        "Yes, AI automation is increasingly affordable and accessible for small and medium-sized businesses (SMBs). Modern AI tools and platforms offer scalable solutions that can be implemented without a massive upfront investment. We design our AI automation packages specifically with SMB budgets in mind, focusing on solutions that deliver a rapid return on investment through significant cost savings and efficiency gains.",
-    },
-    {
-      question: "How long does it take to implement an AI solution?",
-      answer:
-        "The implementation timeline for an AI solution varies depending on its complexity and integration requirements. Basic AI automations, such as a simple chatbot or email sequence, can be deployed within 2-4 weeks. More advanced workflows and integrations might take 6-8 weeks, while custom-developed AI solutions could range from 8-12 weeks. We provide a detailed project timeline and regular updates throughout the development and implementation process.",
+        "Our AI solutions are designed to augment human capabilities, not replace them. We focus on automating repetitive tasks so your team can focus on higher-value work.",
     },
   ]
 
   return (
-    <div className="min-h-screen relative">
-      {/* Hero Section */}
-      <section className="relative py-20 lg:py-32 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-blue-900/20 to-indigo-900/20" />
+    <div className="relative z-10">
+      <Section glass>
+        <div className="space-y-16">
+          {/* Hero Section */}
+          <div className="text-center space-y-6">
+            <Badge variant="secondary" className="mb-4">
+              <Bot className="h-4 w-4 mr-2" />
+              AI & Automation
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+              AI & Automation Solutions
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Transform your business operations with intelligent automation and AI-powered solutions that reduce costs,
+              improve efficiency, and scale your operations.
+            </p>
+          </div>
 
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Client Problems */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-4">
+                Common Automation Challenges
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Problems that prevent businesses from achieving operational excellence
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {problems.map((problem, index) => (
+                <Card key={index} className="glass-card border-red-200/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0" />
+                      <p className="text-muted-foreground">{problem}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Our Solutions */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent mb-4">
+                Our AI Solutions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                We create intelligent automation systems combining AI, machine learning, and process optimization
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {solutions.map((solution, index) => (
+                <Card
+                  key={index}
+                  className="glass-card border-green-200/20 hover:border-green-300/30 transition-colors"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-muted-foreground">{solution}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Benefits */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+                Benefits You'll Experience
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="glass-card border-purple-200/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-4 w-4 text-white" />
+                      </div>
+                      <p className="font-medium">{benefit}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section glass className="py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Case Study: Manufacturing Automation Success</h2>
+            <p className="text-lg text-muted-foreground">
+              A manufacturing client achieved $2M annual savings and 95% quality accuracy through AI automation
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div>
+              <Image
+                src="/images/ai-automation-illustration.webp"
+                alt="AI automation in manufacturing process"
+                width={500}
+                height={400}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="space-y-6">
               <div>
-                <Badge className="mb-6 bg-gradient-to-r from-purple-600 to-blue-600 text-white border-0">
-                  <Bot className="w-4 h-4 mr-2" />
-                  AI Automation Solutions
-                </Badge>
-
-                <h1 className="text-4xl lg:text-6xl font-bold text-white mb-6 leading-tight">
-                  Transform Your Business with
-                  <span className="bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 bg-clip-text text-transparent">
-                    {" "}
-                    AI Automation
-                  </span>
-                </h1>
-
-                <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                  Unlock the power of artificial intelligence to streamline operations, reduce costs, and scale your
-                  business efficiently. Our AI automation solutions work 24/7 to boost productivity and drive growth.
+                <h3 className="text-xl font-semibold text-foreground mb-2">Challenge</h3>
+                <p className="text-muted-foreground">
+                  A manufacturing company struggled with quality control issues, manual inspection processes, and high
+                  operational costs affecting their competitiveness.
                 </p>
-
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <Link href="/contact">
-                    <Button
-                      size="lg"
-                      className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:opacity-90 text-white border-0"
-                    >
-                      Start Your AI Journey
-                      <ArrowRight className="ml-2 h-5 w-5" />
-                    </Button>
-                  </Link>
-                  <Link href="/case-studies">
-                    <Button
-                      size="lg"
-                      variant="outline"
-                      className="glass border-white/30 text-white hover:bg-white/10 bg-transparent"
-                    >
-                      View Success Stories
-                    </Button>
-                  </Link>
-                </div>
               </div>
-
-              <div className="relative">
-                <div className="glass rounded-3xl p-8 backdrop-blur-xl border border-white/20">
-                  <Image
-                    src="/images/ai-automation-optimized.webp"
-                    alt="AI Automation Dashboard"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl w-full h-auto"
-                    priority
-                  />
-                </div>
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Solution</h3>
+                <p className="text-muted-foreground">
+                  We implemented AI-powered quality control systems, automated inspection processes, and predictive
+                  maintenance solutions to optimize their entire production line.
+                </p>
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Why AI Automation Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-pink-900/10" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-                Why AI Automation is Essential for Modern Business
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                In today's competitive landscape, businesses that leverage AI automation gain significant advantages in
-                efficiency, cost reduction, and scalability.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Zap className="w-8 h-8" />,
-                  title: "24/7 Operations",
-                  description:
-                    "AI systems work around the clock, handling tasks and customer inquiries even when your team is offline.",
-                },
-                {
-                  icon: <Target className="w-8 h-8" />,
-                  title: "Precision & Accuracy",
-                  description: "Eliminate human errors and ensure consistent, accurate execution of repetitive tasks.",
-                },
-                {
-                  icon: <TrendingUp className="w-8 h-8" />,
-                  title: "Scalable Growth",
-                  description: "Handle increased workload without proportional increases in staffing costs.",
-                },
-              ].map((benefit, index) => (
-                <div
-                  key={index}
-                  className="glass rounded-2xl p-8 backdrop-blur-xl border border-white/20 hover:border-white/40 transition-all duration-300 group hover:-translate-y-2"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {benefit.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{benefit.title}</h3>
-                  <p className="text-gray-300 leading-relaxed">{benefit.description}</p>
-                </div>
-              ))}
-            </div>
+          <div className="grid md:grid-cols-4 gap-6">
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <DollarSign className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-green-500">$2M</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Annual Savings</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Target className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-blue-500">95%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Quality Accuracy</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Clock className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-purple-500">80%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Time Reduction</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Award className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-orange-500">4 Months</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Implementation</p>
+              </CardContent>
+            </Card>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* AI Automation Process Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-purple-900/10 to-pink-900/10" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
-                Our AI Automation Implementation Process
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                We follow a proven methodology to ensure successful AI integration that delivers measurable results.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: "01",
-                  title: "Business Analysis",
-                  description: "Identify automation opportunities and assess current workflows",
-                },
-                {
-                  step: "02",
-                  title: "Solution Design",
-                  description: "Create custom AI solutions tailored to your specific needs",
-                },
-                {
-                  step: "03",
-                  title: "Implementation",
-                  description: "Deploy and integrate AI systems with your existing infrastructure",
-                },
-                {
-                  step: "04",
-                  title: "Optimization",
-                  description: "Monitor performance and continuously improve AI effectiveness",
-                },
-              ].map((step, index) => (
-                <div key={index} className="text-center group">
-                  <div className="w-20 h-20 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {step.step}
-                  </div>
-                  <h3 className="text-xl font-bold text-white mb-4">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
-                </div>
-              ))}
-            </div>
+      <Section glass>
+        <div className="text-center space-y-6 py-12">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Ready to Transform Your Business with AI?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Let's discuss how AI automation can reduce your costs, improve quality, and scale your operations.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            >
+              Start AI Transformation
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button size="lg" variant="outline">
+              View Our Portfolio
+            </Button>
           </div>
         </div>
-      </section>
-
-      {/* AI Solutions Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/10 via-blue-900/10 to-indigo-900/10" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">Key AI Automation Solutions</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive AI tools designed to transform every aspect of your business operations.
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: "Intelligent Chatbots",
-                  description: "24/7 customer support with natural language processing",
-                  features: ["Multi-language support", "Lead qualification", "Order processing", "FAQ automation"],
-                },
-                {
-                  title: "Process Automation",
-                  description: "Streamline repetitive tasks and workflows",
-                  features: [
-                    "Data entry automation",
-                    "Document processing",
-                    "Inventory management",
-                    "Report generation",
-                  ],
-                },
-                {
-                  title: "Predictive Analytics",
-                  description: "AI-powered insights for better decision making",
-                  features: [
-                    "Sales forecasting",
-                    "Customer behavior analysis",
-                    "Market trend prediction",
-                    "Risk assessment",
-                  ],
-                },
-              ].map((solution, index) => (
-                <div
-                  key={index}
-                  className="glass rounded-2xl p-8 backdrop-blur-xl border border-white/20 hover:border-white/40 transition-all duration-300 group hover:-translate-y-2"
-                >
-                  <h3 className="text-2xl font-bold text-white mb-4">{solution.title}</h3>
-                  <p className="text-gray-300 mb-6">{solution.description}</p>
-                  <ul className="space-y-2">
-                    {solution.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Business Size Solutions */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-pink-900/10 via-purple-900/10 to-blue-900/10" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">AI Automation for Every Business Size</h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Scalable AI solutions designed to meet the unique needs and budgets of businesses at every stage.
-              </p>
-            </div>
-
-            <div className="grid lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: <Users className="w-8 h-8" />,
-                  title: "Small Businesses",
-                  description: "Cost-effective AI tools to compete with larger companies",
-                  features: [
-                    "Basic chatbot setup",
-                    "Email automation",
-                    "Social media scheduling",
-                    "Simple workflow automation",
-                  ],
-                  price: "Starting at $497/month",
-                },
-                {
-                  icon: <Building className="w-8 h-8" />,
-                  title: "Medium Enterprises",
-                  description: "Advanced AI systems for growing operations",
-                  features: [
-                    "Custom AI solutions",
-                    "CRM integration",
-                    "Advanced analytics",
-                    "Multi-department automation",
-                  ],
-                  price: "Starting at $1,497/month",
-                },
-                {
-                  icon: <Briefcase className="w-8 h-8" />,
-                  title: "Large Corporations",
-                  description: "Enterprise-grade AI infrastructure and support",
-                  features: [
-                    "Custom AI development",
-                    "Enterprise integrations",
-                    "Dedicated support",
-                    "Advanced security",
-                  ],
-                  price: "Custom pricing",
-                },
-              ].map((tier, index) => (
-                <div
-                  key={index}
-                  className="glass rounded-2xl p-8 backdrop-blur-xl border border-white/20 hover:border-white/40 transition-all duration-300 group hover:-translate-y-2"
-                >
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform duration-300">
-                    {tier.icon}
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-4">{tier.title}</h3>
-                  <p className="text-gray-300 mb-6">{tier.description}</p>
-                  <ul className="space-y-2 mb-6">
-                    {tier.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-300">
-                        <div className="w-2 h-2 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full mr-3" />
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                  <div className="text-2xl font-bold text-white mb-6">{tier.price}</div>
-                  <Link href="/contact">
-                    <Button className="w-full bg-gradient-to-r from-purple-600 to-blue-600 hover:opacity-90 text-white border-0">
-                      Get Started
-                    </Button>
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/10 via-purple-900/10 to-pink-900/10" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">Frequently Asked Questions</h2>
-              <p className="text-xl text-gray-300">
-                Get answers to common questions about AI automation implementation and benefits.
-              </p>
-            </div>
-
-            <FAQ faqs={aiAutomationFAQs} />
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 relative">
-        <div className="absolute inset-0 bg-gradient-to-br from-purple-900/20 via-pink-900/20 to-orange-900/20" />
-
-        <div className="container mx-auto px-6 relative z-10">
-          <div className="max-w-4xl mx-auto text-center">
-            <div className="glass rounded-3xl p-12 backdrop-blur-xl border border-white/20">
-              <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">Ready to Automate Your Success?</h2>
-              <p className="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
-                Join hundreds of businesses that have transformed their operations with our AI automation solutions.
-                Start your journey today.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:opacity-90 text-white border-0"
-                  >
-                    Start Your AI Transformation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </Button>
-                </Link>
-                <Link href="/case-studies">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="glass border-white/30 text-white hover:bg-white/10 bg-transparent"
-                  >
-                    View Success Stories
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      </Section>
     </div>
   )
 }
-
-export default AIAutomationPage

@@ -1,378 +1,166 @@
+import { CardDescription } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { ArrowLeft, Calendar, User, Clock, Share2, BookOpen, ArrowRight } from "lucide-react"
-import Link from "next/link"
-import ScrollAnimation from "@/components/scroll-animation"
+import { Section } from "@/components/Section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
-import type { Metadata } from "next"
+import Link from "next/link"
+import { ArrowLeft } from "lucide-react"
 
-interface BlogPostPageProps {
-  params: {
-    slug: string
-  }
-}
-
-export async function generateMetadata({ params }: BlogPostPageProps): Promise<Metadata> {
-  // In a real app, you'd fetch the blog post data here
-  return {
-    title: "How AI Automation is Revolutionizing Small Business Operations in 2024 | MH Digital Solutions",
-    description:
-      "Discover the latest AI automation trends that are helping small businesses reduce costs by 70% while improving efficiency and customer satisfaction. Expert insights and real case studies.",
-    keywords:
-      "AI automation, small business, cost reduction, efficiency, business operations, automation tools, digital transformation",
-    alternates: {
-      canonical: `https://www.mhdigitalsolution.com/blog/${params.slug}`,
-    },
-    openGraph: {
-      title: "How AI Automation is Revolutionizing Small Business Operations in 2024",
-      description:
-        "Discover how AI automation is helping small businesses reduce costs by 70% while improving efficiency.",
-      images: ["/images/ai-automation.webp"],
-      type: "article",
-    },
-  }
-}
-
-export default function BlogPostPage({ params }: BlogPostPageProps) {
-  // In a real app, you'd fetch this data based on the slug
-  const post = {
-    title: "How AI Automation is Revolutionizing Small Business Operations in 2024",
-    author: "Mohammad Hassan",
-    date: "December 15, 2024",
-    readTime: "8 min read",
-    category: "AI & Automation",
-    image: "/images/ai-automation.webp",
+// Placeholder for blog post data
+const blogPosts = [
+  {
+    slug: "ai-automation-future",
+    title: "AI & Automation: The Future of Business Efficiency",
+    date: "July 20, 2024",
+    author: "MH Digital Team",
+    image: "/images/blog-ai-automation.webp",
     content: `
-      <p>In today's rapidly evolving business landscape, small businesses are discovering that AI automation isn't just for tech giants anymore. With costs decreasing and accessibility increasing, AI-powered solutions are becoming essential tools for competitive advantage.</p>
-
-      <h2>The Current State of AI Automation for Small Businesses</h2>
-      <p>Recent studies show that <strong>70% of small businesses that implement AI automation see significant cost reductions within the first six months</strong>. According to <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-state-of-ai-in-2023" target="_blank" rel="noopener noreferrer">McKinsey's State of AI 2023 report<span class="sr-only"> (opens in new tab)</span></a>, these aren't just incremental improvements – we're talking about transformative changes that fundamentally alter how businesses operate.</p>
-
-      <p>At <a href="/services/ai-automation">MH Digital Solutions, our AI automation services</a> have helped over 200 businesses implement these game-changing technologies, resulting in an average of 60% reduction in manual tasks and 300% improvement in operational efficiency.</p>
-
-      <h2>Key Areas Where AI is Making an Impact</h2>
-      
-      <h3>1. Customer Service Automation</h3>
-      <p>AI chatbots and virtual assistants are handling up to 80% of routine customer inquiries, freeing up human staff for more complex tasks. This not only reduces labor costs but also provides 24/7 customer support. Our <a href="/services/digital-marketing">comprehensive digital marketing strategies</a> often include AI-powered customer service solutions that integrate seamlessly with your existing workflows.</p>
-
-      <h3>2. Process Optimization</h3>
-      <p>Machine learning algorithms are identifying inefficiencies in business processes that humans might miss, leading to streamlined operations and reduced waste. For businesses looking to optimize their operations, our <a href="/services/business-consulting">business consulting services</a> include process automation assessments.</p>
-
-      <h3>3. Predictive Analytics</h3>
-      <p>Small businesses are now using AI to predict customer behavior, inventory needs, and market trends with remarkable accuracy. According to <a href="https://www.salesforce.com/resources/articles/predictive-analytics/" target="_blank" rel="noopener noreferrer">Salesforce's research on predictive analytics<span class="sr-only"> (opens in new tab)</span></a>, businesses using AI-driven insights see 73% faster decision-making processes.</p>
-
-      <h2>Real-World Success Stories</h2>
-      <p>Consider the case of a small manufacturing company in Huntsville, AL, that implemented AI-powered quality control systems through our automation services. They reduced defect rates by 85% and cut inspection time in half, resulting in annual savings of over $200,000.</p>
-
-      <p>Another client, a healthcare practice with multiple locations, implemented our AI-powered chatbot solution and saw an 80% reduction in routine phone inquiries, allowing their staff to focus on patient care rather than appointment scheduling.</p>
-
-      <h2>Getting Started with AI Automation</h2>
-      <p>The key to successful AI implementation is starting small and scaling gradually. Begin with one process, measure results, and expand from there. Most importantly, choose solutions that integrate well with your existing systems.</p>
-
-      <p>For businesses ready to explore AI automation, we recommend starting with a comprehensive audit of your current processes. Our team can help identify the best opportunities for automation in your specific industry and business model.</p>
-
-      <h2>The Future of AI in Small Business</h2>
-      <p>Looking ahead, <a href="https://www.gartner.com/en/newsroom/press-releases/2023-10-11-gartner-says-by-2026-organizations-that-operationalize-ai-transparency-trust-and-security-will-see-50-percent-better-business-outcomes" target="_blank" rel="noopener noreferrer">Gartner predicts<span class="sr-only"> (opens in new tab)</span></a> that by 2026, organizations that operationalize AI will see 50% better business outcomes. This isn't just about efficiency – it's about survival in an increasingly competitive marketplace.</p>
-
-      <h2>Conclusion</h2>
-      <p>AI automation is no longer a luxury for small businesses – it's becoming a necessity for survival in an increasingly competitive marketplace. The businesses that embrace these technologies now will have a significant advantage over those that wait.</p>
-
-      <p>Ready to explore how AI automation can transform your business? <a href="/services/ai-automation">Learn more about our AI automation services</a> or <a href="https://calendly.com/mhdigitalsolutionsus" target="_blank" rel="noopener noreferrer">schedule a free consultation</a> to discuss your specific needs.</p>
+      <p>Artificial Intelligence (AI) and automation are rapidly transforming the business landscape, offering unprecedented opportunities for efficiency, innovation, and growth. From automating repetitive tasks to providing deep insights from vast datasets, AI is no longer a futuristic concept but a present-day necessity for competitive businesses.</p>
+      <h3>Streamlining Operations with AI</h3>
+      <p>One of the most significant impacts of AI and automation is in streamlining operational workflows. AI-powered tools can handle tasks like data entry, customer support, and inventory management, freeing up human employees to focus on more strategic and creative endeavors. This not only boosts productivity but also reduces the likelihood of human error.</p>
+      <h3>Enhanced Decision-Making</h3>
+      <p>AI's ability to process and analyze large volumes of data at incredible speeds provides businesses with actionable insights that were previously unattainable. Predictive analytics, powered by AI, can forecast market trends, customer behavior, and potential risks, enabling more informed and proactive decision-making.</p>
+      <h3>Personalized Customer Experiences</h3>
+      <p>Automation in customer relationship management (CRM) and marketing allows businesses to deliver highly personalized experiences to their clients. AI-driven chatbots provide instant support, while automated email campaigns can be tailored to individual customer preferences, leading to increased satisfaction and loyalty.</p>
+      <h3>Challenges and Considerations</h3>
+      <p>While the benefits are clear, implementing AI and automation also comes with challenges. Businesses need to invest in the right technology, ensure data privacy and security, and train their workforce to adapt to new tools and processes. Ethical considerations surrounding AI's use also need careful navigation.</p>
+      <h3>The Road Ahead</h3>
+      <p>The future of business is undeniably intertwined with AI and automation. Companies that embrace these technologies will be better positioned to innovate, scale, and maintain a competitive edge. Continuous learning and adaptation will be key to harnessing the full potential of AI for long-term success.</p>
     `,
-    tags: ["AI Automation", "Small Business", "Cost Reduction", "Efficiency", "Business Growth"],
-  }
+  },
+  {
+    slug: "seo-strategy-2024",
+    title: "SEO Strategy in 2024: What You Need to Know",
+    date: "July 15, 2024",
+    author: "MH Digital Team",
+    image: "/images/blog-seo-strategy.webp",
+    content: `
+      <p>Search Engine Optimization (SEO) continues to be a cornerstone of digital marketing, but its landscape is constantly evolving. In 2024, staying ahead requires understanding the latest trends and adapting your strategies to meet Google's ever-refining algorithms and user expectations.</p>
+      <h3>Core Web Vitals and User Experience</h3>
+      <p>Google's emphasis on Core Web Vitals remains paramount. Page loading speed, interactivity, and visual stability are critical ranking factors. Websites that offer a superior user experience (UX) are more likely to rank higher, making technical SEO and UX design inseparable.</p>
+      <h3>AI and Generative Search</h3>
+      <p>The rise of AI, particularly generative AI in search (like Google's SGE), is changing how users find information. While traditional SEO still matters, optimizing for conversational queries and providing comprehensive, authoritative content that answers complex questions will become increasingly important.</p>
+      <h3>E-A-T Principles (Expertise, Authoritativeness, Trustworthiness)</h3>
+      <p>E-A-T is more crucial than ever, especially for YMYL (Your Money Your Life) topics. Google prioritizes content from credible sources. Businesses must demonstrate their expertise, build authority through quality backlinks and mentions, and foster trust with their audience.</p>
+      <h3>Video SEO and Visual Search</h3>
+      <p>Video content continues its dominance. Optimizing videos for search (titles, descriptions, tags, transcripts) and leveraging platforms like YouTube is essential. Visual search, though still nascent, is also growing, making image optimization and structured data for images more relevant.</p>
+      <h3>Local SEO and Hyper-Personalization</h3>
+      <p>For businesses with a physical presence, local SEO is vital. Optimizing Google My Business profiles, local citations, and reviews helps capture nearby customers. Hyper-personalization, driven by user data and AI, will allow for more targeted content delivery.</p>
+      <h3>Conclusion</h3>
+      <p>SEO in 2024 is about more than just keywords; it's about delivering exceptional value, user experience, and trustworthiness. A holistic approach that integrates technical SEO, content strategy, and user-centric design will be key to long-term success.</p>
+    `,
+  },
+  {
+    slug: "web-development-trends",
+    title: "Top Web Development Trends to Watch in 2024",
+    date: "July 10, 2024",
+    author: "MH Digital Team",
+    image: "/images/blog-web-dev-trends.webp",
+    content: `
+      <p>The web development landscape is in a constant state of flux, with new technologies and methodologies emerging regularly. In 2024, several key trends are shaping how websites and web applications are built, focusing on performance, user experience, and developer efficiency.</p>
+      <h3>Server-Side Rendering (SSR) and Static Site Generation (SSG)</h3>
+      <p>Frameworks like Next.js and Astro continue to popularize SSR and SSG. These approaches offer significant performance benefits, improved SEO, and better user experiences by pre-rendering content on the server or at build time, reducing client-side load.</p>
+      <h3>Progressive Web Apps (PWAs)</h3>
+      <p>PWAs combine the best of web and mobile apps, offering offline capabilities, push notifications, and fast loading times. They provide an app-like experience directly from the browser, reducing the need for native app development in many cases.</p>
+      <h3>Headless CMS and API-First Development</h3>
+      <p>The decoupling of the frontend and backend, facilitated by headless CMS solutions (like Strapi, Contentful, Sanity) and API-first development, provides greater flexibility and scalability. Developers can use their preferred frontend frameworks while content creators manage content independently.</p>
+      <h3>WebAssembly (Wasm)</h3>
+      <p>WebAssembly is gaining traction for running high-performance applications directly in the browser. It enables developers to write code in languages like C++, Rust, or Go and compile it to Wasm, bringing near-native performance to complex web applications, games, and heavy computations.</p>
+      <h3>Low-Code/No-Code Platforms</h3>
+      <p>While not for every project, low-code/no-code platforms are empowering non-developers and accelerating development for simpler applications. Tools like Webflow, Bubble, and AppGyver allow for rapid prototyping and deployment, democratizing web creation.</p>
+      <h3>Cybersecurity and Privacy by Design</h3>
+      <p>With increasing cyber threats and stricter data privacy regulations (e.g., GDPR, CCPA), security and privacy are no longer afterthoughts. Developers are adopting a "privacy by design" approach, integrating robust security measures from the initial stages of development.</p>
+      <h3>Conclusion</h3>
+      <p>The trends in web development for 2024 point towards a more performant, secure, and user-centric web. Embracing these advancements will be crucial for businesses looking to build future-proof digital experiences.</p>
+    `,
+  },
+  {
+    slug: "ui-ux-power-conversion",
+    title: "The Power of UI/UX Design in Driving Conversions",
+    date: "July 05, 2024",
+    author: "MH Digital Team",
+    image: "/images/blog-ui-ux-power.webp",
+    content: `
+      <p>In the competitive digital landscape, a visually appealing and intuitive user interface (UI) combined with a seamless user experience (UX) is no longer a luxury—it's a necessity for driving conversions. UI/UX design plays a pivotal role in how users interact with your digital product and ultimately, whether they complete a desired action.</p>
+      <h3>First Impressions Matter</h3>
+      <p>Users form an opinion about your website or app within seconds. A clean, modern UI creates a positive first impression, signaling professionalism and trustworthiness. Conversely, a cluttered or outdated interface can deter users immediately.</p>
+      <h3>Intuitive Navigation Reduces Friction</h3>
+      <p>Good UX ensures that users can easily find what they're looking for and navigate through your product without confusion. Clear calls-to-action, logical information architecture, and consistent design patterns reduce friction in the user journey, making it easier for them to convert, whether it's making a purchase, signing up for a newsletter, or filling out a form.</p>
+      <h3>Building Trust and Credibility</h3>
+      <p>A well-designed UI/UX instills confidence. When a website feels professional and functions smoothly, users are more likely to trust the brand. This trust is crucial for conversions, especially in e-commerce or service-based businesses where users are asked to provide personal information or make financial transactions.</p>
+      <h3>Personalization and Engagement</h3>
+      <p>Modern UI/UX design incorporates elements of personalization, adapting to user preferences and behaviors. This tailored experience can significantly increase engagement, making users feel understood and valued, which in turn encourages them to interact more and convert.</p>
+      <h3>Mobile-First Approach</h3>
+      <p>With the majority of internet traffic coming from mobile devices, a responsive and mobile-first UI/UX design is non-negotiable. A poor mobile experience can lead to high bounce rates and lost conversions. Designs optimized for smaller screens ensure accessibility and usability for all users.</p>
+      <h3>Conclusion</h3>
+      <p>Investing in robust UI/UX design is an investment in your conversion rates. By prioritizing user needs, creating intuitive interfaces, and fostering trust, businesses can significantly improve their digital product's performance and achieve their conversion goals.</p>
+    `,
+  },
+  {
+    slug: "cloud-solutions-business",
+    title: "Cloud Solutions: Powering Business Agility and Scalability",
+    date: "June 28, 2024",
+    author: "MH Digital Team",
+    image: "/images/blog-cloud-solutions.webp",
+    content: `
+      <p>Cloud computing has revolutionized how businesses operate, offering unparalleled agility, scalability, and cost-efficiency. Moving beyond traditional on-premise infrastructure, cloud solutions provide a flexible and robust environment for applications, data storage, and collaborative tools.</p>
+      <h3>Enhanced Agility and Flexibility</h3>
+      <p>One of the primary benefits of cloud solutions is the ability to rapidly deploy and scale resources up or down based on demand. This agility allows businesses to quickly respond to market changes, launch new products, and adapt to fluctuating workloads without significant upfront investment in hardware.</p>
+      <h3>Cost Efficiency and Reduced Overhead</h3>
+      <p>Cloud computing shifts IT expenditure from capital expenditure (CapEx) to operational expenditure (OpEx). Businesses pay only for the resources they consume, eliminating the need for large investments in servers, data centers, and their maintenance. This leads to significant cost savings and reduced IT overhead.</p>
+      <h3>Improved Collaboration and Accessibility</h3>
+      <p>Cloud-based applications and storage facilitate seamless collaboration among teams, regardless of their geographical location. Employees can access files and tools from anywhere, at any time, fostering a more connected and productive work environment. This is particularly beneficial for remote and hybrid work models.</p>
+      <h3>Robust Security and Disaster Recovery</h3>
+      <p>Leading cloud providers invest heavily in advanced security measures, often surpassing what individual businesses can afford. Cloud solutions also offer robust disaster recovery capabilities, ensuring business continuity even in the event of unforeseen disruptions, with data backed up and recoverable.</p>
+      <h3>Innovation and Competitive Advantage</h3>
+      <p>By offloading infrastructure management to cloud providers, businesses can focus their resources on innovation and core competencies. Access to cutting-edge cloud services like AI, machine learning, and big data analytics provides a competitive edge, enabling new product development and enhanced customer experiences.</p>
+      <h3>Conclusion</h3>
+      <p>Cloud solutions are no longer just an option but a strategic imperative for businesses aiming for agility, scalability, and innovation. Embracing the cloud empowers organizations to optimize operations, reduce costs, and stay competitive in a rapidly evolving digital world.</p>
+    `,
+  },
+]
 
-  const relatedPosts = [
-    {
-      id: "seo-strategies-2024",
-      title: "10 SEO Strategies That Will Dominate Search Rankings in 2024",
-      image: "/images/digital-marketing.webp",
-      category: "SEO",
-      excerpt: "Discover the latest SEO techniques that are driving organic traffic growth for businesses worldwide.",
-    },
-    {
-      id: "social-media-roi",
-      title: "Measuring Social Media ROI: Advanced Analytics for Business Growth",
-      image: "/images/digital-marketing-team.png",
-      category: "Social Media",
-      excerpt: "Learn how to track and measure the real impact of your social media marketing efforts.",
-    },
-  ]
+export default function BlogPostPage({ params }: { params: { slug: string } }) {
+  const post = blogPosts.find((p) => p.slug === params.slug)
+
+  if (!post) {
+    return (
+      <Section className="py-16 md:py-24 text-center">
+        <h1 className="text-4xl font-bold text-foreground">Blog Post Not Found</h1>
+        <p className="text-lg text-muted-foreground mt-4">The blog post you are looking for does not exist.</p>
+        <Link href="/blog">
+          <Button className="mt-8 gradient-button">Back to Blog</Button>
+        </Link>
+      </Section>
+    )
+  }
 
   return (
-    <div className="min-h-screen pt-16 bg-transparent">
-      {/* Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BlogPosting",
-            headline: post.title,
-            author: {
-              "@type": "Person",
-              name: post.author,
-            },
-            datePublished: "2024-12-15",
-            dateModified: "2024-12-15",
-            image: `https://www.mhdigitalsolution.com${post.image}`,
-            publisher: {
-              "@type": "Organization",
-              name: "MH Digital Solutions",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://www.mhdigitalsolution.com/images/mh-logo.webp",
-              },
-            },
-            mainEntityOfPage: {
-              "@type": "WebPage",
-              "@id": `https://www.mhdigitalsolution.com/blog/${params.slug}`,
-            },
-          }),
-        }}
-      />
-
-      {/* Hero Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <Link
-                href="/blog"
-                className="inline-flex items-center text-blue-600 hover:text-blue-700 mb-8"
-                aria-label="Return to blog homepage"
-              >
-                <ArrowLeft className="h-4 w-4 mr-2" />
-                Back to Blog
-              </Link>
-
-              <Badge className="mb-4 bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 border-0">
-                {post.category}
-              </Badge>
-
-              <h1 className="text-4xl md:text-5xl font-bold mb-6 text-gray-900 dark:text-white">{post.title}</h1>
-
-              <div className="flex items-center space-x-6 text-sm text-gray-500 dark:text-gray-400 mb-8">
-                <div className="flex items-center">
-                  <User className="h-4 w-4 mr-1" />
-                  {post.author}
-                </div>
-                <div className="flex items-center">
-                  <Calendar className="h-4 w-4 mr-1" />
-                  {post.date}
-                </div>
-                <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-1" />
-                  {post.readTime}
-                </div>
-              </div>
-
-              <div className="relative h-96 mb-8 rounded-2xl overflow-hidden">
-                <Image
-                  src={post.image || "/placeholder.svg"}
-                  alt="AI automation transforming small business operations with robotic process automation and machine learning"
-                  fill
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Article Content */}
-      <ScrollAnimation>
-        <section className="py-12 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <div className="grid lg:grid-cols-4 gap-12">
-                {/* Main Content */}
-                <div className="lg:col-span-3">
-                  <div className="glass p-8 rounded-2xl">
-                    <div
-                      className="prose prose-lg max-w-none dark:prose-invert prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline"
-                      dangerouslySetInnerHTML={{ __html: post.content }}
-                    />
-
-                    {/* Tags */}
-                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                      <h4 className="font-semibold mb-4 text-gray-900 dark:text-white">Tags:</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {post.tags.map((tag, index) => (
-                          <Badge key={index} variant="secondary">
-                            {tag}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Share */}
-                    <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
-                      <Button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white">
-                        <Share2 className="h-4 w-4 mr-2" />
-                        Share Article
-                      </Button>
-                    </div>
-
-                    {/* Call to Action */}
-                    <div className="mt-8 p-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg">
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                        Ready to Implement AI Automation in Your Business?
-                      </h3>
-                      <p className="text-gray-600 dark:text-gray-300 mb-4">
-                        Our AI automation experts can help you identify the best opportunities for automation in your
-                        business and implement solutions that deliver real ROI.
-                      </p>
-                      <div className="flex flex-col sm:flex-row gap-4">
-                        <a
-                          href="https://calendly.com/mhdigitalsolutionsus"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-semibold rounded-lg hover:opacity-90 transition-opacity"
-                        >
-                          Get Free AI Consultation
-                          <ArrowRight className="ml-2 h-4 w-4" />
-                        </a>
-                        <Link
-                          href="/services/ai-automation"
-                          className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white rounded-lg transition-all duration-300"
-                        >
-                          Learn About Our AI Services
-                        </Link>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Sidebar */}
-                <div className="lg:col-span-1">
-                  <div className="sticky top-24 space-y-8">
-                    {/* Table of Contents */}
-                    <Card className="glass border-0">
-                      <CardContent className="p-6">
-                        <h4 className="font-semibold mb-4 text-gray-900 dark:text-white flex items-center">
-                          <BookOpen className="h-4 w-4 mr-2" />
-                          Table of Contents
-                        </h4>
-                        <nav className="space-y-2 text-sm">
-                          <a
-                            href="#current-state"
-                            className="block text-gray-600 dark:text-gray-400 hover:text-blue-600"
-                          >
-                            Current State of AI Automation
-                          </a>
-                          <a href="#key-areas" className="block text-gray-600 dark:text-gray-400 hover:text-blue-600">
-                            Key Areas of Impact
-                          </a>
-                          <a
-                            href="#success-stories"
-                            className="block text-gray-600 dark:text-gray-400 hover:text-blue-600"
-                          >
-                            Real-World Success Stories
-                          </a>
-                          <a
-                            href="#getting-started"
-                            className="block text-gray-600 dark:text-gray-400 hover:text-blue-600"
-                          >
-                            Getting Started
-                          </a>
-                        </nav>
-                      </CardContent>
-                    </Card>
-
-                    {/* Author Bio */}
-                    <Card className="glass border-0">
-                      <CardContent className="p-6">
-                        <h4 className="font-semibold mb-4 text-gray-900 dark:text-white">About the Author</h4>
-                        <div className="flex items-center mb-3">
-                          <div className="w-12 h-12 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center mr-3">
-                            <span className="text-white font-bold">MH</span>
-                          </div>
-                          <div>
-                            <div className="font-medium text-gray-900 dark:text-white">{post.author}</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">CEO & Founder</div>
-                          </div>
-                        </div>
-                        <p className="text-sm text-gray-600 dark:text-gray-400">
-                          Digital marketing expert with 10+ years of experience helping businesses grow through
-                          innovative AI automation strategies and digital transformation.
-                        </p>
-                      </CardContent>
-                    </Card>
-
-                    {/* Related Services */}
-                    <Card className="glass border-0">
-                      <CardContent className="p-6">
-                        <h4 className="font-semibold mb-4 text-gray-900 dark:text-white">Related Services</h4>
-                        <div className="space-y-3">
-                          <Link
-                            href="/services/ai-automation"
-                            className="block p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors"
-                          >
-                            <div className="font-medium text-blue-600">AI & Automation</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">
-                              Streamline operations with AI
-                            </div>
-                          </Link>
-                          <Link
-                            href="/services/business-consulting"
-                            className="block p-3 rounded-lg bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors"
-                          >
-                            <div className="font-medium text-purple-600">Business Consulting</div>
-                            <div className="text-sm text-gray-600 dark:text-gray-400">Strategic business guidance</div>
-                          </Link>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Related Posts */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="max-w-4xl mx-auto">
-              <h3 className="text-3xl font-bold mb-8 text-gray-900 dark:text-white">Related Articles</h3>
-              <div className="grid md:grid-cols-2 gap-8">
-                {relatedPosts.map((relatedPost, index) => (
-                  <Card key={relatedPost.id} className="glass border-0 hover:scale-105 transition-all duration-300">
-                    <CardContent className="p-0">
-                      <div className="relative h-48 overflow-hidden rounded-t-lg">
-                        <Image
-                          src={relatedPost.image || "/placeholder.svg"}
-                          alt={`${relatedPost.title} - ${relatedPost.category} insights`}
-                          fill
-                          className="object-cover"
-                        />
-                        <Badge className="absolute top-4 left-4 bg-white/90 dark:bg-gray-800/90 text-gray-800 dark:text-gray-200 border-0">
-                          {relatedPost.category}
-                        </Badge>
-                      </div>
-                      <div className="p-6">
-                        <h4 className="text-lg font-bold mb-2 text-gray-900 dark:text-white">{relatedPost.title}</h4>
-                        <p className="text-gray-600 dark:text-gray-400 text-sm mb-4">{relatedPost.excerpt}</p>
-                        <Link href={`/blog/${relatedPost.id}`}>
-                          <Button variant="ghost" className="w-full justify-between">
-                            Read Article
-                            <ArrowLeft className="h-4 w-4 rotate-180" />
-                          </Button>
-                        </Link>
-                      </div>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-    </div>
+    <Section className="py-16 md:py-24">
+      <div className="max-w-3xl mx-auto">
+        <Link href="/blog" className="inline-flex items-center text-primary hover:underline mb-8">
+          <ArrowLeft className="h-4 w-4 mr-2" />
+          Back to Blog
+        </Link>
+        <Card className="glass-card p-6 md:p-8">
+          <Image
+            src={post.image || "/placeholder.svg"}
+            alt={post.title}
+            width={800}
+            height={450}
+            className="rounded-lg mb-6 w-full h-auto object-cover"
+          />
+          <CardHeader className="p-0 mb-4">
+            <CardTitle className="text-4xl font-bold text-foreground mb-2">{post.title}</CardTitle>
+            <CardDescription className="text-muted-foreground text-sm">
+              By {post.author} on {post.date}
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="prose prose-lg dark:prose-invert max-w-none p-0">
+            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+          </CardContent>
+        </Card>
+      </div>
+    </Section>
   )
 }

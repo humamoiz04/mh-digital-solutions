@@ -1,341 +1,373 @@
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
-import { ArrowRight, Target, BarChart3, Star } from "lucide-react"
-import ScrollAnimation from "@/components/scroll-animation"
-import Link from "next/link"
-import type { Metadata } from "next"
+"use client"
 
-export const metadata: Metadata = {
-  title: "Client Success Stories | Digital Marketing & Transformation Case Studies - MH Digital Solutions",
-  description:
-    "Explore how MH Digital Solutions delivered measurable results for businesses from local startups to large corporations through our expertise in digital marketing, web development, and AI.",
-  keywords:
-    "case studies, client success stories, digital marketing results, business transformation, ROI case studies, client testimonials",
-  alternates: {
-    canonical: "https://www.mhdigitalsolution.com/case-studies",
-  },
-}
+import { useState, useMemo } from "react"
+import { Button } from "@/components/ui/button"
+import { Section } from "@/components/Section"
+import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Badge } from "@/components/ui/badge"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, Search, ExternalLink, Award, TrendingUp } from "lucide-react"
 
 export default function CaseStudiesPage() {
+  const [searchTerm, setSearchTerm] = useState("")
+  const [selectedIndustry, setSelectedIndustry] = useState("All")
+
   const caseStudies = [
     {
-      id: "local-to-national-expansion",
+      slug: "premium-auto-detailing-expansion",
       title: "Premium Auto Detailing: Boosting Local Leads with Affordable SEO",
-      client: "Premium Auto Detailing",
       industry: "Automotive Services",
-      businessSize: "Small Business",
-      challenge:
+      image: "/images/system-update-flat.webp",
+      description:
         "Local detailing business with excellent service but limited to neighborhood customers, struggling with lead generation and online visibility.",
-      solution:
-        "Comprehensive digital marketing strategy including national SEO, Google Ads campaigns, social media marketing, and franchise-ready website development.",
-      results: {
+      results: "+1200% Leads, +800% Revenue",
+      metrics: {
         expansion: "50 States",
         leads: "+1200%",
         revenue: "+800%",
-        timeframe: "18 months",
       },
-      image: "/images/business-operations.jpeg",
-      color: "from-teal-600 to-blue-600",
-      testimonial: {
-        text: "MH Digital Solutions transformed our local detailing business into a national franchise opportunity. Their strategic approach to digital marketing helped us expand to all 50 states.",
-        author: "Mike Johnson",
-        position: "Owner",
-      },
+      featured: true,
     },
     {
-      id: "restaurant-digital-transformation",
+      slug: "mobile-app-success-story",
+      title: "Mobile App Development: From Concept to 1M+ Downloads",
+      industry: "Technology",
+      image: "/images/api-integration-developer.webp",
+      description:
+        "Startup with innovative app idea but no technical expertise, needed end-to-end mobile app development and launch strategy.",
+      results: "1M+ Downloads, $2M Revenue",
+      metrics: {
+        downloads: "1M+",
+        revenue: "$2M",
+        rating: "4.8★",
+      },
+      featured: true,
+    },
+    {
+      slug: "bella-vista-restaurant-transformation",
       title: "Bella Vista Restaurant: Increasing E-commerce Conversions by 220%",
-      client: "Bella Vista Restaurant",
       industry: "Food & Beverage",
-      businessSize: "Mid-Market Company",
-      challenge:
+      image: "/images/business-process-infographic.webp",
+      description:
         "Excellent food and ratings but no online presence, causing long wait times and frustrated customers leading to negative reviews.",
-      solution:
-        "Complete digital ecosystem including online reservation system, digital menu, order management, review management, and customer communication platform.",
-      results: {
+      results: "+220% Revenue, +95% Satisfaction",
+      metrics: {
         satisfaction: "+95%",
         efficiency: "+60%",
         revenue: "+220%",
-        timeframe: "10 weeks",
       },
-      image: "/images/digital-marketing-laptop.jpeg",
-      color: "from-amber-600 to-orange-600",
-      testimonial: {
-        text: "The digital transformation was incredible. We went from chaos to complete organization, and our customers love the new experience.",
-        author: "Maria Rodriguez",
-        position: "Restaurant Manager",
-      },
+      featured: true,
     },
     {
-      id: "enterprise-ai-automation",
+      slug: "techcorp-ai-automation",
       title: "TechCorp Industries: Streamlining Operations with Custom AI Automation",
-      client: "TechCorp Industries",
       industry: "Technology",
-      businessSize: "Enterprise Corporation",
-      challenge:
+      image: "/images/business-automation.webp",
+      description:
         "Manual processes across multiple departments causing inefficiencies, high operational costs, and scalability issues.",
-      solution:
-        "Custom AI automation platform with machine learning algorithms, process automation, and intelligent workflow management.",
-      results: {
+      results: "+75% Efficiency, -40% Costs",
+      metrics: {
         efficiency: "+75%",
         costs: "-40%",
         accuracy: "+99.2%",
-        timeframe: "6 months",
       },
-      image: "/images/ai-automation.webp",
-      color: "from-purple-600 to-pink-600",
-      testimonial: {
-        text: "The AI automation solution revolutionized our operations. We're now processing 3x more work with the same team size.",
-        author: "David Chen",
-        position: "CTO",
-      },
+      featured: true,
     },
     {
-      id: "regional-franchise-scaling",
+      slug: "fitlife-gyms-scaling",
       title: "FitLife Gyms: Scaling Digital Presence Across Multiple Locations",
-      client: "FitLife Gyms",
       industry: "Fitness & Wellness",
-      businessSize: "Regional Franchise",
-      challenge:
+      image: "/images/process-optimization.webp",
+      description:
         "Inconsistent branding and marketing across 15 locations, poor local SEO performance, and declining membership rates.",
-      solution:
-        "Multi-location SEO strategy, unified brand management, local marketing automation, and franchise-wide digital marketing system.",
-      results: {
+      results: "+300% Members, +250% Revenue",
+      metrics: {
         locations: "15 Gyms",
         members: "+300%",
         revenue: "+250%",
-        timeframe: "12 months",
       },
-      image: "/images/team-collaboration.webp",
-      color: "from-green-600 to-emerald-600",
-      testimonial: {
-        text: "MH Digital Solutions helped us create a cohesive digital strategy across all our locations. Membership has never been higher.",
-        author: "Sarah Thompson",
-        position: "Franchise Director",
+      featured: true,
+    },
+    {
+      slug: "saas-growth-strategy",
+      title: "SaaS Company Achieves 300% Growth with Integrated Digital Strategy",
+      industry: "SaaS",
+      image: "/images/analytics-team.webp",
+      description:
+        "A comprehensive digital marketing strategy led to a significant increase in qualified leads and reduced CAC for a SaaS client.",
+      results: "300% Growth, 50% Reduced CAC",
+      metrics: {
+        growth: "300%",
+        cac: "-50%",
+        leads: "+400%",
       },
+      featured: false,
+    },
+    {
+      slug: "healthcare-digital-transformation",
+      title: "Healthcare Provider Streamlines Operations with Digital Solutions",
+      industry: "Healthcare",
+      image: "/images/repair-work-setup.webp",
+      description: "Digital transformation initiative improved patient care and operational efficiency significantly.",
+      results: "25% Efficiency Gain, 95% Patient Satisfaction",
+      metrics: {
+        efficiency: "+25%",
+        satisfaction: "95%",
+        costs: "-15%",
+      },
+      featured: false,
+    },
+    {
+      slug: "manufacturing-automation",
+      title: "Manufacturing Company Reduces Costs by 40% with AI Automation",
+      industry: "Manufacturing",
+      image: "/images/software-development-concept.webp",
+      description:
+        "Implementation of AI-powered automation systems transformed production processes and quality control.",
+      results: "40% Cost Reduction, 99.5% Quality Score",
+      metrics: {
+        costs: "-40%",
+        quality: "99.5%",
+        efficiency: "+60%",
+      },
+      featured: false,
     },
   ]
 
+  const industries = [
+    "All",
+    "Automotive Services",
+    "Food & Beverage",
+    "Technology",
+    "Fitness & Wellness",
+    "SaaS",
+    "Healthcare",
+    "Manufacturing",
+  ]
+
+  const filteredStudies = useMemo(() => {
+    return caseStudies.filter((study) => {
+      const matchesSearch =
+        study.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+        study.description.toLowerCase().includes(searchTerm.toLowerCase())
+      const matchesIndustry = selectedIndustry === "All" || study.industry === selectedIndustry
+      return matchesSearch && matchesIndustry
+    })
+  }, [searchTerm, selectedIndustry])
+
+  const featuredStudies = caseStudies.filter((study) => study.featured)
+
   return (
-    <div className="min-h-screen bg-transparent pt-16">
-      {/* Hero Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center max-w-4xl mx-auto">
-              <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white border-0 mb-6">
-                📈 Proven Results
-              </Badge>
-              <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Our Client Success Stories:</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  Driving Measurable Impact for Every Business
-                </span>
-              </h1>
-              <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                Discover how we've helped businesses across industries achieve remarkable growth through strategic
-                digital marketing, innovative technology solutions, and data-driven strategies.
-              </p>
-              <div className="flex items-center justify-center gap-8 mb-8">
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-purple-600">500+</div>
-                  <div className="text-sm text-gray-600">Projects Completed</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-green-600">300%</div>
-                  <div className="text-sm text-gray-600">Avg. Growth Rate</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-blue-600">98%</div>
-                  <div className="text-sm text-gray-600">Client Satisfaction</div>
-                </div>
-              </div>
+    <div className="relative z-10 section-with-blobs">
+      <Section className="py-16 md:py-24">
+        <div className="text-center mb-12">
+          <Badge className="mb-4 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white">
+            <div className="icon-gradient-bg w-4 h-4 mr-2">
+              <Award className="w-3 h-3" />
             </div>
+            Proven Results
+          </Badge>
+          <h1 className="text-4xl font-bold text-foreground mb-4 gradient-text">Our Client Success Stories</h1>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Discover how we&apos;ve helped businesses across industries achieve remarkable growth through strategic
+            digital marketing, innovative technology solutions, and data-driven strategies.
+          </p>
+        </div>
+
+        {/* Success Metrics */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+          <div className="text-center glass-card p-6">
+            <div className="text-3xl font-bold gradient-text mb-2">500+</div>
+            <div className="text-sm text-muted-foreground">Projects Completed</div>
           </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Case Studies Grid */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="space-y-16">
-              {caseStudies.map((study, index) => (
-                <ScrollAnimation key={study.id} delay={index * 100}>
-                  <Card className="glass border-0 hover-lift overflow-hidden">
-                    <CardContent className="p-0">
-                      <div className={`grid lg:grid-cols-2 gap-0 ${index % 2 === 1 ? "lg:grid-flow-col-dense" : ""}`}>
-                        {/* Content Side */}
-                        <div className={`p-8 lg:p-12 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
-                          <div className="flex items-center gap-3 mb-4">
-                            <Badge className={`bg-gradient-to-r ${study.color} text-white border-0`}>
-                              {study.industry}
-                            </Badge>
-                            <Badge variant="outline">{study.businessSize}</Badge>
-                            <span className="text-sm text-gray-500">{study.results.timeframe}</span>
-                          </div>
-
-                          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{study.title}</h2>
-                          <p className="text-lg text-gray-600 dark:text-gray-400 mb-6">Client: {study.client}</p>
-
-                          <div className="space-y-6 mb-8">
-                            <div>
-                              <h3 className="font-semibold text-red-600 mb-2 flex items-center">
-                                <Target className="h-4 w-4 mr-2" />
-                                Challenge:
-                              </h3>
-                              <p className="text-gray-600 dark:text-gray-400">{study.challenge}</p>
-                            </div>
-                            <div>
-                              <h3 className="font-semibold text-blue-600 mb-2 flex items-center">
-                                <BarChart3 className="h-4 w-4 mr-2" />
-                                Solution:
-                              </h3>
-                              <p className="text-gray-600 dark:text-gray-400">{study.solution}</p>
-                            </div>
-                          </div>
-
-                          {/* Results Grid */}
-                          <div className="grid grid-cols-3 gap-4 mb-8">
-                            {Object.entries(study.results)
-                              .filter(([key]) => key !== "timeframe")
-                              .map(([key, value], resultIndex) => (
-                                <div key={resultIndex} className="text-center">
-                                  <div
-                                    className={`text-2xl font-bold bg-gradient-to-r ${study.color} bg-clip-text text-transparent`}
-                                  >
-                                    {value}
-                                  </div>
-                                  <div className="text-sm text-gray-600 dark:text-gray-400 capitalize">
-                                    {key.replace(/([A-Z])/g, " $1").trim()}
-                                  </div>
-                                </div>
-                              ))}
-                          </div>
-
-                          {/* Testimonial */}
-                          <div className="bg-gray-50 dark:bg-gray-800/50 p-6 rounded-lg mb-6">
-                            <div className="flex items-center mb-3">
-                              {[...Array(5)].map((_, i) => (
-                                <Star key={i} className="h-4 w-4 text-yellow-400 fill-current" />
-                              ))}
-                            </div>
-                            <p className="text-gray-700 dark:text-gray-300 italic mb-3">"{study.testimonial.text}"</p>
-                            <div className="text-sm">
-                              <div className="font-semibold text-gray-900 dark:text-white">
-                                {study.testimonial.author}
-                              </div>
-                              <div className="text-gray-600 dark:text-gray-400">{study.testimonial.position}</div>
-                            </div>
-                          </div>
-
-                          <Link href={`/case-studies/${study.id}`}>
-                            <Button className={`bg-gradient-to-r ${study.color} hover:opacity-90 text-white`}>
-                              Read Full Case Study
-                              <ArrowRight className="ml-2 h-4 w-4" />
-                            </Button>
-                          </Link>
-                        </div>
-
-                        {/* Image Side */}
-                        <div className={`relative h-64 lg:h-auto ${index % 2 === 1 ? "lg:col-start-1" : ""}`}>
-                          <div
-                            className="absolute inset-0 bg-cover bg-center"
-                            style={{ backgroundImage: `url(${study.image})` }}
-                          >
-                            <div className={`absolute inset-0 bg-gradient-to-t ${study.color} opacity-20`}></div>
-                          </div>
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
+          <div className="text-center glass-card p-6">
+            <div className="text-3xl font-bold gradient-text mb-2">300%</div>
+            <div className="text-sm text-muted-foreground">Avg. Growth Rate</div>
           </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Results Summary */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Consistent Results</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  Across All Industries
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Our proven methodologies deliver measurable impact regardless of business size or industry
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { metric: "800%", label: "Max Revenue Growth", description: "Premium Auto Detailing" },
-                { metric: "1200%", label: "Lead Generation Increase", description: "Across all campaigns" },
-                { metric: "99.2%", label: "Process Accuracy", description: "AI automation projects" },
-                { metric: "18 months", label: "Average Transformation", description: "From local to national" },
-              ].map((result, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="glass border-0 text-center hover-lift">
-                    <CardContent className="p-8">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent mb-2">
-                        {result.metric}
-                      </div>
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{result.label}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{result.description}</div>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
+          <div className="text-center glass-card p-6">
+            <div className="text-3xl font-bold gradient-text mb-2">98%</div>
+            <div className="text-sm text-muted-foreground">Client Satisfaction</div>
           </div>
-        </section>
-      </ScrollAnimation>
+          <div className="text-center glass-card p-6">
+            <div className="text-3xl font-bold gradient-text mb-2">18</div>
+            <div className="text-sm text-muted-foreground">Months Avg. ROI</div>
+          </div>
+        </div>
 
-      {/* CTA Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-orange-500/10"></div>
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Ready to Become Our</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                    Next Success Story?
-                  </span>
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Join hundreds of businesses that have transformed their operations and achieved remarkable growth with
-                  our proven strategies.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white font-semibold rounded-full hover:shadow-xl transition-all duration-300 text-lg"
-                  >
-                    Get Your Free Strategy Session
-                    <ArrowRight className="h-5 w-5 ml-2" />
-                  </a>
-                  <Link
-                    href="/contact"
-                    className="inline-flex items-center justify-center px-8 py-4 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full transition-all duration-300"
-                  >
-                    Contact Our Team
+        {/* Featured Case Studies */}
+        <div className="mb-16">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl font-bold text-foreground mb-2">Featured Success Stories</h2>
+            <p className="text-muted-foreground">Our most impactful client transformations</p>
+          </div>
+
+          <div className="grid gap-8 md:grid-cols-2 mb-8">
+            {featuredStudies.slice(0, 4).map((study, index) => (
+              <Card
+                key={index}
+                className="glass-card group hover:scale-105 transition-all duration-300 border-2 border-fuchsia-200/20"
+              >
+                <div className="relative">
+                  <Link href={`/case-studies/${study.slug}`}>
+                    <Image
+                      src={study.image || "/placeholder.svg"}
+                      alt={study.title}
+                      width={500}
+                      height={250}
+                      className="w-full h-48 object-cover rounded-t-lg group-hover:scale-110 transition-transform duration-300"
+                    />
                   </Link>
+                  <Badge className="absolute top-3 left-3 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white">
+                    <TrendingUp className="w-3 h-3 mr-1" />
+                    Featured
+                  </Badge>
                 </div>
+                <CardHeader className="pb-2">
+                  <div className="flex items-center justify-between mb-2">
+                    <Badge variant="secondary" className="text-xs">
+                      {study.industry}
+                    </Badge>
+                    <Badge variant="outline" className="text-xs text-green-600 font-medium">
+                      {study.results}
+                    </Badge>
+                  </div>
+                  <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                    <Link href={`/case-studies/${study.slug}`}>{study.title}</Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  <p className="text-sm text-muted-foreground mb-4">{study.description}</p>
+
+                  {/* Metrics Display */}
+                  <div className="grid grid-cols-3 gap-2 mb-4">
+                    {Object.entries(study.metrics).map(([key, value], idx) => (
+                      <div key={idx} className="text-center p-2 bg-gradient-to-r from-fuchsia-50 to-pink-50 rounded">
+                        <div className="text-sm font-bold text-fuchsia-600">{value}</div>
+                        <div className="text-xs text-muted-foreground capitalize">{key}</div>
+                      </div>
+                    ))}
+                  </div>
+
+                  <Link href={`/case-studies/${study.slug}`}>
+                    <Button className="w-full gradient-button group">
+                      Read Full Case Study
+                      <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform colorful-icon" />
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+
+        {/* Search and Filter Section */}
+        <div className="mb-8 space-y-4">
+          <div className="text-center mb-6">
+            <h2 className="text-2xl font-bold text-foreground mb-2">Complete Portfolio Collection</h2>
+            <p className="text-muted-foreground">Browse all our successful projects and case studies</p>
+          </div>
+
+          <div className="relative max-w-md mx-auto">
+            <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground h-4 w-4 colorful-icon" />
+            <Input
+              type="text"
+              placeholder="Search portfolio projects..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="pl-10 glass-card"
+            />
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-2">
+            {industries.map((industry) => (
+              <Badge
+                key={industry}
+                variant={selectedIndustry === industry ? "default" : "outline"}
+                className={`cursor-pointer transition-all ${
+                  selectedIndustry === industry
+                    ? "bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white"
+                    : "hover:bg-primary/10"
+                }`}
+                onClick={() => setSelectedIndustry(industry)}
+              >
+                {industry}
+              </Badge>
+            ))}
+          </div>
+        </div>
+
+        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {filteredStudies.map((study, index) => (
+            <Card key={index} className="glass-card flex flex-col group hover:scale-105 transition-all duration-300">
+              <Link href={`/case-studies/${study.slug}`}>
+                <Image
+                  src={study.image || "/placeholder.svg"}
+                  alt={study.title}
+                  width={400}
+                  height={250}
+                  className="w-full h-48 object-cover rounded-t-lg group-hover:scale-110 transition-transform duration-300"
+                />
+              </Link>
+              <CardHeader>
+                <div className="flex items-center justify-between mb-2">
+                  <Badge variant="secondary" className="text-xs">
+                    {study.industry}
+                  </Badge>
+                  <Badge variant="outline" className="text-xs text-green-600 font-medium">
+                    {study.results}
+                  </Badge>
+                </div>
+                <CardTitle className="text-xl font-semibold text-foreground">
+                  <Link href={`/case-studies/${study.slug}`} className="hover:text-primary transition-colors">
+                    {study.title}
+                  </Link>
+                </CardTitle>
+                <CardDescription className="text-sm text-muted-foreground">Industry: {study.industry}</CardDescription>
+              </CardHeader>
+              <CardContent className="flex-1 text-muted-foreground">{study.description}</CardContent>
+              <div className="p-6 pt-0">
+                <Link href={`/case-studies/${study.slug}`}>
+                  <Button variant="outline" className="gradient-button bg-transparent w-full group">
+                    View Portfolio Project{" "}
+                    <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform colorful-icon" />
+                  </Button>
+                </Link>
               </div>
+            </Card>
+          ))}
+        </div>
+
+        {filteredStudies.length === 0 && (
+          <div className="text-center py-12">
+            <p className="text-muted-foreground text-lg">No portfolio projects found matching your search criteria.</p>
+          </div>
+        )}
+
+        {/* CTA Section */}
+        <div className="mt-16 text-center">
+          <div className="glass-card p-8 max-w-2xl mx-auto">
+            <h3 className="text-2xl font-bold text-foreground mb-4 gradient-text">
+              Ready to Become Our Next Success Story?
+            </h3>
+            <p className="text-muted-foreground mb-6">
+              Join hundreds of businesses that have transformed their operations and achieved remarkable growth with our
+              proven strategies.
+            </p>
+            <div className="flex gap-4 justify-center">
+              <Link href="https://calendly.com/mhdigitalsolutionsus">
+                <Button className="gradient-button">Get Your Free Strategy Session</Button>
+              </Link>
+              <Link href="/contact">
+                <Button variant="outline" className="gradient-button bg-transparent">
+                  Contact Our Team
+                </Button>
+              </Link>
             </div>
           </div>
-        </section>
-      </ScrollAnimation>
+        </div>
+      </Section>
     </div>
   )
 }

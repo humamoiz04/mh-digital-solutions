@@ -2,60 +2,44 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import Navigation from "@/components/ui/navigation"
-import Footer from "@/components/footer"
-import FloatingBackground from "@/components/ui/floating-background"
-import ChatWidget from "@/components/ui/chat-widget"
-import PromotionalPopup from "@/components/ui/promotional-popup"
-import { ThemeProvider } from "@/components/ui/theme-provider"
+import { ThemeProvider } from "@/components/theme-provider"
+import { Header } from "@/components/header"
+import { Footer } from "@/components/footer"
+import { FloatingBlobs } from "@/components/floating-blobs"
+import { ChatWidget } from "@/components/chat-widget"
+import { WhatsAppWidget } from "@/components/whatsapp-widget"
+import { PromotionalBanner } from "@/components/promotional-banner"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: {
-    default: "MH Digital Solutions | AI-Powered Digital Marketing & Web Development",
-    template: "%s | MH Digital Solutions",
-  },
-  description:
-    "Transform your business with AI-powered digital marketing, custom web development, and automation solutions. Serving small businesses to enterprises with measurable ROI.",
-  keywords:
-    "digital marketing, web development, AI automation, SEO services, lead generation, business consulting, PPC advertising, social media marketing",
-  authors: [{ name: "MH Digital Solutions" }],
-  creator: "MH Digital Solutions",
-  publisher: "MH Digital Solutions",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
-  metadataBase: new URL("https://www.mhdigitalsolution.com"),
+  title: "MH Digital Solution",
+  description: "Your trusted partner for innovative digital marketing and IT solutions.",
   alternates: {
-    canonical: "/",
+    canonical: "https://www.mhdigitalsolution.com",
   },
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: "https://www.mhdigitalsolution.com",
-    siteName: "MH Digital Solutions",
-    title: "MH Digital Solutions | AI-Powered Digital Marketing & Web Development",
+    title: "MH Digital Solution - AI-Powered Digital Marketing & Web Development",
     description:
-      "Transform your business with AI-powered digital marketing, custom web development, and automation solutions. Serving small businesses to enterprises with measurable ROI.",
+      "Transform your business with our innovative digital marketing, web development, and AI automation solutions. Trusted by 500+ clients worldwide.",
+    url: "https://www.mhdigitalsolution.com",
+    siteName: "MH Digital Solution",
     images: [
       {
-        url: "/images/mh-digital-og.webp",
+        url: "https://www.mhdigitalsolution.com/images/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "MH Digital Solutions - AI-Powered Digital Marketing",
+        alt: "MH Digital Solution - Digital Marketing & Web Development",
       },
     ],
+    locale: "en_US",
+    type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MH Digital Solutions | AI-Powered Digital Marketing & Web Development",
-    description:
-      "Transform your business with AI-powered digital marketing, custom web development, and automation solutions.",
-    images: ["/images/mh-digital-og.webp"],
-    creator: "@mhdigitalsolutions",
+    title: "MH Digital Solution - AI-Powered Digital Marketing",
+    description: "Transform your business with innovative digital solutions. Trusted by 500+ clients worldwide.",
+    images: ["https://www.mhdigitalsolution.com/images/og-image.webp"],
   },
   robots: {
     index: true,
@@ -68,112 +52,49 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  verification: {
-    google: "your-google-verification-code",
-    yandex: "your-yandex-verification-code",
-    yahoo: "your-yahoo-verification-code",
-  },
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang="en" className="dark" suppressHydrationWarning>
+    <html lang="en">
       <head>
-        {/* Preconnect to external domains for performance */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://calendly.com" />
-
-        {/* Favicon and app icons */}
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-
-        {/* Theme color for mobile browsers */}
-        <meta name="theme-color" content="#000000" />
-        <meta name="color-scheme" content="dark" />
-
-        {/* Structured Data for Organization */}
+        <link rel="canonical" href="https://www.mhdigitalsolution.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "Organization",
-              name: "MH Digital Solutions",
+              name: "MH Digital Solution",
               url: "https://www.mhdigitalsolution.com",
-              logo: "https://www.mhdigitalsolution.com/images/mh-logo.webp",
-              description:
-                "AI-powered digital marketing and web development agency serving small businesses to enterprises with measurable ROI.",
-              address: {
-                "@type": "PostalAddress",
-                addressLocality: "Huntsville",
-                addressRegion: "AL",
-                addressCountry: "US",
+              logo: "https://www.mhdigitalsolution.com/images/mh-digital-solutions-logo.webp",
+              description: "AI-Powered Digital Marketing & Web Development Solutions",
+              founder: {
+                "@type": "Person",
+                name: "MK",
+                jobTitle: "CEO & Founder",
               },
-              contactPoint: {
-                "@type": "ContactPoint",
-                telephone: "+1-256-XXX-XXXX",
-                contactType: "customer service",
-                availableLanguage: "English",
-              },
-              sameAs: [
-                "https://www.linkedin.com/company/mh-digital-solutions",
-                "https://twitter.com/mhdigitalsolutions",
-                "https://www.facebook.com/mhdigitalsolutions",
-              ],
-              service: [
-                {
-                  "@type": "Service",
-                  name: "Digital Marketing",
-                  description:
-                    "Comprehensive digital marketing services including SEO, PPC, and social media marketing",
-                },
-                {
-                  "@type": "Service",
-                  name: "Web Development",
-                  description: "Custom web development and e-commerce solutions",
-                },
-                {
-                  "@type": "Service",
-                  name: "AI Automation",
-                  description: "Business process automation using artificial intelligence",
-                },
-              ],
+              sameAs: ["https://www.linkedin.com/company/mh-digital-solution", "https://twitter.com/mhdigitalsol"],
             }),
           }}
         />
       </head>
-      <body className={`${inter.className} antialiased`}>
-        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
-          {/* Skip to main content link for accessibility */}
-          <a href="#main-content" className="skip-link">
-            Skip to main content
-          </a>
-
-          {/* Floating background elements */}
-          <FloatingBackground />
-
-          {/* Main navigation */}
-          <Navigation />
-
-          {/* Main content */}
-          <main id="main-content" className="relative z-10">
-            {children}
-          </main>
-
-          {/* Footer */}
-          <Footer />
-
-          {/* Interactive elements */}
-          <ChatWidget />
-          <PromotionalPopup />
+      <body className={inter.className}>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <div className="relative min-h-screen flex flex-col">
+            <FloatingBlobs />
+            <Header />
+            <main className="flex-1 relative z-10">{children}</main>
+            <Footer />
+            <ChatWidget />
+            <WhatsAppWidget />
+            <PromotionalBanner />
+          </div>
         </ThemeProvider>
       </body>
     </html>

@@ -1,578 +1,266 @@
+import { Section } from "@/components/Section"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { ArrowRight, BarChart3, PieChart, TrendingUp, CheckCircle, LineChart, Database } from "lucide-react"
-import ScrollAnimation from "@/components/scroll-animation"
+import { TrendingUp, Users, Target, Award, CheckCircle, ArrowRight, BarChart3 } from "lucide-react"
 import Image from "next/image"
-import FAQ from "@/components/faq"
-import Testimonials from "@/components/testimonials"
 
 export default function BusinessAnalyticsPage() {
-  const faqs = [
-    {
-      question: "What types of data do you work with?",
-      answer:
-        "We work with various data types including financial data, customer data, operational metrics, marketing analytics, website performance data, social media metrics, and more. Our analytics solutions are designed to integrate data from multiple sources to provide comprehensive insights.",
-    },
-    {
-      question: "Do I need to have existing data collection systems in place?",
-      answer:
-        "Not necessarily. While it's helpful to have existing data, we can also help you set up data collection systems from scratch. We'll identify what data is valuable for your business objectives and implement the right tools and processes to capture it effectively.",
-    },
-    {
-      question: "How do you ensure data security and privacy?",
-      answer:
-        "We implement robust security measures including data encryption, secure access controls, regular security audits, and compliance with relevant regulations such as GDPR and CCPA. We also provide data governance recommendations to help you maintain data privacy and security long-term.",
-    },
-    {
-      question: "Can you integrate with our existing software systems?",
-      answer:
-        "Yes, our analytics solutions are designed to integrate with most common business software including CRMs, ERPs, marketing platforms, e-commerce systems, and financial software. We use API connections and data integration tools to create seamless data flows.",
-    },
-    {
-      question: "How long does it take to implement a business analytics solution?",
-      answer:
-        "Implementation timelines vary based on project complexity, data sources, and specific requirements. Basic dashboards and reports can be set up in 2-4 weeks, while more complex analytics systems may take 2-3 months. We'll provide a detailed timeline during our initial consultation.",
-    },
+  const problems = [
+    "Data scattered across multiple systems and platforms",
+    "Lack of real-time insights for quick decision making",
+    "Difficulty identifying trends and patterns in business data",
+    "Manual reporting processes consuming valuable time",
+    "Unable to predict future performance and market trends",
   ]
 
-  const testimonials = [
+  const solutions = [
+    "Comprehensive data integration and warehousing",
+    "Real-time dashboards and interactive reporting",
+    "Advanced analytics and predictive modeling",
+    "Automated reporting and alert systems",
+    "Custom analytics solutions for specific needs",
+  ]
+
+  const benefits = [
+    "Data-driven decision making",
+    "Improved operational efficiency",
+    "Identified growth opportunities",
+    "Enhanced customer understanding",
+    "Competitive market advantage",
+    "Measurable ROI improvements",
+  ]
+
+  const faqs = [
     {
-      text: "The business analytics dashboard MH Digital created gives us real-time visibility into our operations. We've been able to identify cost-saving opportunities and improve our margins by 18%.",
-      name: "Thomas Wilson",
-      position: "CFO",
-      company: "Apex Manufacturing",
-      rating: 5,
+      question: "What types of data can you analyze?",
+      answer:
+        "We work with all types of business data including sales, marketing, customer, financial, operational, and web analytics data from various sources and platforms.",
     },
     {
-      text: "Their customer analytics solution transformed how we understand our audience. We've increased customer retention by 24% by implementing their data-driven recommendations.",
-      name: "Laura Chen",
-      position: "Marketing Director",
-      company: "Consumer Brands Inc.",
-      rating: 5,
-    },
-    {
-      text: "MH Digital's sales analytics platform helped us identify underperforming territories and optimize our sales strategy. Our revenue increased by 31% in the first quarter after implementation.",
-      name: "James Rodriguez",
-      position: "VP of Sales",
-      company: "Tech Solutions Group",
-      rating: 5,
+      question: "How quickly can we see results?",
+      answer:
+        "Initial insights and dashboards can be delivered within 2-4 weeks, with more complex predictive models taking 6-8 weeks to implement and optimize.",
     },
   ]
 
   return (
-    <div className="min-h-screen pt-16">
-      {/* Hero Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <div className="relative z-10">
+      <Section glass>
+        <div className="space-y-16">
+          {/* Hero Section */}
+          <div className="text-center space-y-6">
+            <Badge variant="secondary" className="mb-4">
+              <BarChart3 className="h-4 w-4 mr-2" />
+              Business Analytics
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+              Business Analytics Services
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Transform data into actionable insights with comprehensive analytics services that drive informed
+              decision-making and business growth.
+            </p>
+          </div>
+
+          {/* Client Problems */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-4">
+                Common Analytics Challenges
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Problems that prevent businesses from leveraging their data effectively
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {problems.map((problem, index) => (
+                <Card key={index} className="glass-card border-red-200/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0" />
+                      <p className="text-muted-foreground">{problem}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Our Solutions */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent mb-4">
+                Our Analytics Solutions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                We create comprehensive analytics systems combining data integration, visualization, and predictive
+                modeling
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {solutions.map((solution, index) => (
+                <Card
+                  key={index}
+                  className="glass-card border-green-200/20 hover:border-green-300/30 transition-colors"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-muted-foreground">{solution}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Benefits */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+                Benefits You'll Experience
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="glass-card border-purple-200/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-center space-x-3">
+                      <div className="w-8 h-8 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full flex items-center justify-center">
+                        <CheckCircle className="h-4 w-4 text-white" />
+                      </div>
+                      <p className="font-medium">{benefit}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQs */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="glass-card">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </div>
+      </Section>
+
+      <Section glass className="py-16">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-foreground mb-4">Case Study: E-commerce Revenue Growth</h2>
+            <p className="text-lg text-muted-foreground">
+              How we helped an online retailer increase revenue by 45% through data-driven insights
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
+            <div>
+              <Image
+                src="/images/business-analytics-meeting.webp"
+                alt="Business analytics consultation and data visualization"
+                width={500}
+                height={400}
+                className="rounded-lg shadow-lg"
+              />
+            </div>
+            <div className="space-y-6">
               <div>
-                <Badge className="mb-6 bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 text-white border-0">
-                  📊 Data-Driven Business Intelligence
-                </Badge>
-                <h1 className="text-5xl md:text-6xl font-bold mb-6">
-                  <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                    Business Analytics
-                  </span>
-                  <br />
-                  <span className="text-gray-900 dark:text-white">That Drive Decisions</span>
-                </h1>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
-                  Transform your data into actionable insights with our comprehensive business analytics solutions that
-                  help you make smarter, faster business decisions.
+                <h3 className="text-xl font-semibold text-foreground mb-2">Challenge</h3>
+                <p className="text-muted-foreground">
+                  A mid-sized e-commerce company was struggling with declining conversion rates and couldn't identify
+                  which products or marketing channels were driving the most value.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="calendly-button"
-                  >
-                    Get Analytics Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full"
-                  >
-                    View Demo Dashboards
-                  </Button>
-                </div>
               </div>
-              <ScrollAnimation animation="fadeInRight" delay={200}>
-                <div className="relative">
-                  <Image
-                    src="/images/analytics-dashboard-new.webp"
-                    alt="Business Analytics Services"
-                    width={600}
-                    height={400}
-                    className="rounded-2xl shadow-2xl"
-                  />
-                </div>
-              </ScrollAnimation>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Competitor Comparison */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Analytics</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  Provider Comparison
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                See why businesses choose our analytics solutions over competitors
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-3 gap-8">
-              {/* Competitor 1 */}
-              <Card className="glass-card border-0 hover-lift">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gray-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white font-bold">E1</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">E1Sol</h3>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Analytics Package:</span>
-                      <span className="font-bold">$3,500/mo</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Setup Time:</span>
-                      <span>8-12 weeks</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Custom Dashboards:</span>
-                      <span>Limited</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Real-time Data:</span>
-                      <span>❌</span>
-                    </div>
-                  </div>
-                  <Button variant="outline" className="w-full" disabled>
-                    Their Package
-                  </Button>
-                </CardContent>
-              </Card>
-
-              {/* MH Digital (Center - Featured) */}
-              <Card className="glass-card border-2 border-purple-500 scale-105 hover-lift">
-                <CardContent className="p-8 text-center relative">
-                  <Badge className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-gradient-to-r from-purple-600 to-pink-600 text-white">
-                    Best Value
-                  </Badge>
-                  <div className="w-16 h-16 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white font-bold">MH</span>
-                  </div>
-                  <h3 className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent mb-4">
-                    MH Digital
-                  </h3>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Analytics Package:</span>
-                      <span className="font-bold text-green-600">$1,499/mo</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Setup Time:</span>
-                      <span className="text-green-600">2-4 weeks</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Custom Dashboards:</span>
-                      <span className="text-green-600">Unlimited</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Real-time Data:</span>
-                      <span className="text-green-600">✅</span>
-                    </div>
-                  </div>
-                  <Button className="w-full bg-gradient-to-r from-purple-600 to-pink-600">Check Pricing</Button>
-                </CardContent>
-              </Card>
-
-              {/* Competitor 2 */}
-              <Card className="glass-card border-0 hover-lift">
-                <CardContent className="p-8 text-center">
-                  <div className="w-16 h-16 bg-gray-400 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span className="text-white font-bold">TD</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">Thomas Digital</h3>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Analytics Package:</span>
-                      <span className="font-bold">$4,200/mo</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Setup Time:</span>
-                      <span>10-16 weeks</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Custom Dashboards:</span>
-                      <span>3 included</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Real-time Data:</span>
-                      <span>Extra cost</span>
-                    </div>
-                  </div>
-                  <Button variant="outline" className="w-full" disabled>
-                    Their Package
-                  </Button>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Analytics Solutions */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Comprehensive</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  Analytics Solutions
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                End-to-end analytics services that turn complex data into clear, actionable business insights
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  icon: BarChart3,
-                  title: "Business Intelligence Dashboards",
-                  description:
-                    "Interactive dashboards that visualize your key business metrics for faster, better decision making",
-                  features: [
-                    "Real-time data visualization",
-                    "Custom KPI tracking",
-                    "Interactive filtering",
-                    "Cross-platform access",
-                    "Automated reporting",
-                  ],
-                  color: "from-purple-600 to-pink-600",
-                },
-                {
-                  icon: PieChart,
-                  title: "Customer Analytics",
-                  description:
-                    "Deep insights into customer behavior, preferences, and journeys to enhance your marketing and sales",
-                  features: [
-                    "Customer segmentation",
-                    "Purchase pattern analysis",
-                    "Customer lifetime value",
-                    "Churn prediction",
-                    "Behavioral analytics",
-                  ],
-                  color: "from-pink-600 to-orange-500",
-                },
-                {
-                  icon: LineChart,
-                  title: "Financial Analytics",
-                  description:
-                    "Comprehensive financial data analysis to improve profitability, cash flow, and financial planning",
-                  features: [
-                    "Profit & loss analysis",
-                    "Budget vs. actual tracking",
-                    "Cash flow forecasting",
-                    "Expense optimization",
-                    "Financial forecasting",
-                  ],
-                  color: "from-orange-500 to-red-500",
-                },
-                {
-                  icon: TrendingUp,
-                  title: "Operational Analytics",
-                  description:
-                    "Optimize your business operations with data-driven insights into processes, efficiency, and quality",
-                  features: [
-                    "Process efficiency metrics",
-                    "Resource utilization",
-                    "Quality control analytics",
-                    "Supply chain visibility",
-                    "Productivity analysis",
-                  ],
-                  color: "from-red-500 to-purple-600",
-                },
-                {
-                  icon: Database,
-                  title: "Data Integration & Management",
-                  description:
-                    "Unify your data from multiple sources into a single, reliable system for comprehensive analysis",
-                  features: [
-                    "Data warehouse setup",
-                    "Multiple source integration",
-                    "Data cleaning & preparation",
-                    "Automated data pipelines",
-                    "Data governance",
-                  ],
-                  color: "from-purple-600 to-pink-600",
-                },
-                {
-                  icon: CheckCircle,
-                  title: "Predictive Analytics",
-                  description:
-                    "Leverage advanced data models to forecast trends, anticipate challenges, and identify opportunities",
-                  features: [
-                    "Sales forecasting",
-                    "Demand prediction",
-                    "Trend analysis",
-                    "Risk assessment",
-                    "Market opportunity identification",
-                  ],
-                  color: "from-pink-600 to-orange-500",
-                },
-              ].map((service, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className={`service-card-${(index % 6) + 1} border-0 hover-lift`}>
-                    <CardContent className="p-8">
-                      <div
-                        className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-xl flex items-center justify-center mb-6`}
-                      >
-                        <service.icon className="h-8 w-8 text-white" />
-                      </div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">{service.title}</h3>
-                      <p className="text-gray-600 dark:text-gray-400 mb-6">{service.description}</p>
-                      <ul className="space-y-2">
-                        {service.features.map((feature, featureIndex) => (
-                          <li key={featureIndex} className="flex items-center text-sm">
-                            <CheckCircle className="h-4 w-4 text-purple-600 mr-2 flex-shrink-0" />
-                            <span className="text-gray-600 dark:text-gray-400">{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Our Approach */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Our Analytics</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  Methodology
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                A proven approach to implementing effective business analytics solutions
-              </p>
-            </div>
-
-            <div className="max-w-6xl mx-auto">
-              <div className="space-y-12">
-                {[
-                  {
-                    step: "01",
-                    title: "Discovery & Needs Assessment",
-                    description:
-                      "We start by understanding your business goals, key metrics, data sources, and analytical requirements.",
-                    color: "from-purple-600 to-pink-600",
-                  },
-                  {
-                    step: "02",
-                    title: "Data Strategy & Architecture",
-                    description:
-                      "We design a comprehensive data strategy and technical architecture tailored to your specific needs.",
-                    color: "from-pink-600 to-orange-500",
-                  },
-                  {
-                    step: "03",
-                    title: "Data Integration & Preparation",
-                    description: "We connect to all relevant data sources, clean and transform your data for analysis.",
-                    color: "from-orange-500 to-red-500",
-                  },
-                  {
-                    step: "04",
-                    title: "Analytics Development",
-                    description:
-                      "We build custom dashboards, reports, and analytics models that deliver actionable insights.",
-                    color: "from-red-500 to-purple-600",
-                  },
-                  {
-                    step: "05",
-                    title: "Implementation & Training",
-                    description:
-                      "We deploy your analytics solution, train your team, and ensure adoption across your organization.",
-                    color: "from-purple-600 to-pink-600",
-                  },
-                ].map((phase, index) => (
-                  <ScrollAnimation key={index} delay={index * 100}>
-                    <div className="flex items-start space-x-8">
-                      <div
-                        className={`w-20 h-20 bg-gradient-to-r ${phase.color} rounded-full flex items-center justify-center flex-shrink-0`}
-                      >
-                        <span className="text-2xl font-bold text-white">{phase.step}</span>
-                      </div>
-                      <div>
-                        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{phase.title}</h3>
-                        <p className="text-gray-600 dark:text-gray-400">{phase.description}</p>
-                      </div>
-                    </div>
-                  </ScrollAnimation>
-                ))}
-              </div>
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Results & Case Studies */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Analytics</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  Results
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300">
-                Real business impact delivered through data analytics
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                { metric: "31%", label: "Average Revenue Growth", description: "Through data-driven decisions" },
-                { metric: "24%", label: "Cost Reduction", description: "Through operational insights" },
-                { metric: "45%", label: "Efficiency Improvement", description: "Through process analytics" },
-                { metric: "18%", label: "Margin Improvement", description: "Through financial analytics" },
-              ].map((result, index) => (
-                <ScrollAnimation key={index} delay={index * 100}>
-                  <Card className="glass border-0 text-center hover-lift">
-                    <CardContent className="p-8">
-                      <div className="text-4xl font-bold bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent mb-2">
-                        {result.metric}
-                      </div>
-                      <div className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{result.label}</div>
-                      <div className="text-sm text-gray-600 dark:text-gray-400">{result.description}</div>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Technologies */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="text-center mb-16">
-              <h2 className="text-4xl font-bold mb-6">
-                <span className="text-gray-900 dark:text-white">Analytics</span>{" "}
-                <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                  Technologies
-                </span>
-              </h2>
-              <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                We leverage industry-leading technologies to deliver powerful analytics solutions
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
-              {[
-                "Power BI",
-                "Tableau",
-                "Google Analytics",
-                "Looker",
-                "Snowflake",
-                "BigQuery",
-                "AWS Redshift",
-                "Databricks",
-                "Python",
-                "R",
-                "SQL",
-                "Alteryx",
-              ].map((tech, index) => (
-                <ScrollAnimation key={index} delay={index * 50}>
-                  <Card className="glass border-0 hover-lift">
-                    <CardContent className="p-6 text-center">
-                      <h3 className="text-lg font-semibold text-gray-900 dark:text-white">{tech}</h3>
-                    </CardContent>
-                  </Card>
-                </ScrollAnimation>
-              ))}
-            </div>
-          </div>
-        </section>
-      </ScrollAnimation>
-
-      {/* Testimonials Section */}
-      <Testimonials testimonials={testimonials} />
-
-      {/* FAQ Section */}
-      <FAQ
-        title="Business Analytics FAQ"
-        subtitle="Common questions about our business analytics services"
-        faqs={faqs}
-      />
-
-      {/* CTA Section */}
-      <ScrollAnimation>
-        <section className="py-20 bg-transparent">
-          <div className="container mx-auto px-6">
-            <div className="glass rounded-3xl p-12 text-center relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/10 via-pink-600/10 to-orange-500/10"></div>
-              <div className="relative z-10">
-                <h2 className="text-4xl md:text-5xl font-bold mb-6">
-                  <span className="text-gray-900 dark:text-white">Ready to Unlock the</span>{" "}
-                  <span className="bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 bg-clip-text text-transparent">
-                    Power of Your Data
-                  </span>
-                  ?
-                </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                  Let's discuss how our business analytics solutions can help you make smarter decisions and drive
-                  growth
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-2">Solution</h3>
+                <p className="text-muted-foreground">
+                  We implemented comprehensive analytics tracking, created custom dashboards, and developed predictive
+                  models to identify high-value customer segments and optimize product recommendations.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="https://calendly.com/mhdigitalsolutionsus"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="calendly-button"
-                  >
-                    Schedule Analytics Consultation
-                    <ArrowRight className="ml-2 h-5 w-5" />
-                  </a>
-                  <Button
-                    variant="outline"
-                    size="lg"
-                    className="border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white rounded-full"
-                  >
-                    View Demo Dashboards
-                  </Button>
-                </div>
               </div>
             </div>
           </div>
-        </section>
-      </ScrollAnimation>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <TrendingUp className="h-8 w-8 text-green-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-green-500">45%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Revenue Increase</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Users className="h-8 w-8 text-blue-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-blue-500">32%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Conversion Rate Boost</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Target className="h-8 w-8 text-purple-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-purple-500">28%</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Cost Reduction</p>
+              </CardContent>
+            </Card>
+            <Card className="glass-card text-center">
+              <CardHeader>
+                <Award className="h-8 w-8 text-orange-500 mx-auto mb-2" />
+                <CardTitle className="text-2xl font-bold text-orange-500">3 Months</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-sm text-muted-foreground">Implementation Time</p>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </Section>
+
+      <Section glass>
+        <div className="text-center space-y-6 py-12">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+            Ready to Unlock Your Data's Potential?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+            Let's transform your data into actionable insights that drive business growth and competitive advantage.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+            >
+              Get Analytics Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+            <Button size="lg" variant="outline">
+              View Success Stories
+            </Button>
+          </div>
+        </div>
+      </Section>
     </div>
   )
 }
