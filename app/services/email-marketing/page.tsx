@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Mail, Users, Award, CheckCircle, ArrowRight, Send, BarChart3 } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function EmailMarketingPage() {
   const problems = [
@@ -54,7 +55,7 @@ export default function EmailMarketingPage() {
               <Mail className="h-4 w-4 mr-2" />
               Email Marketing
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
               Email Marketing Services
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -250,16 +251,20 @@ export default function EmailMarketingPage() {
             Let's create email campaigns that your audience loves and that drive real business results.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-transform"
-            >
-              Get Email Strategy Audit
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </Button>
-            <Button size="lg" variant="outline" className="hover:scale-105 transition-transform bg-transparent">
-              View Email Examples
-            </Button>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 hover:scale-105 transition-transform"
+              >
+                Get Email Strategy Audit
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </Link>
+            <Link href="/case-studies">
+              <Button size="lg" variant="outline" className="hover:scale-105 transition-transform bg-transparent">
+                View Email Examples
+              </Button>
+            </Link>
           </div>
         </div>
       </Section>

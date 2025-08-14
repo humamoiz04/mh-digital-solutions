@@ -27,7 +27,14 @@
     --ring: 320 91.2% 59.8%;
     --radius: 0.5rem;
 
-    /* Enhanced pink/fuchsia color palette */
+    /* Enhanced pink/fuchsia color palette with dark fuchsia additions */
+    --dark-fuchsia: 300 100% 25%;
+    --deep-fuchsia: 300 85% 35%;
+    --rich-fuchsia: 300 70% 45%;
+    --light-pink: 330 100% 85%;
+    --soft-pink: 330 80% 90%;
+    --pale-pink: 330 60% 95%;
+
     --pastel-blue: 210 80% 85%;
     --pastel-green: 120 60% 80%;
     --pastel-yellow: 45 100% 80%;
@@ -79,6 +86,92 @@
     /* Updated dark mode ring to pink */
     --ring: 320 91.2% 59.8%;
   }
+
+  /* Optimized font size scale for better readability */
+  .text-xs {
+    font-size: 0.75rem;
+    line-height: 1rem;
+  } /* 12px */
+  .text-sm {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  } /* 14px */
+  .text-base {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  } /* 16px */
+  .text-lg {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  } /* 18px */
+  .text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  } /* 20px */
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  } /* 24px */
+  .text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  } /* 30px */
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  } /* 36px */
+  .text-5xl {
+    font-size: 3rem;
+    line-height: 1;
+  } /* 48px */
+  .text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  } /* 60px */
+
+  /* Mobile-optimized font sizes */
+  @media (max-width: 640px) {
+    .text-2xl {
+      font-size: 1.375rem;
+      line-height: 1.875rem;
+    } /* 22px on mobile */
+    .text-3xl {
+      font-size: 1.75rem;
+      line-height: 2rem;
+    } /* 28px on mobile */
+    .text-4xl {
+      font-size: 2rem;
+      line-height: 2.25rem;
+    } /* 32px on mobile */
+    .text-5xl {
+      font-size: 2.5rem;
+      line-height: 1.1;
+    } /* 40px on mobile */
+    .text-6xl {
+      font-size: 3rem;
+      line-height: 1.1;
+    } /* 48px on mobile */
+  }
+
+  /* Improved line heights for better readability */
+  .leading-none {
+    line-height: 1;
+  }
+  .leading-tight {
+    line-height: 1.25;
+  }
+  .leading-snug {
+    line-height: 1.375;
+  }
+  .leading-normal {
+    line-height: 1.5;
+  }
+  .leading-relaxed {
+    line-height: 1.625;
+  }
+  .leading-loose {
+    line-height: 2;
+  }
 }
 
 @layer base {
@@ -105,13 +198,14 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Updated gradient text to use pink/fuchsia colors */
+/* Simplified gradient text without animations */
 .gradient-text {
   background: linear-gradient(
-    to right,
-    hsl(var(--dark-pastel-fuchsia)),
-    hsl(var(--dark-pastel-pink)),
-    hsl(var(--pastel-purple))
+    135deg,
+    hsl(var(--dark-fuchsia)),
+    hsl(var(--deep-fuchsia)),
+    hsl(var(--light-pink)),
+    hsl(var(--soft-pink))
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -119,30 +213,80 @@
   color: transparent;
 }
 
-/* Updated gradient button to use pink/fuchsia colors */
+/* Simplified gradient button without animations */
 .gradient-button {
-  background: linear-gradient(to right, hsl(var(--dark-pastel-fuchsia)), hsl(var(--dark-pastel-pink)));
+  background: linear-gradient(135deg, hsl(var(--dark-fuchsia)), hsl(var(--deep-fuchsia)), hsl(var(--light-pink)));
   color: hsl(var(--primary-foreground));
   border: none;
   transition: all 0.3s ease;
 }
 
 .gradient-button:hover {
-  background: linear-gradient(to right, hsl(var(--dark-pastel-pink)), hsl(var(--dark-pastel-fuchsia)));
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, hsl(var(--deep-fuchsia)), hsl(var(--rich-fuchsia)), hsl(var(--soft-pink)));
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
   transform: translateY(-2px);
 }
 
-/* Updated gradient icon to use pink/fuchsia colors */
+/* Simplified gradient icon without animations */
 .gradient-icon {
-  background: linear-gradient(to right, hsl(var(--dark-pastel-fuchsia)), hsl(var(--dark-pastel-pink)));
+  background: linear-gradient(135deg, hsl(var(--dark-fuchsia)), hsl(var(--deep-fuchsia)), hsl(var(--light-pink)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 
-/* Added floating blobs consistency and colorful icon styles */
+/* SCROLL FADE ANIMATIONS - Mobile-friendly scroll animations */
+.scroll-fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.scroll-fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.scroll-fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Shimmer animation for loading states */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.animate-shimmer::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+  transform: translateX(-100%);
+  animation: shimmer 2s infinite;
+}
+
+/* FLOATING BLOBS ONLY - Enhanced floating blobs with more sophisticated background patterns */
 .section-with-blobs {
   position: relative;
   overflow: hidden;
@@ -155,83 +299,276 @@
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(300, 70%, 65%, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(330, 70%, 65%, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 40%, rgba(270, 60%, 85%, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 15% 85%, rgba(139, 69, 19, 0.12) 0%, transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(219, 39, 119, 0.1) 0%, transparent 45%),
+    radial-gradient(circle at 35% 45%, rgba(244, 114, 182, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 65% 75%, rgba(168, 85, 247, 0.06) 0%, transparent 40%),
+    radial-gradient(circle at 50% 30%, rgba(251, 207, 232, 0.05) 0%, transparent 35%);
   pointer-events: none;
   z-index: -1;
+  animation: blob-background-enhanced 25s ease-in-out infinite;
 }
 
+/* Enhanced blob background animation */
+@keyframes blob-background-enhanced {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    opacity: 0.9;
+    transform: scale(1.08) rotate(90deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.15) rotate(180deg);
+  }
+  75% {
+    opacity: 0.85;
+    transform: scale(1.05) rotate(270deg);
+  }
+}
+
+/* Enhanced floating blob animations with gentler movement */
+@keyframes float-gentle {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(30px, -40px) scale(1.1) rotate(45deg);
+  }
+  50% {
+    transform: translate(-25px, -30px) scale(0.9) rotate(90deg);
+  }
+  75% {
+    transform: translate(-40px, 25px) scale(1.05) rotate(135deg);
+  }
+}
+
+@keyframes float-smooth {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1) rotate(0deg);
+  }
+  25% {
+    transform: translate(50px, -70px) scale(1.15) rotate(90deg);
+  }
+  50% {
+    transform: translate(-35px, -50px) scale(0.85) rotate(180deg);
+  }
+  75% {
+    transform: translate(-70px, 35px) scale(1.08) rotate(270deg);
+  }
+}
+
+@keyframes float-particle {
+  0%,
+  100% {
+    transform: translateY(0px) translateX(0px) scale(1);
+    opacity: 0.4;
+  }
+  25% {
+    transform: translateY(-120px) translateX(60px) scale(1.3);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translateY(-240px) translateX(-40px) scale(0.7);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateY(-180px) translateX(-100px) scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.animate-float-gentle {
+  animation: float-gentle 20s ease-in-out infinite;
+}
+
+.animate-float-smooth {
+  animation: float-smooth 25s ease-in-out infinite;
+}
+
+.animate-float-particle {
+  animation: float-particle 30s linear infinite;
+}
+
+/* Mobile-optimized floating animations with reduced GPU usage */
+@keyframes float-mobile {
+  0%,
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.05);
+  }
+}
+
+.animate-float-mobile {
+  animation: float-mobile 25s ease-in-out infinite;
+}
+
+/* Custom illustration icons and emojis */
+.custom-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: transform 0.3s ease;
+}
+
+.custom-icon:hover {
+  transform: scale(1.1);
+}
+
+.emoji-icon {
+  font-size: 2rem;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* Enhanced icon gradient background with dark fuchsia - no animations */
 .icon-gradient-bg {
-  background: linear-gradient(135deg, #ec4899, #f97316, #8b5cf6);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--dark-fuchsia)),
+    hsl(var(--deep-fuchsia)),
+    hsl(var(--light-pink)),
+    #f97316,
+    #8b5cf6
+  );
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 4px 12px rgba(236, 72, 153, 0.3);
+  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
   transition: all 0.3s ease;
 }
 
 .icon-gradient-bg:hover {
   transform: scale(1.1);
-  box-shadow: 0 6px 20px rgba(236, 72, 153, 0.4);
+  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.5);
 }
 
+/* Enhanced colorful icon with dark fuchsia gradients - no animations */
 .colorful-icon {
-  background: linear-gradient(135deg, #ec4899, #f97316, #8b5cf6);
+  background: linear-gradient(
+    135deg,
+    hsl(var(--dark-fuchsia)),
+    hsl(var(--deep-fuchsia)),
+    hsl(var(--light-pink)),
+    #f97316,
+    #8b5cf6
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 2px 4px rgba(236, 72, 153, 0.3));
+  filter: drop-shadow(0 3px 6px rgba(139, 69, 19, 0.4));
+  transition: all 0.3s ease;
 }
 
-/* Added new pink-themed animations and effects */
+.colorful-icon:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 6px 12px rgba(139, 69, 19, 0.6));
+}
+
+/* Simple hover effects without complex animations */
+.hover-scale {
+  transition: transform 0.3s ease;
+}
+
+.hover-scale:hover {
+  transform: scale(1.05);
+}
+
+.hover-lift {
+  transition: all 0.3s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Enhanced pink-themed effects with dark fuchsia - no animations */
 .pink-glow {
-  box-shadow: 0 0 20px rgba(300, 70%, 65%, 0.3);
+  box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+}
+
+.dark-fuchsia-glow {
+  box-shadow: 0 0 25px rgba(139, 69, 19, 0.4);
 }
 
 .pink-border {
-  border: 2px solid hsl(var(--dark-pastel-pink));
+  border: 2px solid hsl(var(--deep-fuchsia));
 }
 
-@keyframes pink-pulse {
-  0%,
-  100% {
-    box-shadow: 0 0 0 0 rgba(300, 70%, 65%, 0.7);
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optimized image loading without complex animations */
+.image-container {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+}
+
+.image-blur-load {
+  filter: blur(5px);
+  transition: filter 0.3s ease;
+}
+
+.image-blur-load.loaded {
+  filter: blur(0);
+}
+
+/* Accessibility and reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  70% {
-    box-shadow: 0 0 0 10px rgba(300, 70%, 65%, 0);
+
+  .animate-float-mobile,
+  .animate-float-gentle,
+  .animate-float-smooth,
+  .animate-float-particle {
+    animation: none;
+  }
+
+  .section-with-blobs::before {
+    animation: none;
+  }
+
+  .scroll-fade-in,
+  .scroll-fade-up {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-.pink-pulse {
-  animation: pink-pulse 2s infinite;
-}
-
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
+/* Mobile optimization - disable floating blobs on small screens for performance */
+@media (max-width: 768px) {
+  .animate-float-gentle,
+  .animate-float-smooth,
+  .animate-float-particle {
+    animation: none;
   }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-}
 
-.animate-blob {
-  animation: blob 7s infinite;
-}
-
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-
-.animation-delay-4000 {
-  animation-delay: 4s;
+  .section-with-blobs::before {
+    animation: blob-background-enhanced 40s ease-in-out infinite;
+  }
 }

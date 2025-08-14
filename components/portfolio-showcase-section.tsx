@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import Image from "next/image"
+import { OptimizedImage } from "@/components/optimized-image"
 import Link from "next/link"
 import { ArrowRight, ExternalLink, TrendingUp } from "lucide-react"
 
@@ -78,48 +78,54 @@ export function PortfolioShowcaseSection() {
   ]
 
   return (
-    <div className="py-16 md:py-24">
-      <div className="text-center mb-12">
-        <Badge className="mb-4 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white">Our Portfolio</Badge>
-        <h2 className="text-3xl md:text-4xl font-bold mb-4 gradient-text">Success Stories That Speak Volumes</h2>
-        <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+    <div className="py-12 md:py-16 lg:py-20">
+      <div className="text-center mb-8 md:mb-12">
+        <Badge className="mb-3 md:mb-4 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white text-sm">
+          Our Portfolio
+        </Badge>
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4 gradient-text">
+          Success Stories That Speak Volumes
+        </h2>
+        <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto px-4">
           Discover how we've transformed businesses across industries with innovative digital solutions and measurable
           results.
         </p>
       </div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+      <div className="grid gap-6 md:gap-8 md:grid-cols-2 lg:grid-cols-3 mb-8 md:mb-12">
         {featuredProjects.map((project, index) => (
-          <Card key={index} className="glass-card group hover:scale-105 transition-all duration-300">
+          <Card key={index} className="glass-card group hover-scale-optimized">
             <div className="relative overflow-hidden rounded-t-lg">
-              <Image
-                src={project.image || "/placeholder.svg"}
-                alt={project.title}
+              <OptimizedImage
+                src={project.image}
+                alt={`${project.title} - ${project.industry} project showcase`}
                 width={400}
                 height={250}
                 className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={index < 3}
               />
-              <div className="absolute top-4 left-4">
-                <Badge variant="secondary" className="bg-white/90 text-gray-800">
+              <div className="absolute top-3 md:top-4 left-3 md:left-4">
+                <Badge variant="secondary" className="bg-white/90 text-gray-800 text-xs">
                   {project.industry}
                 </Badge>
               </div>
-              <div className="absolute top-4 right-4">
-                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white">
+              <div className="absolute top-3 md:top-4 right-3 md:right-4">
+                <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white text-xs">
                   <TrendingUp className="w-3 h-3 mr-1" />
                   {project.results}
                 </Badge>
               </div>
             </div>
 
-            <CardHeader>
-              <CardTitle className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
+            <CardHeader className="p-4 md:p-6">
+              <CardTitle className="text-lg md:text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
                 {project.title}
               </CardTitle>
-              <p className="text-sm text-muted-foreground">{project.description}</p>
+              <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
             </CardHeader>
 
-            <CardContent className="space-y-4">
+            <CardContent className="space-y-4 p-4 md:p-6 pt-0">
               <div className="space-y-2">
                 <h4 className="font-medium text-sm text-foreground">Key Features:</h4>
                 <div className="flex flex-wrap gap-1">
@@ -133,14 +139,14 @@ export function PortfolioShowcaseSection() {
 
               {project.external ? (
                 <a href={project.link} target="_blank" rel="noopener noreferrer">
-                  <Button className="w-full gradient-button group">
+                  <Button className="w-full gradient-button group text-sm">
                     View Live Project
                     <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </a>
               ) : (
                 <Link href={project.link}>
-                  <Button className="w-full gradient-button group">
+                  <Button className="w-full gradient-button group text-sm">
                     View Case Study
                     <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>

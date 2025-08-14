@@ -4,6 +4,31 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Palette, TrendingUp, Users, Award, CheckCircle, ArrowRight, Monitor } from "lucide-react"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Professional Web Design Services | MH Digital Solution",
+  description:
+    "Create stunning, conversion-focused websites that captivate your audience and drive business growth. Professional web design services with modern responsive design.",
+  keywords:
+    "web design, website design, responsive design, UI/UX design, professional website, conversion optimization",
+  alternates: {
+    canonical: "https://www.mhdigitalsolution.com/services/web-design",
+  },
+  openGraph: {
+    title: "Professional Web Design Services | MH Digital Solution",
+    description: "Create stunning, conversion-focused websites that captivate your audience and drive business growth.",
+    url: "https://www.mhdigitalsolution.com/services/web-design",
+    images: [
+      {
+        url: "https://www.mhdigitalsolution.com/images/ui-ux-design-3d.webp",
+        width: 1200,
+        height: 630,
+        alt: "Professional Web Design Services",
+      },
+    ],
+  },
+}
 
 export default function WebDesignPage() {
   const problems = [

@@ -4,6 +4,13 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Target, Award, CheckCircle, ArrowRight, Bot, DollarSign, Clock } from "lucide-react"
 import Image from "next/image"
+import { generateServiceMetadata } from "@/lib/metadata"
+import Link from "next/link"
+
+export const metadata = generateServiceMetadata(
+  "AI Automation",
+  "Intelligent AI automation solutions that streamline business processes, reduce costs, and improve operational efficiency.",
+)
 
 export default function AiAutomationPage() {
   const problems = [
@@ -134,6 +141,116 @@ export default function AiAutomationPage() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* AI Automation Resources & Success Stories */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent mb-4">
+                AI Automation Resources & Success Stories
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Explore how AI automation is transforming businesses across industries
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link
+                      href="/blog/ai-automation-revolution-2024"
+                      className="hover:text-fuchsia-600 transition-colors"
+                    >
+                      AI Automation Revolution 2024
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Discover how AI automation is revolutionizing business operations and driving unprecedented
+                    efficiency gains across industries.
+                  </p>
+                  <Link
+                    href="/blog/ai-automation-revolution-2024"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    Read More →
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link
+                      href="/case-studies/manufacturing-automation"
+                      className="hover:text-fuchsia-600 transition-colors"
+                    >
+                      Manufacturing Automation Success
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    How we helped a manufacturing company achieve $2M annual savings through intelligent AI automation
+                    systems.
+                  </p>
+                  <Link
+                    href="/case-studies/manufacturing-automation"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    View Case Study →
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link href="/blog/team-collaboration-tools" className="hover:text-fuchsia-600 transition-colors">
+                      AI-Powered Team Collaboration
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Explore how AI-powered collaboration tools are enhancing team productivity and streamlining
+                    workflows.
+                  </p>
+                  <Link
+                    href="/blog/team-collaboration-tools"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    Read More →
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link
+                      href="/case-studies/techcorp-ai-automation"
+                      className="hover:text-fuchsia-600 transition-colors"
+                    >
+                      TechCorp AI Transformation
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Complete AI transformation case study showing how TechCorp achieved operational excellence through
+                    automation.
+                  </p>
+                  <Link
+                    href="/case-studies/techcorp-ai-automation"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    View Case Study →
+                  </Link>
+                </CardContent>
+              </Card>
             </div>
           </div>
 

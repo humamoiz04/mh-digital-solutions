@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, Users, Target, Award, CheckCircle, ArrowRight } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 export default function DigitalMarketingPage() {
   const problems = [
@@ -173,6 +174,112 @@ export default function DigitalMarketingPage() {
                   </CardContent>
                 </Card>
               ))}
+            </div>
+          </div>
+
+          {/* Learn More About Digital Marketing */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent mb-4">
+                Learn More About Digital Marketing
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Explore our latest insights and success stories in digital marketing
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-6">
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link href="/blog/seo-strategies-2024" className="hover:text-fuchsia-600 transition-colors">
+                      SEO Strategies 2024: Complete Guide
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Discover the latest SEO techniques that are driving results in 2024, including AI-powered
+                    optimization and local search strategies.
+                  </p>
+                  <Link
+                    href="/blog/seo-strategies-2024"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    Read More →
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link href="/blog/ppc-optimization-guide" className="hover:text-fuchsia-600 transition-colors">
+                      PPC Optimization Guide 2024
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Learn advanced PPC strategies to maximize your ad spend ROI and drive high-quality leads for your
+                    business.
+                  </p>
+                  <Link
+                    href="/blog/ppc-optimization-guide"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    Read More →
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link
+                      href="/case-studies/saas-growth-strategy"
+                      className="hover:text-fuchsia-600 transition-colors"
+                    >
+                      SaaS Growth Strategy Success
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    How we helped a SaaS startup achieve 400% growth through integrated digital marketing campaigns.
+                  </p>
+                  <Link
+                    href="/case-studies/saas-growth-strategy"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    View Case Study →
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="glass-card">
+                <CardHeader>
+                  <CardTitle className="text-lg">
+                    <Link
+                      href="/blog/social-media-roi-measurement"
+                      className="hover:text-fuchsia-600 transition-colors"
+                    >
+                      Social Media ROI Measurement
+                    </Link>
+                  </CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground mb-4">
+                    Master the art of measuring social media ROI with our comprehensive guide to analytics and
+                    attribution.
+                  </p>
+                  <Link
+                    href="/blog/social-media-roi-measurement"
+                    className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
+                  >
+                    Read More →
+                  </Link>
+                </CardContent>
+              </Card>
             </div>
           </div>
 

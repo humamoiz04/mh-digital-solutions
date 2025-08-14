@@ -38,24 +38,28 @@ export function Header() {
 
   return (
     <header className="flex items-center justify-between h-14 sm:h-16 px-3 sm:px-4 md:px-6 border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-      <Link className="flex items-center gap-2" href="/">
+      <Link className="flex items-center gap-2" href="/" aria-label="MH Digital Solution Home">
         <Image
           src="/images/mh-digital-solutions-logo.webp"
           alt="MH Digital Solution Logo"
           width={32}
           height={32}
           className="sm:w-10 sm:h-10"
+          priority
         />
         <span className="text-base sm:text-lg font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
           MH Digital Solution
         </span>
       </Link>
-      <nav className="hidden md:flex items-center gap-4 lg:gap-6">
+      <nav className="hidden md:flex items-center gap-4 lg:gap-6" role="navigation" aria-label="Main navigation">
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/">
           Home
         </Link>
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center gap-1 text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors">
+          <DropdownMenuTrigger
+            className="flex items-center gap-1 text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
+            aria-label="Services menu"
+          >
             Services <ChevronDown className="h-4 w-4" />
           </DropdownMenuTrigger>
           <DropdownMenuContent className="w-64 max-h-96 overflow-y-auto">
@@ -83,8 +87,11 @@ export function Header() {
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/about">
           About
         </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/team">
-          Team
+        <Link
+          className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
+          href="/portfolio"
+        >
+          Portfolio
         </Link>
         <Link
           className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
@@ -98,10 +105,7 @@ export function Header() {
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/pricing">
           Pricing
         </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/faq">
-          FAQ
-        </Link>
-        <Link href="/contact">
+        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/contact">
           <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white text-sm">
             Contact Us
           </Button>
@@ -109,13 +113,17 @@ export function Header() {
       </nav>
       <Sheet>
         <SheetTrigger asChild>
-          <Button className="md:hidden bg-transparent" size="icon" variant="outline">
+          <Button className="md:hidden bg-transparent" size="icon" variant="outline" aria-label="Open mobile menu">
             <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
         <SheetContent side="right" className="w-[280px] sm:w-[320px]">
-          <div className="flex flex-col gap-4 p-4 pt-8 max-h-full overflow-y-auto">
+          <nav
+            className="flex flex-col gap-4 p-4 pt-8 max-h-full overflow-y-auto"
+            role="navigation"
+            aria-label="Mobile navigation"
+          >
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/">
               Home
             </Link>
@@ -142,8 +150,8 @@ export function Header() {
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/about">
               About
             </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/team">
-              Team
+            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/portfolio">
+              Portfolio
             </Link>
             <Link
               className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2"
@@ -157,15 +165,12 @@ export function Header() {
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/pricing">
               Pricing
             </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/faq">
-              FAQ
-            </Link>
             <Link href="/contact" className="mt-4">
               <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white w-full text-base py-3">
                 Contact Us
               </Button>
             </Link>
-          </div>
+          </nav>
         </SheetContent>
       </Sheet>
     </header>

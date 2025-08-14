@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section"
 import { Button } from "@/components/ui/button"
+import { Phone, MessageCircle, Calendar } from "lucide-react"
 import Link from "next/link"
 
 export function CtaSection() {
@@ -11,9 +12,42 @@ export function CtaSection() {
           Let's discuss how our expert digital solutions can help you achieve your goals. Contact us today for a free
           consultation.
         </p>
-        <Link href="/contact">
-          <Button className="gradient-button px-8 py-4 text-xl">Get a Free Consultation</Button>
-        </Link>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <Link href="/contact">
+            <Button className="gradient-button px-8 py-4 text-xl hover:scale-105 transition-transform">
+              <Calendar className="h-5 w-5 mr-2" />
+              Get Free Consultation
+            </Button>
+          </Link>
+
+          <a href="tel:+17075822255">
+            <Button
+              variant="outline"
+              className="px-8 py-4 text-xl border-2 border-fuchsia-500 text-fuchsia-500 hover:bg-fuchsia-500 hover:text-white transition-all hover:scale-105 bg-transparent"
+            >
+              <Phone className="h-5 w-5 mr-2" />
+              Call Now: (707) 582-2255
+            </Button>
+          </a>
+
+          <a href="https://wa.me/17075822255" target="_blank" rel="noopener noreferrer">
+            <Button
+              variant="outline"
+              className="px-8 py-4 text-xl border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-all hover:scale-105 bg-transparent"
+            >
+              <MessageCircle className="h-5 w-5 mr-2" />
+              WhatsApp
+            </Button>
+          </a>
+        </div>
+
+        <div className="mt-6 text-sm text-muted-foreground">
+          <p>
+            🎉 <span className="text-fuchsia-500 font-semibold">Limited Time:</span> 70% OFF Consultation - Only $15
+            (Reg. $50)
+          </p>
+        </div>
       </div>
     </Section>
   )

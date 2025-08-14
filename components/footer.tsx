@@ -1,57 +1,98 @@
+"use client"
+
 import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
-import { Facebook, Twitter, Linkedin, Instagram } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
+import { NewsletterSignup } from "@/components/newsletter-signup"
 
 export function Footer() {
   return (
-    <footer className="bg-background/80 backdrop-blur-sm py-12 md:py-16 border-t">
-      <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-4 gap-8">
-        <div className="space-y-4">
-          <Link className="flex items-center gap-2" href="/">
-            <Image src="/images/mh-digital-solutions-logo.webp
-" alt="MH Digital Solution Logo" width={40} height={40} />
+    <footer className="bg-background/80 backdrop-blur-sm py-12 md:py-16 border-t section-with-blobs" role="contentinfo">
+      <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-5 gap-8">
+        <div className="space-y-4 md:col-span-2">
+          <Link className="flex items-center gap-2" href="/" aria-label="MH Digital Solution Home">
+            <Image
+              src="/images/mh-digital-solutions-logo.webp"
+              alt="MH Digital Solution Logo"
+              width={40}
+              height={40}
+              loading="lazy"
+            />
             <span className="text-lg font-bold text-foreground">MH Digital Solution</span>
           </Link>
           <p className="text-muted-foreground">
             Your trusted partner for innovative digital marketing and IT solutions.
           </p>
-          <div className="flex space-x-4">
+
+          <div className="space-y-2">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Phone className="h-4 w-4" aria-hidden="true" />
+              <a
+                href="tel:+17075822255"
+                className="hover:text-primary transition-colors"
+                aria-label="Call us at +1 (707) 582-2255"
+              >
+                +1 (707) 582-2255
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <Mail className="h-4 w-4" aria-hidden="true" />
+              <a
+                href="mailto:info@mhdigitalsolution.com"
+                className="hover:text-primary transition-colors"
+                aria-label="Email us at info@mhdigitalsolution.com"
+              >
+                info@mhdigitalsolution.com
+              </a>
+            </div>
+            <div className="flex items-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="h-4 w-4" aria-hidden="true" />
+              <span>Serving Businesses Nationwide</span>
+            </div>
+          </div>
+
+          <div className="flex space-x-4" role="list" aria-label="Social media links">
             <Link
               className="text-muted-foreground hover:text-primary transition-colors"
               href="https://facebook.com/mhdigitalsolution"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
             >
               <Facebook className="h-6 w-6" />
-              <span className="sr-only">Facebook</span>
             </Link>
             <Link
               className="text-muted-foreground hover:text-primary transition-colors"
               href="https://twitter.com/mhdigitalsol"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Twitter"
             >
               <Twitter className="h-6 w-6" />
-              <span className="sr-only">Twitter</span>
             </Link>
             <Link
               className="text-muted-foreground hover:text-primary transition-colors"
               href="https://linkedin.com/company/mh-digital-solution"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Connect with us on LinkedIn"
             >
               <Linkedin className="h-6 w-6" />
-              <span className="sr-only">LinkedIn</span>
             </Link>
             <Link
               className="text-muted-foreground hover:text-primary transition-colors"
               href="https://instagram.com/mhdigitalsolutions"
               target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
             >
               <Instagram className="h-6 w-6" />
-              <span className="sr-only">Instagram</span>
             </Link>
           </div>
         </div>
-        <div className="space-y-2">
+
+        <nav className="space-y-2" aria-label="Marketing services">
           <h3 className="text-lg font-semibold text-foreground">Marketing Services</h3>
           <ul className="space-y-1">
             <li>
@@ -103,8 +144,9 @@ export function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
-        <div className="space-y-2">
+        </nav>
+
+        <nav className="space-y-2" aria-label="Development and technology services">
           <h3 className="text-lg font-semibold text-foreground">Development & Tech</h3>
           <ul className="space-y-1">
             <li>
@@ -177,56 +219,33 @@ export function Footer() {
               </Link>
             </li>
           </ul>
-        </div>
+        </nav>
+
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold text-foreground">Company</h3>
-          <ul className="space-y-1">
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/about">
-                About Us
-              </Link>
-            </li>
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/team">
-                Our Team
-              </Link>
-            </li>
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/the-mh-edge">
-                The MH Edge
-              </Link>
-            </li>
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/blog">
-                Blog
-              </Link>
-            </li>
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/case-studies">
-                Case Studies
-              </Link>
-            </li>
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/contact">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/privacy-policy">
-                Privacy Policy
-              </Link>
-            </li>
-            <li>
-              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/terms-of-service">
-                Terms of Service
-              </Link>
-            </li>
-          </ul>
+          <NewsletterSignup variant="footer" />
         </div>
       </div>
       <Separator className="my-8" />
-      <div className="container px-4 md:px-6 text-center text-sm text-muted-foreground">
-        © 2024 MH Digital Solution. All rights reserved.
+      <div className="container px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="text-sm text-muted-foreground">© 2024 MH Digital Solution. All rights reserved.</div>
+        <nav className="flex gap-4 text-sm" aria-label="Legal links">
+          <Link className="text-muted-foreground hover:text-primary transition-colors" href="/privacy-policy">
+            Privacy Policy
+          </Link>
+          <Link className="text-muted-foreground hover:text-primary transition-colors" href="/terms-of-service">
+            Terms of Service
+          </Link>
+          <button
+            onClick={() => {
+              localStorage.removeItem("cookieConsent")
+              window.location.reload()
+            }}
+            className="text-muted-foreground hover:text-primary transition-colors"
+            aria-label="Reset cookie preferences"
+          >
+            Cookie Settings
+          </button>
+        </nav>
       </div>
     </footer>
   )

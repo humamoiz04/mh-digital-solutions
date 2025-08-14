@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { Section } from "@/components/Section"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
@@ -9,143 +9,31 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Search, ExternalLink, Award, TrendingUp } from "lucide-react"
+import { caseStudies, industries } from "@/lib/content-data"
 
 export default function CaseStudiesPage() {
   const [searchTerm, setSearchTerm] = useState("")
   const [selectedIndustry, setSelectedIndustry] = useState("All")
 
-  const caseStudies = [
-    {
-      slug: "premium-auto-detailing-expansion",
-      title: "Premium Auto Detailing: Boosting Local Leads with Affordable SEO",
-      industry: "Automotive Services",
-      image: "/images/system-update-flat.webp",
-      description:
-        "Local detailing business with excellent service but limited to neighborhood customers, struggling with lead generation and online visibility.",
-      results: "+1200% Leads, +800% Revenue",
-      metrics: {
-        expansion: "50 States",
-        leads: "+1200%",
-        revenue: "+800%",
-      },
-      featured: true,
-    },
-    {
-      slug: "mobile-app-success-story",
-      title: "Mobile App Development: From Concept to 1M+ Downloads",
-      industry: "Technology",
-      image: "/images/api-integration-developer.webp",
-      description:
-        "Startup with innovative app idea but no technical expertise, needed end-to-end mobile app development and launch strategy.",
-      results: "1M+ Downloads, $2M Revenue",
-      metrics: {
-        downloads: "1M+",
-        revenue: "$2M",
-        rating: "4.8★",
-      },
-      featured: true,
-    },
-    {
-      slug: "bella-vista-restaurant-transformation",
-      title: "Bella Vista Restaurant: Increasing E-commerce Conversions by 220%",
-      industry: "Food & Beverage",
-      image: "/images/business-process-infographic.webp",
-      description:
-        "Excellent food and ratings but no online presence, causing long wait times and frustrated customers leading to negative reviews.",
-      results: "+220% Revenue, +95% Satisfaction",
-      metrics: {
-        satisfaction: "+95%",
-        efficiency: "+60%",
-        revenue: "+220%",
-      },
-      featured: true,
-    },
-    {
-      slug: "techcorp-ai-automation",
-      title: "TechCorp Industries: Streamlining Operations with Custom AI Automation",
-      industry: "Technology",
-      image: "/images/business-automation.webp",
-      description:
-        "Manual processes across multiple departments causing inefficiencies, high operational costs, and scalability issues.",
-      results: "+75% Efficiency, -40% Costs",
-      metrics: {
-        efficiency: "+75%",
-        costs: "-40%",
-        accuracy: "+99.2%",
-      },
-      featured: true,
-    },
-    {
-      slug: "fitlife-gyms-scaling",
-      title: "FitLife Gyms: Scaling Digital Presence Across Multiple Locations",
-      industry: "Fitness & Wellness",
-      image: "/images/process-optimization.webp",
-      description:
-        "Inconsistent branding and marketing across 15 locations, poor local SEO performance, and declining membership rates.",
-      results: "+300% Members, +250% Revenue",
-      metrics: {
-        locations: "15 Gyms",
-        members: "+300%",
-        revenue: "+250%",
-      },
-      featured: true,
-    },
-    {
-      slug: "saas-growth-strategy",
-      title: "SaaS Company Achieves 300% Growth with Integrated Digital Strategy",
-      industry: "SaaS",
-      image: "/images/analytics-team.webp",
-      description:
-        "A comprehensive digital marketing strategy led to a significant increase in qualified leads and reduced CAC for a SaaS client.",
-      results: "300% Growth, 50% Reduced CAC",
-      metrics: {
-        growth: "300%",
-        cac: "-50%",
-        leads: "+400%",
-      },
-      featured: false,
-    },
-    {
-      slug: "healthcare-digital-transformation",
-      title: "Healthcare Provider Streamlines Operations with Digital Solutions",
-      industry: "Healthcare",
-      image: "/images/repair-work-setup.webp",
-      description: "Digital transformation initiative improved patient care and operational efficiency significantly.",
-      results: "25% Efficiency Gain, 95% Patient Satisfaction",
-      metrics: {
-        efficiency: "+25%",
-        satisfaction: "95%",
-        costs: "-15%",
-      },
-      featured: false,
-    },
-    {
-      slug: "manufacturing-automation",
-      title: "Manufacturing Company Reduces Costs by 40% with AI Automation",
-      industry: "Manufacturing",
-      image: "/images/software-development-concept.webp",
-      description:
-        "Implementation of AI-powered automation systems transformed production processes and quality control.",
-      results: "40% Cost Reduction, 99.5% Quality Score",
-      metrics: {
-        costs: "-40%",
-        quality: "99.5%",
-        efficiency: "+60%",
-      },
-      featured: false,
-    },
-  ]
+  const observerRef = useRef<IntersectionObserver | null>(null)
 
-  const industries = [
-    "All",
-    "Automotive Services",
-    "Food & Beverage",
-    "Technology",
-    "Fitness & Wellness",
-    "SaaS",
-    "Healthcare",
-    "Manufacturing",
-  ]
+  useEffect(() => {
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible")
+          }
+        })
+      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
+    )
+
+    const elements = document.querySelectorAll(".scroll-fade-in, .scroll-fade-up")
+    elements.forEach((el) => observerRef.current?.observe(el))
+
+    return () => observerRef.current?.disconnect()
+  }, [])
 
   const filteredStudies = useMemo(() => {
     return caseStudies.filter((study) => {
@@ -162,7 +50,7 @@ export default function CaseStudiesPage() {
   return (
     <div className="relative z-10 section-with-blobs">
       <Section className="py-16 md:py-24">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 scroll-fade-in">
           <Badge className="mb-4 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white">
             <div className="icon-gradient-bg w-4 h-4 mr-2">
               <Award className="w-3 h-3" />
@@ -177,7 +65,7 @@ export default function CaseStudiesPage() {
         </div>
 
         {/* Success Metrics */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16 scroll-fade-up">
           <div className="text-center glass-card p-6">
             <div className="text-3xl font-bold gradient-text mb-2">500+</div>
             <div className="text-sm text-muted-foreground">Projects Completed</div>
@@ -197,7 +85,7 @@ export default function CaseStudiesPage() {
         </div>
 
         {/* Featured Case Studies */}
-        <div className="mb-16">
+        <div className="mb-16 scroll-fade-up">
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-foreground mb-2">Featured Success Stories</h2>
             <p className="text-muted-foreground">Our most impactful client transformations</p>
@@ -207,7 +95,8 @@ export default function CaseStudiesPage() {
             {featuredStudies.slice(0, 4).map((study, index) => (
               <Card
                 key={index}
-                className="glass-card group hover:scale-105 transition-all duration-300 border-2 border-fuchsia-200/20"
+                className="glass-card group border-2 border-fuchsia-200/20 scroll-fade-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative">
                   <Link href={`/case-studies/${study.slug}`}>
@@ -263,7 +152,7 @@ export default function CaseStudiesPage() {
         </div>
 
         {/* Search and Filter Section */}
-        <div className="mb-8 space-y-4">
+        <div className="mb-8 space-y-4 scroll-fade-up">
           <div className="text-center mb-6">
             <h2 className="text-2xl font-bold text-foreground mb-2">Complete Portfolio Collection</h2>
             <p className="text-muted-foreground">Browse all our successful projects and case studies</p>
@@ -300,7 +189,7 @@ export default function CaseStudiesPage() {
 
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {filteredStudies.map((study, index) => (
-            <Card key={index} className="glass-card flex flex-col group hover:scale-105 transition-all duration-300">
+            <Card key={index} className="glass-card flex flex-col group scroll-fade-in">
               <Link href={`/case-studies/${study.slug}`}>
                 <Image
                   src={study.image || "/placeholder.svg"}
@@ -346,7 +235,7 @@ export default function CaseStudiesPage() {
         )}
 
         {/* CTA Section */}
-        <div className="mt-16 text-center">
+        <div className="mt-16 text-center scroll-fade-up">
           <div className="glass-card p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-foreground mb-4 gradient-text">
               Ready to Become Our Next Success Story?
