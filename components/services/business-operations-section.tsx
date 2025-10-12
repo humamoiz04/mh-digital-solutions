@@ -68,7 +68,7 @@ export function BusinessOperationsSection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/business-operations-KaqXxrW5JQR3hQTaP8tRSn8zjHijDg.webp" // Added business operations image
+            src="/images/design-mode/business-operations.webp" // Added business operations image
             alt="Business Operations Illustration"
             layout="fill"
             objectFit="contain"

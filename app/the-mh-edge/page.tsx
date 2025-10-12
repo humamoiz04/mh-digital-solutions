@@ -4,6 +4,14 @@ import { Button } from "@/components/ui/button"
 import Image from "next/image"
 import Link from "next/link"
 import { CheckCircle, TrendingUp, Users, Award, Zap, Target } from "lucide-react"
+import type { Metadata } from "next"
+import { generatePageMetadata } from "@/lib/metadata"
+
+export const metadata: Metadata = generatePageMetadata({
+  title: "The MH Edge",
+  description: "Our unique methodology combines strategy, data, and technology to deliver measurable growth.",
+  path: "/the-mh-edge",
+})
 
 export default function MHEdgePage() {
   const problems = [

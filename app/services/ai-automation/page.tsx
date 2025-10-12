@@ -289,7 +289,7 @@ export default function AiAutomationPage() {
           <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
             <div>
               <Image
-                src="/images/ai-automation-illustration.webp"
+                src="/images/ai-automation-new.webp"
                 alt="AI automation in manufacturing process"
                 width={500}
                 height={400}

@@ -2,6 +2,14 @@ import { Section } from "@/components/Section"
 import { AppointmentForm } from "@/components/appointment-form"
 import { CalendarCheck, Users, Lightbulb } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import type { Metadata } from "next"
+import { generatePageMetadata } from "@/lib/metadata"
+
+export const metadata: Metadata = generatePageMetadata({
+  title: "Book a Consultation",
+  description: "Schedule a free consultation with our experts to discuss your goals and plan a winning strategy.",
+  path: "/appointment",
+})
 
 export default function AppointmentPage() {
   return (

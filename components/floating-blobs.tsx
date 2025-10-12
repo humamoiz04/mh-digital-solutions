@@ -15,19 +15,18 @@ interface Blob {
 export function FloatingBlobs() {
   const [blobs, setBlobs] = useState<Blob[]>([])
 
-  const blobColors = [
- 
-    "bg-dark-pastel-yellow",
-    "bg-dark-pastel-purple",
-    "bg-dark-pastel-red",
-    "bg-dark-pastel-orange",
-    "bg-dark-pastel-pink",
-    "bg-dark-pastel-teal",
-    "bg-dark-pastel-indigo",
-    "bg-dark-pastel-lime",
-    "bg-dark-pastel-cyan",
-    "bg-dark-pastel-fuchsia",
-    "bg-[#b8eac7]", // Specific color requested
+  const colors = [
+    "hsl(var(--dark-pastel-yellow))",
+    "hsl(var(--dark-pastel-purple))",
+    "hsl(var(--dark-pastel-red))",
+    "hsl(var(--dark-pastel-orange))",
+    "hsl(var(--dark-pastel-pink))",
+    "hsl(var(--dark-pastel-teal))",
+    "hsl(var(--dark-pastel-indigo))",
+    "hsl(var(--dark-pastel-lime))",
+    "hsl(var(--dark-pastel-cyan))",
+    "hsl(var(--dark-pastel-fuchsia))",
+    "#b8eac7",
   ]
 
   useEffect(() => {
@@ -40,7 +39,7 @@ export function FloatingBlobs() {
           size: Math.random() * (200 - 80) + 80,
           x: Math.random() * 100,
           y: Math.random() * 100,
-          color: blobColors[Math.floor(Math.random() * blobColors.length)],
+          color: colors[i % colors.length],
           animationDuration: Math.random() * (30 - 15) + 15,
           animationDelay: Math.random() * 10,
         })
@@ -57,18 +56,19 @@ export function FloatingBlobs() {
   }, [])
 
   return (
-    <div className="fixed inset-0 w-full h-full overflow-hidden -z-20 pointer-events-none">
+    <div className="fixed inset-0 w-full h-full overflow-hidden -z-50 pointer-events-none" aria-hidden="true">
       {blobs.map((blob) => (
         <div
           key={blob.id}
-          className={`absolute rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob ${blob.color}`}
+          className="absolute rounded-full mix-blend-multiply blur-xl"
           style={{
             width: `${blob.size}px`,
             height: `${blob.size}px`,
             left: `${blob.x}%`,
             top: `${blob.y}%`,
-            animationDuration: `${blob.animationDuration}s`,
-            animationDelay: `${blob.animationDelay}s`,
+            backgroundColor: colors[blob.id % colors.length],
+            opacity: 0.08, // lower opacity further to reduce interference
+            animation: `blob ${blob.animationDuration}s ease-in-out ${blob.animationDelay}s infinite`,
           }}
         />
       ))}
@@ -91,3 +91,5 @@ export function FloatingBlobs() {
     </div>
   )
 }
+
+export default FloatingBlobs

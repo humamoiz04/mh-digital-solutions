@@ -4,6 +4,23 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { TrendingUp, Users, Target, Award, CheckCircle, ArrowRight, BarChart3 } from "lucide-react"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Business Analytics Services | Data-Driven Insights & Reporting | MH Digital",
+  description:
+    "Transform data into actionable insights with comprehensive analytics services that drive informed decision-making and business growth.",
+  keywords:
+    "business analytics services, data analytics, business intelligence, reporting dashboards, predictive analytics",
+  canonical: "https://www.mhdigitalsolution.com/services/business-analytics",
+  openGraph: {
+    title: "Business Analytics Services | Data-Driven Insights & Reporting | MH Digital",
+    description:
+      "Transform data into actionable insights with comprehensive analytics services that drive informed decision-making and business growth.",
+    url: "https://www.mhdigitalsolution.com/services/business-analytics",
+    type: "website",
+  },
+}
 
 export default function BusinessAnalyticsPage() {
   const problems = [

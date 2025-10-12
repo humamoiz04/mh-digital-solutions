@@ -68,7 +68,7 @@ export function SeoSolutionsSection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%283%29-kiISwCuhlKPKaFn0zkMdOiPVwd3n8L.jpeg"
+            src="/images/design-mode/download%20%283%29.jpeg"
             alt="SEO Optimization Process Illustration"
             layout="fill"
             objectFit="contain"

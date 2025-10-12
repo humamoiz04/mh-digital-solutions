@@ -2,6 +2,7 @@
 
 import { MessageCircle } from "lucide-react"
 import { Button } from "@/components/ui/button"
+import ThreeDIcon from "@/components/ui/three-d-icon"
 
 export function WhatsAppWidget() {
   const handleWhatsAppClick = () => {
@@ -12,13 +13,20 @@ export function WhatsAppWidget() {
   }
 
   return (
-    <div className="fixed bottom-6 left-6 z-50">
+    <div
+      className="fixed z-50"
+      style={{
+        left: "1rem",
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + var(--chat-offset, 88px))",
+      }}
+    >
       <Button
         onClick={handleWhatsAppClick}
         className="w-14 h-14 rounded-full bg-green-500 hover:bg-green-600 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-110"
         title="Chat on WhatsApp"
+        aria-label="Chat on WhatsApp"
       >
-        <MessageCircle className="h-6 w-6 text-white" />
+        <ThreeDIcon icon={MessageCircle} size={22} variant="teal" />
       </Button>
     </div>
   )

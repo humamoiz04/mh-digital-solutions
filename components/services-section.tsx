@@ -1,8 +1,9 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Section } from "@/components/Section"
-import { Search, Code, Megaphone, Palette, Cloud, Smartphone, Laptop, BarChart, Briefcase } from "lucide-react"
+import { Search, Code, Megaphone, Cloud, Smartphone, Laptop, BarChart, Briefcase } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
+import ThreeDIcon from "@/components/ui/three-d-icon"
 
 export function ServicesSection() {
   const services = [
@@ -29,14 +30,6 @@ export function ServicesSection() {
       link: "/services/digital-marketing",
       color: "text-dark-pastel-purple",
       image: "/images/social-media-marketing.webp",
-    },
-    {
-      icon: Palette,
-      title: "UI/UX Design",
-      description: "Creating intuitive and engaging user experiences.",
-      link: "/services/ui-ux-design",
-      color: "text-dark-pastel-red",
-      image: "/images/mobile-app-ui-design.webp",
     },
     {
       icon: Cloud,
@@ -80,6 +73,8 @@ export function ServicesSection() {
     },
   ]
 
+  const variants: Array<"brand" | "blue" | "teal"> = ["brand", "blue", "teal"]
+
   return (
     <Section className="py-6 sm:py-8 md:py-12 lg:py-20 text-center">
       <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-3 sm:mb-4 md:mb-6 gradient-text px-2 sm:px-0">
@@ -91,18 +86,18 @@ export function ServicesSection() {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 px-2 sm:px-0">
         {services.map((service, index) => (
           <Link href={service.link} key={index}>
-            <Card className="glass-card flex flex-col items-center p-3 sm:p-4 md:p-6 text-center h-full hover:scale-105 transition-all duration-300 group">
+            <Card className="glass-card flex flex-col items-center p-3 sm:p-4 md:p-6 text-center h-full transition-all group">
               <div className="relative w-full h-32 sm:h-40 md:h-48 mb-3 sm:mb-4 overflow-hidden rounded-lg">
                 <Image
-                  src={service.image || "/placeholder.svg"}
+                  src={service.image || "/placeholder.svg?height=400&width=600&query=service illustration"}
                   alt={`${service.title} Illustration`}
                   fill
                   sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-110 transition-transform duration-300"
+                  className="object-cover"
                 />
               </div>
-              <div className={`mb-2 sm:mb-3 p-2 sm:p-3 rounded-full bg-primary/10 ${service.color}`}>
-                <service.icon className="h-6 w-6 sm:h-8 sm:w-8 md:h-10 md:w-10" />
+              <div className="mb-2 sm:mb-3">
+                <ThreeDIcon icon={service.icon} size={40} variant={variants[index % variants.length]} />
               </div>
               <CardHeader className="pb-1 sm:pb-2 md:pb-4 px-0">
                 <CardTitle className="text-base sm:text-lg md:text-xl font-semibold">{service.title}</CardTitle>

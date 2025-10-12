@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Github, ChromeIcon as Google } from "lucide-react" // Assuming these icons are available or can be added
+import { Github, Cookie as Google } from "lucide-react" // Assuming these icons are available or can be added
 
 export function AuthForm() {
   return (

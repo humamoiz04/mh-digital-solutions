@@ -56,7 +56,7 @@ export function BusinessObjectivesSection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/business-process-optimization-W27Hk3YqrkiiKwQvuiUCUtxfBE1x9V.webp"
+            src="/images/design-mode/business-process-optimization.webp"
             alt="Business Objectives Illustration"
             layout="fill"
             objectFit="contain"

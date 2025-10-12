@@ -5,6 +5,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowLeft, CheckCircle } from "lucide-react"
+import type { Metadata } from "next"
+import { generateCaseStudyMetadata } from "@/lib/metadata"
 
 // Placeholder for case study data
 const caseStudies = [
@@ -214,4 +216,12 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
       </div>
     </Section>
   )
+}
+
+export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
+  const cs = caseStudies.find((c) => c.slug === params.slug)
+  if (!cs) {
+    return generateCaseStudyMetadata("Case Study Not Found", "Requested case study not found.", params.slug)
+  }
+  return generateCaseStudyMetadata(cs.title, cs.challenge || cs.title, params.slug)
 }

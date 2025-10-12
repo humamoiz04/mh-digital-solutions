@@ -94,7 +94,7 @@ export default function DigitalMarketingPage() {
               <TrendingUp className="h-4 w-4 mr-2" />
               Digital Marketing
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-cyan-600 bg-clip-text text-transparent">
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-fuchsia-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
               Digital Marketing Services
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
@@ -387,7 +387,7 @@ export default function DigitalMarketingPage() {
 
       <Section glass>
         <div className="text-center space-y-6 py-12">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
             Get Your Free Digital Marketing Strategy Session Today
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -396,7 +396,7 @@ export default function DigitalMarketingPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700"
+              className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700"
             >
               Get Free Strategy Session
               <ArrowRight className="ml-2 h-4 w-4" />

@@ -5,6 +5,23 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { AlertTriangle, Cloud, Shield, TrendingUp, Zap, Clock, CheckCircle } from "lucide-react"
 import { FloatingBlobs } from "@/components/floating-blobs"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Cloud Solutions & Migration Services | AWS, Azure, Google Cloud | MH Digital",
+  description:
+    "Transform your business with scalable cloud infrastructure. We provide cloud migration, multi-cloud architecture, and managed cloud services for optimal performance.",
+  keywords:
+    "cloud solutions, cloud migration services, AWS consulting, Azure migration, Google Cloud, cloud infrastructure",
+  canonical: "https://www.mhdigitalsolution.com/services/cloud-solutions",
+  openGraph: {
+    title: "Cloud Solutions & Migration Services | AWS, Azure, Google Cloud | MH Digital",
+    description:
+      "Transform your business with scalable cloud infrastructure. We provide cloud migration, multi-cloud architecture, and managed cloud services for optimal performance.",
+    url: "https://www.mhdigitalsolution.com/services/cloud-solutions",
+    type: "website",
+  },
+}
 
 export default function CloudSolutionsPage() {
   const challenges = [
@@ -104,7 +121,7 @@ export default function CloudSolutionsPage() {
       <FloatingBlobs />
 
       {/* Hero Section */}
-      <Section className="py-16 md:py-24 relative z-10" glass>
+      <Section className="py-16 md:py-24 relative z-10 backdrop-blur-sm bg-white/10" glass>
         <div className="text-center space-y-6 mb-16">
           <Badge
             variant="secondary"
@@ -194,7 +211,7 @@ export default function CloudSolutionsPage() {
                   <CardTitle className="text-xl font-bold text-foreground">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{benefit.description}</p>
+                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}

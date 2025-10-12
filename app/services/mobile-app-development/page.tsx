@@ -1,10 +1,26 @@
 import { Section } from "@/components/Section"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import { AlertTriangle, Download, Star, Users, TrendingUp, Monitor, Zap, Clock, CheckCircle } from "lucide-react"
 import { FloatingBlobs } from "@/components/floating-blobs"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Custom Mobile App Development Services (iOS & Android) | MH Digital",
+  description:
+    "We design and develop custom mobile apps for iOS and Android. Our expert team turns your vision into a high-performance, user-friendly mobile application.",
+  keywords:
+    "custom mobile app development services, ios app development company, small business app development, mobile app development, react native development",
+  canonical: "https://www.mhdigitalsolution.com/services/mobile-app-development",
+  openGraph: {
+    title: "Custom Mobile App Development Services (iOS & Android) | MH Digital",
+    description:
+      "We design and develop custom mobile apps for iOS and Android. Our expert team turns your vision into a high-performance, user-friendly mobile application.",
+    url: "https://www.mhdigitalsolution.com/services/mobile-app-development",
+    type: "website",
+  },
+}
 
 export default function MobileAppDevelopmentPage() {
   const services = [
@@ -139,7 +155,7 @@ export default function MobileAppDevelopmentPage() {
       <FloatingBlobs />
 
       {/* Hero Section */}
-      <Section className="py-16 md:py-24 relative z-10" glass>
+      <Section className="py-16 md:py-24 relative z-10 backdrop-blur-sm bg-white/10" glass>
         <div className="text-center space-y-6 mb-16">
           <Badge
             variant="secondary"
@@ -148,19 +164,18 @@ export default function MobileAppDevelopmentPage() {
             📱 Mobile App Development
           </Badge>
           <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4 bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
-            Build Powerful Mobile Apps That Users Love
+            Custom Mobile App Development Services
           </h1>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Transform your business with custom mobile applications that engage users, drive conversions, and build
-            lasting customer relationships.
+            We design and develop custom mobile apps for iOS and Android. Our expert team turns your vision into a
+            high-performance, user-friendly mobile application.
           </p>
         </div>
 
-        {/* Challenges Section */}
         <div className="space-y-8 mb-16">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Common Mobile App Challenges</h2>
-            <p className="text-lg text-muted-foreground">Issues that prevent businesses from succeeding in mobile</p>
+            <h2 className="text-3xl font-bold text-foreground mb-4">Native iOS & Android App Development</h2>
+            <p className="text-lg text-muted-foreground">Professional mobile app development for all platforms</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {challenges.map((challenge, index) => (
@@ -184,10 +199,11 @@ export default function MobileAppDevelopmentPage() {
           </div>
         </div>
 
-        {/* Solutions Section */}
         <div className="space-y-8 mb-16">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Our Mobile Solutions</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">
+              Our App Development Process: From Idea to Launch
+            </h2>
             <p className="text-lg text-muted-foreground">Comprehensive mobile development services for every need</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
@@ -212,10 +228,9 @@ export default function MobileAppDevelopmentPage() {
           </div>
         </div>
 
-        {/* Benefits Section */}
         <div className="space-y-8 mb-16">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Benefits You'll Experience</h2>
+            <h2 className="text-3xl font-bold text-foreground mb-4">UI/UX Design for Mobile Apps</h2>
             <p className="text-lg text-muted-foreground">Why mobile apps are essential for business growth</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -237,7 +252,7 @@ export default function MobileAppDevelopmentPage() {
         </div>
 
         {/* Case Study Section */}
-        <Section glass className="py-16">
+        <Section glass className="py-16 backdrop-blur-sm bg-white/10">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold text-foreground mb-4">Case Study: Fitness App Success</h2>
@@ -302,63 +317,6 @@ export default function MobileAppDevelopmentPage() {
                   <p className="text-sm text-muted-foreground">User Retention</p>
                 </CardContent>
               </Card>
-              <Card className="glass-card text-center">
-                <CardHeader>
-                  <TrendingUp className="h-8 w-8 text-orange-500 mx-auto mb-2" />
-                  <CardTitle className="text-2xl font-bold text-orange-500">8 Months</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-sm text-muted-foreground">Development Time</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </Section>
-
-        {/* FAQ Section */}
-        <Section className="py-16">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
-              <p className="text-lg text-muted-foreground">Get answers to common mobile app development questions</p>
-            </div>
-            <div className="space-y-6">
-              {faqs.map((faq, index) => (
-                <Card key={index} className="glass-card border-fuchsia-100/20">
-                  <CardHeader>
-                    <CardTitle className="text-lg font-semibold text-foreground">{faq.question}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground">{faq.answer}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </Section>
-
-        {/* CTA Section */}
-        <Section glass className="py-16">
-          <div className="text-center">
-            <h2 className="text-3xl font-bold text-foreground mb-6">Ready to Build Your Mobile App?</h2>
-            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's create a mobile app that engages users and drives business growth. Get started with a free
-              consultation today.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                size="lg"
-                className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white"
-              >
-                Get Free App Consultation
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-fuchsia-200 text-fuchsia-600 hover:bg-fuchsia-50 bg-transparent"
-              >
-                View Our Portfolio
-              </Button>
             </div>
           </div>
         </Section>

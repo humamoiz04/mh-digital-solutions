@@ -2,6 +2,8 @@ import { Button } from "@/components/ui/button"
 import { Section } from "@/components/Section"
 import Link from "next/link"
 import { ServiceDashboard } from "@/components/service-dashboard"
+import { Rocket } from "lucide-react"
+import ThreeDIcon from "@/components/ui/three-d-icon"
 
 export function Hero() {
   return (
@@ -20,6 +22,9 @@ export function Hero() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start px-4 sm:px-0">
             <Link href="/appointment" passHref>
               <Button size="lg" className="gradient-button w-full sm:w-auto text-base font-medium">
+                <span className="mr-2 inline-flex align-middle">
+                  <ThreeDIcon icon={Rocket} size={16} variant="brand" />
+                </span>
                 Book a Free Consultation
               </Button>
             </Link>

@@ -9,8 +9,15 @@ export function ClientNetworkSection() {
     { name: "Squeaky Clean", logo: "/images/client-squeaky-clean.webp" },
     { name: "Platinum Builders", logo: "/images/client-platinum-builders.webp" },
     { name: "Said's Plumbing", logo: "/images/client-saids-plumbing.webp" },
-    { name: "Green Leaf", logo: "/images/logo-green-leaf.webp" },
-    { name: "Orange Circle", logo: "/images/logo-orange-circle.webp" },
+    {
+      name: "Nebraska Auto Detailing",
+      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/nebraska%20auto%20detailing-rHUOCjFC4ltIfJMzrJTCIvPjdzid9s.webp",
+    },
+    {
+      name: "Luxury Finesse Detail",
+      logo: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/logo-luxury-finesse-BesQZ2I5j4peLWNN4pPikiVm0pOq1C.webp",
+    },
+    { name: "Exclusive Detail", logo: "/images/exclusive-auto-detailing.webp" },
   ]
 
   return (
@@ -27,8 +34,7 @@ export function ClientNetworkSection() {
               alt={client.name}
               width={150}
               height={80}
-              objectFit="contain"
-              className="grayscale hover:grayscale-0 transition-all duration-300"
+              className="object-contain grayscale hover:grayscale-0 transition-all duration-300"
             />
           </div>
         ))}

@@ -2,14 +2,14 @@
 
 import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
-import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin, ExternalLink } from "lucide-react"
 import Image from "next/image"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 
 export function Footer() {
   return (
-    <footer className="bg-background/80 backdrop-blur-sm py-12 md:py-16 border-t section-with-blobs" role="contentinfo">
-      <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-5 gap-8">
+    <footer className="bg-background py-12 md:py-16 border-t" role="contentinfo">
+      <div className="container px-4 md:px-6 grid grid-cols-1 md:grid-cols-6 gap-8">
         <div className="space-y-4 md:col-span-2">
           <Link className="flex items-center gap-2" href="/" aria-label="MH Digital Solution Home">
             <Image
@@ -33,7 +33,7 @@ export function Footer() {
                 className="hover:text-primary transition-colors"
                 aria-label="Call us at +1 (707) 582-2255"
               >
-                +1 (707) 582-2255
+                +1 (707) 249-1222
               </a>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -54,8 +54,8 @@ export function Footer() {
 
           <div className="flex space-x-4" role="list" aria-label="Social media links">
             <Link
-              className="text-muted-foreground hover:text-primary transition-colors"
-              href="https://facebook.com/mhdigitalsolution"
+              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
+              href="https://www.facebook.com/profile.php?id=61569037172478"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow us on Facebook"
@@ -63,7 +63,7 @@ export function Footer() {
               <Facebook className="h-6 w-6" />
             </Link>
             <Link
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
               href="https://twitter.com/mhdigitalsol"
               target="_blank"
               rel="noopener noreferrer"
@@ -72,7 +72,7 @@ export function Footer() {
               <Twitter className="h-6 w-6" />
             </Link>
             <Link
-              className="text-muted-foreground hover:text-primary transition-colors"
+              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
               href="https://linkedin.com/company/mh-digital-solution"
               target="_blank"
               rel="noopener noreferrer"
@@ -81,8 +81,8 @@ export function Footer() {
               <Linkedin className="h-6 w-6" />
             </Link>
             <Link
-              className="text-muted-foreground hover:text-primary transition-colors"
-              href="https://instagram.com/mhdigitalsolutions"
+              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
+              href="https://www.instagram.com/mh_digitalsolutions/"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Follow us on Instagram"
@@ -143,6 +143,14 @@ export function Footer() {
                 SEO Services
               </Link>
             </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors"
+                href="/services/lead-generation"
+              >
+                Lead Generation
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -189,6 +197,22 @@ export function Footer() {
             <li>
               <Link
                 className="text-muted-foreground hover:text-primary transition-colors"
+                href="/services/cloud-solutions"
+              >
+                Cloud Solutions
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors"
+                href="/services/it-consulting"
+              >
+                IT Consulting
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors"
                 href="/services/business-analytics"
               >
                 Business Analytics
@@ -221,6 +245,96 @@ export function Footer() {
           </ul>
         </nav>
 
+        <nav className="space-y-2" aria-label="Resources and partner websites">
+          <h3 className="text-lg font-semibold text-foreground">Resources & Partners</h3>
+          <ul className="space-y-1">
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                href="https://www.nebraskaautodetailing.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Nebraska Auto Detailing - Opens in new tab"
+              >
+                Nebraska Auto Detailing
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                href="https://www.luxuryfindetail.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Luxury Fin Detail - Opens in new tab"
+              >
+                Luxury Fin Detail
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                href="https://www.aesthetichaven.store/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Aesthetic Haven Store - Opens in new tab"
+              >
+                Aesthetic Haven Store
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                href="https://www.mhdazzles.store/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="MH Dazzles Store - Opens in new tab"
+              >
+                MH Dazzles Store
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                href="https://aistudio.google.com/apikey"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Google AI Studio - Opens in new tab"
+              >
+                Google AI Studio
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                href="https://www.seoreviewtools.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="SEO Review Tools - Opens in new tab"
+              >
+                SEO Review Tools
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
+                href="https://www.aureusintelligence.ai/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Aureus Intelligence AI - Opens in new tab"
+              >
+                Aureus Intelligence AI
+                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
         <div className="space-y-2">
           <NewsletterSignup variant="footer" />
         </div>
@@ -237,8 +351,11 @@ export function Footer() {
           </Link>
           <button
             onClick={() => {
-              localStorage.removeItem("cookieConsent")
-              window.location.reload()
+              if (typeof window !== "undefined") {
+                localStorage.removeItem("cookieConsent")
+                const event = new CustomEvent("showCookieConsent")
+                window.dispatchEvent(event)
+              }
             }}
             className="text-muted-foreground hover:text-primary transition-colors"
             aria-label="Reset cookie preferences"

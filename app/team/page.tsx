@@ -2,26 +2,34 @@ import { Section } from "@/components/Section"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import { Linkedin, Mail } from "lucide-react"
+import type { Metadata } from "next"
+import { generatePageMetadata } from "@/lib/metadata"
+
+export const metadata: Metadata = generatePageMetadata({
+  title: "Our Team",
+  description:
+    "Meet the leadership and experts behind MH Digital Solution—strategists, engineers, and creatives helping businesses grow with AI and digital marketing.",
+  path: "/team",
+})
 
 export default function TeamPage() {
   const teamMembers = [
     {
-      name: "Sarah Johnson",
+      name: "MK",
       role: "CEO & Founder",
-      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download-RljVsxL1tHzCmmETafXY64XMyxedlw.webp",
-      bio: "Sarah founded MH Digital Solution with a vision to bridge the gap between technology and business growth. With over 12 years in digital strategy, she's passionate about helping businesses transform digitally.",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/MK-3duESFucUlXokvTbM5VSDMwOIMj1Mf.webp",
+      bio: "MK founded MH Digital Solution with a vision to bridge the gap between technology and business growth. With over 12 years in digital strategy, he's passionate about helping businesses transform digitally.",
       expertise: ["Digital Strategy", "Business Development", "Client Relations"],
-      email: "sarah@mhdigitalsolution.com",
+      email: "mk@mhdigitalsolution.com",
       linkedin: "#",
     },
     {
-      name: "Michael Chen",
-      role: "CTO & Lead Developer",
-      image:
-        "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%2810%29%20%281%29-qikp2lMQkhn16XnLeqMXWAWjbM2gZ2.webp",
-      bio: "Michael brings 15+ years of full-stack development experience. He leads our technical team and ensures we deliver cutting-edge solutions that scale with our clients' growth.",
-      expertise: ["Full-Stack Development", "Cloud Architecture", "AI Integration"],
-      email: "michael@mhdigitalsolution.com",
+      name: "Senorita",
+      role: "CTO & Business Consultant",
+      image: "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/senorita-AwK0HjasaQrDczWORsi41YBz76WdDi.webp",
+      bio: "Senorita brings 7+ years of business consulting experience. She leads our consultation team and ensures we deliver cutting-edge solutions that scale with our clients' growth.",
+      expertise: ["Business Consultation", "Business Solutions", "Growth Strategy"],
+      email: "seno@mhdigitalsolution.com",
       linkedin: "#",
     },
     {
@@ -35,13 +43,13 @@ export default function TeamPage() {
       linkedin: "#",
     },
     {
-      name: "David Park",
+      name: "Farhan Siddiqui",
       role: "Senior UI/UX Designer",
       image:
         "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%289%29%20%281%29-0OII6OB90mb9Cyt4k87Tg0h28WCHxY.webp",
       bio: "David creates user experiences that convert. His design philosophy centers on understanding user behavior and creating interfaces that feel intuitive and engaging.",
       expertise: ["User Experience Design", "Interface Design", "Design Systems"],
-      email: "david@mhdigitalsolution.com",
+      email: "fs@mhdigitalsolution.com",
       linkedin: "#",
     },
     {

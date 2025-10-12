@@ -68,7 +68,7 @@ export function ITConsultingDetail() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%286%29-bGCvfpgBIWoCQdqWTpSEK5IZUSX9De.webp"
+            src="/images/design-mode/download%20%286%29.webp"
             alt="IT Consulting and Web Analytics Team"
             layout="fill"
             objectFit="contain"

@@ -1,9 +1,27 @@
+import type { Metadata } from "next"
 import { Section } from "@/components/Section"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Search, TrendingUp, Target, Award, CheckCircle, ArrowRight, Globe } from "lucide-react"
 import Image from "next/image"
+
+export const metadata: Metadata = {
+  title: "Expert SEO Services to Boost Rankings & Traffic | MH Digital Solution",
+  description:
+    "Drive organic traffic and generate more leads with our custom SEO strategies. We offer on-page, off-page, and technical SEO to help you dominate search results.",
+  keywords:
+    "SEO services, seo services for small business, affordable seo services, local seo services, technical seo audit, on-page seo checklist",
+  alternates: {
+    canonical: "https://www.mhdigitalsolution.com/services/seo-services",
+  },
+  openGraph: {
+    title: "Expert SEO Services to Boost Rankings & Traffic | MH Digital Solution",
+    description:
+      "Drive organic traffic and generate more leads with our custom SEO strategies. We offer on-page, off-page, and technical SEO to help you dominate search results.",
+    url: "https://www.mhdigitalsolution.com/services/seo-services",
+  },
+}
 
 export default function SeoServicesPage() {
   const problems = [
@@ -45,7 +63,7 @@ export default function SeoServicesPage() {
   ]
 
   return (
-    <div className="relative z-10">
+    <div className="relative z-10 backdrop-blur-sm bg-white/5 min-h-screen">
       <Section glass>
         <div className="space-y-16">
           {/* Hero Section */}
@@ -54,12 +72,12 @@ export default function SeoServicesPage() {
               <Search className="h-4 w-4 mr-2" />
               SEO Services
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-green-600 via-blue-600 to-purple-600 bg-clip-text text-transparent">
-              SEO Services
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-fuchsia-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Expert SEO Services That Deliver Tangible Results
             </h1>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Boost your online visibility and drive organic traffic with our expert Search Engine Optimization
-              strategies.
+              Drive organic traffic and generate more leads with our custom SEO strategies. We offer on-page, off-page,
+              and technical SEO to help you dominate search results.
             </p>
           </div>
 
@@ -252,7 +270,7 @@ export default function SeoServicesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
-              className="bg-gradient-to-r from-green-600 to-blue-600 hover:from-green-700 hover:to-blue-700 hover:scale-105 transition-transform"
+              className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 hover:scale-105 transition-transform"
             >
               Get Free SEO Audit
               <ArrowRight className="ml-2 h-4 w-4" />

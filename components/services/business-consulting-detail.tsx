@@ -66,7 +66,7 @@ export function BusinessConsultingDetail() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%285%29-OhpqE5maQ2my8GXK5h54uDJwfvqjsi.jpeg"
+            src="/images/design-mode/download%20%285%29.jpeg"
             alt="Creative Business Strategy Illustration"
             layout="fill"
             objectFit="contain"

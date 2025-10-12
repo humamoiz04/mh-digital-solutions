@@ -41,12 +41,20 @@ export function ContactForm() {
         body: JSON.stringify(formData),
       })
 
-      if (response.ok) {
-        setIsSubmitted(true)
-        setFormData({ name: "", email: "", subject: "", message: "" })
-      } else {
-        throw new Error("Failed to send message")
+      const data = await (async () => {
+        try {
+          return await response.json()
+        } catch {
+          return {}
+        }
+      })()
+
+      if (!response.ok || (data && (data as any).error)) {
+        throw new Error((data as any)?.error || "Failed to send message")
       }
+
+      setIsSubmitted(true)
+      setFormData({ name: "", email: "", subject: "", message: "" })
     } catch (error) {
       setError("Failed to send message. Please try again or contact us directly at +17075822255")
     } finally {
@@ -100,6 +108,7 @@ export function ContactForm() {
                 value={formData.name}
                 onChange={handleChange}
                 required
+                aria-required="true"
               />
             </div>
             <div>
@@ -112,6 +121,7 @@ export function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 required
+                aria-required="true"
               />
             </div>
           </div>
@@ -135,10 +145,15 @@ export function ContactForm() {
               value={formData.message}
               onChange={handleChange}
               required
+              aria-required="true"
             />
           </div>
 
-          {error && <div className="text-red-500 text-sm text-center bg-red-50 p-2 rounded">{error}</div>}
+          {error && (
+            <div className="text-red-500 text-sm text-center bg-red-50 p-2 rounded" role="alert" aria-live="assertive">
+              {error}
+            </div>
+          )}
 
           <Button type="submit" className="gradient-button w-full h-12 text-lg font-semibold" disabled={isSubmitting}>
             {isSubmitting ? (

@@ -6,6 +6,23 @@ import { CheckCircle } from "lucide-react"
 import { FloatingBlobs } from "@/components/floating-blobs"
 import { LeadGenerationDetail } from "@/components/services/lead-generation-detail"
 import { CTASection } from "@/components/cta-section"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Lead Generation Services | B2B & B2C Lead Generation | MH Digital",
+  description:
+    "Generate high-quality leads with our proven lead generation strategies. We help businesses attract, engage, and convert prospects into loyal customers.",
+  keywords:
+    "lead generation services, b2b lead generation, digital marketing leads, qualified leads, lead generation company",
+  canonical: "https://www.mhdigitalsolution.com/services/lead-generation",
+  openGraph: {
+    title: "Lead Generation Services | B2B & B2C Lead Generation | MH Digital",
+    description:
+      "Generate high-quality leads with our proven lead generation strategies. We help businesses attract, engage, and convert prospects into loyal customers.",
+    url: "https://www.mhdigitalsolution.com/services/lead-generation",
+    type: "website",
+  },
+}
 
 export default function LeadGenerationPage() {
   const services = [
@@ -54,11 +71,11 @@ export default function LeadGenerationPage() {
   return (
     <div className="relative overflow-hidden min-h-screen bg-background">
       <FloatingBlobs />
-      <Section className="py-16 md:py-24 relative z-10" glass>
-        {" "}
-        {/* Apply glass effect */}
+      <Section className="py-16 md:py-24 relative z-10 backdrop-blur-sm bg-white/10" glass>
         <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-foreground mb-4 gradient-text">Lead Generation Services</h1>
+          <h1 className="text-4xl font-bold text-foreground mb-4 bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
+            Lead Generation Services
+          </h1>
           <p className="text-lg text-muted-foreground">
             Attract, engage, and convert high-quality leads into loyal customers with our comprehensive lead generation
             strategies.
@@ -66,9 +83,7 @@ export default function LeadGenerationPage() {
         </div>
         <LeadGenerationDetail />
       </Section>
-      <Section className="py-16 md:py-24" glass>
-        {" "}
-        {/* Apply glass effect */}
+      <Section className="py-16 md:py-24 backdrop-blur-sm bg-white/10" glass>
         <div className="flex flex-col items-center gap-8 md:flex-row md:gap-16">
           <div className="w-full md:w-1/2">
             <Image
@@ -95,9 +110,7 @@ export default function LeadGenerationPage() {
           </div>
         </div>
       </Section>
-      <Section glass>
-        {" "}
-        {/* Apply glass effect */}
+      <Section className="backdrop-blur-sm bg-white/10" glass>
         <CTASection />
       </Section>
     </div>

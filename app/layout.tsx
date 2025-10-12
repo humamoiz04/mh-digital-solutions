@@ -5,12 +5,11 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { FloatingBlobs } from "@/components/floating-blobs"
-import { ChatWidget } from "@/components/chat-widget"
+import FloatingBlobs from "@/components/floating-blobs"
+import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
+import { SocialChatWidgets } from "@/components/social-chat-widgets"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
-import { PromotionalBanner } from "@/components/promotional-banner"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
-import { StructuredData } from "@/components/structured-data"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -93,6 +92,7 @@ export default function RootLayout({
       <head>
         <link rel="preload" href="/images/mh-digital-solutions-logo.webp" as="image" type="image/webp" />
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
+        <link rel="preload" href="/images/colorful-chatbot-icon.png" as="image" type="image/png" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
         <link rel="dns-prefetch" href="//api.whatsapp.com" />
@@ -115,11 +115,6 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
 
         <link rel="canonical" href="https://www.mhdigitalsolution.com" />
-
-        <StructuredData type="Organization" />
-        <StructuredData type="LocalBusiness" />
-        <StructuredData type="AggregateRating" />
-        <StructuredData type="BreadcrumbList" />
       </head>
       <body className={`${inter.className} font-sans antialiased`}>
         <a
@@ -132,34 +127,19 @@ export default function RootLayout({
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
           <div className="relative min-h-screen flex flex-col">
             <FloatingBlobs />
-            <Header />
-            <main id="main-content" className="flex-1 relative z-10" role="main">
-              {children}
-            </main>
-            <Footer />
-            <ChatWidget />
+            <div className="relative z-10 backdrop-blur-sm bg-white/5 min-h-screen flex flex-col">
+              <Header />
+              <main id="main-content" className="flex-1" role="main">
+                {children}
+              </main>
+              <Footer />
+            </div>
+            <EnhancedChatWidget />
+            <SocialChatWidgets />
             <WhatsAppWidget />
-            <PromotionalBanner />
             <CookieConsentBanner />
           </div>
         </ThemeProvider>
-
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              // Core Web Vitals monitoring
-              if ('web-vital' in window) {
-                import('web-vitals').then(({ getCLS, getFID, getFCP, getLCP, getTTFB }) => {
-                  getCLS(console.log);
-                  getFID(console.log);
-                  getFCP(console.log);
-                  getLCP(console.log);
-                  getTTFB(console.log);
-                });
-              }
-            `,
-          }}
-        />
       </body>
     </html>
   )

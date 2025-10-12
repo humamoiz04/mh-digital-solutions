@@ -1,8 +1,37 @@
+import type { Metadata } from "next"
 import { Section } from "@/components/Section"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
+import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
-import { AlertTriangle, CheckCircle, Code, Smartphone, Search, Shield, TrendingUp, Users } from "lucide-react"
+import {
+  AlertTriangle,
+  CheckCircle,
+  Code,
+  Smartphone,
+  Search,
+  Shield,
+  TrendingUp,
+  Users,
+  ArrowRight,
+} from "lucide-react"
+
+export const metadata: Metadata = {
+  title: "Expert Web Development Services | Custom & E-commerce | MH Digital",
+  description:
+    "From custom web apps to robust e-commerce platforms, our web development services build fast, secure, and scalable websites. Let's build your vision.",
+  keywords:
+    "custom web development company, e-commerce website development, wordpress development services, hire php developer, front-end development services",
+  alternates: {
+    canonical: "https://www.mhdigitalsolution.com/services/web-development",
+  },
+  openGraph: {
+    title: "Expert Web Development Services | Custom & E-commerce | MH Digital",
+    description:
+      "From custom web apps to robust e-commerce platforms, our web development services build fast, secure, and scalable websites. Let's build your vision.",
+    url: "https://www.mhdigitalsolution.com/services/web-development",
+  },
+}
 
 export default function WebDevelopmentPage() {
   const problems = [
@@ -90,91 +119,121 @@ export default function WebDevelopmentPage() {
   ]
 
   return (
-    <div className="relative z-10">
-      {/* Problem Section */}
-      <Section className="py-16 md:py-24">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-6 gradient-text">
-              Is Your Website Holding Your Business Back?
+    <div className="relative z-10 backdrop-blur-sm bg-white/5 min-h-screen">
+      <Section glass>
+        <div className="space-y-16">
+          {/* Hero Section */}
+          <div className="text-center space-y-6">
+            <Badge variant="secondary" className="mb-4">
+              <Code className="h-4 w-4 mr-2" />
+              Web Development
+            </Badge>
+            <h1 className="text-4xl md:text-6xl font-bold bg-gradient-to-r from-fuchsia-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              Custom Web Development Company
             </h1>
-            <p className="text-lg text-muted-foreground mb-8">
-              Many businesses struggle with outdated websites that fail to convert visitors into customers. Don't let
-              poor web presence cost you valuable opportunities.
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              From custom web apps to robust e-commerce platforms, our web development services build fast, secure, and
+              scalable websites. Let's build your vision.
             </p>
-            <div className="space-y-4">
+          </div>
+
+          {/* Problems Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-red-500 to-orange-500 bg-clip-text text-transparent mb-4">
+                Is Your Website Holding Your Business Back?
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Many businesses struggle with outdated websites that fail to convert visitors into customers
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {problems.map((problem, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <AlertTriangle className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
-                  <p className="text-muted-foreground">{problem}</p>
-                </div>
+                <Card key={index} className="glass-card border-red-200/20 hover:scale-105 transition-transform">
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <AlertTriangle className="h-5 w-5 text-red-500 mt-1 flex-shrink-0" />
+                      <p className="text-muted-foreground">{problem}</p>
+                    </div>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
-          <div className="relative">
-            <Image
-              src="/images/web-development-3d.webp"
-              alt="Web development challenges"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-2xl"
-            />
-          </div>
-        </div>
-      </Section>
 
-      {/* Solution Section */}
-      <Section glass className="py-16">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <Image
-              src="/images/developer-workspace-3d.webp"
-              alt="Professional web development"
-              width={600}
-              height={400}
-              className="rounded-lg shadow-2xl"
-            />
-          </div>
-          <div>
-            <h2 className="text-3xl font-bold text-foreground mb-6">Professional Web Development Solutions</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              We create modern, high-performing websites that drive results. Our development approach focuses on user
-              experience, performance, and business growth.
-            </p>
-            <div className="space-y-4">
+          {/* Solutions Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent mb-4">
+                Professional Web Development Solutions
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                We create modern, high-performing websites that drive results and business growth
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {solutions.map((solution, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-1 flex-shrink-0" />
-                  <p className="text-muted-foreground">{solution}</p>
-                </div>
+                <Card
+                  key={index}
+                  className="glass-card border-green-200/20 hover:border-green-300/30 transition-all hover:scale-105"
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
+                      <p className="text-muted-foreground">{solution}</p>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* Benefits Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-500 to-pink-500 bg-clip-text text-transparent mb-4">
+                Benefits of Professional Web Development
+              </h2>
+            </div>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <Card key={index} className="glass-card border-purple-200/20 hover:scale-105 transition-transform">
+                  <CardHeader>
+                    <benefit.icon className="h-12 w-12 text-fuchsia-500 mx-auto mb-4" />
+                    <CardTitle className="text-xl font-bold text-foreground">{benefit.title}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{benefit.description}</p>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+
+          {/* FAQs Section */}
+          <div className="space-y-8">
+            <div className="text-center">
+              <h2 className="text-3xl font-bold bg-gradient-to-r from-indigo-500 to-purple-500 bg-clip-text text-transparent mb-4">
+                Frequently Asked Questions
+              </h2>
+            </div>
+            <div className="space-y-4">
+              {faqs.map((faq, index) => (
+                <Card key={index} className="glass-card hover:scale-102 transition-transform">
+                  <CardHeader>
+                    <CardTitle className="text-lg">{faq.question}</CardTitle>
+                  </CardHeader>
+                  <CardContent>
+                    <p className="text-muted-foreground">{faq.answer}</p>
+                  </CardContent>
+                </Card>
               ))}
             </div>
           </div>
         </div>
       </Section>
 
-      {/* Benefits Section */}
-      <Section className="py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Benefits of Professional Web Development</h2>
-          <p className="text-lg text-muted-foreground">Transform your online presence and drive business growth</p>
-        </div>
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {benefits.map((benefit, index) => (
-            <Card key={index} className="glass-card text-center group hover:scale-105 transition-all duration-300">
-              <CardHeader>
-                <benefit.icon className="h-12 w-12 text-primary mx-auto mb-4" />
-                <CardTitle className="text-xl font-bold text-foreground">{benefit.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{benefit.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      {/* Case Study */}
+      {/* Case Study Section */}
       <Section glass className="py-16">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
@@ -182,7 +241,7 @@ export default function WebDevelopmentPage() {
             <p className="text-lg text-muted-foreground">How we increased online sales by 180% for a retail client</p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 items-center mb-8">
+          <div className="grid md:grid-cols-2 gap-8 items-center mb-12">
             <div>
               <Image
                 src="/images/pink-laptop-3d.webp"
@@ -211,7 +270,7 @@ export default function WebDevelopmentPage() {
           </div>
 
           <div className="grid md:grid-cols-4 gap-6">
-            <Card className="glass-card text-center">
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
               <CardHeader>
                 <TrendingUp className="h-8 w-8 text-green-500 mx-auto mb-2" />
                 <CardTitle className="text-2xl font-bold text-green-500">180%</CardTitle>
@@ -220,7 +279,7 @@ export default function WebDevelopmentPage() {
                 <p className="text-sm text-muted-foreground">Sales Increase</p>
               </CardContent>
             </Card>
-            <Card className="glass-card text-center">
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
               <CardHeader>
                 <Smartphone className="h-8 w-8 text-blue-500 mx-auto mb-2" />
                 <CardTitle className="text-2xl font-bold text-blue-500">65%</CardTitle>
@@ -229,7 +288,7 @@ export default function WebDevelopmentPage() {
                 <p className="text-sm text-muted-foreground">Mobile Conversions</p>
               </CardContent>
             </Card>
-            <Card className="glass-card text-center">
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
               <CardHeader>
                 <Users className="h-8 w-8 text-purple-500 mx-auto mb-2" />
                 <CardTitle className="text-2xl font-bold text-purple-500">40%</CardTitle>
@@ -238,7 +297,7 @@ export default function WebDevelopmentPage() {
                 <p className="text-sm text-muted-foreground">Lower Bounce Rate</p>
               </CardContent>
             </Card>
-            <Card className="glass-card text-center">
+            <Card className="glass-card text-center hover:scale-105 transition-transform">
               <CardHeader>
                 <Search className="h-8 w-8 text-orange-500 mx-auto mb-2" />
                 <CardTitle className="text-2xl font-bold text-orange-500">3x</CardTitle>
@@ -251,107 +310,24 @@ export default function WebDevelopmentPage() {
         </div>
       </Section>
 
-      {/* Process Overview */}
-      <Section className="py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Our Development Process</h2>
-          <p className="text-lg text-muted-foreground">A proven methodology for successful web development projects</p>
-        </div>
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-          {process.map((step, index) => (
-            <Card key={index} className="glass-card text-center group hover:scale-105 transition-all duration-300">
-              <CardHeader>
-                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl">{step.icon}</span>
-                </div>
-                <div className="text-sm font-bold text-primary mb-2">{step.step}</div>
-                <CardTitle className="text-xl font-bold text-foreground">{step.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">{step.description}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </Section>
-
-      {/* FAQ Section */}
-      <Section glass className="py-16">
-        <div className="max-w-3xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4">Frequently Asked Questions</h2>
-            <p className="text-lg text-muted-foreground">Get answers to common web development questions</p>
-          </div>
-          <div className="space-y-6">
-            {faqs.map((faq, index) => (
-              <Card key={index} className="glass-card">
-                <CardHeader>
-                  <CardTitle className="text-lg font-semibold text-foreground">{faq.question}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">{faq.answer}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </Section>
-
-      {/* Why Choose Us */}
-      <Section className="py-16">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-foreground mb-4">Why Choose MH Digital Solution?</h2>
-          <p className="text-lg text-muted-foreground">What sets our web development services apart</p>
-        </div>
-        <div className="grid md:grid-cols-3 gap-8">
-          <Card className="glass-card text-center">
-            <CardHeader>
-              <Code className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-xl font-bold text-foreground">Expert Development Team</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                Our senior developers have 10+ years of experience with modern technologies and best practices.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="glass-card text-center">
-            <CardHeader>
-              <Shield className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-xl font-bold text-foreground">Security First Approach</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                We implement enterprise-grade security measures to protect your website and user data.
-              </p>
-            </CardContent>
-          </Card>
-          <Card className="glass-card text-center">
-            <CardHeader>
-              <Users className="h-12 w-12 text-primary mx-auto mb-4" />
-              <CardTitle className="text-xl font-bold text-foreground">Ongoing Support</CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-muted-foreground">
-                We provide continuous support, maintenance, and optimization to ensure peak performance.
-              </p>
-            </CardContent>
-          </Card>
-        </div>
-      </Section>
-
       {/* CTA Section */}
-      <Section glass className="py-16">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold text-foreground mb-6">Ready to Transform Your Web Presence?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+      <Section glass>
+        <div className="text-center space-y-6 py-12">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
+            Ready to Transform Your Web Presence?
+          </h2>
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Let's create a website that drives results for your business. Get started with a free consultation today.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button size="lg" className="gradient-button">
+            <Button
+              size="lg"
+              className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 hover:scale-105 transition-transform"
+            >
               Get Free Consultation
+              <ArrowRight className="ml-2 h-4 w-4" />
             </Button>
-            <Button size="lg" variant="outline" className="gradient-button bg-transparent">
+            <Button size="lg" variant="outline" className="hover:scale-105 transition-transform bg-transparent">
               View Our Portfolio
             </Button>
           </div>

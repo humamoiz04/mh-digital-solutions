@@ -68,7 +68,7 @@ export function AutomationSolutionsSection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/automation-analytics-XXsOC5sHnOZyogjZ28ePvYL5oV8APE.webp" // Added automation analytics image
+            src="/images/design-mode/automation-analytics.webp" // Added automation analytics image
             alt="Automation and Analytics Illustration"
             layout="fill"
             objectFit="contain"

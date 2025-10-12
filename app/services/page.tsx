@@ -1,6 +1,15 @@
 import { Section } from "@/components/Section"
 import { ServicesSection } from "@/components/services-section"
 import { CtaSection } from "@/components/cta-section"
+import type { Metadata } from "next"
+import { generatePageMetadata } from "@/lib/metadata"
+
+export const metadata: Metadata = generatePageMetadata({
+  title: "All Services",
+  description:
+    "Explore our full suite of services including SEO, PPC, social media, web development, cloud, and IT consulting.",
+  path: "/services",
+})
 
 export default function ServicesPage() {
   return (

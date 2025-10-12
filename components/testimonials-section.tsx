@@ -11,7 +11,7 @@ export function TestimonialsSection() {
       </p>
       <div className="flex justify-center mb-12">
         <Image
-          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/clutch-verified-6pGg8tavndH37yRyl0UG9MncmeyKCN.webp"
+          src="/images/design-mode/clutch-verified.webp"
           alt="Clutch Premier Verified Badge"
           width={120}
           height={120}

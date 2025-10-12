@@ -66,7 +66,7 @@ export function BusinessAnalyticsDetail() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/business-analytics-3d-LpVycrmDoCq3nWiWVgN3yQmrXuzQrC.webp"
+            src="/images/design-mode/business-analytics-3d.webp"
             alt="Business Analytics 3D Visualization"
             layout="fill"
             objectFit="contain"

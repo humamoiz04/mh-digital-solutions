@@ -6,6 +6,23 @@ import Image from "next/image"
 import { AlertTriangle, Shield, TrendingUp, Users, CheckCircle, Zap, Clock } from "lucide-react"
 import { FloatingBlobs } from "@/components/floating-blobs"
 import { PartnerBadges } from "@/components/partner-badges"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "IT Consulting Services | Technology Strategy & Digital Transformation | MH Digital",
+  description:
+    "Transform your technology infrastructure with expert IT consulting. We provide strategic guidance, cybersecurity, cloud migration, and digital transformation services.",
+  keywords:
+    "IT consulting services, technology consulting, digital transformation, cybersecurity consulting, cloud migration",
+  canonical: "https://www.mhdigitalsolution.com/services/it-consulting",
+  openGraph: {
+    title: "IT Consulting Services | Technology Strategy & Digital Transformation | MH Digital",
+    description:
+      "Transform your technology infrastructure with expert IT consulting. We provide strategic guidance, cybersecurity, cloud migration, and digital transformation services.",
+    url: "https://www.mhdigitalsolution.com/services/it-consulting",
+    type: "website",
+  },
+}
 
 export default function ITConsultingPage() {
   const challenges = [
@@ -105,7 +122,7 @@ export default function ITConsultingPage() {
       <FloatingBlobs />
 
       {/* Hero Section */}
-      <Section className="py-16 md:py-24 relative z-10" glass>
+      <Section className="py-16 md:py-24 relative z-10 backdrop-blur-sm bg-white/10" glass>
         <div className="text-center space-y-6 mb-16">
           <Badge
             variant="secondary"
@@ -198,7 +215,7 @@ export default function ITConsultingPage() {
                   <CardTitle className="text-xl font-bold text-foreground">{benefit.title}</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground">{benefit.description}</p>
+                  <p className="text-sm text-muted-foreground">{benefit.description}</p>
                 </CardContent>
               </Card>
             ))}

@@ -20,7 +20,6 @@ export function Header() {
       { name: "Web Development", href: "/services/web-development" },
       { name: "Web Design", href: "/services/web-design" },
       { name: "Mobile App Development", href: "/services/mobile-app-development" },
-      { name: "UI/UX Design", href: "/services/ui-ux-design" },
       { name: "E-commerce Solutions", href: "/services/ecommerce-solutions" },
     ],
     "Technology Services": [
@@ -102,6 +101,9 @@ export function Header() {
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/blog">
           Blog
         </Link>
+        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/faq">
+          FAQ
+        </Link>
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/pricing">
           Pricing
         </Link>
@@ -161,6 +163,9 @@ export function Header() {
             </Link>
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/blog">
               Blog
+            </Link>
+            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/faq">
+              FAQ
             </Link>
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/pricing">
               Pricing

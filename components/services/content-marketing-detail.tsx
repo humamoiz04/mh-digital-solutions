@@ -66,7 +66,7 @@ export function ContentMarketingDetail() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/download%20%281%29-g43UezgQRA0tLYG5c2pjsV1eudUjUd.jpeg"
+            src="/images/design-mode/download%20%281%29.jpeg"
             alt="Content Marketing Strategy Illustration"
             layout="fill"
             objectFit="contain"
