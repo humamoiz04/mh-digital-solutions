@@ -159,7 +159,7 @@ export function EnhancedChatWidget() {
                     AI Assistant
                   </span>
                   <div
-                    className="w-2 h-2 bg-green-400 rounded-full animate-pulse"
+                    className="w-2 h-2 bg-green-500 rounded-full"
                     title="Online"
                     aria-label="Assistant is online"
                   ></div>

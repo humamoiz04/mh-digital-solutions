@@ -33,7 +33,7 @@ export function Footer() {
                 className="hover:text-primary transition-colors"
                 aria-label="Call us at +1 (707) 582-2255"
               >
-                +1 (707) 249-1222
+                +1 (707) 582-2255
               </a>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -340,9 +340,9 @@ export function Footer() {
         </div>
       </div>
       <Separator className="my-8" />
-      <div className="container px-4 md:px-6 flex flex-col md:flex-row justify-between items-center gap-4">
-        <div className="text-sm text-muted-foreground">© 2024 MH Digital Solution. All rights reserved.</div>
-        <nav className="flex gap-4 text-sm" aria-label="Legal links">
+      <div className="container px-4 md:px-6 flex flex-col md:flex-row justify-center items-center gap-4 text-center">
+        <div className="text-sm text-muted-foreground">© 2025 MH Digital Solution. All rights reserved.</div>
+        <nav className="flex flex-wrap gap-4 text-sm" aria-label="Legal links">
           <Link className="text-muted-foreground hover:text-primary transition-colors" href="/privacy-policy">
             Privacy Policy
           </Link>
