@@ -1,5 +1,6 @@
+"use client"
+
 import { Button } from "@/components/ui/button"
-import { Section } from "@/components/Section"
 import Link from "next/link"
 import { ServiceDashboard } from "@/components/service-dashboard"
 import { Rocket } from "lucide-react"
@@ -7,7 +8,7 @@ import ThreeDIcon from "@/components/ui/three-d-icon"
 
 export function Hero() {
   return (
-    <Section className="py-8 sm:py-12 md:py-16 lg:py-20">
+    <>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center">
         <div className="space-y-6 md:space-y-8 text-center lg:text-left order-2 lg:order-1">
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight gradient-text px-4 sm:px-0">
@@ -43,6 +44,6 @@ export function Hero() {
           <ServiceDashboard />
         </div>
       </div>
-    </Section>
+    </>
   )
 }
