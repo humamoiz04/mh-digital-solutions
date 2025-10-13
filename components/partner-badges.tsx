@@ -1,16 +1,21 @@
 "use client"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Shield, Star, CheckCircle } from "lucide-react"
+import { Star, CheckCircle } from "lucide-react"
 
 export function PartnerBadges() {
   const partners = [
     {
       name: "Google Partner",
       icon: (
-        <div className="w-8 h-8 bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-          G
-        </div>
+        <img
+          src="/images/partners/google-partner.jpg"
+          alt="Google Partner logo"
+          width={32}
+          height={32}
+          loading="lazy"
+          className="w-8 h-8 object-contain"
+        />
       ),
       description: "Certified Google Ads & Analytics Partner",
       verified: true,
@@ -18,9 +23,14 @@ export function PartnerBadges() {
     {
       name: "Meta Business Partner",
       icon: (
-        <div className="w-8 h-8 bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-          M
-        </div>
+        <img
+          src="/images/partners/meta-partner.jpg"
+          alt="Meta Business Partner logo"
+          width={32}
+          height={32}
+          loading="lazy"
+          className="w-8 h-8 object-contain"
+        />
       ),
       description: "Official Meta Marketing Partner",
       verified: true,
@@ -28,16 +38,30 @@ export function PartnerBadges() {
     {
       name: "HubSpot Partner",
       icon: (
-        <div className="w-8 h-8 bg-gradient-to-r from-fuchsia-600 to-pink-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
-          H
-        </div>
+        <img
+          src="/images/partners/hubspot-partner.jpg"
+          alt="HubSpot Partner logo"
+          width={32}
+          height={32}
+          loading="lazy"
+          className="w-8 h-8 object-contain"
+        />
       ),
       description: "Certified HubSpot Solutions Partner",
       verified: true,
     },
     {
       name: "Clutch Verified",
-      icon: <Shield className="w-8 h-8 text-fuchsia-600" />,
+      icon: (
+        <img
+          src="/images/partners/clutch-verified.jpg"
+          alt="Clutch Verified badge"
+          width={32}
+          height={32}
+          loading="lazy"
+          className="w-8 h-8 object-contain"
+        />
+      ),
       description: "Top-Rated Digital Agency",
       verified: true,
     },

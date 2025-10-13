@@ -115,6 +115,39 @@ export default function RootLayout({
         <link rel="manifest" href="/site.webmanifest" />
 
         <link rel="canonical" href="https://www.mhdigitalsolution.com" />
+        {/* add hreflang alternates for US and Malta to improve local SEO */}
+        <link rel="alternate" hrefLang="x-default" href="https://www.mhdigitalsolution.com" />
+        <link rel="alternate" hrefLang="en-US" href="https://www.mhdigitalsolution.com" />
+        <link rel="alternate" hrefLang="en-MT" href="https://www.mhdigitalsolution.com/mt" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "LocalBusiness",
+              name: "MH Digital Solution",
+              url: "https://www.mhdigitalsolution.com",
+              telephone: "+17072491222",
+              areaServed: [
+                { "@type": "Country", name: "United States" },
+                { "@type": "Country", name: "Malta" },
+              ],
+              sameAs: [
+                "https://www.facebook.com/profile.php?id=61569037172478",
+                "https://www.instagram.com/mh_digitalsolutions/",
+                "https://linkedin.com/company/mh-digital-solution",
+              ],
+              serviceType: [
+                "SEO Services",
+                "Web Design",
+                "Web Development",
+                "PPC Advertising",
+                "Social Media Marketing",
+                "AI Automation",
+              ],
+            }),
+          }}
+        />
       </head>
       <body className={`${inter.className} font-sans antialiased`}>
         <a

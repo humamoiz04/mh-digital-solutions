@@ -35,7 +35,8 @@ export function ChatWidget() {
   }
 
   useEffect(() => {
-    scrollToBottom()
+    const id = requestAnimationFrame(scrollToBottom)
+    return () => cancelAnimationFrame(id)
   }, [messages])
 
   const handleSendMessage = async () => {
@@ -82,7 +83,7 @@ export function ChatWidget() {
 
         const errorMessage: Message = {
           id: Date.now() + 1,
-          text: `🤖 **I'm still here to help!** (Offline mode)\n\n**Quick Contact Options:**\n📞 **Call:** +1 (707) 582-2255\n💬 **WhatsApp:** +1 (707) 582-2255\n🌐 **Website:** www.mhdigitalsolution.com\n\n🎉 **70% OFF consultation - Just $15!**\n\n**How can I assist you today?**`,
+          text: `🤖 **I'm still here to help!** (Offline mode)\n\n**Quick Contact Options:**\n📞 **Call:** +17072491222\n💬 **WhatsApp:** +17072491222\n🌐 **Website:** www.mhdigitalsolution.com\n\n🎉 **70% OFF consultation - Just $15!**\n\n**How can I assist you today?**`,
           sender: "bot",
           timestamp: new Date(),
         }

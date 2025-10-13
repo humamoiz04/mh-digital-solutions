@@ -31,7 +31,7 @@ export function EnhancedChatWidget() {
     {
       id: "1",
       content:
-        "👋 Hi! I'm your AI assistant. I can help you with questions about our services, pricing, or anything else you'd like to know!",
+        "👋 Hi! I’m your AI assistant. Ask me about our services (web, SEO, PPC, apps, automation), pricing & packages, process & timelines, industries we serve in the USA and Malta, or local SEO strategies. I’ll give you clear, helpful answers.",
       sender: "bot",
       timestamp: new Date(),
     },
@@ -57,8 +57,10 @@ export function EnhancedChatWidget() {
   }
 
   useEffect(() => {
-    scrollToBottom()
-  }, [messages])
+    if (!isOpen) return
+    const id = requestAnimationFrame(scrollToBottom)
+    return () => cancelAnimationFrame(id)
+  }, [messages, isOpen])
 
   const handleSendMessage = async () => {
     if (!inputValue.trim() || isLoading) return
@@ -92,7 +94,7 @@ export function EnhancedChatWidget() {
         content:
           typeof data.response === "string" && data.response.trim().length > 0
             ? data.response
-            : "Thanks for reaching out! Tell me what you need help with (web, SEO, apps, automation, pricing). I’ll provide clear next steps.",
+            : "👋 Hi! I’m your AI assistant. Ask me about our services (web, SEO, PPC, apps, automation), pricing & packages, process & timelines, industries we serve in the USA and Malta, or local SEO strategies. I’ll give you clear, helpful answers.",
         sender: "bot",
         timestamp: new Date(),
       }
@@ -102,7 +104,7 @@ export function EnhancedChatWidget() {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         content:
-          "Thanks for reaching out! Tell me what you need help with (web, SEO, apps, automation, pricing). I’ll provide clear next steps.",
+          "👋 Hi! I’m your AI assistant. Ask me about our services (web, SEO, PPC, apps, automation), pricing & packages, process & timelines, industries we serve in the USA and Malta, or local SEO strategies. I’ll give you clear, helpful answers.",
         sender: "bot",
         timestamp: new Date(),
       }
@@ -244,7 +246,7 @@ export function EnhancedChatWidget() {
                   value={inputValue}
                   onChange={(e) => setInputValue(e.target.value)}
                   onKeyPress={handleKeyPress}
-                  placeholder="Ask me anything..."
+                  placeholder="Ask a question (e.g., 'SEO cost in Malta?' or 'Web design packages USA')"
                   disabled={isLoading}
                   className="flex-1 focus:ring-2 focus:ring-fuchsia-300"
                   aria-label="Type your message"

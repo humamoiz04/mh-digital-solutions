@@ -166,6 +166,31 @@ const nextConfig = {
         destination: '/services/seo-services',
         permanent: true,
       },
+      {
+        source: '/pricing.html',
+        destination: '/pricing',
+        permanent: true,
+      },
+      {
+        source: '/case-studies.html',
+        destination: '/case-studies',
+        permanent: true,
+      },
+      {
+        source: '/services/ai-automation.html',
+        destination: '/services/ai-automation',
+        permanent: true,
+      },
+      {
+        source: '/services/mobile-app.html',
+        destination: '/services/mobile-app-development',
+        permanent: true,
+      },
+      {
+        source: '/services/seo.html',
+        destination: '/services/seo-services',
+        permanent: true,
+      },
     ]
   },
   async headers() {

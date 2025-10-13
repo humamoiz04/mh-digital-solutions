@@ -58,10 +58,10 @@ function InstagramLogo({ size = 20, className }: { size?: number; className?: st
 export function SocialChatWidgets() {
   return (
     <div
-      className="fixed z-50 flex flex-row items-center gap-2"
+      className="fixed z-50 flex flex-col items-center gap-2"
       style={{
-        right: "5.5rem",
-        bottom: "calc(env(safe-area-inset-bottom, 0px) + var(--chat-offset, 88px))",
+        right: "1rem",
+        bottom: "calc(env(safe-area-inset-bottom, 0px) + var(--chat-offset, 88px) + 60px)",
       }}
       aria-label="Social chat shortcuts"
       role="group"

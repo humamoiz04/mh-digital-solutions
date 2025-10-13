@@ -29,11 +29,11 @@ export function Footer() {
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
               <Phone className="h-4 w-4" aria-hidden="true" />
               <a
-                href="tel:+17075822255"
+                href="tel:+17072491222"
                 className="hover:text-primary transition-colors"
-                aria-label="Call us at +1 (707) 582-2255"
+                aria-label="Call us at +1 (707) 249-1222"
               >
-                +1 (707) 582-2255
+                +1 (707) 249-1222
               </a>
             </div>
             <div className="flex items-center gap-2 text-sm text-muted-foreground">

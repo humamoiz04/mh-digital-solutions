@@ -21,30 +21,35 @@ export function ScrollFadeAnimation({
 }: ScrollFadeProps) {
   const [isVisible, setIsVisible] = useState(false)
   const elementRef = useRef<HTMLDivElement>(null)
+  const didShowRef = useRef(false)
+  const timeoutRef = useRef<number | null>(null)
 
   useEffect(() => {
+    const el = elementRef.current
+    if (!el) return
+
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setTimeout(() => {
+        if (entry.isIntersecting && !didShowRef.current) {
+          didShowRef.current = true
+          timeoutRef.current = window.setTimeout(() => {
             setIsVisible(true)
+            observer.unobserve(el)
+            observer.disconnect()
           }, delay * 1000)
         }
       },
-      {
-        threshold: 0.1,
-        rootMargin: "0px 0px -50px 0px",
-      },
+      { threshold: 0.1, rootMargin: "0px 0px -50px 0px" },
     )
 
-    if (elementRef.current) {
-      observer.observe(elementRef.current)
-    }
+    observer.observe(el)
 
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current)
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current)
+        timeoutRef.current = null
       }
+      observer.disconnect()
     }
   }, [delay])
 

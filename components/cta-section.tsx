@@ -27,7 +27,7 @@ export function CtaSection() {
               className="px-8 py-4 text-xl border-2 border-fuchsia-500 text-fuchsia-500 hover:bg-fuchsia-500 hover:text-white transition-all hover:scale-105 bg-transparent"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call Now: (707) 582-2255
+              Call Now: (707) 249-1222
             </Button>
           </a>
 
