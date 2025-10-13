@@ -3,8 +3,7 @@ import { generateText } from "ai"
 
 // Helper to try multiple v4-compatible models and pick the first that works
 async function generateWithFallback(prompt: string) {
-  // Keep a single conservative model to avoid spec-version issues with AI SDK v4
-  const model = "openai/gpt-4o-mini"
+  const model = "anthropic/claude-sonnet-4.5"
   try {
     const { text } = await generateText({ model, prompt })
     if (text && text.trim().length > 0) return text
