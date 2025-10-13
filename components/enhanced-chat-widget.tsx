@@ -92,17 +92,17 @@ export function EnhancedChatWidget() {
         content:
           typeof data.response === "string" && data.response.trim().length > 0
             ? data.response
-            : "I'm sorry, I couldn't process your request. Please try again.",
+            : "Thanks for reaching out! Tell me what you need help with (web, SEO, apps, automation, pricing). I’ll provide clear next steps.",
         sender: "bot",
         timestamp: new Date(),
       }
 
       setMessages((prev) => [...prev, botMessage])
-    } catch (error) {
+    } catch {
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         content:
-          "I'm experiencing some technical difficulties. Please try again later or contact us directly at +1 (707) 582-2255.",
+          "Thanks for reaching out! Tell me what you need help with (web, SEO, apps, automation, pricing). I’ll provide clear next steps.",
         sender: "bot",
         timestamp: new Date(),
       }
