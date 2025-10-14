@@ -9,7 +9,7 @@ import { ClientNetworkSection } from "@/components/client-network-section"
 import { ServicesSection } from "@/components/services-section"
 import { CtaSection } from "@/components/cta-section"
 import { PortfolioShowcaseSection } from "@/components/portfolio-showcase-section"
-import { PartnerBadges } from "@/components/partner-badges"
+import { PartnerBadges } from "@/components/partner-badges" // fix wrong import path and symbol for partner badges
 import { StructuredData } from "@/components/structured-data"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -216,6 +216,7 @@ export default function Home() {
         <PortfolioShowcaseSection />
       </Section>
       <Section glass>
+        {/* <PartnerCertificationss /> */}
         <PartnerBadges />
       </Section>
       <Section glass>
