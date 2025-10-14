@@ -3,7 +3,15 @@
 import { usePathname } from "next/navigation"
 
 interface StructuredDataProps {
-  type?: "Organization" | "LocalBusiness" | "Service" | "Article" | "BreadcrumbList" | "Review" | "AggregateRating"
+  type?:
+    | "Organization"
+    | "LocalBusiness"
+    | "Service"
+    | "Article"
+    | "BreadcrumbList"
+    | "Review"
+    | "AggregateRating"
+    | "FAQPage"
   data?: Record<string, any>
 }
 
@@ -51,7 +59,7 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
           contactPoint: [
             {
               "@type": "ContactPoint",
-              telephone: "+17075822255",
+              telephone: "+17072491222",
               contactType: "customer service",
               availableLanguage: ["English"],
               hoursAvailable: {
@@ -64,7 +72,7 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
             {
               "@type": "ContactPoint",
               contactType: "sales",
-              telephone: "+17075822255",
+              telephone: "+17072491222",
               availableLanguage: ["English"],
             },
           ],
@@ -144,7 +152,7 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
           ],
           "@id": "https://www.mhdigitalsolution.com",
           url: "https://www.mhdigitalsolution.com",
-          telephone: "+17075822255",
+          telephone: "+17072491222",
           email: "info@mhdigitalsolution.com",
           description:
             "Leading digital marketing agency specializing in AI-powered solutions, web development, and business growth strategies. Serving businesses nationwide with proven results.",
@@ -255,7 +263,7 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
             "@type": "LocalBusiness",
             name: "MH Digital Solution",
             url: "https://www.mhdigitalsolution.com",
-            telephone: "+17075822255",
+            telephone: "+17072491222",
             aggregateRating: {
               "@type": "AggregateRating",
               ratingValue: "4.9",
@@ -289,7 +297,7 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
             "@type": "LocalBusiness",
             name: "MH Digital Solution",
             image: "https://www.mhdigitalsolution.com/images/mh-digital-solutions-logo.webp",
-            telephone: "+17075822255",
+            telephone: "+17072491222",
             address: {
               "@type": "PostalAddress",
               addressLocality: "Austin",
@@ -354,6 +362,94 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
         return {
           ...baseData,
           itemListElement: breadcrumbs,
+          ...data,
+        }
+
+      case "FAQPage":
+        return {
+          ...baseData,
+          mainEntity: data.faqs || [
+            {
+              "@type": "Question",
+              name: "What digital marketing services do you offer in Valletta Malta?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We offer social media management, PPC advertising, SEO, content marketing, and reputation management tailored to businesses in Valletta Malta.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "How do your SEO services help local Montana businesses?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Our SEO services focus on local keyword targeting, Google My Business optimization, competitor analysis, and quality link building to increase local search rankings.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What types of websites do you develop for Wichita businesses?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We design responsive, mobile-friendly websites including corporate sites, e-commerce stores, landing pages, and custom applications tailored to client needs.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What services do your small business consulting offers include?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We provide strategic planning, digital transformation guidance, market analysis, and process optimization tailored for Charleston WV businesses.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What ecommerce platforms do you specialize in?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We primarily work with Shopify and WooCommerce, offering full-service store development, customization, and optimization.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What Shopify services do you provide?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "From store setup and theme customization to marketing strategy and sales optimization, we cover all aspects of Shopify development.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What kind of AI automation solutions do you offer?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We provide workflow automation, customer engagement bots, data analytics, and process optimization tools powered by AI.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What workflow automation services are available?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "We implement CRM automation, task management systems, email marketing automation, and custom business process tools.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What digital marketing channels do you specialize in?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Our expertise spans SEO, PPC advertising, social media marketing, content marketing, and email campaigns.",
+              },
+            },
+            {
+              "@type": "Question",
+              name: "What SEO strategies are best for restaurants?",
+              acceptedAnswer: {
+                "@type": "Answer",
+                text: "Optimizing Google My Business, integrating menu keywords, acquiring local citations, and managing customer reviews.",
+              },
+            },
+          ],
           ...data,
         }
 

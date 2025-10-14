@@ -14,24 +14,29 @@ export function CtaSection() {
         </p>
 
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-          <Link href="/contact">
+          <Link href="/contact" aria-label="Go to contact page">
             <Button className="gradient-button px-8 py-4 text-xl hover:scale-105 transition-transform">
               <Calendar className="h-5 w-5 mr-2" />
               Get Free Consultation
             </Button>
           </Link>
 
-          <a href="tel:+17075822255">
+          <a href="tel:+17072491222" aria-label="Call us at +17072491222">
             <Button
               variant="outline"
               className="px-8 py-4 text-xl border-2 border-fuchsia-500 text-fuchsia-500 hover:bg-fuchsia-500 hover:text-white transition-all hover:scale-105 bg-transparent"
             >
               <Phone className="h-5 w-5 mr-2" />
-              Call Now: (707) 249-1222
+              Call Now: +17072491222
             </Button>
           </a>
 
-          <a href="https://wa.me/17075822255" target="_blank" rel="noopener noreferrer">
+          <a
+            href="https://wa.me/17072491222?text=Hi%20MH%20Digital%20Solutions%2C%20I%27d%20like%20a%20free%20consultation."
+            target="_blank"
+            rel="nofollow noopener noreferrer"
+            aria-label="Open WhatsApp chat with MH Digital Solutions"
+          >
             <Button
               variant="outline"
               className="px-8 py-4 text-xl border-2 border-green-500 text-green-500 hover:bg-green-500 hover:text-white transition-all hover:scale-105 bg-transparent"

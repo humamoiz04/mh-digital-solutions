@@ -1,0 +1,20 @@
+# Disavow file template - MH Digital Solutions
+# IMPORTANT: Upload a curated copy of this file to https://search.google.com/search-console/disavow-links
+# Do not disavow good links. Review every domain before adding.
+
+# Syntax:
+#   domain:spammydomain.tld
+#   domain:sub.spammydomain.tld
+#   # You can also disavow specific URLs, but prefer domains:
+#   # https://spammydomain.tld/bad-page.html
+
+# Examples (PLACEHOLDERS - verify before use)
+domain:cheap-seo-links.example
+domain:free-guest-posts.example
+domain:irrelevant-forum.example
+domain:auto-generated-directory.example
+
+# Notes:
+# - Keep your NAP consistent (+17072491222) in all business listings.
+# - Prefer contacting reputable sites for link removal if feasible.
+# - Revalidate periodically and prune this list as links are removed.

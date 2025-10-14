@@ -10,6 +10,7 @@ import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
 import { SocialChatWidgets } from "@/components/social-chat-widgets"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
+import { PromoBanner } from "@/components/promo-banner"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -31,6 +32,11 @@ export const metadata: Metadata = {
   publisher: "MH Digital Solution",
   alternates: {
     canonical: "https://www.mhdigitalsolution.com",
+    languages: {
+      "x-default": "/",
+      "en-US": "/",
+      "en-MT": "/mt",
+    },
   },
   openGraph: {
     title: "MH Digital Solution - AI-Powered Digital Marketing & Web Development",
@@ -114,11 +120,6 @@ export default function RootLayout({
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/site.webmanifest" />
 
-        <link rel="canonical" href="https://www.mhdigitalsolution.com" />
-        {/* add hreflang alternates for US and Malta to improve local SEO */}
-        <link rel="alternate" hrefLang="x-default" href="https://www.mhdigitalsolution.com" />
-        <link rel="alternate" hrefLang="en-US" href="https://www.mhdigitalsolution.com" />
-        <link rel="alternate" hrefLang="en-MT" href="https://www.mhdigitalsolution.com/mt" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -162,6 +163,7 @@ export default function RootLayout({
             <FloatingBlobs />
             <div className="relative z-10 backdrop-blur-sm bg-white/5 min-h-screen flex flex-col">
               <Header />
+              <PromoBanner />
               <main id="main-content" className="flex-1" role="main">
                 {children}
               </main>

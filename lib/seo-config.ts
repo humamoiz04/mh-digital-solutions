@@ -94,6 +94,11 @@ export function generateMetadata(config: SEOConfig): Metadata {
     keywords: config.keywords.join(", "),
     alternates: {
       canonical: config.canonical,
+      languages: {
+        "x-default": config.canonical,
+        "en-US": config.canonical,
+        "en-MT": config.canonical?.endsWith("/mt") ? config.canonical : `${config.canonical?.replace(/\/$/, "")}/mt`,
+      },
     },
     openGraph: config.openGraph
       ? {

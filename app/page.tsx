@@ -57,7 +57,7 @@ export default function Home() {
           provider: {
             "@type": "Organization",
             name: "MH Digital Solution",
-            telephone: "+17075822255",
+            telephone: "+17072491222",
             email: "info@mhdigitalsolution.com",
           },
         }}

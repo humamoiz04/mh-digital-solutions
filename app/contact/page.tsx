@@ -100,7 +100,7 @@ export default function ContactPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 text-muted-foreground">
-                <p className="text-xl font-bold text-fuchsia-600">+1 (707) 582-2255</p>
+                <p className="text-xl font-bold text-fuchsia-600">+1 (707) 249-1222</p>
                 <div className="flex items-center gap-2 mt-2">
                   <Clock className="h-4 w-4 text-fuchsia-600" />
                   <span>Mon - Fri: 9:00 AM - 5:00 PM (CST)</span>
@@ -137,7 +137,7 @@ export default function ContactPage() {
                 </CardDescription>
               </CardHeader>
               <CardContent className="p-0 text-muted-foreground">
-                <p className="text-lg font-semibold text-green-600">+1 (707) 582-2255</p>
+                <p className="text-lg font-semibold text-green-600">+1 (707) 249-1222</p>
                 <p className="mt-2">💬 Instant messaging for quick questions</p>
                 <p className="text-sm">🚀 Perfect for Austin businesses on-the-go</p>
               </CardContent>
@@ -177,18 +177,18 @@ export default function ContactPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+17075822255"
+                href="tel:+17072491222"
                 className="bg-white text-fuchsia-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
               >
-                📞 Call Now: (707) 582-2255
+                {"📞 Call Now: +1 (707) 249-1222"}
               </a>
               <a
                 href="https://calendly.com/mhdigitalsolutionsus"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-fuchsia-600 transition-colors"
               >
-                📅 Schedule Free Consultation
+                {"📅 Schedule Free Consultation"}
               </a>
             </div>
           </div>

@@ -1,0 +1,18 @@
+🇺🇸 USA: Targeting Informational & Niche B2B (Low KD)
+These keywords focus on specific problems or industries, making them easier to rank for than general terms like "SEO."
+
+Keyword Category	High-Potential Keyword Example	Intent Type	Rationale (Low Competition)
+Industry Niche	fintech digital marketing strategy	Informational/Commercial	Focuses on a high-value niche with lower overall competition than generic terms.
+Specific Service	web design packages for small business USA	Transactional	Highly specific long-tail query with clear budget intent.
+Question	how to choose digital marketing agency for startup	Informational	Targets users in the research phase; great for a blog post.
+Platform Specific	wordpress e-commerce optimization guide 2024	Informational	Users need help with a specific platform; easy to own the topic.
+
+Export to Sheets
+🇲🇹 Malta: Targeting Localized & Bilingual (High Rank Chance)
+The competition is much lower in Malta, making geo-modified keywords highly effective for a quick rank.
+
+Keyword Category	High-Potential Keyword Example	Intent Type	Rationale (High Chance)
+Local Service	social media marketing agency in Valletta	Transactional	Dominates local search results (Local SEO is king in Malta).
+Bilingual/Local	web design servizzi Malta (Web design services Malta)	Transactional/Local	Targets the bilingual user base for immediate local ranking advantage.
+Local Question	how much does seo cost in malta	Informational/Commercial	Low volume, but high intent question that leads directly to a consultation.
+Local Niche	digital marketing for malta hospitality business	Commercial	Targets a key local industry (tourism) with strong commercial intent.

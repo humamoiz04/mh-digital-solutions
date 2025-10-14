@@ -1,5 +1,126 @@
 export const blogPosts = [
   {
+    slug: "dual-track-seo-strategy",
+    title: "The Dual-Track SEO Strategy: How to Rank in a Global (US) and Niche (Malta) Market Simultaneously",
+    date: "January 10, 2025",
+    author: "Mohammad Hassan",
+    category: "SEO",
+    image: "/images/blog-dual-track-seo.webp",
+    description:
+      "Master the art of ranking in both broad US markets and hyper-local Malta searches with our proven dual-track SEO framework. Includes keyword mapping, hreflang setup, and content strategies.",
+    featured: true,
+  },
+  {
+    slug: "digital-marketing-services-valletta-malta",
+    title: "Digital Marketing Services in Valletta Malta: Complete Guide for Local Businesses",
+    date: "January 9, 2025",
+    author: "Sarah Johnson",
+    category: "Digital Marketing",
+    image: "/images/blog-valletta-marketing.webp",
+    description:
+      "Unlock your business's growth potential with expert digital marketing services in Valletta Malta. Tailored strategies for social media, PPC, and reputation management.",
+    featured: true,
+  },
+  {
+    slug: "affordable-seo-agency-billings-montana",
+    title: "Affordable SEO Agency in Billings Montana: Boost Your Local Rankings",
+    date: "January 8, 2025",
+    author: "Mike Chen",
+    category: "SEO",
+    image: "/images/blog-billings-seo.webp",
+    description:
+      "Searching for an affordable SEO agency in Billings Montana? Our local SEO experts specialize in Montana business growth with proven strategies.",
+    featured: false,
+  },
+  {
+    slug: "best-web-design-company-wichita-kansas",
+    title: "Best Web Design Company in Wichita Kansas: Responsive & Conversion-Focused",
+    date: "January 7, 2025",
+    author: "Sarah Johnson",
+    category: "Web Development",
+    image: "/images/blog-wichita-web-design.webp",
+    description:
+      "Partner with the best web design company in Wichita Kansas for stunning, responsive websites that convert visitors into loyal customers.",
+    featured: false,
+  },
+  {
+    slug: "small-business-consulting-charleston-wv",
+    title: "Small Business Consulting Firms in Charleston WV: Strategic Growth Partners",
+    date: "January 6, 2025",
+    author: "Mohammad Hassan",
+    category: "Business Consulting",
+    image: "/images/blog-charleston-consulting.webp",
+    description:
+      "Expert small business consulting in Charleston WV. Strategic planning, market analysis, and technology integration tailored for local companies.",
+    featured: false,
+  },
+  {
+    slug: "ecommerce-solutions-casper-wyoming",
+    title: "Ecommerce Solutions for Small Business in Casper WY: Shopify & WooCommerce Experts",
+    date: "January 5, 2025",
+    author: "Mike Chen",
+    category: "E-commerce",
+    image: "/images/blog-casper-ecommerce.webp",
+    description:
+      "Maximize your online sales with tailored ecommerce solutions for small businesses in Casper WY. Shopify and WooCommerce development specialists.",
+    featured: false,
+  },
+  {
+    slug: "shopify-experts-anchorage-alaska",
+    title: "Reliable Shopify Experts in Anchorage Alaska: Store Setup & Marketing",
+    date: "January 4, 2025",
+    author: "Sarah Johnson",
+    category: "E-commerce",
+    image: "/images/blog-anchorage-shopify.webp",
+    description:
+      "Experienced Shopify experts in Anchorage Alaska help businesses build and customize stores that convert. From design to marketing strategy.",
+    featured: false,
+  },
+  {
+    slug: "ai-automation-tools-montana-businesses",
+    title: "AI Automation Tools for Local Businesses Montana: Streamline Operations & Cut Costs",
+    date: "January 3, 2025",
+    author: "Mohammad Hassan",
+    category: "AI & Automation",
+    image: "/images/blog-montana-ai-automation.webp",
+    description:
+      "Leverage AI automation tools to streamline operations and cut costs for local businesses in Montana. Enhance efficiency with cutting-edge AI.",
+    featured: false,
+  },
+  {
+    slug: "workflow-automation-malta-city",
+    title: "Affordable Workflow Automation in Malta City: Increase Productivity & Reduce Errors",
+    date: "January 2, 2025",
+    author: "Mike Chen",
+    category: "AI & Automation",
+    image: "/images/blog-malta-workflow-automation.webp",
+    description:
+      "Increase productivity and reduce errors with affordable workflow automation solutions customized for businesses in Malta City.",
+    featured: false,
+  },
+  {
+    slug: "digital-marketing-agency-glendive-montana",
+    title: "Best Digital Marketing Agency near Glendive Montana: Local SEO & PPC Experts",
+    date: "January 1, 2025",
+    author: "Sarah Johnson",
+    category: "Digital Marketing",
+    image: "/images/blog-glendive-marketing.webp",
+    description:
+      "Choose the best digital marketing agency near Glendive Montana for expert local SEO, PPC, and content marketing with data-driven strategies.",
+    featured: false,
+  },
+  {
+    slug: "seo-for-restaurants-malta",
+    title: "How to Improve SEO for Restaurants in Malta: Google My Business & Local Citations",
+    date: "December 31, 2024",
+    author: "Mohammad Hassan",
+    category: "SEO",
+    image: "/images/blog-malta-restaurant-seo.webp",
+    description:
+      "Improve your restaurant's online visibility in Malta with targeted SEO strategies including Google My Business optimization and review management.",
+    featured: false,
+  },
+  {
     slug: "ai-automation-revolution-2024",
     title: "How AI Automation is Revolutionizing Small Business Operations in 2024",
     date: "December 15, 2024",
@@ -171,6 +292,8 @@ export const categories = [
   "Productivity",
   "Mobile Development",
   "E-commerce",
+  "Digital Marketing",
+  "Business Consulting",
 ]
 
 export const industries = [

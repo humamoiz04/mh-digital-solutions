@@ -34,6 +34,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services/business-registration",
     "/services/business-insurance",
     "/services/ai-automation",
+    "/blog/dual-track-seo-strategy",
+    "/blog/digital-marketing-services-valletta-malta",
+    "/blog/affordable-seo-agency-billings-montana",
+    "/blog/best-web-design-company-wichita-kansas",
+    "/blog/small-business-consulting-charleston-wv",
+    "/blog/ecommerce-solutions-casper-wyoming",
+    "/blog/shopify-experts-anchorage-alaska",
+    "/blog/ai-automation-tools-montana-businesses",
+    "/blog/workflow-automation-malta-city",
+    "/blog/digital-marketing-agency-glendive-montana",
+    "/blog/seo-for-restaurants-malta",
   ]
 
   return paths.map((path) => ({

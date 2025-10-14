@@ -253,7 +253,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                 href="https://www.nebraskaautodetailing.com/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 aria-label="Nebraska Auto Detailing - Opens in new tab"
               >
                 Nebraska Auto Detailing
@@ -265,7 +265,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                 href="https://www.luxuryfindetail.com/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 aria-label="Luxury Fin Detail - Opens in new tab"
               >
                 Luxury Fin Detail
@@ -277,7 +277,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                 href="https://www.aesthetichaven.store/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 aria-label="Aesthetic Haven Store - Opens in new tab"
               >
                 Aesthetic Haven Store
@@ -289,7 +289,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                 href="https://www.mhdazzles.store/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 aria-label="MH Dazzles Store - Opens in new tab"
               >
                 MH Dazzles Store
@@ -301,7 +301,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                 href="https://aistudio.google.com/apikey"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 aria-label="Google AI Studio - Opens in new tab"
               >
                 Google AI Studio
@@ -313,7 +313,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                 href="https://www.seoreviewtools.com/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 aria-label="SEO Review Tools - Opens in new tab"
               >
                 SEO Review Tools
@@ -325,7 +325,7 @@ export function Footer() {
                 className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
                 href="https://www.aureusintelligence.ai/"
                 target="_blank"
-                rel="noopener noreferrer"
+                rel="nofollow noopener noreferrer"
                 aria-label="Aureus Intelligence AI - Opens in new tab"
               >
                 Aureus Intelligence AI
