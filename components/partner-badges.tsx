@@ -9,7 +9,7 @@ export function PartnerBadges() {
       name: "Google Partner",
       icon: (
         <img
-          src="/images/partners/google-partner.webp"
+          src="/images/partners/partner-google.webp"
           alt="Google Partner logo"
           width={32}
           height={32}
@@ -39,7 +39,7 @@ export function PartnerBadges() {
       name: "HubSpot Partner",
       icon: (
         <img
-          src="/images/partners/hubspot-partner.webp"
+          src="/images/partners/partner-hubspot.webp"
           alt="HubSpot Partner logo"
           width={32}
           height={32}
@@ -54,7 +54,7 @@ export function PartnerBadges() {
       name: "Clutch Verified",
       icon: (
         <img
-          src="/images/partners/clutch-verified.webp"
+          src="/images/partners/clutch-verified-badge.webp"
           alt="Clutch Verified badge"
           width={32}
           height={32}

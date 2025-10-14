@@ -6,25 +6,25 @@ export function PartnerCertifications() {
   const certifications = [
     {
       name: "Google Partner",
-      image: "/images/google-partner-badge.webp",
+      image: "/images/google-partner.webp",
       description: "Certified Google Ads and Analytics expertise with proven track record",
       verified: true,
     },
     {
       name: "Meta Business Partner",
-      image: "/images/meta-partner-badge.webp",
+      image: "/images/meta-partner.webp",
       description: "Official Meta Marketing Partner for Facebook and Instagram advertising",
       verified: true,
     },
     {
       name: "HubSpot Certified Partner",
-      image: "/images/hubspot-partner-badge.webp",
+      image: "/images/hubspot-partne.webp",
       description: "Certified in inbound marketing, sales automation, and CRM solutions",
       verified: true,
     },
     {
       name: "Clutch Verified",
-      image: "/images/clutch-verified-badge.webp",
+      image: "/images/clutch-verified.webp",
       description: "Top-rated digital agency with verified client reviews and results",
       verified: true,
     },
