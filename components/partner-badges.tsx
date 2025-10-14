@@ -9,7 +9,7 @@ export function PartnerBadges() {
       name: "Google Partner",
       icon: (
         <img
-          src="/images/partners/google-partner.jpg"
+          src="/images/partners/google-partner.webp"
           alt="Google Partner logo"
           width={32}
           height={32}
@@ -24,7 +24,7 @@ export function PartnerBadges() {
       name: "Meta Business Partner",
       icon: (
         <img
-          src="/images/partners/meta-partner.jpg"
+          src="/images/partners/partner-meta.webp"
           alt="Meta Business Partner logo"
           width={32}
           height={32}
@@ -39,7 +39,7 @@ export function PartnerBadges() {
       name: "HubSpot Partner",
       icon: (
         <img
-          src="/images/partners/hubspot-partner.jpg"
+          src="/images/partners/hubspot-partner.webp"
           alt="HubSpot Partner logo"
           width={32}
           height={32}
@@ -54,7 +54,7 @@ export function PartnerBadges() {
       name: "Clutch Verified",
       icon: (
         <img
-          src="/images/partners/clutch-verified.jpg"
+          src="/images/partners/clutch-verified.webp"
           alt="Clutch Verified badge"
           width={32}
           height={32}
