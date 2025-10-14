@@ -9,6 +9,7 @@ import Link from "next/link"
 import { EmailGate } from "@/components/email-gate"
 import { Badge } from "@/components/ui/badge"
 
+
 export default function PricingPage() {
   const [hasAccess, setHasAccess] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
@@ -26,8 +27,8 @@ export default function PricingPage() {
       packages: [
         {
           name: "Starter Website",
-          price: "$1,499",
-          originalPrice: "$4,999",
+          price: "$199",
+          originalPrice: "$499",
           features: [
             "5-page responsive website",
             "Mobile-optimized design",
@@ -40,8 +41,8 @@ export default function PricingPage() {
         },
         {
           name: "Business Website",
-          price: "$2,999",
-          originalPrice: "$9,999",
+          price: "$299",
+          originalPrice: "$999",
           popular: true,
           features: [
             "10-page custom website",
@@ -52,12 +53,13 @@ export default function PricingPage() {
             "3 months free maintenance",
             "FREE: Logo design",
             "FREE: Social media integration",
+            "FREE: **Local Organic Search Audit**", 
           ],
         },
         {
           name: "Enterprise Solution",
-          price: "$7,999",
-          originalPrice: "$24,999",
+          price: "$599",
+          originalPrice: "$1999",
           features: [
             "Unlimited pages",
             "Custom web application",
@@ -67,6 +69,7 @@ export default function PricingPage() {
             "6 months free maintenance",
             "FREE: Mobile app",
             "FREE: Cloud hosting setup",
+            "FREE: **Quarterly Organic Growth Strategy**", 
           ],
         },
       ],
@@ -78,10 +81,10 @@ export default function PricingPage() {
       packages: [
         {
           name: "Social Starter",
-          price: "$599/mo",
-          originalPrice: "$1,999/mo",
+          price: "$99/mo",
+          originalPrice: "$399/mo",
           features: [
-            "2 social platforms",
+            "2 social platforms **(No Contract)**", // ENHANCED RISK REVERSAL
             "12 posts per month",
             "Basic graphics design",
             "Community management",
@@ -92,11 +95,11 @@ export default function PricingPage() {
         },
         {
           name: "Social Pro",
-          price: "$1,199/mo",
-          originalPrice: "$3,999/mo",
+          price: "$149/mo",
+          originalPrice: "$599/mo",
           popular: true,
           features: [
-            "4 social platforms",
+            "4 social platforms **(No Contract)**", // ENHANCED RISK REVERSAL
             "20 posts per month",
             "Custom graphics & videos",
             "Influencer outreach",
@@ -108,10 +111,10 @@ export default function PricingPage() {
         },
         {
           name: "Social Enterprise",
-          price: "$2,499/mo",
-          originalPrice: "$8,299/mo",
+          price: "$299/mo",
+          originalPrice: "$799/mo",
           features: [
-            "All major platforms",
+            "All major platforms **(No Contract)**", // ENHANCED RISK REVERSAL
             "Daily posting",
             "Video content creation",
             "24/7 community management",
@@ -119,6 +122,7 @@ export default function PricingPage() {
             "Advanced ad campaigns",
             "FREE: Social media audit",
             "FREE: Crisis management",
+            "FREE: **Press Release Distribution (1/mo)**",
           ],
         },
       ],
@@ -130,10 +134,10 @@ export default function PricingPage() {
       packages: [
         {
           name: "Content Essentials",
-          price: "$799/mo",
-          originalPrice: "$2,699/mo",
+          price: "$199/mo",
+          originalPrice: "$699/mo",
           features: [
-            "4 blog posts per month",
+            "4 blog posts per month **(No Contract)**", // ENHANCED RISK REVERSAL
             "SEO optimization",
             "Keyword research",
             "Basic graphics",
@@ -144,11 +148,11 @@ export default function PricingPage() {
         },
         {
           name: "Content Pro",
-          price: "$1,599/mo",
-          originalPrice: "$5,299/mo",
+          price: "299/mo",
+          originalPrice: "$999/mo",
           popular: true,
           features: [
-            "8 blog posts per month",
+            "8 blog posts per month **(No Contract)**", // ENHANCED RISK REVERSAL
             "Video content creation",
             "Infographic design",
             "Social media content",
@@ -156,14 +160,15 @@ export default function PricingPage() {
             "Landing page copy",
             "FREE: Brand voice guide",
             "FREE: Content audit",
+            "FREE: **Content Repurposing (3 formats)**", 
           ],
         },
         {
           name: "Content Enterprise",
-          price: "$3,199/mo",
-          originalPrice: "$10,699/mo",
+          price: "$499/mo",
+          originalPrice: "$1999/mo",
           features: [
-            "Unlimited content",
+            "Unlimited content **(No Contract)**", // ENHANCED RISK REVERSAL
             "Multi-format content",
             "Advanced video production",
             "Podcast production",
@@ -182,10 +187,10 @@ export default function PricingPage() {
       packages: [
         {
           name: "SEO Optimization",
-          price: "$899/mo",
-          originalPrice: "$2,999/mo",
+          price: "$199/mo",
+          originalPrice: "$1,499/mo",
           features: [
-            "Keyword research & strategy",
+            "Keyword research & strategy **(No Contract)**", // ENHANCED RISK REVERSAL
             "On-page optimization",
             "Technical SEO audit",
             "Local SEO setup",
@@ -196,10 +201,10 @@ export default function PricingPage() {
         },
         {
           name: "PPC Management",
-          price: "$1,299/mo",
-          originalPrice: "$4,299/mo",
+          price: "$299/mo",
+          originalPrice: "$1,999/mo",
           features: [
-            "Google Ads management",
+            "Google Ads management **(No Contract)**", // ENHANCED RISK REVERSAL
             "Facebook Ads campaigns",
             "Landing page optimization",
             "A/B testing",
@@ -210,10 +215,10 @@ export default function PricingPage() {
         },
         {
           name: "AI & Automation",
-          price: "$2,199/mo",
-          originalPrice: "$7,299/mo",
+          price: "$399/mo",
+          originalPrice: "$2,999/mo",
           features: [
-            "Custom AI chatbot",
+            "Custom AI chatbot **(No Contract)**", // ENHANCED RISK REVERSAL
             "Process automation",
             "CRM integration",
             "Email automation",
@@ -224,7 +229,111 @@ export default function PricingPage() {
         },
       ],
     },
+    comboPackages: {
+      title: "All-in-One Combo Packages",
+      icon: Users,
+      color: "from-fuchsia-600 to-pink-600",
+      packages: [
+        {
+          name: "Launch Accelerator",
+          price: "$499",
+          originalPrice: "$1,899",
+          popular: true,
+          tag: "BEST VALUE",
+          features: [
+            "**Web Dev:** Starter Website (5 pages)",
+            "**Content:** 2x SEO blog posts",
+            "**Social:** Basic social media setup (2 platforms)",
+            "3 months free web hosting",
+            "Basic Google Analytics setup",
+            "FREE: 1 Hour Strategy Session",
+            "FREE: Brand Style Guide",
+            "FREE: **Initial Organic Keyword Research**", 
+          ],
+        },
+        {
+          name: "Growth Engine",
+          price: "$599/mo",
+          originalPrice: "$1,999/mo",
+          popular: true,
+          tag: "TOP SELLER",
+          features: [
+            "**SEO:** Advanced SEO Optimization **(No Contract)**", // ENHANCED RISK REVERSAL
+            "**Content:** Content Pro (8 blog posts/mo)",
+            "**Social:** Social Pro (4 platforms, 20 posts/mo)",
+            "Dedicated Account Manager",
+            "Monthly Conversion Rate Report",
+            "FREE: PPC Ad Copy Refinement",
+            "FREE: A/B Testing Setup for 1 Page",
+            "FREE: **Monthly Organic Traffic Analysis**", 
+          ],
+        },
+        {
+          name: "Ultimate Digital Partner",
+          price: "$999/mo",
+          originalPrice: "$3,999/mo",
+          popular: false,
+          features: [
+            "**Web Dev:** Business Website (Maintenance only)",
+            "**All Services:** Full Enterprise features **(No Contract)**", // ENHANCED RISK REVERSAL
+            "Custom API integration support",
+            "Priority Support (24/7 Slack)",
+            "Quarterly Strategy Review Meeting",
+            "FREE: Custom AI Chatbot Setup",
+            "FREE: Quarterly Security Audit",
+            "FREE: **Dedicated Organic Marketing Specialist**", 
+          ],
+        },
+      ],
+    },
+    // NEW À LA CARTE ORGANIC ADD-ONS
+    organicAddons: [
+        {
+            name: "Premium Blog Post (1000 words)",
+            description: "Fully SEO-optimized, includes royalty-free images.",
+            price: "$149",
+            frequency: "one‑time",
+            variant: "default"
+        },
+        {
+            name: "High-DA Guest Post Placement",
+            description: "Guaranteed backlink from a domain authority 30+ site.",
+            price: "$199",
+            frequency: "one‑time",
+            variant: "default"
+        },
+        {
+            name: "Conversion Copy Refresh",
+            description: "Homepage + 1 Landing Page, focused on sales copy.",
+            price: "$399",
+            frequency: "one‑time",
+            variant: "default"
+        },
+        {
+            name: "Backlink Audit & Cleanup",
+            description: "Full analysis and disavow of toxic backlinks.",
+            price: "$99",
+            frequency: "one‑time",
+            variant: "outline"
+        },
+        {
+            name: "Priority Support",
+            description: "24/7 Slack channel + 4h SLA for critical issues.",
+            price: "$99",
+            frequency: "mo",
+            variant: "outline"
+        },
+        {
+            name: "Advanced Analytics Setup",
+            description: "GA4 + Tag Manager + Custom Dashboards setup.",
+            price: "$299",
+            frequency: "one‑time",
+            variant: "default"
+        },
+    ]
   }
+
+  // ... existing useEffects for access and timer ...
 
   useEffect(() => {
     const accessData = localStorage.getItem("pricingAccess")
@@ -270,6 +379,7 @@ export default function PricingPage() {
 
   return (
     <div className="relative z-10">
+      {/* Sale Banners (No Change) */}
       <div className="bg-gradient-to-r from-red-600 via-fuchsia-600 to-pink-600 text-white py-3 relative">
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="flex items-center justify-center gap-2 text-lg font-semibold">
@@ -291,6 +401,7 @@ export default function PricingPage() {
           </div>
         </div>
       </div>
+      {/* End Sale Banners */}
 
       <Section className="py-16 md:py-24">
         <div className="text-center mb-12">
@@ -306,7 +417,8 @@ export default function PricingPage() {
           </p>
         </div>
 
-        {Object.entries(servicePricing).map(([key, service]) => (
+        {/* MAPPING THROUGH ALL SERVICE CATEGORIES */}
+        {Object.entries(servicePricing).filter(([key]) => key !== 'organicAddons').map(([key, service]) => (
           <div key={key} className="mb-16">
             <div className="text-center mb-8">
               <div
@@ -323,13 +435,21 @@ export default function PricingPage() {
                   key={index}
                   className={`glass-card flex flex-col relative transition-all duration-300 hover:scale-105 ${
                     pkg.popular ? "border-fuchsia-500 shadow-2xl shadow-fuchsia-500/20 scale-105" : "hover:shadow-xl"
+                  } ${
+                    pkg.tag === "BEST VALUE" ? "border-green-500 shadow-2xl shadow-green-500/30 scale-105" : ""
                   }`}
                   style={{ animationDelay: `${index * 0.1}s` }}
                 >
-                  {pkg.popular && (
+                  {(pkg.popular || pkg.tag) && (
                     <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <Badge className="bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white px-4 py-1">
-                        MOST POPULAR
+                      <Badge 
+                          className={`px-4 py-1 ${
+                              pkg.tag === "BEST VALUE" 
+                                ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white" 
+                                : "bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white"
+                          }`}
+                      >
+                        {pkg.tag || "MOST POPULAR"}
                       </Badge>
                     </div>
                   )}
@@ -362,7 +482,7 @@ export default function PricingPage() {
                   <CardFooter className="pt-4">
                     <Link href="/contact" className="w-full">
                       <Button className="gradient-button w-full text-lg py-3 hover:shadow-lg transition-all duration-300">
-                        Get Started - SAVE 70%!
+                        {pkg.tag === "BEST VALUE" ? "Activate Best Value Deal!" : "Get Started - SAVE 70%!"}
                       </Button>
                     </Link>
                   </CardFooter>
@@ -372,54 +492,83 @@ export default function PricingPage() {
           </div>
         ))}
 
-        {/* Add-ons */}
+        {/* NEW: SOCIAL PROOF / TESTIMONIALS SECTION */}
+        <div className="text-center mt-24">
+            <h3 className="text-3xl font-bold text-foreground mb-6">Our Clients Speak For Themselves</h3>
+            <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+                {/* Testimonial Card 1 */}
+                <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
+                    <p className="italic text-lg text-muted-foreground">"The Growth Engine combo paid for itself within the first month. Incredible speed and value!"</p>
+                    <CardFooter className="pt-4 px-0 text-left font-semibold">
+                        <span className="text-fuchsia-600">- Sarah L., CEO of TechStart</span>
+                    </CardFooter>
+                </Card>
+                {/* Testimonial Card 2 */}
+                <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
+                    <p className="italic text-lg text-muted-foreground">"Professional, fast, and the web development package was exactly what our small business needed."</p>
+                    <CardFooter className="pt-4 px-0 text-left font-semibold">
+                        <span className="text-fuchsia-600">- Alex R., Founder of Local Goods</span>
+                    </CardFooter>
+                </Card>
+                {/* Testimonial Card 3 */}
+                <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
+                    <p className="italic text-lg text-muted-foreground">"The free organic audit led to immediate changes that boosted our search ranking. Highly recommend!"</p>
+                    <CardFooter className="pt-4 px-0 text-left font-semibold">
+                        <span className="text-fuchsia-600">- Maria K., Marketing Manager</span>
+                    </CardFooter>
+                </Card>
+            </div>
+        </div>
+        {/* END SOCIAL PROOF */}
+
+
+        {/* UPDATED À LA CARTE ADD-ONS SECTION */}
         <div className="text-center mt-16">
           <div className="max-w-5xl mx-auto">
-            <h3 className="text-2xl font-bold text-foreground mb-4">Popular Add‑ons</h3>
-            <p className="text-muted-foreground mb-8">Enhance any plan with these optional services.</p>
+            <h3 className="text-2xl font-bold text-foreground mb-4">🎯 À La Carte Organic Add-ons</h3>
+            <p className="text-muted-foreground mb-8">
+                Boost your current package with high-impact, one-time organic marketing services.
+            </p>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <Card className="glass-card p-6">
-                <CardHeader className="p-0 mb-2">
-                  <CardTitle className="text-lg font-semibold">Advanced Analytics Setup</CardTitle>
-                  <CardDescription>GA4 + Tag Manager + Custom Dashboards</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="text-2xl font-bold text-foreground mb-4">$399 one‑time</div>
-                  <Link href="/contact">
-                    <Button className="w-full">Add to Plan</Button>
-                  </Link>
-                </CardContent>
-              </Card>
-              <Card className="glass-card p-6">
-                <CardHeader className="p-0 mb-2">
-                  <CardTitle className="text-lg font-semibold">Priority Support</CardTitle>
-                  <CardDescription>24/7 Slack channel + 4h SLA</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="text-2xl font-bold text-foreground mb-4">$199/mo</div>
-                  <Link href="/contact">
-                    <Button className="w-full bg-transparent" variant="outline">
-                      Add to Plan
-                    </Button>
-                  </Link>
-                </CardContent>
-              </Card>
-              <Card className="glass-card p-6">
-                <CardHeader className="p-0 mb-2">
-                  <CardTitle className="text-lg font-semibold">Conversion Copy Refresh</CardTitle>
-                  <CardDescription>Homepage + 1 Landing Page</CardDescription>
-                </CardHeader>
-                <CardContent className="p-0">
-                  <div className="text-2xl font-bold text-foreground mb-4">$799 one‑time</div>
-                  <Link href="/contact">
-                    <Button className="w-full">Add to Plan</Button>
-                  </Link>
-                </CardContent>
-              </Card>
+              {servicePricing.organicAddons.map((addon, index) => (
+                <Card key={index} className="glass-card p-6">
+                  <CardHeader className="p-0 mb-2">
+                    <CardTitle className="text-lg font-semibold">{addon.name}</CardTitle>
+                    <CardDescription>{addon.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="p-0">
+                    <div className="text-2xl font-bold text-foreground mb-4">
+                        {addon.price} {addon.frequency !== 'mo' ? addon.frequency : `/ ${addon.frequency}`}
+                    </div>
+                    <Link href="/contact">
+                      <Button className="w-full" variant={addon.variant as "default" | "outline"}>
+                        Add to Plan
+                      </Button>
+                    </Link>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </div>
+        {/* END UPDATED ADD-ONS SECTION */}
 
+        {/* NEW: FINAL CTA/CONSULTATION BANNER */}
+        <div className="text-center mt-16">
+            <div className="bg-gradient-to-r from-fuchsia-500/10 to-pink-500/10 rounded-2xl p-8 border border-fuchsia-500/30 max-w-4xl mx-auto">
+                <h3 className="text-3xl font-bold text-fuchsia-600 mb-2">Still Unsure Which Plan is Right?</h3>
+                <p className="text-lg text-muted-foreground mb-6">Book your **FREE 30-Minute Strategy Call** to find your perfect fit and unlock maximum savings.</p>
+                <Link href="/contact">
+                    <Button size="lg" className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white shadow-lg shadow-fuchsia-500/50">
+                        Book My Free Strategy Call Now
+                    </Button>
+                </Link>
+            </div>
+        </div>
+        {/* END NEW CTA */}
+
+
+        {/* Guarantee Section (No Change) */}
         <div className="text-center mt-16">
           <div className="bg-gradient-to-r from-green-500/10 to-emerald-500/10 rounded-2xl p-8 border border-green-500/20">
             <h3 className="text-2xl font-bold text-foreground mb-4">🛡️ 100% Satisfaction Guarantee</h3>
