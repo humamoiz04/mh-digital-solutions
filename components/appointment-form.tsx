@@ -41,7 +41,10 @@ export function AppointmentForm() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          page_path: typeof window !== "undefined" ? window.location.pathname : undefined,
+        }),
       })
 
       const data = await (async () => {
@@ -67,7 +70,7 @@ export function AppointmentForm() {
         message: "",
       })
     } catch (error) {
-      setError("Failed to book appointment. Please try again or call us directly at +17075822255")
+      setError("Failed to book appointment. Please try again or call us directly at +17072491222")
     } finally {
       setIsSubmitting(false)
     }
@@ -224,8 +227,8 @@ export function AppointmentForm() {
         <div className="text-center text-sm text-muted-foreground">
           <p>
             Or call us directly:{" "}
-            <a href="tel:+17075822255" className="text-fuchsia-500 hover:underline font-semibold">
-              +1 (707) 582-2255
+            <a href="tel:+17072491222" className="text-fuchsia-500 hover:underline font-semibold">
+              +1 (707) 249-1222
             </a>
           </p>
         </div>

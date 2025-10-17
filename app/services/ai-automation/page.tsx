@@ -208,18 +208,21 @@ export default function AiAutomationPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg">
-                    <Link href="/blog/team-collaboration-tools" className="hover:text-fuchsia-600 transition-colors">
-                      AI-Powered Team Collaboration
+                    <Link
+                      href="/blog/mobile-app-development-trends-2024"
+                      className="hover:text-fuchsia-600 transition-colors"
+                    >
+                      Mobile App Development Trends
                     </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Explore how AI-powered collaboration tools are enhancing team productivity and streamlining
-                    workflows.
+                    Explore how mobile app development trends are enabling AI-powered automation and enhanced user
+                    experiences.
                   </p>
                   <Link
-                    href="/blog/team-collaboration-tools"
+                    href="/blog/mobile-app-development-trends-2024"
                     className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
                   >
                     Read More →

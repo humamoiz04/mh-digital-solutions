@@ -213,18 +213,20 @@ export default function DigitalMarketingPage() {
               <Card className="glass-card">
                 <CardHeader>
                   <CardTitle className="text-lg">
-                    <Link href="/blog/ppc-optimization-guide" className="hover:text-fuchsia-600 transition-colors">
-                      PPC Optimization Guide 2024
+                    <Link
+                      href="/blog/mobile-app-development-trends-2024"
+                      className="hover:text-fuchsia-600 transition-colors"
+                    >
+                      Mobile App Development Trends 2024
                     </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Learn advanced PPC strategies to maximize your ad spend ROI and drive high-quality leads for your
-                    business.
+                    Learn advanced mobile development strategies to maximize your app's reach and engagement in 2024.
                   </p>
                   <Link
-                    href="/blog/ppc-optimization-guide"
+                    href="/blog/mobile-app-development-trends-2024"
                     className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
                   >
                     Read More →
@@ -236,19 +238,19 @@ export default function DigitalMarketingPage() {
                 <CardHeader>
                   <CardTitle className="text-lg">
                     <Link
-                      href="/case-studies/saas-growth-strategy"
+                      href="/case-studies/fitlife-gyms-scaling"
                       className="hover:text-fuchsia-600 transition-colors"
                     >
-                      SaaS Growth Strategy Success
+                      FitLife Gyms Growth Success
                     </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    How we helped a SaaS startup achieve 400% growth through integrated digital marketing campaigns.
+                    How we helped FitLife Gyms achieve 300% growth through integrated digital marketing campaigns.
                   </p>
                   <Link
-                    href="/case-studies/saas-growth-strategy"
+                    href="/case-studies/fitlife-gyms-scaling"
                     className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
                   >
                     View Case Study →
@@ -260,20 +262,20 @@ export default function DigitalMarketingPage() {
                 <CardHeader>
                   <CardTitle className="text-lg">
                     <Link
-                      href="/blog/social-media-roi-measurement"
+                      href="/blog/ai-automation-revolution-2024"
                       className="hover:text-fuchsia-600 transition-colors"
                     >
-                      Social Media ROI Measurement
+                      AI Automation in Marketing
                     </Link>
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground mb-4">
-                    Master the art of measuring social media ROI with our comprehensive guide to analytics and
-                    attribution.
+                    Discover how AI automation is transforming digital marketing strategies and improving campaign
+                    performance.
                   </p>
                   <Link
-                    href="/blog/social-media-roi-measurement"
+                    href="/blog/ai-automation-revolution-2024"
                     className="text-fuchsia-600 hover:text-fuchsia-700 font-medium"
                   >
                     Read More →

@@ -338,13 +338,10 @@ export default function AboutPage() {
           <div className="grid md:grid-cols-3 gap-6">
             <Card className="glass-card">
               <CardContent className="p-6">
-                <Link
-                  href="/blog/business-analytics-insights"
-                  className="block hover:text-fuchsia-600 transition-colors"
-                >
-                  <h4 className="font-semibold mb-2">Business Analytics Insights 2024</h4>
+                <Link href="/blog/seo-strategies-2024" className="block hover:text-fuchsia-600 transition-colors">
+                  <h4 className="font-semibold mb-2">SEO Strategies 2024</h4>
                   <p className="text-sm text-muted-foreground">
-                    Transform your Austin business with data-driven decision making and advanced analytics strategies.
+                    Discover the latest SEO strategies for enhancing your Austin business's online visibility.
                   </p>
                 </Link>
               </CardContent>
@@ -352,23 +349,25 @@ export default function AboutPage() {
             <Card className="glass-card">
               <CardContent className="p-6">
                 <Link
-                  href="/blog/hr-management-digital-transformation"
+                  href="/blog/ai-automation-revolution-2024"
                   className="block hover:text-fuchsia-600 transition-colors"
                 >
-                  <h4 className="font-semibold mb-2">HR Digital Transformation</h4>
+                  <h4 className="font-semibold mb-2">AI Automation Revolution 2024</h4>
                   <p className="text-sm text-muted-foreground">
-                    Modernize your HR processes with digital solutions that improve efficiency and employee experience.
+                    Explore how AI automation is transforming industries and driving efficiency in Austin.
                   </p>
                 </Link>
               </CardContent>
             </Card>
             <Card className="glass-card">
               <CardContent className="p-6">
-                <Link href="/blog/web-development-trends" className="block hover:text-fuchsia-600 transition-colors">
-                  <h4 className="font-semibold mb-2">Web Development Trends 2024</h4>
+                <Link
+                  href="/blog/mobile-app-development-trends-2024"
+                  className="block hover:text-fuchsia-600 transition-colors"
+                >
+                  <h4 className="font-semibold mb-2">Mobile App Development Trends 2024</h4>
                   <p className="text-sm text-muted-foreground">
-                    Discover the latest web development trends shaping the future of digital experiences in Austin and
-                    beyond.
+                    Stay ahead with the latest mobile app development trends shaping Austin's digital future.
                   </p>
                 </Link>
               </CardContent>

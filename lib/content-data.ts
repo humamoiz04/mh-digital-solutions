@@ -200,6 +200,50 @@ export const caseStudies = [
     metrics: { downloads: "1M+", revenue: "$2M", rating: "4.8★" },
     featured: true,
   },
+  {
+    slug: "saas-growth-strategy",
+    title: "SaaS Company Achieves 300% Growth with Integrated Digital Strategy",
+    industry: "Software as a Service (SaaS)",
+    image: "/images/case-study-saas-growth.webp",
+    description:
+      "Low customer acquisition cost and limited brand visibility in a competitive market. Implemented comprehensive digital marketing strategy including advanced SEO, targeted PPC campaigns, and content marketing.",
+    results: "300% Leads, 50% CAC Reduction",
+    metrics: { leads: "+300%", cac: "-50%", keywords: "15+ Top 3" },
+    featured: false,
+  },
+  {
+    slug: "rebranding-digital-success",
+    title: "Global Retailer's Rebranding Leads to 40% Online Sales Boost",
+    industry: "Retail & E-commerce",
+    image: "/images/case-study-rebranding.webp",
+    description:
+      "Outdated brand image and declining online engagement post-rebranding. Executed full digital rebranding across all platforms with website redesign and social media strategy overhaul.",
+    results: "40% Sales Increase, 25% Engagement Growth",
+    metrics: { sales: "+40%", engagement: "+25%", conversion: "+15%" },
+    featured: false,
+  },
+  {
+    slug: "mobile-banking-app-launch",
+    title: "FinTech Startup Launches Secure Mobile Banking App, Gains 100K Users",
+    industry: "FinTech",
+    image: "/images/case-study-mobile-banking.webp",
+    description:
+      "Developing a secure, scalable, and user-friendly mobile banking application from scratch with robust security features and intuitive UI/UX.",
+    results: "100K+ Users, 4.8★ Rating",
+    metrics: { users: "100K+", rating: "4.8★", security: "Zero Incidents" },
+    featured: false,
+  },
+  {
+    slug: "cloud-optimization-cost-savings",
+    title: "Enterprise Achieves 30% Cost Savings with Cloud Optimization",
+    industry: "Enterprise Solutions",
+    image: "/images/case-study-cloud-optimization.webp",
+    description:
+      "Spiraling cloud costs and inefficient resource utilization across multiple cloud environments. Conducted thorough cloud audit and implemented cost optimization strategies.",
+    results: "30% Cost Reduction, 20% Performance Gain",
+    metrics: { costs: "-30%", performance: "+20%", efficiency: "+40%" },
+    featured: false,
+  },
 ]
 
 export const pricingPlans = [
@@ -305,4 +349,7 @@ export const industries = [
   "SaaS",
   "Healthcare",
   "Manufacturing",
+  "Retail & E-commerce",
+  "FinTech",
+  "Enterprise Solutions",
 ]
