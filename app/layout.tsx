@@ -1,5 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
+import Script from "next/script"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
@@ -96,6 +97,20 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ9GMD3G1C" strategy="afterInteractive" />
+        <Script
+          id="google-analytics"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-JQ9GMD3G1C');
+            `,
+          }}
+        />
+
         <link rel="preload" href="/images/mh-digital-solutions-logo.webp" as="image" type="image/webp" />
         <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/images/colorful-chatbot-icon.png" as="image" type="image/png" />
