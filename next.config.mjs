@@ -29,6 +29,30 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // HTTP to HTTPS redirect for all traffic
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'header',
+            key: 'x-forwarded-proto',
+            value: 'http',
+          },
+        ],
+        destination: 'https://:host/:path*',
+        permanent: true,
+      },
+      {
+        source: '/:path*',
+        has: [
+          {
+            type: 'host',
+            value: 'mhdigitalsolution.com',
+          },
+        ],
+        destination: 'https://www.mhdigitalsolution.com/:path*',
+        permanent: true,
+      },
       // Legacy HTML redirects
       {
         source: '/home',
@@ -131,18 +155,6 @@ const nextConfig = {
       {
         source: '/blog/:clutch_profile_url*',
         destination: '/about',
-        permanent: true,
-      },
-      // Canonical URL enforcement (www vs non-www)
-      {
-        source: '/:path*',
-        has: [
-          {
-            type: 'host',
-            value: 'mhdigitalsolution.com',
-          },
-        ],
-        destination: 'https://www.mhdigitalsolution.com/:path*',
         permanent: true,
       },
       // Additional service redirects for common variations

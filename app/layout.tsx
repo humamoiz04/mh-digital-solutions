@@ -149,6 +149,54 @@ export default function RootLayout({
             }),
           }}
         />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "AggregateRating",
+              "@id": "https://www.mhdigitalsolution.com#aggregateRating",
+              ratingValue: "5",
+              bestRating: "5",
+              worstRating: "1",
+              ratingCount: "127",
+              reviewCount: "127",
+            }),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              name: "MH Digital Solution",
+              url: "https://www.mhdigitalsolution.com",
+              logo: "https://www.mhdigitalsolution.com/images/mh-digital-solutions-logo.webp",
+              description: "AI-Powered Digital Marketing & Web Development Solutions",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "127",
+                reviewCount: "127",
+              },
+              founder: {
+                "@type": "Person",
+                name: "MK",
+              },
+              contact: {
+                "@type": "ContactPoint",
+                contactType: "Customer Service",
+                telephone: "+17072491222",
+                email: "info@mhdigitalsolution.com",
+              },
+            }),
+          }}
+        />
       </head>
       <body className={`${inter.className} font-sans antialiased`}>
         <a

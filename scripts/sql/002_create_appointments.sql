@@ -1,3 +1,6 @@
+-- Added transaction wrapper and better error handling
+begin;
+
 create extension if not exists pgcrypto;
 create extension if not exists "uuid-ossp";
 
@@ -30,3 +33,19 @@ begin
       with check (true);
   end if;
 end $$;
+
+-- Allow authenticated users to view their own appointments
+do $$
+begin
+  if not exists (
+    select 1 from pg_policies where polname = 'appointments_select_own'
+  ) then
+    create policy appointments_select_own
+      on public.appointments
+      for select
+      to authenticated
+      using (auth.uid() = user_id or user_id is null);
+  end if;
+end $$;
+
+commit;

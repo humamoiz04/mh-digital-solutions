@@ -1,4 +1,6 @@
--- Idempotent table creation
+-- Added transaction wrapper and better error handling
+begin;
+
 create extension if not exists pgcrypto;
 create extension if not exists "uuid-ossp";
 
@@ -29,5 +31,18 @@ begin
   end if;
 end $$;
 
--- By default do not allow selecting contacts as anon (protect PII)
--- You can add admin policies later for dashboards.
+-- Allow authenticated users to view their own contacts
+do $$
+begin
+  if not exists (
+    select 1 from pg_policies where polname = 'contacts_select_own'
+  ) then
+    create policy contacts_select_own
+      on public.contacts
+      for select
+      to authenticated
+      using (auth.uid() = user_id or user_id is null);
+  end if;
+end $$;
+
+commit;

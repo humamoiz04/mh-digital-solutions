@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Separator } from "@/components/ui/separator"
-import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin, ExternalLink } from "lucide-react"
+import { Facebook, Twitter, Linkedin, Instagram, Phone, Mail, MapPin } from "lucide-react"
 import Image from "next/image"
 import { NewsletterSignup } from "@/components/newsletter-signup"
 
@@ -24,6 +24,7 @@ export function Footer() {
           <p className="text-muted-foreground">
             Your trusted partner for innovative digital marketing and IT solutions.
           </p>
+          <p className="text-sm text-muted-foreground font-semibold">CEO & Founder: MK</p>
 
           <div className="space-y-2">
             <div className="flex items-center gap-2 text-sm text-muted-foreground">
@@ -245,91 +246,47 @@ export function Footer() {
           </ul>
         </nav>
 
-        <nav className="space-y-2" aria-label="Resources and partner websites">
-          <h3 className="text-lg font-semibold text-foreground">Resources & Partners</h3>
+        <nav className="space-y-2" aria-label="Important links">
+          <h3 className="text-lg font-semibold text-foreground">Important Links</h3>
           <ul className="space-y-1">
             <li>
-              <Link
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
-                href="https://www.nebraskaautodetailing.com/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label="Nebraska Auto Detailing - Opens in new tab"
-              >
-                Nebraska Auto Detailing
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/">
+                Home
               </Link>
             </li>
             <li>
-              <Link
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
-                href="https://www.luxuryfindetail.com/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label="Luxury Fin Detail - Opens in new tab"
-              >
-                Luxury Fin Detail
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/about">
+                About Us
               </Link>
             </li>
             <li>
-              <Link
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
-                href="https://www.aesthetichaven.store/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label="Aesthetic Haven Store - Opens in new tab"
-              >
-                Aesthetic Haven Store
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/team">
+                Our Team
               </Link>
             </li>
             <li>
-              <Link
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
-                href="https://www.mhdazzles.store/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label="MH Dazzles Store - Opens in new tab"
-              >
-                MH Dazzles Store
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/the-mh-edge">
+                The MH Edge
               </Link>
             </li>
             <li>
-              <Link
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
-                href="https://aistudio.google.com/apikey"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label="Google AI Studio - Opens in new tab"
-              >
-                Google AI Studio
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/portfolio">
+                Portfolio
               </Link>
             </li>
             <li>
-              <Link
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
-                href="https://www.seoreviewtools.com/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label="SEO Review Tools - Opens in new tab"
-              >
-                SEO Review Tools
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/case-studies">
+                Case Studies
               </Link>
             </li>
             <li>
-              <Link
-                className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-1"
-                href="https://www.aureusintelligence.ai/"
-                target="_blank"
-                rel="nofollow noopener noreferrer"
-                aria-label="Aureus Intelligence AI - Opens in new tab"
-              >
-                Aureus Intelligence AI
-                <ExternalLink className="h-3 w-3" aria-hidden="true" />
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/blog">
+                Blog
+              </Link>
+            </li>
+            <li>
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/contact">
+                Contact
               </Link>
             </li>
           </ul>

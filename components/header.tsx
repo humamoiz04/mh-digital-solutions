@@ -86,6 +86,15 @@ export function Header() {
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/about">
           About
         </Link>
+        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/team">
+          Team
+        </Link>
+        <Link
+          className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
+          href="/the-mh-edge"
+        >
+          The MH Edge
+        </Link>
         <Link
           className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
           href="/portfolio"
@@ -106,6 +115,9 @@ export function Header() {
         </Link>
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/pricing">
           Pricing
+        </Link>
+        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/local">
+          Local Services
         </Link>
         <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/contact">
           <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white text-sm">
@@ -152,6 +164,15 @@ export function Header() {
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/about">
               About
             </Link>
+            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/team">
+              Team
+            </Link>
+            <Link
+              className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2"
+              href="/the-mh-edge"
+            >
+              The MH Edge
+            </Link>
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/portfolio">
               Portfolio
             </Link>
@@ -169,6 +190,9 @@ export function Header() {
             </Link>
             <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/pricing">
               Pricing
+            </Link>
+            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/local">
+              Local Services
             </Link>
             <Link href="/contact" className="mt-4">
               <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white w-full text-base py-3">
