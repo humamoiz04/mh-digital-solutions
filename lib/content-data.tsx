@@ -1,465 +1,384 @@
-export const caseStudies = [
-  // ... existing case studies ...
-
-  // Wyoming Case Studies
-  {
-    slug: "drilling-supply-gillette-wy",
-    title: "How We Increased Leads by 125% for a Drilling Supply Company in Gillette, WY",
-    description: "B2B digital marketing success for industrial supply company targeting high-value leads in Wyoming.",
-    industry: "B2B / Industrial",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: true,
-    challenge:
-      "A drilling supply company in Gillette, Wyoming was struggling to generate qualified B2B leads despite having quality products and services. Their website had poor visibility for high-intent keywords like 'drilling equipment supplier Gillette' and 'industrial supply company Wyoming.'",
-    solution:
-      "We implemented a comprehensive B2B digital marketing strategy including: SEO optimization for transactional keywords, targeted PPC campaigns for high-value search terms, LinkedIn lead generation, and content marketing focused on industry pain points.",
-    results: [
-      "125% increase in qualified leads within 6 months",
-      "Ranked #1 for 'drilling supply Gillette WY' and 8 related keywords",
-      "Reduced cost per lead by 40%",
-      "Generated $2.3M in attributed revenue",
-    ],
-    metrics: {
-      Leads: "+125%",
-      Revenue: "$2.3M",
-      ROI: "450%",
-    },
-  },
-  {
-    slug: "jackson-hole-resort-website-redesign",
-    title: "300% Increase in Direct Bookings for a Jackson Hole Resort Website Redesign",
-    description: "Luxury hospitality web design and conversion optimization for Jackson Hole resort.",
-    industry: "Hospitality / Tourism",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: true,
-    challenge:
-      "A luxury resort in Jackson Hole was losing bookings to competitors with better online experiences. Their website had high traffic but low conversion rates, and they weren't ranking for 'luxury resort website design Jackson WY' or 'Jackson Hole accommodation booking.'",
-    solution:
-      "Complete website redesign with focus on user experience, high-quality imagery, streamlined booking process, and SEO optimization for tourism keywords. Implemented schema markup for local business and hotel listings.",
-    results: [
-      "300% increase in direct bookings",
-      "Conversion rate improved from 1.2% to 4.8%",
-      "Ranked #1 for 'Jackson Hole luxury resort' and related terms",
-      "Reduced dependency on OTA commissions by 60%",
-    ],
-    metrics: {
-      Bookings: "+300%",
-      Conversion: "4.8%",
-      Revenue: "+$1.8M",
-    },
-  },
-  {
-    slug: "cheyenne-ppc-management-success",
-    title: "Doubling Qualified Leads for a Cheyenne Business via Strategic PPC Management",
-    description: "PPC advertising expert services for small business growth in Cheyenne, Wyoming.",
-    industry: "Professional Services",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: false,
-    challenge:
-      "A professional services firm in Cheyenne was running inefficient PPC campaigns with high cost-per-lead and low conversion rates. They needed expert PPC management for keywords like 'PPC advertising expert Cheyenne WY' and 'hire Google Ads specialist.'",
-    solution:
-      "Comprehensive PPC audit and restructuring, keyword optimization, ad copy testing, landing page optimization, and conversion tracking implementation. Focused on high-intent transactional keywords.",
-    results: [
-      "Doubled qualified leads in 4 months",
-      "Reduced cost per lead by 55%",
-      "Improved conversion rate by 180%",
-      "Generated $890K in attributed revenue",
-    ],
-    metrics: {
-      Leads: "+100%",
-      CPA: "-55%",
-      Revenue: "$890K",
-    },
-  },
-  {
-    slug: "casper-ecommerce-seo-package",
-    title: "Affordable eCommerce SEO Package Increased Sales by 200% for Casper Retailer",
-    description: "Cost-effective eCommerce SEO services for online retail business in Casper, Wyoming.",
-    industry: "eCommerce",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: false,
-    challenge:
-      "An eCommerce retailer in Casper was looking for affordable SEO solutions to compete with larger retailers. They needed to rank for 'affordable eCommerce SEO package Casper' and product-specific keywords.",
-    solution:
-      "Implemented our affordable eCommerce SEO package including product page optimization, technical SEO fixes, backlink strategy, and content marketing for long-tail keywords.",
-    results: [
-      "200% increase in organic sales",
-      "Ranked for 45+ high-intent product keywords",
-      "Organic traffic increased by 320%",
-      "ROI of 650% within 12 months",
-    ],
-    metrics: {
-      Sales: "+200%",
-      Traffic: "+320%",
-      ROI: "650%",
-    },
-  },
-
-  // West Virginia Case Studies
-  {
-    slug: "morgantown-law-firm-seo",
-    title: "Morgantown Law Firm Achieves 1st Page Ranking for 5 Key Practice Areas",
-    description: "Professional legal marketing and SEO services for law firm in Morgantown, West Virginia.",
-    industry: "Professional Services / Legal",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: true,
-    challenge:
-      "A law firm in Morgantown needed to establish authority and rank for competitive legal keywords. They wanted to target 'Morgantown law firm SEO,' 'legal marketing services WV,' and specific practice area keywords.",
-    solution:
-      "Comprehensive legal SEO strategy including: practice area page optimization, local SEO for Morgantown, content marketing targeting legal intent keywords, and trust-building through schema markup and citations.",
-    results: [
-      "Achieved 1st page rankings for 5 key practice areas",
-      "Increased qualified leads by 180%",
-      "Ranked #1 for 'Morgantown law firm' and 'family law attorney Morgantown'",
-      "Generated $1.2M in attributed client value",
-    ],
-    metrics: {
-      Rankings: "5 #1",
-      Leads: "+180%",
-      Value: "$1.2M",
-    },
-  },
-  {
-    slug: "charleston-real-estate-ppc",
-    title: "Doubling Qualified Leads for a Charleston Real Estate Agency via PPC Management",
-    description: "Google Ads expert services for real estate lead generation in Charleston, West Virginia.",
-    industry: "Real Estate",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: false,
-    challenge:
-      "A real estate agency in Charleston needed to hire a Google Ads expert to improve their PPC performance. They were targeting 'Charleston PPC services' and 'hire Google Ads specialist' keywords.",
-    solution:
-      "Strategic PPC management with focus on high-intent real estate keywords, geographic targeting, property-specific ads, and conversion optimization.",
-    results: [
-      "Doubled qualified leads",
-      "Reduced cost per lead by 48%",
-      "Improved lead quality score by 35%",
-      "Generated $750K in attributed sales",
-    ],
-    metrics: {
-      Leads: "+100%",
-      CPA: "-48%",
-      Sales: "$750K",
-    },
-  },
-  {
-    slug: "huntington-app-development",
-    title: "Custom Mobile App Development Project Completed in Record Time for Huntington Startup",
-    description: "Price quote for custom mobile app development services in Huntington, West Virginia.",
-    industry: "Technology / Software",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: false,
-    challenge:
-      "A startup in Huntington needed a custom mobile app but was concerned about cost and timeline. They searched for 'price quote custom mobile app development Huntington WV.'",
-    solution:
-      "Agile development approach with transparent pricing, regular updates, and efficient project management to deliver quality app on time and within budget.",
-    results: [
-      "Delivered app 2 weeks ahead of schedule",
-      "20% under budget",
-      "App achieved 4.8-star rating with 50K+ downloads",
-      "Generated $500K in first-year revenue",
-    ],
-    metrics: {
-      Timeline: "-2 weeks",
-      Budget: "-20%",
-      Downloads: "50K+",
-    },
-  },
-
-  // Kansas Case Studies
-  {
-    slug: "olathe-automotive-local-seo",
-    title: "From Page 3 to Top 3: Boosting Local Foot Traffic for an Automotive Repair Shop in Olathe, KS",
-    description: "Local SEO services for automotive repair shop in Olathe, Kansas.",
-    industry: "Local Service / Automotive",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: true,
-    challenge:
-      "An automotive repair shop in Olathe was on page 3 for 'auto repair Olathe' and wasn't getting enough foot traffic. They needed local SEO optimization and 'shop digital marketing Kansas' strategy.",
-    solution:
-      "Comprehensive local SEO strategy including Google My Business optimization, local citations, review generation, local content marketing, and schema markup implementation.",
-    results: [
-      "Ranked #2 for 'auto repair Olathe KS' within 3 months",
-      "Increased foot traffic by 240%",
-      "Generated 150+ 5-star reviews",
-      "Increased revenue by $180K annually",
-    ],
-    metrics: {
-      Ranking: "#2",
-      Traffic: "+240%",
-      Revenue: "+$180K",
-    },
-  },
-  {
-    slug: "wichita-affordable-seo-package",
-    title: "[Client Name] Saves $5k Annually by Switching to Our Affordable SEO Package in Wichita, KS",
-    description: "Affordable SEO services and best SEO package pricing for Wichita businesses.",
-    industry: "Digital Marketing",
-    image: "/placeholder.svg?height=500&width=900",
-    featured: false,
-    challenge:
-      "A business in Wichita was overpaying for SEO services without seeing results. They searched for 'affordable SEO Wichita' and 'best SEO package price.'",
-    solution:
-      "Transparent, affordable SEO package with clear deliverables, monthly reporting, and focus on ROI-driven strategies.",
-    results: [
-      "Saved $5,000 annually compared to previous agency",
-      "Increased organic traffic by 180%",
-      "Ranked for 30+ target keywords",
-      "Improved conversion rate by 95%",
-    ],
-    metrics: {
-      Savings: "$5K/year",
-      Traffic: "+180%",
-      Conversion: "+95%",
-    },
-  },
-]
-
-export const industries = [
-  "All",
-  "B2B / Industrial",
-  "Hospitality / Tourism",
-  "Professional Services",
-  "Professional Services / Legal",
-  "eCommerce",
-  "Real Estate",
-  "Technology / Software",
-  "Local Service / Automotive",
-  "Digital Marketing",
-]
-
+// Blog Posts Data
 export const blogPosts = [
   {
-    slug: "dual-track-seo-strategy",
-    title: "Dual-Track SEO Strategy: Balancing Local and National Rankings",
-    description: "Learn how to optimize your website for both local and national search results simultaneously.",
+    slug: "seo-strategy-2024",
+    title: "Complete SEO Strategy Guide for 2024: Dominate Local Search Rankings",
+    description:
+      "Learn the proven SEO strategies that help businesses rank #1 in local search results and attract qualified leads.",
     category: "SEO",
-    date: "October 15, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
+    date: "December 15, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
     featured: true,
-    content: `<h2>Introduction</h2>
-<p>In today's competitive digital landscape, businesses need to rank both locally and nationally to maximize their reach. This comprehensive guide explores the dual-track SEO strategy that can help you achieve both goals.</p>
-<h2>Understanding Local vs National SEO</h2>
-<p>Local SEO focuses on optimizing your online presence for local searches, while national SEO targets broader, nationwide keywords. The key is balancing both strategies effectively.</p>
-<h2>Implementation Steps</h2>
-<ol>
-<li>Optimize your Google My Business profile for local visibility</li>
-<li>Create location-specific landing pages for national reach</li>
-<li>Build high-quality backlinks from authoritative sources</li>
-<li>Implement schema markup for both local and national content</li>
-<li>Monitor and adjust your strategy based on performance data</li>
-</ol>
-<h2>Conclusion</h2>
-<p>By implementing a dual-track SEO strategy, you can significantly improve your online visibility and reach more potential customers across all markets.</p>`,
+    content: `
+      <h2>Introduction</h2>
+      <p>SEO has evolved significantly in 2024. This guide covers the latest strategies that actually work.</p>
+      <h2>Key Strategies</h2>
+      <ul>
+        <li>Technical SEO fundamentals</li>
+        <li>Content optimization for E-E-A-T</li>
+        <li>Local SEO for multi-location businesses</li>
+        <li>Link building strategies</li>
+      </ul>
+    `,
   },
   {
-    slug: "digital-marketing-services-valletta-malta",
-    title: "Digital Marketing Services in Valletta, Malta: A Complete Guide",
-    description: "Discover how digital marketing can transform your business in Valletta, Malta.",
+    slug: "digital-marketing-trends",
+    title: "Top 10 Digital Marketing Trends Dominating 2024",
+    description: "Discover the digital marketing trends that are reshaping how businesses connect with customers.",
     category: "Digital Marketing",
-    date: "October 10, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
+    date: "December 10, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
     featured: true,
-    content: `<h2>Why Digital Marketing Matters in Malta</h2>
-<p>Malta's growing digital economy presents unique opportunities for businesses to reach customers online. Digital marketing services are essential for staying competitive.</p>
-<h2>Key Services</h2>
-<ul>
-<li>SEO Optimization</li>
-<li>Social Media Marketing</li>
-<li>Content Marketing</li>
-<li>PPC Advertising</li>
-<li>Email Marketing</li>
-</ul>
-<h2>Getting Started</h2>
-<p>Contact us today to learn how our digital marketing services can help your Valletta business grow online.</p>`,
+    content: `<h2>2024 Marketing Trends</h2><p>AI, personalization, and video content are leading the way...</p>`,
   },
   {
-    slug: "affordable-seo-agency-billings-montana",
-    title: "Affordable SEO Agency in Billings, Montana: Proven Results",
-    description: "Find affordable SEO services in Billings, Montana that deliver real results for your business.",
-    category: "SEO",
-    date: "October 5, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: true,
-    content: `<h2>Why Choose an Affordable SEO Agency?</h2>
-<p>Small businesses in Billings need affordable SEO solutions that don't break the bank. Our agency provides cost-effective strategies that deliver measurable results.</p>
-<h2>Our Approach</h2>
-<p>We focus on sustainable, long-term SEO strategies that improve your rankings and drive qualified traffic to your website.</p>
-<h2>Success Stories</h2>
-<p>Our clients in Billings have seen an average 150% increase in organic traffic within 6 months of working with us.</p>`,
-  },
-  {
-    slug: "best-web-design-company-wichita-kansas",
-    title: "Best Web Design Company in Wichita, Kansas",
-    description: "Discover the best web design services in Wichita, Kansas for your business.",
+    slug: "web-design-best-practices",
+    title: "Web Design Best Practices: Creating High-Converting Websites",
+    description: "Master the principles of web design that convert visitors into customers.",
     category: "Web Design",
-    date: "September 28, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>What Makes Great Web Design?</h2>
-<p>A great website combines beautiful design with excellent user experience and strong conversion optimization.</p>
-<h2>Our Web Design Process</h2>
-<p>We follow a proven process that ensures your website not only looks great but also performs well in search engines and converts visitors into customers.</p>`,
-  },
-  {
-    slug: "small-business-consulting-charleston-wv",
-    title: "Small Business Consulting in Charleston, West Virginia",
-    description: "Expert business consulting services for small businesses in Charleston, WV.",
-    category: "Business Consulting",
-    date: "September 20, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>Growing Your Small Business</h2>
-<p>Small businesses in Charleston need expert guidance to navigate the competitive market. Our consulting services help you develop strategies for sustainable growth.</p>`,
-  },
-  {
-    slug: "ecommerce-solutions-casper-wyoming",
-    title: "eCommerce Solutions for Casper, Wyoming Retailers",
-    description: "Complete eCommerce solutions for online retailers in Casper, Wyoming.",
-    category: "eCommerce",
-    date: "September 15, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>Building Your Online Store</h2>
-<p>We provide comprehensive eCommerce solutions that help Casper retailers establish and grow their online presence.</p>`,
-  },
-  {
-    slug: "shopify-experts-anchorage-alaska",
-    title: "Shopify Experts in Anchorage, Alaska",
-    description: "Expert Shopify development and optimization services in Anchorage, Alaska.",
-    category: "eCommerce",
-    date: "September 10, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>Shopify Store Development</h2>
-<p>Our Shopify experts help Anchorage businesses build and optimize their online stores for maximum sales.</p>`,
-  },
-  {
-    slug: "ai-automation-tools-montana-businesses",
-    title: "AI Automation Tools for Montana Businesses",
-    description: "Discover how AI automation can streamline operations for Montana businesses.",
-    category: "AI & Automation",
-    date: "September 5, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
+    date: "December 5, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
     featured: true,
-    content: `<h2>The Future of Business Automation</h2>
-<p>AI and automation tools are transforming how Montana businesses operate. Learn how to leverage these technologies for competitive advantage.</p>`,
+    content: `<h2>Design Principles</h2><p>User experience, mobile optimization, and conversion optimization...</p>`,
   },
   {
-    slug: "workflow-automation-malta-city",
-    title: "Workflow Automation Solutions for Malta Businesses",
-    description: "Streamline your business processes with workflow automation in Malta.",
-    category: "AI & Automation",
-    date: "August 30, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
+    slug: "ppc-advertising-guide",
+    title: "PPC Advertising Mastery: Generate Qualified Leads with Google Ads",
+    description: "Complete guide to running profitable PPC campaigns that deliver ROI.",
+    category: "PPC Advertising",
+    date: "November 28, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
     featured: false,
-    content: `<h2>Automating Your Workflows</h2>
-<p>Workflow automation helps Malta businesses save time and reduce errors in their daily operations.</p>`,
+    content: `<h2>PPC Strategy</h2><p>Keyword research, ad copy, landing pages, and optimization...</p>`,
   },
   {
-    slug: "digital-marketing-agency-glendive-montana",
-    title: "Digital Marketing Agency in Glendive, Montana",
-    description: "Full-service digital marketing agency serving Glendive, Montana businesses.",
-    category: "Digital Marketing",
-    date: "August 25, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>Your Local Digital Marketing Partner</h2>
-<p>We provide comprehensive digital marketing services tailored to Glendive businesses.</p>`,
-  },
-  {
-    slug: "seo-for-restaurants-malta",
-    title: "SEO for Restaurants in Malta: Attract More Diners",
-    description: "Specialized SEO strategies for restaurants in Malta to increase foot traffic and online orders.",
-    category: "SEO",
-    date: "August 20, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>Restaurant SEO Strategies</h2>
-<p>Restaurants in Malta can attract more customers through targeted SEO strategies that improve local visibility.</p>`,
-  },
-  {
-    slug: "ai-automation-revolution-2024",
-    title: "The AI Automation Revolution in 2024: What You Need to Know",
-    description: "Explore the latest AI automation trends and how they're transforming businesses in 2024.",
-    category: "AI & Automation",
-    date: "August 15, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: true,
-    content: `<h2>AI Automation Trends</h2>
-<p>2024 is seeing unprecedented adoption of AI automation across industries. Here are the key trends to watch.</p>`,
-  },
-  {
-    slug: "seo-strategies-2024",
-    title: "SEO Strategies for 2024: Stay Ahead of the Competition",
-    description: "Latest SEO strategies and best practices for 2024 to improve your search rankings.",
-    category: "SEO",
-    date: "August 10, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: true,
-    content: `<h2>2024 SEO Best Practices</h2>
-<p>The SEO landscape continues to evolve. Here are the strategies that will help you rank higher in 2024.</p>`,
-  },
-  {
-    slug: "mobile-app-development-trends-2024",
-    title: "Mobile App Development Trends in 2024",
-    description: "Discover the latest trends in mobile app development for 2024.",
-    category: "Mobile Development",
-    date: "August 5, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>App Development Trends</h2>
-<p>Mobile app development is evolving rapidly. Learn about the trends shaping the industry in 2024.</p>`,
-  },
-  {
-    slug: "content-marketing-strategies-2024",
-    title: "Content Marketing Strategies for 2024",
-    description: "Effective content marketing strategies to engage your audience in 2024.",
-    category: "Content Marketing",
-    date: "July 30, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
-    featured: false,
-    content: `<h2>Content Strategy for 2024</h2>
-<p>Content marketing remains a powerful tool for building audience engagement and driving conversions.</p>`,
-  },
-  {
-    slug: "social-media-marketing-2024",
-    title: "Social Media Marketing in 2024: Strategies That Work",
-    description: "Proven social media marketing strategies for 2024 to grow your audience and engagement.",
+    slug: "social-media-marketing",
+    title: "Social Media Marketing Strategy: Build Your Brand Community",
+    description: "Proven strategies for growing your social media presence and engaging your audience.",
     category: "Social Media",
-    date: "July 25, 2024",
-    author: "MH Digital Team",
-    image: "/placeholder.svg?height=450&width=800",
+    date: "November 20, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
     featured: false,
-    content: `<h2>Social Media Success</h2>
-<p>Social media marketing continues to evolve with new platforms and strategies emerging regularly.</p>`,
+    content: `<h2>Social Strategy</h2><p>Content calendar, engagement tactics, and community building...</p>`,
+  },
+  {
+    slug: "ecommerce-optimization",
+    title: "E-Commerce Optimization: Increase Sales and Reduce Cart Abandonment",
+    description: "Strategies to optimize your online store and maximize revenue.",
+    category: "E-Commerce",
+    date: "November 15, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>E-Commerce Tips</h2><p>Product pages, checkout optimization, and conversion rate optimization...</p>`,
+  },
+  {
+    slug: "ai-automation-business",
+    title: "AI Automation for Business: Streamline Operations and Boost Productivity",
+    description: "How to leverage AI and automation to transform your business operations.",
+    category: "AI & Automation",
+    date: "November 10, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>AI Applications</h2><p>Chatbots, workflow automation, and predictive analytics...</p>`,
+  },
+  {
+    slug: "content-marketing-strategy",
+    title: "Content Marketing Strategy: Attract and Engage Your Target Audience",
+    description: "Build a content marketing strategy that drives traffic and establishes authority.",
+    category: "Content Marketing",
+    date: "November 5, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>Content Strategy</h2><p>Blog posts, videos, infographics, and distribution channels...</p>`,
+  },
+  {
+    slug: "mobile-app-development",
+    title: "Mobile App Development: From Concept to Launch",
+    description: "Complete guide to developing and launching a successful mobile application.",
+    category: "Mobile Development",
+    date: "October 30, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>App Development</h2><p>Planning, design, development, testing, and launch...</p>`,
+  },
+  {
+    slug: "business-consulting-tips",
+    title: "Business Consulting: Strategic Growth Planning for Your Company",
+    description: "Expert consulting strategies to accelerate your business growth.",
+    category: "Business Consulting",
+    date: "October 25, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>Consulting Services</h2><p>Strategy, operations, and growth planning...</p>`,
+  },
+  {
+    slug: "local-seo-montana",
+    title: "Local SEO for Montana Businesses: Dominate Your Local Market",
+    description: "Proven local SEO strategies for Montana businesses to rank higher and attract local customers.",
+    category: "SEO",
+    date: "October 20, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>Montana Local SEO</h2><p>Google Business Profile, local citations, and location-specific content...</p>`,
+  },
+  {
+    slug: "conversion-rate-optimization",
+    title: "Conversion Rate Optimization: Turn Visitors into Customers",
+    description: "Techniques to optimize your website and increase conversion rates.",
+    category: "Digital Marketing",
+    date: "October 15, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>CRO Strategies</h2><p>A/B testing, user experience, and persuasion principles...</p>`,
+  },
+  {
+    slug: "email-marketing-campaigns",
+    title: "Email Marketing Campaigns: Build Relationships and Drive Sales",
+    description: "Master email marketing to nurture leads and increase customer lifetime value.",
+    category: "Content Marketing",
+    date: "October 10, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>Email Strategy</h2><p>Segmentation, personalization, and automation...</p>`,
+  },
+  {
+    slug: "video-marketing-strategy",
+    title: "Video Marketing Strategy: Engage Your Audience with Compelling Video Content",
+    description: "How to create and distribute video content that drives engagement and conversions.",
+    category: "Content Marketing",
+    date: "October 5, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>Video Content</h2><p>YouTube optimization, video ads, and live streaming...</p>`,
+  },
+  {
+    slug: "brand-building-guide",
+    title: "Brand Building Guide: Create a Memorable Brand Identity",
+    description: "Strategies to build a strong brand that resonates with your target audience.",
+    category: "Business Consulting",
+    date: "September 30, 2024",
+    author: "MH Digital Solution",
+    image: "/placeholder.svg?height=400&width=600",
+    featured: false,
+    content: `<h2>Brand Strategy</h2><p>Logo design, brand voice, and brand positioning...</p>`,
   },
 ]
 
+// Blog Categories
 export const categories = [
   "All",
   "SEO",
   "Digital Marketing",
   "Web Design",
-  "Business Consulting",
-  "eCommerce",
-  "AI & Automation",
-  "Mobile Development",
-  "Content Marketing",
+  "PPC Advertising",
   "Social Media",
+  "E-Commerce",
+  "AI & Automation",
+  "Content Marketing",
+  "Mobile Development",
+  "Business Consulting",
+]
+
+// Case Studies Data
+export const caseStudies = [
+  {
+    slug: "drilling-supply-gillette-wy",
+    title: "How We Increased Leads by 125% for a Drilling Supply Company in Gillette, WY",
+    description:
+      "B2B digital marketing strategy that transformed lead generation for a drilling supply distributor targeting high-value contracts.",
+    category: "B2B Marketing",
+    industry: "Industrial Supply",
+    location: "Gillette, Wyoming",
+    client: "Rocky Mountain Drilling Supply",
+    challenge:
+      "Low visibility in B2B search results, competing against national suppliers with larger marketing budgets.",
+    solution:
+      "Implemented technical SEO, created industry-specific content targeting 'drilling supply leads Gillette' and 'B2B industrial marketing Wyoming', optimized for high-intent keywords.",
+    results: [
+      "125% increase in qualified leads",
+      "3 new enterprise contracts worth $500K+",
+      "Ranked #1 for 'drilling supply Gillette WY'",
+      "45% improvement in lead quality score",
+    ],
+    metrics: { leadIncrease: "125%", contractValue: "$500K+", timeframe: "6 months", roi: "340%" },
+    featured: true,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>Rocky Mountain Drilling Supply was losing market share to national competitors...</p>`,
+  },
+  {
+    slug: "morgantown-law-firm-seo",
+    title: "Morgantown Law Firm Achieves 1st Page Ranking for 5 Key Practice Areas & 42% Increase in Consultations",
+    description:
+      "Professional services SEO strategy that dominated local search for a specialized law firm targeting high-value cases.",
+    category: "Professional Services",
+    industry: "Legal Services",
+    location: "Morgantown, West Virginia",
+    client: "Mountain State Legal Group",
+    challenge:
+      "Invisible for key transactional keywords like 'Morgantown DUI lawyer' and 'family law attorney Morgantown'.",
+    solution: "Comprehensive local SEO strategy with practice area-specific landing pages and authority building.",
+    results: [
+      "42% increase in consultation calls",
+      "5 practice areas on Google Page 1",
+      "28% growth in organic traffic",
+      "#1 ranking for 'Morgantown DUI lawyer'",
+    ],
+    metrics: { consultationIncrease: "42%", pageOneRankings: 5, trafficGrowth: "28%", timeframe: "6 months" },
+    featured: true,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>Mountain State Legal Group was a well-established firm but invisible online...</p>`,
+  },
+  {
+    slug: "automotive-repair-olathe-ks",
+    title: "From Page 3 to Top 3: Boosting Local Foot Traffic for an Automotive Repair Shop in Olathe, KS",
+    description:
+      "Local SEO transformation that increased foot traffic and service bookings for a family-owned auto repair business.",
+    category: "Local Services",
+    industry: "Automotive Services",
+    location: "Olathe, Kansas",
+    client: "Premier Auto Repair Olathe",
+    challenge:
+      "Buried on page 3 for 'auto repair Olathe', losing customers to competitors with better online visibility.",
+    solution: "Complete local SEO overhaul including Google Business Profile optimization and review generation.",
+    results: [
+      "240% increase in organic traffic",
+      "Top 3 ranking for 'auto repair Olathe'",
+      "35% increase in service bookings",
+      "150+ new 5-star reviews",
+    ],
+    metrics: { trafficIncrease: "240%", bookingIncrease: "35%", reviewsGenerated: 150, ranking: "Top 3" },
+    featured: true,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>Premier Auto Repair was losing customers to competitors with better online presence...</p>`,
+  },
+  {
+    slug: "jackson-hole-resort-redesign",
+    title: "300% Increase in Direct Bookings for a Jackson Hole Resort Website Redesign",
+    description:
+      "Hospitality web design and conversion optimization that transformed a resort's online booking performance.",
+    category: "Web Design & Development",
+    industry: "Hospitality & Tourism",
+    location: "Jackson Hole, Wyoming",
+    client: "Mountain Peak Resort Jackson Hole",
+    challenge: "Outdated website with poor user experience and low conversion rate (0.8%).",
+    solution: "Complete website redesign with modern UX and integrated booking system.",
+    results: [
+      "300% increase in direct bookings",
+      "Conversion rate improved from 0.8% to 3.2%",
+      "Average booking value increased 45%",
+      "$2.1M additional annual revenue",
+    ],
+    metrics: { bookingIncrease: "300%", conversionRate: "3.2%", revenueIncrease: "$2.1M", timeframe: "4 months" },
+    featured: true,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>Mountain Peak Resort had a dated website that didn't reflect the quality of their property...</p>`,
+  },
+  {
+    slug: "affordable-seo-package-wichita",
+    title: "Saves $5k Annually by Switching to Our Affordable SEO Package (Wichita, KS)",
+    description: "Cost-effective SEO solution that delivered enterprise-level results at a fraction of the price.",
+    category: "SEO Services",
+    industry: "Digital Marketing",
+    location: "Wichita, Kansas",
+    client: "Midwest Manufacturing Co.",
+    challenge: "Paying $3,500/month to a national agency with minimal results.",
+    solution: "Customized affordable SEO package with transparent pricing and dedicated account management.",
+    results: [
+      "Saved $5,000 annually",
+      "Better results than previous agency",
+      "Transparent monthly reporting",
+      "ROI increased 180%",
+    ],
+    metrics: { monthlySavings: "$417", annualSavings: "$5,000", roiIncrease: "180%", timeframe: "12 months" },
+    featured: false,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>Midwest Manufacturing was paying $3,500/month but wasn't seeing results...</p>`,
+  },
+  {
+    slug: "technical-seo-audit-cheyenne",
+    title: "The Technical SEO Audit that Saved a Cheyenne Business from a Google Penalty",
+    description: "Critical technical SEO audit that identified and fixed issues preventing Google ranking recovery.",
+    category: "SEO Services",
+    industry: "Digital Marketing",
+    location: "Cheyenne, Wyoming",
+    client: "Cheyenne E-Commerce Solutions",
+    challenge: "Website was hit by a Google algorithm update, lost 60% of organic traffic.",
+    solution: "Comprehensive technical SEO audit identifying crawl errors and indexation issues.",
+    results: [
+      "Recovered 85% of lost traffic",
+      "Fixed 47 critical technical issues",
+      "Improved Core Web Vitals score",
+      "Prevented manual penalty",
+    ],
+    metrics: { trafficRecovery: "85%", issuesFixed: 47, timeframe: "8 weeks", penaltyPrevented: true },
+    featured: false,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>After a Google algorithm update, Cheyenne E-Commerce Solutions lost 60% of traffic...</p>`,
+  },
+  {
+    slug: "custom-ecommerce-laramie",
+    title: "Launch Success: Delivering a Custom E-commerce Website for a Laramie Retailer in 45 Days",
+    description: "Fast-track e-commerce development that got a retailer online and generating sales quickly.",
+    category: "Web Development",
+    industry: "E-Commerce",
+    location: "Laramie, Wyoming",
+    client: "Laramie Outdoor Gear",
+    challenge: "Needed a custom e-commerce website built quickly to capture holiday season sales.",
+    solution: "Agile development approach with daily standups and rapid prototyping.",
+    results: ["Launched in 45 days", "$180K in first-month sales", "98% uptime", "Mobile conversion rate: 4.2%"],
+    metrics: { developmentTime: "45 days", firstMonthSales: "$180K", uptime: "98%", conversionRate: "4.2%" },
+    featured: false,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>Laramie Outdoor Gear needed a custom e-commerce website built in 45 days...</p>`,
+  },
+  {
+    slug: "lead-generation-casper-wy",
+    title: "Doubling Qualified Leads for a Casper, WY PPC Campaign with Advanced Audience Targeting",
+    description: "Advanced PPC strategy that doubled qualified leads while reducing cost per lead.",
+    category: "PPC Advertising",
+    industry: "Digital Marketing",
+    location: "Casper, Wyoming",
+    client: "Casper Business Solutions",
+    challenge: "PPC campaigns were generating leads but many were low-quality, wasting ad spend.",
+    solution: "Implemented advanced audience targeting, keyword refinement, and landing page optimization.",
+    results: [
+      "Doubled qualified leads",
+      "Cost per lead reduced 35%",
+      "Lead quality score improved 60%",
+      "ROAS increased to 4.2x",
+    ],
+    metrics: { leadIncrease: "100%", costPerLeadReduction: "35%", roas: "4.2x", monthlySavings: "$8,000" },
+    featured: false,
+    image: "/placeholder.svg?height=400&width=600",
+    content: `<h2>The Challenge</h2><p>Casper Business Solutions was running PPC campaigns but getting low-quality leads...</p>`,
+  },
+]
+
+// Industries for filtering
+export const industries = [
+  "All",
+  "Industrial Supply",
+  "Legal Services",
+  "Automotive Services",
+  "Hospitality & Tourism",
+  "Digital Marketing",
+  "E-Commerce",
+  "Web Development",
+  "Professional Services",
+  "B2B Marketing",
+  "Local Services",
 ]
