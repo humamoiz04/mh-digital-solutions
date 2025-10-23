@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="relative z-10 section-with-blobs">
+    <div className="relative z-10">
       <StructuredData type="LocalBusiness" />
       <StructuredData
         type="Service"
@@ -44,7 +44,7 @@ export default function ContactPage() {
       />
 
       <Section className="py-16 md:py-24">
-        <div className="text-center mb-12 scroll-fade-in">
+        <div className="text-center mb-12">
           <Badge className="mb-4 bg-fuchsia-100 text-fuchsia-800 hover:bg-fuchsia-200">Get In Touch</Badge>
           <h1 className="text-4xl font-bold text-foreground mb-4 gradient-text">
             Contact MH Digital Solutions in Austin, Texas
@@ -55,7 +55,7 @@ export default function ContactPage() {
           </p>
         </div>
 
-        <div className="mb-12 scroll-fade-up">
+        <div className="mb-12">
           <h2 className="text-2xl font-bold text-foreground mb-6 text-center gradient-text">
             Request a Free Marketing Consultation
           </h2>
@@ -66,15 +66,15 @@ export default function ContactPage() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          <div className="scroll-fade-in">
+          <div>
             <ContactForm />
           </div>
 
-          <div className="space-y-6 scroll-fade-up">
-            <Card className="glass-card p-6 hover-lift">
+          <div className="space-y-6">
+            <Card className="glass-card p-6">
               <CardHeader className="p-0 mb-4">
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
-                  <MapPin className="h-7 w-7 text-primary gradient-icon" />
+                  <MapPin className="h-7 w-7 text-primary" />
                   Our Austin Office
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -89,10 +89,10 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card className="glass-card p-6 hover-lift">
+            <Card className="glass-card p-6">
               <CardHeader className="p-0 mb-4">
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
-                  <Phone className="h-7 w-7 text-primary gradient-icon" />
+                  <Phone className="h-7 w-7 text-primary" />
                   Call Our Austin Team
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -109,10 +109,10 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card className="glass-card p-6 hover-lift">
+            <Card className="glass-card p-6">
               <CardHeader className="p-0 mb-4">
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
-                  <Mail className="h-7 w-7 text-primary gradient-icon" />
+                  <Mail className="h-7 w-7 text-primary" />
                   Email Our Experts
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -126,10 +126,10 @@ export default function ContactPage() {
               </CardContent>
             </Card>
 
-            <Card className="glass-card p-6 hover-lift">
+            <Card className="glass-card p-6">
               <CardHeader className="p-0 mb-4">
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
-                  <MessageCircle className="h-7 w-7 text-primary gradient-icon" />
+                  <MessageCircle className="h-7 w-7 text-primary" />
                   WhatsApp Direct
                 </CardTitle>
                 <CardDescription className="text-muted-foreground">
@@ -169,7 +169,7 @@ export default function ContactPage() {
           </div>
         </div>
 
-        <div className="mt-16 text-center scroll-fade-up">
+        <div className="mt-16 text-center">
           <div className="bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white p-8 rounded-2xl">
             <h3 className="text-2xl font-bold mb-4">Ready to Grow Your Austin Business?</h3>
             <p className="text-lg mb-6">
@@ -180,7 +180,7 @@ export default function ContactPage() {
                 href="tel:+17072491222"
                 className="bg-white text-fuchsia-600 px-8 py-3 rounded-lg font-bold hover:bg-gray-100 transition-colors"
               >
-                {"📞 Call Now: +1 (707) 249-1222"}
+                📞 Call Now: +1 (707) 249-1222
               </a>
               <a
                 href="https://calendly.com/mhdigitalsolutionsus"
@@ -188,7 +188,7 @@ export default function ContactPage() {
                 rel="nofollow noopener noreferrer"
                 className="border-2 border-white text-white px-8 py-3 rounded-lg font-bold hover:bg-white hover:text-fuchsia-600 transition-colors"
               >
-                {"📅 Schedule Free Consultation"}
+                📅 Schedule Free Consultation
               </a>
             </div>
           </div>

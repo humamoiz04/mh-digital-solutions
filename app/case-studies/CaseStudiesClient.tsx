@@ -11,7 +11,7 @@ import { Badge } from "@/components/ui/badge"
 import Image from "next/image"
 import Link from "next/link"
 import { ArrowRight, Search, ExternalLink, Award, TrendingUp } from "lucide-react"
-import { caseStudies, industries } from "@/lib/content-data"
+import { caseStudies, industries } from "../../lib/content-data"
 
 export default function CaseStudiesClient() {
   const [searchTerm, setSearchTerm] = useState("")

@@ -186,6 +186,39 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               "@context": "https://schema.org",
+              "@type": "Review",
+              itemReviewed: {
+                "@type": "LocalBusiness",
+                name: "MH Digital Solution",
+                url: "https://www.mhdigitalsolution.com",
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              author: {
+                "@type": "Organization",
+                name: "MH Digital Solution Clients",
+              },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "127",
+                reviewCount: "127",
+              },
+            }),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
               "@type": "Organization",
               name: "MH Digital Solution",
               url: "https://www.mhdigitalsolution.com",

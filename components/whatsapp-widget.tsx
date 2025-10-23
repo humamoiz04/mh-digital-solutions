@@ -22,7 +22,7 @@ function WhatsAppLogo({ size = 20, className }: { size?: number; className?: str
 
 export function WhatsAppWidget() {
   const handleWhatsAppClick = () => {
-    const phoneNumber = "+17072491222" // updated NAP-consistent number
+    const phoneNumber = "+17072491222"
     const message = "Hi! I'm interested in your digital marketing services. Can you help me?"
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank", "noopener,noreferrer")
@@ -32,8 +32,7 @@ export function WhatsAppWidget() {
     <div
       className="fixed z-50"
       style={{
-        right: "1rem",
-        // stacked above SocialChatWidgets (which uses + 60px)
+        left: "1rem",
         bottom: "calc(env(safe-area-inset-bottom, 0px) + var(--chat-offset, 88px) + 60px + 68px)",
       }}
     >
