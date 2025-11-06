@@ -144,9 +144,12 @@ export default function RootLayout({
               name: "MH Digital Solution",
               url: "https://www.mhdigitalsolution.com",
               telephone: "+17072491222",
+              email: "info@mhdigitalsolution.com",
               areaServed: [
                 { "@type": "Country", name: "United States" },
                 { "@type": "Country", name: "Malta" },
+                { "@type": "State", name: "Wyoming" },
+                { "@type": "State", name: "Colorado" },
               ],
               sameAs: [
                 "https://www.facebook.com/profile.php?id=61569037172478",
@@ -160,48 +163,9 @@ export default function RootLayout({
                 "PPC Advertising",
                 "Social Media Marketing",
                 "AI Automation",
+                "Mobile App Development",
+                "E-commerce Solutions",
               ],
-            }),
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "AggregateRating",
-              "@id": "https://www.mhdigitalsolution.com#aggregateRating",
-              ratingValue: "5",
-              bestRating: "5",
-              worstRating: "1",
-              ratingCount: "127",
-              reviewCount: "127",
-            }),
-          }}
-        />
-
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "Review",
-              itemReviewed: {
-                "@type": "LocalBusiness",
-                name: "MH Digital Solution",
-                url: "https://www.mhdigitalsolution.com",
-              },
-              reviewRating: {
-                "@type": "Rating",
-                ratingValue: "5",
-                bestRating: "5",
-                worstRating: "1",
-              },
-              author: {
-                "@type": "Organization",
-                name: "MH Digital Solution Clients",
-              },
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
@@ -224,14 +188,6 @@ export default function RootLayout({
               url: "https://www.mhdigitalsolution.com",
               logo: "https://www.mhdigitalsolution.com/images/mh-digital-solutions-logo.webp",
               description: "AI-Powered Digital Marketing & Web Development Solutions",
-              aggregateRating: {
-                "@type": "AggregateRating",
-                ratingValue: "5",
-                bestRating: "5",
-                worstRating: "1",
-                ratingCount: "127",
-                reviewCount: "127",
-              },
               founder: {
                 "@type": "Person",
                 name: "MK",
@@ -242,6 +198,38 @@ export default function RootLayout({
                 telephone: "+17072491222",
                 email: "info@mhdigitalsolution.com",
               },
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "127",
+                reviewCount: "127",
+              },
+            }),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              itemListElement: [
+                {
+                  "@type": "ListItem",
+                  position: 1,
+                  name: "Home",
+                  item: "https://www.mhdigitalsolution.com",
+                },
+                {
+                  "@type": "ListItem",
+                  position: 2,
+                  name: "Services",
+                  item: "https://www.mhdigitalsolution.com/services",
+                },
+              ],
             }),
           }}
         />

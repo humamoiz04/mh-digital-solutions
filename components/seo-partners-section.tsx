@@ -3,7 +3,7 @@ import { Section } from "@/components/Section"
 
 export function SeoPartnersSection() {
   const partners = [
-    { name: "Google Partner", logo: "/images/google-partner.webp" }, // Updated image path
+    { name: "Google Partner", logo: "/images/google-partner.webp" },
     { name: "Meta Partner", logo: "/images/meta-partner.webp" },
     { name: "HubSpot Partner", logo: "/images/hubspot-partner.webp" },
     { name: "Clutch Verified", logo: "/images/clutch-verified.webp" },

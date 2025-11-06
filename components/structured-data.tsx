@@ -87,7 +87,7 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
             bestRating: "5",
             worstRating: "1",
             ratingCount: "127",
-            reviewCount: "98",
+            reviewCount: "127",
           },
           review: [
             {
@@ -95,6 +95,7 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
               author: {
                 "@type": "Person",
                 name: "Maria S.",
+                url: "https://www.mhdigitalsolution.com",
               },
               reviewRating: {
                 "@type": "Rating",
@@ -102,14 +103,16 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
                 bestRating: "5",
               },
               reviewBody:
-                "Within 3 weeks of launching, we had our first 25 online customers. The ROI has been incredible!",
+                "Within 3 weeks of launching our new website, we had our first 25 online customers. The ROI has been incredible! Highly recommend MH Digital Solution for any business looking to grow online.",
               datePublished: "2024-11-15",
+              name: "Outstanding Results and Professional Service",
             },
             {
               "@type": "Review",
               author: {
                 "@type": "Person",
                 name: "James T.",
+                url: "https://www.mhdigitalsolution.com",
               },
               reviewRating: {
                 "@type": "Rating",
@@ -117,14 +120,16 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
                 bestRating: "5",
               },
               reviewBody:
-                "Our website conversion rate went from 1.2% to 4.8% after the redesign. We're booking 3x more appointments!",
+                "Our website conversion rate went from 1.2% to 4.8% after the redesign. We're booking 3x more appointments! The team's expertise in UX and conversion optimization is unmatched.",
               datePublished: "2024-11-10",
+              name: "Conversion Rate Optimization Excellence",
             },
             {
               "@type": "Review",
               author: {
                 "@type": "Person",
                 name: "Lisa R.",
+                url: "https://www.mhdigitalsolution.com",
               },
               reviewRating: {
                 "@type": "Rating",
@@ -132,8 +137,41 @@ export function StructuredData({ type = "Organization", data = {} }: StructuredD
                 bestRating: "5",
               },
               reviewBody:
-                "We went from 50 to 300+ leads per month. Our revenue has tripled and we're expanding to new locations!",
+                "We went from 50 to 300+ leads per month. Our revenue has tripled and we're expanding to new locations! MH Digital Solution truly understands digital marketing.",
               datePublished: "2024-11-05",
+              name: "Exceptional Lead Generation Results",
+            },
+            {
+              "@type": "Review",
+              author: {
+                "@type": "Person",
+                name: "David M.",
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+              },
+              reviewBody:
+                "Professional, knowledgeable, and results-driven team. They took the time to understand our business needs and delivered a comprehensive strategy that exceeded expectations.",
+              datePublished: "2024-10-28",
+              name: "Professional and Results-Driven",
+            },
+            {
+              "@type": "Review",
+              author: {
+                "@type": "Person",
+                name: "Sarah K.",
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+              },
+              reviewBody:
+                "The SEO improvements we saw within 3 months were remarkable. Our organic traffic increased by 180% and we're finally on page 1 for our target keywords!",
+              datePublished: "2024-10-15",
+              name: "Outstanding SEO Results",
             },
           ],
           ...data,

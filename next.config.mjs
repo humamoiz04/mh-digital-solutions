@@ -53,6 +53,21 @@ const nextConfig = {
         destination: 'https://www.mhdigitalsolution.com/:path*',
         permanent: true,
       },
+      {
+        source: '/blog',
+        destination: 'https://www.mhdigitalsolution.com/blog',
+        permanent: true,
+      },
+      {
+        source: '/blog/ai-automation-revolution-2024',
+        destination: 'https://www.mhdigitalsolution.com/blog/ai-automation-revolution-2024',
+        permanent: true,
+      },
+      {
+        source: '/blog/seo-strategies-2024',
+        destination: 'https://www.mhdigitalsolution.com/blog/seo-strategies-2024',
+        permanent: true,
+      },
       // Legacy HTML redirects
       {
         source: '/home',
@@ -109,7 +124,6 @@ const nextConfig = {
         destination: '/services/business-consulting',
         permanent: true,
       },
-      // Service redirects to fix 404 errors
       {
         source: '/services/consultation',
         destination: '/contact',
@@ -140,7 +154,6 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
-      // Tag and developer redirects
       {
         source: '/tag/planning/:path*',
         destination: '/blog',
@@ -151,13 +164,11 @@ const nextConfig = {
         destination: '/services/web-development',
         permanent: true,
       },
-      // Blog profile redirects - fix clutch profile URL issue
       {
         source: '/blog/:clutch_profile_url*',
         destination: '/about',
         permanent: true,
       },
-      // Additional service redirects for common variations
       {
         source: '/web-design',
         destination: '/services/web-design',
