@@ -1,7 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Inter } from "next/font/google"
+import { Inter } from 'next/font/google'
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
@@ -230,6 +230,46 @@ export default function RootLayout({
                   item: "https://www.mhdigitalsolution.com/services",
                 },
               ],
+            }),
+          }}
+        />
+
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Review",
+              itemReviewed: {
+                "@type": "LocalBusiness",
+                name: "MH Digital Solution",
+                url: "https://www.mhdigitalsolution.com",
+              },
+              reviewRating: {
+                "@type": "Rating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+              },
+              author: {
+                "@type": "Organization",
+                name: "MH Digital Solution Clients",
+              },
+              datePublished: new Date().toISOString().split("T")[0],
+              reviewBody: "MH Digital Solution delivers exceptional results with innovative strategies and expert execution.",
+              aggregateRating: {
+                "@type": "AggregateRating",
+                ratingValue: "5",
+                bestRating: "5",
+                worstRating: "1",
+                ratingCount: "127",
+                reviewCount: "127",
+                itemReviewed: {
+                  "@type": "LocalBusiness",
+                  name: "MH Digital Solution",
+                  url: "https://www.mhdigitalsolution.com",
+                },
+              },
             }),
           }}
         />
