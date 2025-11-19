@@ -1,17 +1,6 @@
-import { createClient } from "@/lib/supabase/server"
 import { NextResponse } from "next/server"
-import { cookies } from "next/headers"
 
 export async function GET(request: Request) {
-  const { searchParams } = new URL(request.url)
-  const code = searchParams.get("code")
-
-  if (code) {
-    const cookieStore = cookies()
-    const supabase = createClient()
-    await supabase.auth.exchangeCodeForSession(code)
-  }
-
-  // URL to redirect to after sign in process completes
+  // Redirect to home page (Supabase auth removed)
   return NextResponse.redirect(new URL("/", request.url))
 }
