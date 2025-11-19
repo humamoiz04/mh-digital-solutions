@@ -114,11 +114,7 @@ const nextConfig = {
         destination: '/pricing',
         permanent: true,
       },
-      {
-        source: '/services/business-plan-development',
-        destination: '/services/business-consulting',
-        permanent: true,
-      },
+      // Removed redirect for business-plan-development to let it be a standalone page
       {
         source: '/services/strategic-business-consulting',
         destination: '/services/business-consulting',

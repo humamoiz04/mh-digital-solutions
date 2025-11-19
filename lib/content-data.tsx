@@ -234,6 +234,37 @@ export const blogPosts = [
     featured: false,
     content: `<h2>Brand Strategy</h2><p>Logo design, brand voice, and brand positioning...</p>`,
   },
+  {
+    slug: "social-media-roi-measurement",
+    title: "Social Media ROI Measurement: Proving Your Social Media Strategy's Value",
+    description:
+      "Learn how to measure ROI from your social media campaigns with actionable metrics and tracking methods that connect social activity to business results.",
+    searchSnippet:
+      "Measure social media ROI effectively: track conversions, calculate ROAS, and prove social marketing value to stakeholders.",
+    category: "Social Media",
+    date: "December 8, 2024",
+    author: "MH Digital Solution",
+    image: "/images/blog-social-media-roi.jpg",
+    imageAlt: "Social media analytics dashboard showing ROI metrics and conversion tracking",
+    imageCaption: "Comprehensive social media ROI dashboard with engagement and conversion data",
+    featured: false,
+    content: `
+      <h2>Understanding Social Media ROI</h2>
+      <p>Social media ROI measurement is critical for justifying your marketing budget and optimizing your strategy.</p>
+      <h2>Key ROI Metrics</h2>
+      <ul>
+        <li><strong>Engagement Rate:</strong> Likes, comments, and shares relative to audience size</li>
+        <li><strong>Conversion Rate:</strong> Percentage of social traffic that converts to customers</li>
+        <li><strong>ROAS (Return on Ad Spend):</strong> Revenue generated per dollar spent on social ads</li>
+        <li><strong>Cost Per Acquisition:</strong> Average cost to acquire a customer through social media</li>
+        <li><strong>Customer Lifetime Value:</strong> Total value of a customer acquired through social channels</li>
+      </ul>
+      <h2>Tracking Methods</h2>
+      <p>Use UTM parameters, conversion pixels, and analytics platforms to track social media performance accurately.</p>
+      <h2>Calculating ROI</h2>
+      <p>ROI = (Revenue from Social - Social Marketing Cost) / Social Marketing Cost × 100</p>
+    `,
+  },
 ]
 
 // Blog Categories
@@ -249,6 +280,22 @@ export const categories = [
   "Content Marketing",
   "Mobile Development",
   "Business Consulting",
+]
+
+// Industries for filtering
+export const industries = [
+  "All",
+  "Industrial Supply",
+  "Legal Services",
+  "Automotive Services",
+  "Hospitality & Tourism",
+  "Digital Marketing",
+  "E-Commerce",
+  "Web Development",
+  "Professional Services",
+  "B2B Marketing",
+  "Local Services",
+  "Business Services",
 ]
 
 // Case Studies Data
@@ -455,19 +502,92 @@ export const caseStudies = [
     imageCaption: "Google Ads campaign optimization with advanced targeting and analytics",
     content: `<h2>The Challenge</h2><p>Casper Business Solutions was running PPC campaigns but getting low-quality leads...</p>`,
   },
-]
-
-// Industries for filtering
-export const industries = [
-  "All",
-  "Industrial Supply",
-  "Legal Services",
-  "Automotive Services",
-  "Hospitality & Tourism",
-  "Digital Marketing",
-  "E-Commerce",
-  "Web Development",
-  "Professional Services",
-  "B2B Marketing",
-  "Local Services",
+  {
+    slug: "ecommerce-platform-growth",
+    title: "Scaling an E-Commerce Platform to $5M Annual Revenue Through Strategic Digital Marketing",
+    description:
+      "Complete digital transformation that tripled revenue for an online retailer through SEO, paid advertising, and conversion optimization.",
+    searchSnippet:
+      "E-commerce case study: Scaled online retailer to $5M revenue with integrated digital marketing strategy and CRO.",
+    category: "E-Commerce & Digital Marketing",
+    industry: "E-Commerce",
+    location: "Multiple Locations (National)",
+    client: "GrowthHub E-Commerce",
+    challenge:
+      "E-commerce platform was generating $1.5M annually but hitting growth plateaus due to poor conversion rates and limited organic visibility.",
+    solution:
+      "Implemented comprehensive digital strategy including technical SEO, high-intent PPC campaigns, A/B testing, and checkout optimization.",
+    results: [
+      "Revenue increased from $1.5M to $5M (233% growth)",
+      "Organic traffic grew 420%",
+      "Conversion rate improved from 1.2% to 3.8%",
+      "Average order value increased 45%",
+      "Customer acquisition cost reduced 38%",
+    ],
+    metrics: { revenueIncrease: "$5M", trafficGrowth: "420%", conversionRate: "3.8%", timeframe: "12 months" },
+    featured: true,
+    image: "/images/case-study-ecommerce-growth.jpg",
+    imageAlt: "E-commerce platform dashboard showing sales growth and revenue metrics",
+    imageCaption: "E-commerce analytics dashboard with revenue scaling and performance optimization",
+    content: `
+      <h2>The Challenge</h2>
+      <p>GrowthHub E-Commerce had built a solid business generating $1.5M in annual revenue, but was struggling to scale further. Their conversion rate was low at 1.2%, organic visibility was limited, and they were overspending on inefficient advertising campaigns.</p>
+      <h2>Our Strategy</h2>
+      <p>We implemented a comprehensive digital transformation including:</p>
+      <ul>
+        <li>Technical SEO to improve search visibility</li>
+        <li>High-intent PPC targeting qualified buyers</li>
+        <li>Extensive A/B testing of landing pages and checkout flow</li>
+        <li>Product page optimization for conversion</li>
+        <li>Email remarketing to recover abandoned carts</li>
+        <li>Analytics implementation for data-driven decisions</li>
+      </ul>
+      <h2>Results</h2>
+      <p>Within 12 months, GrowthHub saw explosive growth, scaling from $1.5M to $5M in annual revenue—a 233% increase. Organic traffic grew 420% while conversion rates nearly tripled from 1.2% to 3.8%.</p>
+    `,
+  },
+  {
+    slug: "local-to-national-expansion",
+    title: "From Local Leader to National Brand: Scaling Operations Across 12 States",
+    description:
+      "Business consulting and digital strategy that transformed a local service provider into a national brand with operations in 12 states.",
+    searchSnippet:
+      "Business expansion case study: Local service provider scaled to 12 states with strategic consulting and digital infrastructure.",
+    category: "Business Consulting & Strategy",
+    industry: "Business Services",
+    location: "National (12 States)",
+    client: "Service Excellence Corp",
+    challenge:
+      "Successful local service company wanted to expand nationally but lacked strategic framework, digital infrastructure, and operational systems for multi-state growth.",
+    solution:
+      "Developed comprehensive growth strategy including operational playbooks, digital marketing infrastructure, brand standardization, and management systems.",
+    results: [
+      "Expanded to 12 states within 18 months",
+      "Revenue grew from $2M to $18M",
+      "Opened 24 new locations successfully",
+      "Maintained quality and brand consistency across all markets",
+      "Reduced operational costs 22% through systemization",
+    ],
+    metrics: { statesExpanded: 12, revenueGrowth: "$18M", locationsOpened: 24, timeframe: "18 months" },
+    featured: true,
+    image: "/images/case-study-national-expansion.jpg",
+    imageAlt: "National expansion map showing 12-state coverage and business growth",
+    imageCaption: "National business expansion strategy with multi-state operations",
+    content: `
+      <h2>The Challenge</h2>
+      <p>Service Excellence Corp was a thriving local service provider with strong operations in their home market. However, they faced a critical decision: remain local or pursue national expansion. They wanted to scale but didn't know how to maintain quality while expanding rapidly.</p>
+      <h2>Our Approach</h2>
+      <p>We developed a comprehensive expansion strategy covering:</p>
+      <ul>
+        <li>Market analysis and selection for first 12 states</li>
+        <li>Operational standardization and playbooks</li>
+        <li>Digital marketing infrastructure for multi-market management</li>
+        <li>Brand guidelines for consistency</li>
+        <li>Management and reporting systems</li>
+        <li>Financial modeling and resource allocation</li>
+      </ul>
+      <h2>Results</h2>
+      <p>Service Excellence Corp successfully expanded to 12 states, opened 24 new locations, and grew revenue from $2M to $18M in just 18 months. By implementing our strategic systems, they maintained quality and brand consistency across all markets while reducing operational costs 22%.</p>
+    `,
+  },
 ]
