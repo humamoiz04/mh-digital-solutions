@@ -3,17 +3,17 @@ import { MongoClient, Db } from "mongodb"
 let cachedClient: MongoClient | null = null
 let cachedDb: Db | null = null
 
-if (!process.env.MONGODB_URI) {
-  throw new Error("MONGODB_URI is not defined in environment variables")
-}
-
 export async function getDatabase(): Promise<Db> {
+  if (!process.env.MONGODB_URI) {
+    throw new Error("MONGODB_URI is not defined in environment variables")
+  }
+
   if (cachedDb) {
     return cachedDb
   }
 
   if (!cachedClient) {
-    cachedClient = new MongoClient(process.env.MONGODB_URI!)
+    cachedClient = new MongoClient(process.env.MONGODB_URI)
     await cachedClient.connect()
   }
 
