@@ -1,30 +1,30 @@
-import { MongoClient, Db } from "mongodb"
+import { MongoClient, Db } from "mongodb";
 
-let cachedClient: MongoClient | null = null
-let cachedDb: Db | null = null
+let cachedClient: MongoClient | null = null;
+let cachedDb: Db | null = null;
 
 export async function getDatabase(): Promise<Db> {
   if (!process.env.MONGODB_URI) {
-    throw new Error("MONGODB_URI is not defined in environment variables")
+    throw new Error("MONGODB_URI is not defined in environment variables");
   }
 
   if (cachedDb) {
-    return cachedDb
+    return cachedDb;
   }
 
   if (!cachedClient) {
-    cachedClient = new MongoClient(process.env.MONGODB_URI)
-    await cachedClient.connect()
+    cachedClient = new MongoClient(process.env.MONGODB_URI);
+    await cachedClient.connect();
   }
 
-  cachedDb = cachedClient.db("mh-digital")
-  return cachedDb
+  cachedDb = cachedClient.db("mh-digital");
+  return cachedDb;
 }
 
 export async function closeDatabase(): Promise<void> {
   if (cachedClient) {
-    await cachedClient.close()
-    cachedClient = null
-    cachedDb = null
+    await cachedClient.close();
+    cachedClient = null;
+    cachedDb = null;
   }
 }
