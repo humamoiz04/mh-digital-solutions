@@ -268,8 +268,10 @@ export const blogPosts = [
   {
     slug: "digital-marketing-agency-glendive-montana",
     title: "Choosing the Right Digital Marketing Agency in Glendive, Montana",
-    description: "Guide for Glendive businesses on selecting the perfect digital marketing partner to grow their local presence.",
-    searchSnippet: "Find the best digital marketing agency in Glendive Montana with proven local SEO and PPC expertise.",
+    description:
+      "Guide for Glendive businesses on selecting the perfect digital marketing partner to grow their local presence.",
+    searchSnippet:
+      "Find the best digital marketing agency in Glendive Montana with proven local SEO and PPC expertise.",
     category: "Digital Marketing",
     date: "December 1, 2024",
     author: "MH Digital Solution",
@@ -282,8 +284,10 @@ export const blogPosts = [
   {
     slug: "dual-track-seo-strategy",
     title: "Dual Track SEO Strategy: Combining Organic and Paid Search for Maximum ROI",
-    description: "Master the art of integrating SEO and PPC campaigns for synergistic results that outperform either strategy alone.",
-    searchSnippet: "Dual track SEO strategy: combine organic SEO and paid ads for 3x better results and lower acquisition costs.",
+    description:
+      "Master the art of integrating SEO and PPC campaigns for synergistic results that outperform either strategy alone.",
+    searchSnippet:
+      "Dual track SEO strategy: combine organic SEO and paid ads for 3x better results and lower acquisition costs.",
     category: "SEO",
     date: "November 25, 2024",
     author: "MH Digital Solution",
@@ -296,8 +300,10 @@ export const blogPosts = [
   {
     slug: "ecommerce-solutions-casper-wyoming",
     title: "E-Commerce Solutions for Casper, Wyoming Businesses: From Setup to Success",
-    description: "Complete guide to launching and growing an online store in Casper with local market strategies and best practices.",
-    searchSnippet: "E-commerce solutions Casper Wyoming: online store setup, payment processing, and local shipping integration.",
+    description:
+      "Complete guide to launching and growing an online store in Casper with local market strategies and best practices.",
+    searchSnippet:
+      "E-commerce solutions Casper Wyoming: online store setup, payment processing, and local shipping integration.",
     category: "E-Commerce",
     date: "November 18, 2024",
     author: "MH Digital Solution",
@@ -310,8 +316,10 @@ export const blogPosts = [
   {
     slug: "mobile-app-development-trends-2024",
     title: "Top Mobile App Development Trends Shaping 2024",
-    description: "Discover the latest mobile app development trends including AI integration, cross-platform frameworks, and progressive web apps.",
-    searchSnippet: "Mobile app development trends 2024: AI integration, Flutter, React Native, and PWA adoption for businesses.",
+    description:
+      "Discover the latest mobile app development trends including AI integration, cross-platform frameworks, and progressive web apps.",
+    searchSnippet:
+      "Mobile app development trends 2024: AI integration, Flutter, React Native, and PWA adoption for businesses.",
     category: "Mobile Development",
     date: "November 12, 2024",
     author: "MH Digital Solution",
@@ -324,8 +332,10 @@ export const blogPosts = [
   {
     slug: "seo-for-restaurants-malta",
     title: "Local SEO for Malta Restaurants: Fill Tables with Search Visibility",
-    description: "Proven local SEO strategies for Malta restaurants to attract more diners through Google search and maps.",
-    searchSnippet: "Restaurant SEO Malta: Google Business Profile optimization, local keywords, and review management for more customers.",
+    description:
+      "Proven local SEO strategies for Malta restaurants to attract more diners through Google search and maps.",
+    searchSnippet:
+      "Restaurant SEO Malta: Google Business Profile optimization, local keywords, and review management for more customers.",
     category: "SEO",
     date: "November 8, 2024",
     author: "MH Digital Solution",
@@ -338,8 +348,10 @@ export const blogPosts = [
   {
     slug: "social-media-marketing-2024",
     title: "Social Media Marketing Trends That Will Dominate 2024",
-    description: "Stay ahead of the curve with these social media marketing trends including short-form video, social commerce, and AI content creation.",
-    searchSnippet: "Social media marketing 2024: TikTok strategies, Instagram Reels, social commerce, and AI-powered content creation.",
+    description:
+      "Stay ahead of the curve with these social media marketing trends including short-form video, social commerce, and AI content creation.",
+    searchSnippet:
+      "Social media marketing 2024: TikTok strategies, Instagram Reels, social commerce, and AI-powered content creation.",
     category: "Social Media",
     date: "November 3, 2024",
     author: "MH Digital Solution",
@@ -348,6 +360,245 @@ export const blogPosts = [
     imageCaption: "2024 social media marketing trends and analytics",
     featured: false,
     content: `<h2>2024 Social Trends</h2><p>Short-form video, social commerce, and AI content creation...</p>`,
+  },
+  {
+    slug: "huntington-app-development",
+    title: "Mobile App Success: How We Built a Custom App for Huntington, WV Business",
+    description:
+      "Complete mobile app development from concept to launch, generating 50K downloads and $200K revenue in first year.",
+    searchSnippet:
+      "Mobile app development case study: Custom app for Huntington business achieved 50K downloads and $200K revenue.",
+    category: "Mobile App Development",
+    industry: "Mobile Development",
+    location: "Huntington, West Virginia",
+    client: "Huntington Local Services",
+    challenge: "Needed a customer-facing mobile app to streamline service bookings and improve customer experience.",
+    solution:
+      "Designed and developed custom iOS and Android app with booking system, push notifications, and payment processing.",
+    results: [
+      "50,000 downloads in first year",
+      "$200,000 in app-generated revenue",
+      "4.7-star average rating",
+      "35% increase in customer retention",
+    ],
+    metrics: { downloads: "50K", revenue: "$200K", rating: "4.7", retention: "35%" },
+    featured: false,
+    image: "/images/mobile-app-development.webp",
+    imageAlt: "Mobile app development for Huntington West Virginia business",
+    imageCaption: "Custom mobile app with booking system and payment processing",
+    content: `<h2>The Challenge</h2><p>Huntington Local Services needed a mobile app to compete with national brands...</p>`,
+  },
+  {
+    slug: "olathe-automotive-local-seo",
+    title: "Olathe Automotive Shop Dominates Local Search with Targeted SEO Strategy",
+    description:
+      "Local SEO campaign that took an Olathe automotive shop from page 3 to position #1, increasing bookings 240%.",
+    searchSnippet:
+      "Automotive SEO Olathe: Local shop achieved #1 ranking and 240% booking increase through targeted SEO.",
+    category: "Local SEO",
+    industry: "Automotive Services",
+    location: "Olathe, Kansas",
+    client: "Premier Auto Repair Olathe",
+    challenge: "Buried on page 3 for 'auto repair Olathe', losing customers to competitors.",
+    solution:
+      "Comprehensive local SEO including Google Business Profile optimization, citation building, and review generation.",
+    results: [
+      "240% increase in service bookings",
+      "#1 ranking for 'auto repair Olathe'",
+      "150+ new 5-star reviews",
+      "35% increase in organic traffic",
+    ],
+    metrics: { bookingIncrease: "240%", ranking: "#1", reviews: 150, trafficIncrease: "35%" },
+    featured: true,
+    image: "/images/automotive-repair-shop.webp",
+    imageAlt: "Automotive repair shop in Olathe Kansas with local SEO success",
+    imageCaption: "Premier auto repair facility with local search dominance",
+    content: `<h2>The Challenge</h2><p>Premier Auto Repair was losing customers to competitors with better online visibility...</p>`,
+  },
+  {
+    slug: "jackson-hole-resort-website-redesign",
+    title: "Jackson Hole Resort Website Redesign: 300% Increase in Direct Bookings",
+    description:
+      "Complete website redesign and UX overhaul for Jackson Hole resort, tripling direct bookings and reducing OTA commissions.",
+    searchSnippet:
+      "Resort website redesign: Jackson Hole property increased direct bookings 300% through modern UX design.",
+    category: "Web Design",
+    industry: "Hospitality & Tourism",
+    location: "Jackson Hole, Wyoming",
+    client: "Mountain Peak Resort",
+    challenge: "Outdated website with poor UX and low conversion rate (0.8%), losing bookings to OTAs.",
+    solution:
+      "Modern responsive website with integrated booking engine, virtual tours, and optimized conversion funnels.",
+    results: [
+      "300% increase in direct bookings",
+      "Conversion rate improved to 3.2%",
+      "$2.1M additional annual revenue",
+      "45% increase in average booking value",
+    ],
+    metrics: { bookingIncrease: "300%", conversionRate: "3.2%", revenue: "$2.1M", timeframe: "4 months" },
+    featured: true,
+    image: "/images/luxury-resort-mountain.webp",
+    imageAlt: "Jackson Hole luxury resort with mountain views and modern website",
+    imageCaption: "Mountain resort with redesigned booking website",
+    content: `<h2>The Challenge</h2><p>Mountain Peak Resort had an outdated website that didn't reflect their luxury property...</p>`,
+  },
+  {
+    slug: "saas-lead-generation",
+    title: "SaaS Lead Generation: 500% ROI Through Strategic Content Marketing and PPC",
+    description:
+      "Integrated digital strategy for B2B SaaS company, generating 1,200+ qualified leads monthly with 500% ROI.",
+    searchSnippet:
+      "SaaS lead generation case study: B2B software company achieved 500% ROI and 1,200 qualified leads monthly.",
+    category: "B2B Lead Generation",
+    industry: "Software & Technology",
+    location: "National",
+    client: "CloudTech Solutions",
+    challenge: "Low lead volume and high customer acquisition costs preventing scaling.",
+    solution: "Content marketing strategy, targeted LinkedIn ads, and conversion-optimized landing pages.",
+    results: [
+      "1,200+ qualified leads per month",
+      "500% ROI on marketing spend",
+      "Cost per lead reduced 62%",
+      "42 new enterprise customers",
+    ],
+    metrics: { leadsPerMonth: "1,200+", roi: "500%", costReduction: "62%", newCustomers: 42 },
+    featured: true,
+    image: "/images/saas-dashboard-analytics.webp",
+    imageAlt: "SaaS lead generation dashboard showing growth metrics",
+    imageCaption: "B2B SaaS lead generation with content marketing and PPC",
+    content: `<h2>The Challenge</h2><p>CloudTech Solutions struggled with expensive leads and slow growth...</p>`,
+  },
+  {
+    slug: "casper-ecommerce-seo-package",
+    title: "Affordable E-Commerce SEO Package Drives 380% Traffic Growth for Casper Retailer",
+    description:
+      "Budget-friendly SEO package for Casper e-commerce store, achieving enterprise-level results at affordable pricing.",
+    searchSnippet:
+      "Affordable e-commerce SEO: Casper retailer achieved 380% traffic growth with budget-friendly SEO package.",
+    category: "E-Commerce SEO",
+    industry: "E-Commerce",
+    location: "Casper, Wyoming",
+    client: "Casper Outdoor Gear",
+    challenge: "Limited marketing budget but needed significant SEO improvements to compete online.",
+    solution:
+      "Customized affordable SEO package focused on high-ROI activities: product optimization, technical SEO, and content.",
+    results: [
+      "380% increase in organic traffic",
+      "First page rankings for 23 keywords",
+      "Revenue increased 195%",
+      "ROI: 720% in 10 months",
+    ],
+    metrics: { trafficIncrease: "380%", rankings: 23, revenueIncrease: "195%", roi: "720%" },
+    featured: false,
+    image: "/images/ecommerce-store-growth.webp",
+    imageAlt: "E-commerce store in Casper Wyoming with SEO growth",
+    imageCaption: "Outdoor gear e-commerce with affordable SEO success",
+    content: `<h2>The Challenge</h2><p>Casper Outdoor Gear had a limited budget but needed SEO to compete...</p>`,
+  },
+  {
+    slug: "charleston-real-estate-ppc",
+    title: "Charleston Real Estate Agency Generates 85 Qualified Leads Monthly with PPC",
+    description:
+      "Targeted PPC campaign for Charleston real estate agency, generating consistent high-quality leads at $42 per lead.",
+    searchSnippet:
+      "Real estate PPC Charleston: Agency generates 85 monthly leads at $42 cost per lead through targeted ads.",
+    category: "PPC Advertising",
+    industry: "Real Estate",
+    location: "Charleston, West Virginia",
+    client: "Charleston Premium Properties",
+    challenge: "High competition in local real estate market, needed consistent lead flow.",
+    solution:
+      "Geo-targeted Google Ads and Facebook campaigns with optimized landing pages for different property types.",
+    results: [
+      "85 qualified leads per month",
+      "Cost per lead: $42",
+      "28 closed transactions in 6 months",
+      "ROAS: 12.3x",
+    ],
+    metrics: { leadsPerMonth: 85, costPerLead: "$42", transactions: 28, roas: "12.3x" },
+    featured: false,
+    image: "/images/real-estate-property.webp",
+    imageAlt: "Charleston West Virginia real estate with PPC advertising success",
+    imageCaption: "Real estate agency generating leads through targeted PPC campaigns",
+    content: `<h2>The Challenge</h2><p>Charleston Premium Properties competed in a saturated real estate market...</p>`,
+  },
+  {
+    slug: "wichita-affordable-seo-package",
+    title: "Wichita Business Saves $60K Annually with Affordable SEO Package",
+    description:
+      "Cost-effective SEO solution for Wichita company, delivering better results than their previous $5K/month agency.",
+    searchSnippet: "Affordable SEO Wichita: Business saved $60K annually while achieving superior SEO results.",
+    category: "SEO Services",
+    industry: "Digital Marketing",
+    location: "Wichita, Kansas",
+    client: "Wichita Manufacturing Co.",
+    challenge: "Paying $5,000/month to national agency with minimal results and poor communication.",
+    solution:
+      "Affordable monthly SEO package with transparent reporting, dedicated account manager, and proven strategies.",
+    results: [
+      "Saved $60,000 annually",
+      "Organic traffic up 285%",
+      "Lead generation increased 190%",
+      "Better results than previous agency",
+    ],
+    metrics: { annualSavings: "$60K", trafficIncrease: "285%", leadIncrease: "190%", timeframe: "12 months" },
+    featured: false,
+    image: "/images/business-cost-savings.webp",
+    imageAlt: "Wichita Kansas business with affordable SEO package and cost savings",
+    imageCaption: "Manufacturing company achieving better SEO results at lower cost",
+    content: `<h2>The Challenge</h2><p>Wichita Manufacturing was overpaying for underwhelming SEO services...</p>`,
+  },
+  {
+    slug: "cheyenne-ppc-management-success",
+    title: "Cheyenne Business Triples Revenue with Professional PPC Management",
+    description:
+      "Complete PPC account overhaul for Cheyenne service business, tripling revenue while reducing ad spend 30%.",
+    searchSnippet:
+      "PPC management Cheyenne: Service business tripled revenue and reduced ad spend 30% with expert management.",
+    category: "PPC Management",
+    industry: "Business Services",
+    location: "Cheyenne, Wyoming",
+    client: "Cheyenne Professional Services",
+    challenge: "Wasting ad budget on poorly managed campaigns with low ROI.",
+    solution: "Complete PPC audit, campaign restructuring, advanced targeting, and ongoing optimization.",
+    results: [
+      "Revenue tripled from $45K to $135K/month",
+      "Ad spend reduced 30%",
+      "Conversion rate improved from 2.1% to 7.8%",
+      "Cost per acquisition down 65%",
+    ],
+    metrics: { revenueIncrease: "200%", adSpendReduction: "30%", conversionRate: "7.8%", cpaReduction: "65%" },
+    featured: false,
+    image: "/images/ppc-campaign-success.webp",
+    imageAlt: "PPC campaign management dashboard for Cheyenne Wyoming business",
+    imageCaption: "Professional PPC management with revenue growth and cost reduction",
+    content: `<h2>The Challenge</h2><p>Cheyenne Professional Services was burning money on ineffective PPC campaigns...</p>`,
+  },
+  {
+    slug: "restaurant-digital-transformation",
+    title: "Restaurant Chain Digital Transformation: 400% Online Ordering Growth",
+    description:
+      "Complete digital transformation for restaurant chain including online ordering, loyalty program, and marketing automation.",
+    searchSnippet:
+      "Restaurant digital transformation: Chain achieved 400% online ordering growth through complete digital overhaul.",
+    category: "Digital Transformation",
+    industry: "Food & Beverage",
+    location: "Multi-Location",
+    client: "Regional Restaurant Group",
+    challenge: "No online ordering system, limited digital presence, losing market share to tech-savvy competitors.",
+    solution: "Integrated online ordering platform, mobile app, loyalty program, and omnichannel marketing automation.",
+    results: [
+      "400% increase in online orders",
+      "Mobile app: 75K downloads",
+      "Loyalty program: 40% enrollment",
+      "$3.2M additional annual revenue",
+    ],
+    metrics: { orderIncrease: "400%", downloads: "75K", loyaltyRate: "40%", revenue: "$3.2M" },
+    featured: true,
+    image: "/images/restaurant-ordering-system.webp",
+    imageAlt: "Restaurant digital transformation with online ordering and mobile app",
+    imageCaption: "Restaurant chain with modern digital ordering and loyalty systems",
+    content: `<h2>The Challenge</h2><p>Regional Restaurant Group was losing customers to tech-enabled competitors...</p>`,
   },
 ]
 
@@ -521,7 +772,8 @@ export const caseStudies = [
     slug: "technical-seo-audit-cheyenne",
     title: "The Technical SEO Audit that Saved a Cheyenne Business from a Google Penalty",
     description: "Critical technical SEO audit that identified and fixed issues preventing Google ranking recovery.",
-    searchSnippet: "Technical SEO case study: Audit identified 47 critical issues and recovered 85% of lost organic traffic.",
+    searchSnippet:
+      "Technical SEO case study: Audit identified 47 critical issues and recovered 85% of lost organic traffic.",
     category: "SEO Services",
     industry: "Digital Marketing",
     location: "Cheyenne, Wyoming",
@@ -545,7 +797,8 @@ export const caseStudies = [
     slug: "custom-ecommerce-laramie",
     title: "Launch Success: Delivering a Custom E-commerce Website for a Laramie Retailer in 45 Days",
     description: "Fast-track e-commerce development that got a retailer online and generating sales quickly.",
-    searchSnippet: "E-commerce development case study: Custom platform launched in 45 days with $180K first-month sales.",
+    searchSnippet:
+      "E-commerce development case study: Custom platform launched in 45 days with $180K first-month sales.",
     category: "Web Development",
     industry: "E-Commerce",
     location: "Laramie, Wyoming",
@@ -675,8 +928,10 @@ export const caseStudies = [
   {
     slug: "fitlife-gyms-scaling",
     title: "FitLife Gyms: Scaling from 2 to 15 Locations with Digital Marketing",
-    description: "Multi-location franchise growth powered by localized SEO, PPC campaigns, and membership automation systems.",
-    searchSnippet: "Fitness franchise case study: Scaled from 2 to 15 locations using localized digital marketing strategies.",
+    description:
+      "Multi-location franchise growth powered by localized SEO, PPC campaigns, and membership automation systems.",
+    searchSnippet:
+      "Fitness franchise case study: Scaled from 2 to 15 locations using localized digital marketing strategies.",
     category: "Multi-Location Marketing",
     industry: "Fitness & Wellness",
     location: "Regional (Multiple States)",
@@ -699,14 +954,17 @@ export const caseStudies = [
   {
     slug: "healthcare-digital-transformation",
     title: "Healthcare Practice Digital Transformation: 300% Patient Acquisition Growth",
-    description: "Complete digital transformation for a healthcare practice including telemedicine integration, online scheduling, and patient portal implementation.",
-    searchSnippet: "Healthcare digital transformation: 300% patient growth through HIPAA-compliant systems and digital marketing.",
+    description:
+      "Complete digital transformation for a healthcare practice including telemedicine integration, online scheduling, and patient portal implementation.",
+    searchSnippet:
+      "Healthcare digital transformation: 300% patient growth through HIPAA-compliant systems and digital marketing.",
     category: "Healthcare Technology",
     industry: "Healthcare Services",
     location: "Regional",
     client: "Comprehensive Care Medical Group",
     challenge: "Traditional healthcare practice needed to modernize operations and attract younger patients.",
-    solution: "Implemented telemedicine platform, patient portal, online scheduling, and HIPAA-compliant marketing automation.",
+    solution:
+      "Implemented telemedicine platform, patient portal, online scheduling, and HIPAA-compliant marketing automation.",
     results: [
       "300% increase in new patient acquisitions",
       "85% reduction in phone call volume",
@@ -723,8 +981,10 @@ export const caseStudies = [
   {
     slug: "local-business-seo",
     title: "Local Business SEO Success: From Invisible to #1 in Local Search",
-    description: "Small local business achieved dominant local search visibility through comprehensive local SEO optimization.",
-    searchSnippet: "Local SEO case study: Small business achieved #1 local ranking and 400% traffic increase in 6 months.",
+    description:
+      "Small local business achieved dominant local search visibility through comprehensive local SEO optimization.",
+    searchSnippet:
+      "Local SEO case study: Small business achieved #1 local ranking and 400% traffic increase in 6 months.",
     category: "Local SEO",
     industry: "Local Services",
     location: "Multiple Locations",
@@ -747,8 +1007,10 @@ export const caseStudies = [
   {
     slug: "techcorp-ai-automation",
     title: "TechCorp AI Automation: Reducing Operational Costs 40% with Intelligent Systems",
-    description: "Enterprise AI automation implementation that dramatically reduced costs while improving service quality and response times.",
-    searchSnippet: "AI automation case study: Enterprise reduced operational costs 40% through intelligent chatbots and workflow automation.",
+    description:
+      "Enterprise AI automation implementation that dramatically reduced costs while improving service quality and response times.",
+    searchSnippet:
+      "AI automation case study: Enterprise reduced operational costs 40% through intelligent chatbots and workflow automation.",
     category: "AI & Automation",
     industry: "Technology Services",
     location: "National",
@@ -767,5 +1029,163 @@ export const caseStudies = [
     imageAlt: "AI automation systems with robotic process automation and chatbots",
     imageCaption: "Enterprise AI automation reducing costs and improving efficiency",
     content: `<h2>The Challenge</h2><p>TechCorp Services was spending excessive resources on manual processes and customer support...</p>`,
+  },
+  {
+    slug: "saas-lead-generation",
+    title: "SaaS Lead Generation: 500% ROI Through Strategic Content Marketing and PPC",
+    description:
+      "Integrated digital strategy for B2B SaaS company, generating 1,200+ qualified leads monthly with 500% ROI.",
+    searchSnippet:
+      "SaaS lead generation case study: B2B software company achieved 500% ROI and 1,200 qualified leads monthly.",
+    category: "B2B Lead Generation",
+    industry: "Software & Technology",
+    location: "National",
+    client: "CloudTech Solutions",
+    challenge: "Low lead volume and high customer acquisition costs preventing scaling.",
+    solution: "Content marketing strategy, targeted LinkedIn ads, and conversion-optimized landing pages.",
+    results: [
+      "1,200+ qualified leads per month",
+      "500% ROI on marketing spend",
+      "Cost per lead reduced 62%",
+      "42 new enterprise customers",
+    ],
+    metrics: { leadsPerMonth: "1,200+", roi: "500%", costReduction: "62%", newCustomers: 42 },
+    featured: true,
+    image: "/images/saas-dashboard-analytics.webp",
+    imageAlt: "SaaS lead generation dashboard showing growth metrics",
+    imageCaption: "B2B SaaS lead generation with content marketing and PPC",
+    content: `<h2>The Challenge</h2><p>CloudTech Solutions struggled with expensive leads and slow growth...</p>`,
+  },
+  {
+    slug: "casper-ecommerce-seo-package",
+    title: "Affordable E-Commerce SEO Package Drives 380% Traffic Growth for Casper Retailer",
+    description:
+      "Budget-friendly SEO package for Casper e-commerce store, achieving enterprise-level results at affordable pricing.",
+    searchSnippet:
+      "Affordable e-commerce SEO: Casper retailer achieved 380% traffic growth with budget-friendly SEO package.",
+    category: "E-Commerce SEO",
+    industry: "E-Commerce",
+    location: "Casper, Wyoming",
+    client: "Casper Outdoor Gear",
+    challenge: "Limited marketing budget but needed significant SEO improvements to compete online.",
+    solution:
+      "Customized affordable SEO package focused on high-ROI activities: product optimization, technical SEO, and content.",
+    results: [
+      "380% increase in organic traffic",
+      "First page rankings for 23 keywords",
+      "Revenue increased 195%",
+      "ROI: 720% in 10 months",
+    ],
+    metrics: { trafficIncrease: "380%", rankings: 23, revenueIncrease: "195%", roi: "720%" },
+    featured: false,
+    image: "/images/ecommerce-store-growth.webp",
+    imageAlt: "E-commerce store in Casper Wyoming with SEO growth",
+    imageCaption: "Outdoor gear e-commerce with affordable SEO success",
+    content: `<h2>The Challenge</h2><p>Casper Outdoor Gear had a limited budget but needed SEO to compete...</p>`,
+  },
+  {
+    slug: "charleston-real-estate-ppc",
+    title: "Charleston Real Estate Agency Generates 85 Qualified Leads Monthly with PPC",
+    description:
+      "Targeted PPC campaign for Charleston real estate agency, generating consistent high-quality leads at $42 per lead.",
+    searchSnippet:
+      "Real estate PPC Charleston: Agency generates 85 monthly leads at $42 cost per lead through targeted ads.",
+    category: "PPC Advertising",
+    industry: "Real Estate",
+    location: "Charleston, West Virginia",
+    client: "Charleston Premium Properties",
+    challenge: "High competition in local real estate market, needed consistent lead flow.",
+    solution:
+      "Geo-targeted Google Ads and Facebook campaigns with optimized landing pages for different property types.",
+    results: [
+      "85 qualified leads per month",
+      "Cost per lead: $42",
+      "28 closed transactions in 6 months",
+      "ROAS: 12.3x",
+    ],
+    metrics: { leadsPerMonth: 85, costPerLead: "$42", transactions: 28, roas: "12.3x" },
+    featured: false,
+    image: "/images/real-estate-property.webp",
+    imageAlt: "Charleston West Virginia real estate with PPC advertising success",
+    imageCaption: "Real estate agency generating leads through targeted PPC campaigns",
+    content: `<h2>The Challenge</h2><p>Charleston Premium Properties competed in a saturated real estate market...</p>`,
+  },
+  {
+    slug: "wichita-affordable-seo-package",
+    title: "Wichita Business Saves $60K Annually with Affordable SEO Package",
+    description:
+      "Cost-effective SEO solution for Wichita company, delivering better results than their previous $5K/month agency.",
+    searchSnippet: "Affordable SEO Wichita: Business saved $60K annually while achieving superior SEO results.",
+    category: "SEO Services",
+    industry: "Digital Marketing",
+    location: "Wichita, Kansas",
+    client: "Wichita Manufacturing Co.",
+    challenge: "Paying $5,000/month to national agency with minimal results and poor communication.",
+    solution:
+      "Affordable monthly SEO package with transparent reporting, dedicated account manager, and proven strategies.",
+    results: [
+      "Saved $60,000 annually",
+      "Organic traffic up 285%",
+      "Lead generation increased 190%",
+      "Better results than previous agency",
+    ],
+    metrics: { annualSavings: "$60K", trafficIncrease: "285%", leadIncrease: "190%", timeframe: "12 months" },
+    featured: false,
+    image: "/images/business-cost-savings.webp",
+    imageAlt: "Wichita Kansas business with affordable SEO package and cost savings",
+    imageCaption: "Manufacturing company achieving better SEO results at lower cost",
+    content: `<h2>The Challenge</h2><p>Wichita Manufacturing was overpaying for underwhelming SEO services...</p>`,
+  },
+  {
+    slug: "cheyenne-ppc-management-success",
+    title: "Cheyenne Business Triples Revenue with Professional PPC Management",
+    description:
+      "Complete PPC account overhaul for Cheyenne service business, tripling revenue while reducing ad spend 30%.",
+    searchSnippet:
+      "PPC management Cheyenne: Service business tripled revenue and reduced ad spend 30% with expert management.",
+    category: "PPC Management",
+    industry: "Business Services",
+    location: "Cheyenne, Wyoming",
+    client: "Cheyenne Professional Services",
+    challenge: "Wasting ad budget on poorly managed campaigns with low ROI.",
+    solution: "Complete PPC audit, campaign restructuring, advanced targeting, and ongoing optimization.",
+    results: [
+      "Revenue tripled from $45K to $135K/month",
+      "Ad spend reduced 30%",
+      "Conversion rate improved from 2.1% to 7.8%",
+      "Cost per acquisition down 65%",
+    ],
+    metrics: { revenueIncrease: "200%", adSpendReduction: "30%", conversionRate: "7.8%", cpaReduction: "65%" },
+    featured: false,
+    image: "/images/ppc-campaign-success.webp",
+    imageAlt: "PPC campaign management dashboard for Cheyenne Wyoming business",
+    imageCaption: "Professional PPC management with revenue growth and cost reduction",
+    content: `<h2>The Challenge</h2><p>Cheyenne Professional Services was burning money on ineffective PPC campaigns...</p>`,
+  },
+  {
+    slug: "restaurant-digital-transformation",
+    title: "Restaurant Chain Digital Transformation: 400% Online Ordering Growth",
+    description:
+      "Complete digital transformation for restaurant chain including online ordering, loyalty program, and marketing automation.",
+    searchSnippet:
+      "Restaurant digital transformation: Chain achieved 400% online ordering growth through complete digital overhaul.",
+    category: "Digital Transformation",
+    industry: "Food & Beverage",
+    location: "Multi-Location",
+    client: "Regional Restaurant Group",
+    challenge: "No online ordering system, limited digital presence, losing market share to tech-savvy competitors.",
+    solution: "Integrated online ordering platform, mobile app, loyalty program, and omnichannel marketing automation.",
+    results: [
+      "400% increase in online orders",
+      "Mobile app: 75K downloads",
+      "Loyalty program: 40% enrollment",
+      "$3.2M additional annual revenue",
+    ],
+    metrics: { orderIncrease: "400%", downloads: "75K", loyaltyRate: "40%", revenue: "$3.2M" },
+    featured: true,
+    image: "/images/restaurant-ordering-system.webp",
+    imageAlt: "Restaurant digital transformation with online ordering and mobile app",
+    imageCaption: "Restaurant chain with modern digital ordering and loyalty systems",
+    content: `<h2>The Challenge</h2><p>Regional Restaurant Group was losing customers to tech-enabled competitors...</p>`,
   },
 ]
