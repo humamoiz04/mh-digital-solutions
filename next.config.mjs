@@ -53,21 +53,6 @@ const nextConfig = {
         destination: 'https://www.mhdigitalsolution.com/:path*',
         permanent: true,
       },
-      {
-        source: '/blog',
-        destination: 'https://www.mhdigitalsolution.com/blog',
-        permanent: true,
-      },
-      {
-        source: '/blog/ai-automation-revolution-2024',
-        destination: 'https://www.mhdigitalsolution.com/blog/ai-automation-revolution-2024',
-        permanent: true,
-      },
-      {
-        source: '/blog/seo-strategies-2024',
-        destination: 'https://www.mhdigitalsolution.com/blog/seo-strategies-2024',
-        permanent: true,
-      },
       // Legacy HTML redirects
       {
         source: '/home',
@@ -114,7 +99,6 @@ const nextConfig = {
         destination: '/pricing',
         permanent: true,
       },
-      // Removed redirect for business-plan-development to let it be a standalone page
       {
         source: '/services/strategic-business-consulting',
         destination: '/services/business-consulting',
@@ -158,11 +142,6 @@ const nextConfig = {
       {
         source: '/find-developers/:path*',
         destination: '/services/web-development',
-        permanent: true,
-      },
-      {
-        source: '/blog/:clutch_profile_url*',
-        destination: '/about',
         permanent: true,
       },
       {

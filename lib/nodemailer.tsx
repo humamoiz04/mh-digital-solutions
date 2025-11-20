@@ -1,23 +1,8 @@
 import nodemailer from "nodemailer"
 
-function createTransporter() {
-  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASSWORD) {
-    console.warn("[v0] Gmail credentials not configured, email sending disabled")
-    return null
-  }
-
-  return nodemailer.createTransport({
-    service: "gmail",
-    auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASSWORD,
-    },
-  })
-}
-
 export async function sendAppointmentConfirmation(
-  customerEmail: string,
-  appointment: {
+  email: string,
+  details: {
     name: string
     email: string
     phone?: string
@@ -27,22 +12,35 @@ export async function sendAppointmentConfirmation(
     message?: string
   },
 ) {
-  const transporter = createTransporter()
-  if (!transporter) return
+  const gmailUser = process.env.GMAIL_USER
+  const gmailPassword = process.env.GMAIL_PASSWORD
 
-  const html = `
+  if (!gmailUser || !gmailPassword) {
+    console.log("[v0] Email not sent: GMAIL credentials not configured")
+    return
+  }
+
+  const transporter = nodemailer.createTransporter({
+    service: "gmail",
+    auth: {
+      user: gmailUser,
+      pass: gmailPassword,
+    },
+  })
+
+  const htmlContent = `
     <!DOCTYPE html>
     <html>
       <head>
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
-          .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
-          .appointment-details { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
+          .header { background: linear-gradient(135deg, #ec4899, #a855f7); padding: 30px; text-align: center; color: white; }
+          .content { background: #f9f9f9; padding: 30px; }
+          .details { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
           .detail-row { padding: 10px 0; border-bottom: 1px solid #eee; }
-          .label { font-weight: bold; color: #667eea; }
-          .footer { text-align: center; padding: 20px; color: #666; font-size: 12px; }
+          .label { font-weight: bold; color: #666; }
+          .footer { text-align: center; padding: 20px; color: #666; font-size: 14px; }
         </style>
       </head>
       <body>
@@ -51,30 +49,20 @@ export async function sendAppointmentConfirmation(
             <h1>Appointment Confirmed!</h1>
           </div>
           <div class="content">
-            <p>Dear ${appointment.name},</p>
-            <p>Thank you for booking an appointment with MH Digital Solution. We're excited to work with you!</p>
-            
-            <div class="appointment-details">
-              <h2>Appointment Details</h2>
-              <div class="detail-row">
-                <span class="label">Service:</span> ${appointment.service}
-              </div>
-              <div class="detail-row">
-                <span class="label">Date:</span> ${appointment.date}
-              </div>
-              <div class="detail-row">
-                <span class="label">Time:</span> ${appointment.time}
-              </div>
-              ${appointment.phone ? `<div class="detail-row"><span class="label">Phone:</span> ${appointment.phone}</div>` : ""}
-              ${appointment.message ? `<div class="detail-row"><span class="label">Message:</span> ${appointment.message}</div>` : ""}
+            <p>Dear ${details.name},</p>
+            <p>Thank you for booking a consultation with MH Digital Solutions. We're excited to discuss your digital needs!</p>
+            <div class="details">
+              <div class="detail-row"><span class="label">Service:</span> ${details.service}</div>
+              <div class="detail-row"><span class="label">Date:</span> ${details.date}</div>
+              <div class="detail-row"><span class="label">Time:</span> ${details.time}</div>
+              ${details.phone ? `<div class="detail-row"><span class="label">Phone:</span> ${details.phone}</div>` : ""}
+              ${details.message ? `<div class="detail-row"><span class="label">Message:</span> ${details.message}</div>` : ""}
             </div>
-            
-            <p>Our team will contact you shortly to confirm the details. If you need to reschedule or have any questions, please don't hesitate to reach out.</p>
-            
-            <p>Best regards,<br>MH Digital Solution Team</p>
+            <p>We'll call you shortly to confirm the details. If you have any questions, please call us at +1 (707) 249-1222.</p>
           </div>
           <div class="footer">
-            <p>MH Digital Solution | mhdigitalsolutionsus@gmail.com | +1 (707) 249-1222</p>
+            <p>MH Digital Solutions</p>
+            <p>mhdigitalsolutionsus@gmail.com | +1 (707) 249-1222</p>
           </div>
         </div>
       </body>
@@ -83,18 +71,18 @@ export async function sendAppointmentConfirmation(
 
   try {
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
-      to: customerEmail,
-      subject: "Appointment Confirmation - MH Digital Solution",
-      html,
+      from: `"MH Digital Solutions" <${gmailUser}>`,
+      to: email,
+      subject: "Appointment Confirmation - MH Digital Solutions",
+      html: htmlContent,
     })
-    console.log("[v0] Appointment confirmation email sent to:", customerEmail)
+    console.log("[v0] Appointment confirmation email sent to:", email)
   } catch (error) {
-    console.error("[v0] Failed to send appointment confirmation:", error)
+    console.error("[v0] Error sending appointment confirmation:", error)
   }
 }
 
-export async function sendAdminNotification(appointment: {
+export async function sendAdminNotification(details: {
   name: string
   email: string
   phone?: string
@@ -103,21 +91,35 @@ export async function sendAdminNotification(appointment: {
   time: string
   message?: string
 }) {
-  const transporter = createTransporter()
-  if (!transporter) return
-
+  const gmailUser = process.env.GMAIL_USER
+  const gmailPassword = process.env.GMAIL_PASSWORD
   const adminEmail = process.env.ADMIN_EMAIL || "mhdigitalsolutionsus@gmail.com"
 
-  const html = `
+  if (!gmailUser || !gmailPassword) {
+    console.log("[v0] Admin notification not sent: GMAIL credentials not configured")
+    return
+  }
+
+  const transporter = nodemailer.createTransporter({
+    service: "gmail",
+    auth: {
+      user: gmailUser,
+      pass: gmailPassword,
+    },
+  })
+
+  const htmlContent = `
     <!DOCTYPE html>
     <html>
       <head>
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: #667eea; color: white; padding: 20px; border-radius: 8px 8px 0 0; }
-          .content { background: #f9f9f9; padding: 20px; border-radius: 0 0 8px 8px; }
-          .detail { padding: 10px; margin: 5px 0; background: white; border-radius: 4px; }
+          .header { background: #ec4899; padding: 20px; color: white; }
+          .content { background: #f9f9f9; padding: 20px; }
+          .details { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
+          .detail-row { padding: 10px 0; border-bottom: 1px solid #eee; }
+          .label { font-weight: bold; }
         </style>
       </head>
       <body>
@@ -126,13 +128,15 @@ export async function sendAdminNotification(appointment: {
             <h2>New Appointment Booking</h2>
           </div>
           <div class="content">
-            <div class="detail"><strong>Name:</strong> ${appointment.name}</div>
-            <div class="detail"><strong>Email:</strong> ${appointment.email}</div>
-            <div class="detail"><strong>Phone:</strong> ${appointment.phone || "Not provided"}</div>
-            <div class="detail"><strong>Service:</strong> ${appointment.service}</div>
-            <div class="detail"><strong>Date:</strong> ${appointment.date}</div>
-            <div class="detail"><strong>Time:</strong> ${appointment.time}</div>
-            ${appointment.message ? `<div class="detail"><strong>Message:</strong> ${appointment.message}</div>` : ""}
+            <div class="details">
+              <div class="detail-row"><span class="label">Name:</span> ${details.name}</div>
+              <div class="detail-row"><span class="label">Email:</span> ${details.email}</div>
+              ${details.phone ? `<div class="detail-row"><span class="label">Phone:</span> ${details.phone}</div>` : ""}
+              <div class="detail-row"><span class="label">Service:</span> ${details.service}</div>
+              <div class="detail-row"><span class="label">Date:</span> ${details.date}</div>
+              <div class="detail-row"><span class="label">Time:</span> ${details.time}</div>
+              ${details.message ? `<div class="detail-row"><span class="label">Message:</span> ${details.message}</div>` : ""}
+            </div>
           </div>
         </div>
       </body>
@@ -141,30 +145,43 @@ export async function sendAdminNotification(appointment: {
 
   try {
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
+      from: `"MH Digital Solutions Website" <${gmailUser}>`,
       to: adminEmail,
-      subject: `New Appointment: ${appointment.service} - ${appointment.name}`,
-      html,
+      subject: `New Appointment: ${details.name} - ${details.service}`,
+      html: htmlContent,
     })
-    console.log("[v0] Admin notification email sent for appointment:", appointment.name)
+    console.log("[v0] Admin notification sent to:", adminEmail)
   } catch (error) {
-    console.error("[v0] Failed to send admin notification:", error)
+    console.error("[v0] Error sending admin notification:", error)
   }
 }
 
 export async function sendEmail(to: string, subject: string, html: string) {
-  const transporter = createTransporter()
-  if (!transporter) return
+  const gmailUser = process.env.GMAIL_USER
+  const gmailPassword = process.env.GMAIL_PASSWORD
+
+  if (!gmailUser || !gmailPassword) {
+    console.log("[v0] Email not sent: GMAIL credentials not configured")
+    return
+  }
+
+  const transporter = nodemailer.createTransporter({
+    service: "gmail",
+    auth: {
+      user: gmailUser,
+      pass: gmailPassword,
+    },
+  })
 
   try {
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
+      from: `"MH Digital Solutions" <${gmailUser}>`,
       to,
       subject,
       html,
     })
     console.log("[v0] Email sent successfully to:", to)
   } catch (error) {
-    console.error("[v0] Failed to send email:", error)
+    console.error("[v0] Error sending email:", error)
   }
 }
