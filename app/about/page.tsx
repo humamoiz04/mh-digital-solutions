@@ -69,11 +69,12 @@ export default function AboutPage() {
   ]
 
   return (
-    <div className="relative z-10">
+    <div className="relative z-10 min-h-screen">
+      {console.log("[v0] About page rendering")}
       <StructuredData type="Organization" />
       <StructuredData type="LocalBusiness" />
 
-      <Section className="py-16 md:py-24">
+      <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="text-center mb-16 scroll-fade-in">
           <Badge className="mb-4 bg-pink-100 text-pink-800 hover:bg-pink-200">Meet Our Leadership</Badge>
           <h1 className="text-4xl md:text-6xl font-bold leading-tight gradient-text mb-6">
@@ -159,7 +160,7 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-      </Section>
+      </div>
 
       <Section className="py-16 md:py-24">
         <div className="grid md:grid-cols-2 gap-12 items-center scroll-fade-up">
