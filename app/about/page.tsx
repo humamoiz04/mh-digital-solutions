@@ -89,18 +89,6 @@ export default function AboutPage() {
           </div>
         </div>
 
-        <div className="mb-20 scroll-fade-up">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground mb-4 gradient-text">Our Mission and Vision</h2>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto">
-              Our mission is to empower Austin businesses and companies across Texas with cutting-edge digital marketing
-              solutions that drive measurable growth. We envision a future where every business, regardless of size, has
-              access to world-class digital marketing expertise that transforms their online presence and accelerates
-              their success.
-            </p>
-          </div>
-        </div>
-
         <div className="grid md:grid-cols-2 gap-12 items-center mb-20 scroll-fade-up">
           <div className="space-y-6">
             <div className="flex items-center gap-4 mb-6">
@@ -129,12 +117,12 @@ export default function AboutPage() {
               businesses worldwide.
             </p>
           </div>
-          <div className="relative h-[400px] md:h-[500px] flex items-center justify-center">
+          <div className="relative w-full h-[400px] md:h-[500px]">
             <Image
               src="/images/business-process-infographic.webp"
               alt="Digital marketing team in Austin office working on business process innovation"
               fill
-              className="object-contain z-10"
+              className="object-contain"
               title="Business Process Innovation at MH Digital Solutions"
             />
           </div>
@@ -142,7 +130,7 @@ export default function AboutPage() {
 
         <div className="bg-gradient-to-r from-pink-50 to-purple-50 rounded-3xl p-8 md:p-12 scroll-fade-up">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="relative h-[300px] md:h-[400px]">
+            <div className="relative w-full h-[300px] md:h-[400px]">
               <Image
                 src="/images/mr-mrs-mk.webp"
                 alt="MK and family - The journey of building Austin's premier digital marketing agency"
@@ -229,12 +217,12 @@ export default function AboutPage() {
               </Badge>
             </div>
           </div>
-          <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
+          <div className="relative w-full h-[400px] md:h-[600px]">
             <Image
               src="/images/analytics-team.webp"
               alt="Digital marketing team collaboration and analytics at MH Digital Solutions Austin office"
               fill
-              className="object-contain z-10"
+              className="object-contain"
               title="Team Analytics and Collaboration at MH Digital Solutions"
             />
           </div>

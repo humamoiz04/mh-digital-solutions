@@ -1,8 +1,8 @@
 import nodemailer from "nodemailer"
 
 export async function sendAppointmentConfirmation(
-  email: string,
-  details: {
+  recipientEmail: string,
+  appointmentData: {
     name: string
     email: string
     phone?: string
@@ -12,19 +12,18 @@ export async function sendAppointmentConfirmation(
     message?: string
   },
 ) {
-  const gmailUser = process.env.GMAIL_USER
-  const gmailPassword = process.env.GMAIL_PASSWORD
+  console.log("[v0] Sending appointment confirmation email to:", recipientEmail)
 
-  if (!gmailUser || !gmailPassword) {
-    console.log("[v0] Email not sent: GMAIL credentials not configured")
+  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASSWORD) {
+    console.error("[v0] Gmail credentials not configured")
     return
   }
 
-  const transporter = nodemailer.createTransporter({
+  const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: gmailUser,
-      pass: gmailPassword,
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASSWORD,
     },
   })
 
@@ -35,34 +34,76 @@ export async function sendAppointmentConfirmation(
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: linear-gradient(135deg, #ec4899, #a855f7); padding: 30px; text-align: center; color: white; }
-          .content { background: #f9f9f9; padding: 30px; }
-          .details { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
-          .detail-row { padding: 10px 0; border-bottom: 1px solid #eee; }
-          .label { font-weight: bold; color: #666; }
+          .header { background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+          .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+          .appointment-details { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
+          .detail-row { display: flex; padding: 10px 0; border-bottom: 1px solid #eee; }
+          .detail-label { font-weight: bold; width: 120px; color: #666; }
+          .detail-value { flex: 1; color: #333; }
           .footer { text-align: center; padding: 20px; color: #666; font-size: 14px; }
+          .button { display: inline-block; background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%); color: white; padding: 12px 30px; text-decoration: none; border-radius: 5px; margin: 20px 0; }
         </style>
       </head>
       <body>
         <div class="container">
           <div class="header">
-            <h1>Appointment Confirmed!</h1>
+            <h1>Appointment Confirmed! 🎉</h1>
           </div>
           <div class="content">
-            <p>Dear ${details.name},</p>
-            <p>Thank you for booking a consultation with MH Digital Solutions. We're excited to discuss your digital needs!</p>
-            <div class="details">
-              <div class="detail-row"><span class="label">Service:</span> ${details.service}</div>
-              <div class="detail-row"><span class="label">Date:</span> ${details.date}</div>
-              <div class="detail-row"><span class="label">Time:</span> ${details.time}</div>
-              ${details.phone ? `<div class="detail-row"><span class="label">Phone:</span> ${details.phone}</div>` : ""}
-              ${details.message ? `<div class="detail-row"><span class="label">Message:</span> ${details.message}</div>` : ""}
+            <p>Dear ${appointmentData.name},</p>
+            <p>Thank you for booking a consultation with MH Digital Solutions. We're excited to help you achieve your digital goals!</p>
+            
+            <div class="appointment-details">
+              <h3 style="color: #ec4899; margin-top: 0;">Your Appointment Details</h3>
+              <div class="detail-row">
+                <span class="detail-label">Service:</span>
+                <span class="detail-value">${appointmentData.service}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Date:</span>
+                <span class="detail-value">${appointmentData.date}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Time:</span>
+                <span class="detail-value">${appointmentData.time}</span>
+              </div>
+              ${
+                appointmentData.phone
+                  ? `
+              <div class="detail-row">
+                <span class="detail-label">Phone:</span>
+                <span class="detail-value">${appointmentData.phone}</span>
+              </div>
+              `
+                  : ""
+              }
+              ${
+                appointmentData.message
+                  ? `
+              <div class="detail-row">
+                <span class="detail-label">Message:</span>
+                <span class="detail-value">${appointmentData.message}</span>
+              </div>
+              `
+                  : ""
+              }
             </div>
-            <p>We'll call you shortly to confirm the details. If you have any questions, please call us at +1 (707) 249-1222.</p>
+
+            <p>One of our experts will contact you shortly to confirm the details and prepare for our consultation.</p>
+            
+            <p>In the meantime, feel free to explore our services or reach out if you have any questions:</p>
+            <p style="text-align: center;">
+              <a href="tel:+17072491222" style="color: #ec4899; text-decoration: none; font-weight: bold;">+1 (707) 249-1222</a>
+            </p>
+            
+            <p>Looking forward to speaking with you!</p>
+            <p><strong>MH Digital Solutions Team</strong></p>
           </div>
           <div class="footer">
-            <p>MH Digital Solutions</p>
-            <p>mhdigitalsolutionsus@gmail.com | +1 (707) 249-1222</p>
+            <p>MH Digital Solutions | Austin, Texas</p>
+            <p>
+              <a href="https://www.mhdigitalsolution.com" style="color: #ec4899; text-decoration: none;">www.mhdigitalsolution.com</a>
+            </p>
           </div>
         </div>
       </body>
@@ -71,18 +112,18 @@ export async function sendAppointmentConfirmation(
 
   try {
     await transporter.sendMail({
-      from: `"MH Digital Solutions" <${gmailUser}>`,
-      to: email,
-      subject: "Appointment Confirmation - MH Digital Solutions",
+      from: `"MH Digital Solutions" <${process.env.GMAIL_USER}>`,
+      to: recipientEmail,
+      subject: "Your Appointment with MH Digital Solutions is Confirmed",
       html: htmlContent,
     })
-    console.log("[v0] Appointment confirmation email sent to:", email)
+    console.log("[v0] Appointment confirmation email sent successfully")
   } catch (error) {
-    console.error("[v0] Error sending appointment confirmation:", error)
+    console.error("[v0] Error sending appointment confirmation email:", error)
   }
 }
 
-export async function sendAdminNotification(details: {
+export async function sendAdminNotification(appointmentData: {
   name: string
   email: string
   phone?: string
@@ -91,20 +132,18 @@ export async function sendAdminNotification(details: {
   time: string
   message?: string
 }) {
-  const gmailUser = process.env.GMAIL_USER
-  const gmailPassword = process.env.GMAIL_PASSWORD
-  const adminEmail = process.env.ADMIN_EMAIL || "mhdigitalsolutionsus@gmail.com"
+  console.log("[v0] Sending admin notification for new appointment")
 
-  if (!gmailUser || !gmailPassword) {
-    console.log("[v0] Admin notification not sent: GMAIL credentials not configured")
+  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASSWORD || !process.env.ADMIN_EMAIL) {
+    console.error("[v0] Email credentials not configured")
     return
   }
 
-  const transporter = nodemailer.createTransporter({
+  const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: gmailUser,
-      pass: gmailPassword,
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASSWORD,
     },
   })
 
@@ -115,28 +154,67 @@ export async function sendAdminNotification(details: {
         <style>
           body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; }
           .container { max-width: 600px; margin: 0 auto; padding: 20px; }
-          .header { background: #ec4899; padding: 20px; color: white; }
-          .content { background: #f9f9f9; padding: 20px; }
-          .details { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; }
-          .detail-row { padding: 10px 0; border-bottom: 1px solid #eee; }
-          .label { font-weight: bold; }
+          .header { background: linear-gradient(135deg, #ec4899 0%, #a855f7 100%); color: white; padding: 30px; text-align: center; border-radius: 10px 10px 0 0; }
+          .content { background: #f9f9f9; padding: 30px; border-radius: 0 0 10px 10px; }
+          .appointment-details { background: white; padding: 20px; border-radius: 8px; margin: 20px 0; }
+          .detail-row { display: flex; padding: 10px 0; border-bottom: 1px solid #eee; }
+          .detail-label { font-weight: bold; width: 120px; color: #666; }
+          .detail-value { flex: 1; color: #333; }
         </style>
       </head>
       <body>
         <div class="container">
           <div class="header">
-            <h2>New Appointment Booking</h2>
+            <h1>🔔 New Appointment Booked</h1>
           </div>
           <div class="content">
-            <div class="details">
-              <div class="detail-row"><span class="label">Name:</span> ${details.name}</div>
-              <div class="detail-row"><span class="label">Email:</span> ${details.email}</div>
-              ${details.phone ? `<div class="detail-row"><span class="label">Phone:</span> ${details.phone}</div>` : ""}
-              <div class="detail-row"><span class="label">Service:</span> ${details.service}</div>
-              <div class="detail-row"><span class="label">Date:</span> ${details.date}</div>
-              <div class="detail-row"><span class="label">Time:</span> ${details.time}</div>
-              ${details.message ? `<div class="detail-row"><span class="label">Message:</span> ${details.message}</div>` : ""}
+            <p><strong>A new appointment has been scheduled!</strong></p>
+            
+            <div class="appointment-details">
+              <h3 style="color: #ec4899; margin-top: 0;">Client Information</h3>
+              <div class="detail-row">
+                <span class="detail-label">Name:</span>
+                <span class="detail-value">${appointmentData.name}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Email:</span>
+                <span class="detail-value"><a href="mailto:${appointmentData.email}">${appointmentData.email}</a></span>
+              </div>
+              ${
+                appointmentData.phone
+                  ? `
+              <div class="detail-row">
+                <span class="detail-label">Phone:</span>
+                <span class="detail-value"><a href="tel:${appointmentData.phone}">${appointmentData.phone}</a></span>
+              </div>
+              `
+                  : ""
+              }
+              <div class="detail-row">
+                <span class="detail-label">Service:</span>
+                <span class="detail-value">${appointmentData.service}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Date:</span>
+                <span class="detail-value">${appointmentData.date}</span>
+              </div>
+              <div class="detail-row">
+                <span class="detail-label">Time:</span>
+                <span class="detail-value">${appointmentData.time}</span>
+              </div>
+              ${
+                appointmentData.message
+                  ? `
+              <div class="detail-row">
+                <span class="detail-label">Message:</span>
+                <span class="detail-value">${appointmentData.message}</span>
+              </div>
+              `
+                  : ""
+              }
             </div>
+
+            <p><strong>Action Required:</strong> Please contact the client to confirm the appointment details.</p>
           </div>
         </div>
       </body>
@@ -145,42 +223,45 @@ export async function sendAdminNotification(details: {
 
   try {
     await transporter.sendMail({
-      from: `"MH Digital Solutions Website" <${gmailUser}>`,
-      to: adminEmail,
-      subject: `New Appointment: ${details.name} - ${details.service}`,
+      from: `"MH Digital Solutions" <${process.env.GMAIL_USER}>`,
+      to: process.env.ADMIN_EMAIL,
+      subject: `New Appointment: ${appointmentData.name} - ${appointmentData.service}`,
       html: htmlContent,
     })
-    console.log("[v0] Admin notification sent to:", adminEmail)
+    console.log("[v0] Admin notification email sent successfully")
   } catch (error) {
-    console.error("[v0] Error sending admin notification:", error)
+    console.error("[v0] Error sending admin notification email:", error)
   }
 }
 
-export async function sendEmail(to: string, subject: string, html: string) {
-  const gmailUser = process.env.GMAIL_USER
-  const gmailPassword = process.env.GMAIL_PASSWORD
+export async function sendEmail(options: {
+  to: string
+  subject: string
+  html: string
+}) {
+  console.log("[v0] Sending email to:", options.to)
 
-  if (!gmailUser || !gmailPassword) {
-    console.log("[v0] Email not sent: GMAIL credentials not configured")
+  if (!process.env.GMAIL_USER || !process.env.GMAIL_PASSWORD) {
+    console.error("[v0] Gmail credentials not configured")
     return
   }
 
-  const transporter = nodemailer.createTransporter({
+  const transporter = nodemailer.createTransport({
     service: "gmail",
     auth: {
-      user: gmailUser,
-      pass: gmailPassword,
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASSWORD,
     },
   })
 
   try {
     await transporter.sendMail({
-      from: `"MH Digital Solutions" <${gmailUser}>`,
-      to,
-      subject,
-      html,
+      from: `"MH Digital Solutions" <${process.env.GMAIL_USER}>`,
+      to: options.to,
+      subject: options.subject,
+      html: options.html,
     })
-    console.log("[v0] Email sent successfully to:", to)
+    console.log("[v0] Email sent successfully")
   } catch (error) {
     console.error("[v0] Error sending email:", error)
   }
