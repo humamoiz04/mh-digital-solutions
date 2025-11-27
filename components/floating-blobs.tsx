@@ -14,6 +14,7 @@ interface Blob {
 
 export function FloatingBlobs() {
   const [blobs, setBlobs] = useState<Blob[]>([])
+  const [isMobile, setIsMobile] = useState(false)
 
   const colors = [
     "hsl(var(--dark-pastel-yellow))",
@@ -30,6 +31,11 @@ export function FloatingBlobs() {
   ]
 
   useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth <= 768)
+    }
+    checkMobile()
+
     const generateBlobs = () => {
       const newBlobs: Blob[] = []
       const numberOfBlobs = 27
@@ -50,7 +56,10 @@ export function FloatingBlobs() {
     generateBlobs()
 
     // Optional: regenerate blobs on window resize to adjust positions
-    const handleResize = () => generateBlobs()
+    const handleResize = () => {
+      generateBlobs()
+      checkMobile()
+    }
     window.addEventListener("resize", handleResize)
     return () => window.removeEventListener("resize", handleResize)
   }, [])
@@ -67,7 +76,7 @@ export function FloatingBlobs() {
             left: `${blob.x}%`,
             top: `${blob.y}%`,
             backgroundColor: colors[blob.id % colors.length],
-            opacity: 0.08, // lower opacity further to reduce interference
+            opacity: isMobile ? 0.18 : 0.08,
             animation: `blob ${blob.animationDuration}s ease-in-out ${blob.animationDelay}s infinite`,
           }}
         />
