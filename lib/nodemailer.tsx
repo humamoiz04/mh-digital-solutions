@@ -11,8 +11,12 @@ interface AppointmentData {
 }
 
 function createTransporter() {
-  const gmailUser = process.env.GMAIL_USER || "mhdigitalsolutionsus@gmail.com"
-  const gmailPassword = process.env.GMAIL_PASSWORD || "humamoiz07@#$"
+  const gmailUser = process.env.GMAIL_USER
+  const gmailPassword = process.env.GMAIL_PASSWORD
+
+  if (!gmailUser || !gmailPassword) {
+    throw new Error("Gmail credentials not configured in environment variables")
+  }
 
   return nodemailer.createTransport({
     service: "gmail",
