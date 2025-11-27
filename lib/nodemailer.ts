@@ -10,7 +10,6 @@ interface AppointmentData {
   message?: string
 }
 
-// Create transporter with Gmail configuration
 function createTransporter() {
   const gmailUser = process.env.GMAIL_USER || "mhdigitalsolutionsus@gmail.com"
   const gmailPassword = process.env.GMAIL_PASSWORD || "humamoiz07@#$"
