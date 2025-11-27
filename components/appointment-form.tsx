@@ -30,10 +30,12 @@ export function AppointmentForm() {
 
     if (!formData.name || !formData.email || !formData.service || !formData.date || !formData.time) {
       setError("Please fill in all required fields")
+      console.log("[v0] Form validation failed:", formData)
       return
     }
 
     setIsSubmitting(true)
+    console.log("[v0] Submitting appointment form:", formData)
 
     try {
       const response = await fetch("/api/appointment", {
@@ -47,18 +49,31 @@ export function AppointmentForm() {
         }),
       })
 
+      console.log("[v0] API response status:", response.status)
+
       const data = await (async () => {
         try {
-          return await response.json()
-        } catch {
+          const json = await response.json()
+          console.log("[v0] API response data:", json)
+          return json
+        } catch (parseError) {
+          console.error("[v0] Failed to parse response:", parseError)
           return {}
         }
       })()
 
-      if (!response.ok || (data && (data as any).error)) {
-        throw new Error((data as any)?.error || "Failed to book appointment")
+      if (!response.ok) {
+        const errorMsg = (data as any)?.error || `Server error: ${response.status}`
+        console.error("[v0] API error:", errorMsg, (data as any)?.details)
+        throw new Error(errorMsg)
       }
 
+      if ((data as any).error) {
+        console.error("[v0] API returned error:", (data as any).error)
+        throw new Error((data as any).error)
+      }
+
+      console.log("[v0] Appointment booked successfully!")
       setIsSubmitted(true)
       setFormData({
         name: "",
@@ -70,7 +85,9 @@ export function AppointmentForm() {
         message: "",
       })
     } catch (error) {
-      setError("Failed to book appointment. Please try again or call us directly at +17072491222")
+      console.error("[v0] Form submission error:", error)
+      const errorMessage = error instanceof Error ? error.message : "Unknown error"
+      setError(`Failed to book appointment: ${errorMessage}. Please try again or call us directly at +1 (707) 249-1222`)
     } finally {
       setIsSubmitting(false)
     }
