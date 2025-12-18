@@ -54,6 +54,187 @@ const nextConfig = {
         destination: 'https://www.mhdigitalsolution.com/:path*',
         permanent: true,
       },
+      {
+        source: '/mt',
+        destination: '/',
+        permanent: true,
+      },
+      
+      // These are from broken local service pages that don't match new structure
+      {
+        source: '/local/jackson/seo',
+        destination: '/locations/wyoming/jackson-hole',
+        permanent: true,
+      },
+      {
+        source: '/local/jackson/web-design',
+        destination: '/locations/wyoming/jackson-hole',
+        permanent: true,
+      },
+      {
+        source: '/local/jackson/digital-marketing',
+        destination: '/locations/wyoming/jackson-hole',
+        permanent: true,
+      },
+      {
+        source: '/local/jackson/near-me',
+        destination: '/locations/wyoming/jackson-hole',
+        permanent: true,
+      },
+      {
+        source: '/local/cheyenne/seo',
+        destination: '/locations/wyoming/cheyenne',
+        permanent: true,
+      },
+      {
+        source: '/local/cheyenne/web-design',
+        destination: '/locations/wyoming/cheyenne',
+        permanent: true,
+      },
+      {
+        source: '/local/cheyenne/digital-marketing',
+        destination: '/locations/wyoming/cheyenne',
+        permanent: true,
+      },
+      {
+        source: '/local/cheyenne/near-me',
+        destination: '/locations/wyoming/cheyenne',
+        permanent: true,
+      },
+      {
+        source: '/local/casper/seo',
+        destination: '/locations/wyoming/casper',
+        permanent: true,
+      },
+      {
+        source: '/local/casper/web-design',
+        destination: '/locations/wyoming/casper',
+        permanent: true,
+      },
+      {
+        source: '/local/casper/digital-marketing',
+        destination: '/locations/wyoming/casper',
+        permanent: true,
+      },
+      {
+        source: '/local/casper/near-me',
+        destination: '/locations/wyoming/casper',
+        permanent: true,
+      },
+      {
+        source: '/local/laramie/web-design',
+        destination: '/locations/wyoming/laramie',
+        permanent: true,
+      },
+      {
+        source: '/local/laramie/seo',
+        destination: '/locations/wyoming/laramie',
+        permanent: true,
+      },
+      {
+        source: '/local/laramie/near-me',
+        destination: '/locations/wyoming/laramie',
+        permanent: true,
+      },
+      {
+        source: '/local/gillette/:service*',
+        destination: '/locations/wyoming',
+        permanent: true,
+      },
+      {
+        source: '/local/sheridan/:service*',
+        destination: '/locations/wyoming',
+        permanent: true,
+      },
+      {
+        source: '/local/rock-springs/:service*',
+        destination: '/locations/wyoming',
+        permanent: true,
+      },
+      // Montana cities
+      {
+        source: '/local/bozeman/:service*',
+        destination: '/locations',
+        permanent: true,
+      },
+      {
+        source: '/local/missoula/:service*',
+        destination: '/locations',
+        permanent: true,
+      },
+      {
+        source: '/local/helena/:service*',
+        destination: '/locations',
+        permanent: true,
+      },
+      {
+        source: '/local/billings/:service*',
+        destination: '/locations',
+        permanent: true,
+      },
+      {
+        source: '/local/butte/:service*',
+        destination: '/locations',
+        permanent: true,
+      },
+      {
+        source: '/local/great-falls/:service*',
+        destination: '/locations',
+        permanent: true,
+      },
+      // West Virginia cities
+      {
+        source: '/local/morgantown/seo',
+        destination: '/locations/west-virginia/morgantown',
+        permanent: true,
+      },
+      {
+        source: '/local/morgantown/web-design',
+        destination: '/locations/west-virginia/morgantown',
+        permanent: true,
+      },
+      {
+        source: '/local/morgantown/digital-marketing',
+        destination: '/locations/west-virginia/morgantown',
+        permanent: true,
+      },
+      {
+        source: '/local/morgantown/near-me',
+        destination: '/locations/west-virginia/morgantown',
+        permanent: true,
+      },
+      {
+        source: '/local/charleston/:service*',
+        destination: '/locations/west-virginia/charleston',
+        permanent: true,
+      },
+      {
+        source: '/local/huntington/:service*',
+        destination: '/locations/west-virginia/huntington',
+        permanent: true,
+      },
+      {
+        source: '/local/wheeling/:service*',
+        destination: '/locations/west-virginia',
+        permanent: true,
+      },
+      {
+        source: '/local/fairmont/:service*',
+        destination: '/locations/west-virginia',
+        permanent: true,
+      },
+      {
+        source: '/local/martinsburg/:service*',
+        destination: '/locations/west-virginia',
+        permanent: true,
+      },
+      // Catch-all for any remaining /local/ routes
+      {
+        source: '/local/:path*',
+        destination: '/locations',
+        permanent: true,
+      },
+
       // Duplicate blog post redirects to canonical versions
       {
         source: '/blog/ppc-optimization',

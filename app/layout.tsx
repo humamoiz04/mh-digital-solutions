@@ -97,6 +97,13 @@ export default function RootLayout({
   return (
     <html lang="en" className={inter.variable}>
       <head>
+        <Script
+          src="https://analytics.ahrefs.com/analytics.js"
+          data-key="fzQI789IpWezaXeYK9P2Ww"
+          async
+          strategy="afterInteractive"
+        />
+
         <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ9GMD3G1C" strategy="afterInteractive" />
         <Script
           id="google-analytics"
