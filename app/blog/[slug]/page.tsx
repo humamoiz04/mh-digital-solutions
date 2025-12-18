@@ -31,7 +31,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         </Link>
         <Card className="glass-card p-6 md:p-8">
           <Image
-            src={post.image || "/placeholder.svg"}
+            src={post.image || "/images/content-marketing-blog.webp"}
             alt={post.title}
             width={800}
             height={450}

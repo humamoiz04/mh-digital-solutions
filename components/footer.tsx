@@ -246,6 +246,66 @@ export function Footer() {
           </ul>
         </nav>
 
+        <nav className="space-y-2" aria-label="Areas We Serve">
+          <h3 className="text-lg font-semibold text-foreground">Areas We Serve</h3>
+          <ul className="space-y-1 text-sm">
+            <li>
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/locations/nebraska">
+                Nebraska
+              </Link>
+            </li>
+            <li>
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/locations/wyoming">
+                Wyoming
+              </Link>
+            </li>
+            <li>
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/locations/maine">
+                Maine
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors"
+                href="/locations/rhode-island"
+              >
+                Rhode Island
+              </Link>
+            </li>
+            <li>
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/locations/new-mexico">
+                New Mexico
+              </Link>
+            </li>
+            <li>
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/locations/iowa">
+                Iowa
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors"
+                href="/locations/massachusetts"
+              >
+                Massachusetts
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-primary transition-colors"
+                href="/locations/west-virginia"
+              >
+                West Virginia
+              </Link>
+            </li>
+            <li>
+              <Link className="text-muted-foreground hover:text-primary transition-colors" href="/locations/vermont">
+                Vermont
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
         <nav className="space-y-2" aria-label="Important links">
           <h3 className="text-lg font-semibold text-foreground">Important Links</h3>
           <ul className="space-y-1">

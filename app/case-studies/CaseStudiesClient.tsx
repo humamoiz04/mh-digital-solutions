@@ -77,7 +77,7 @@ export default function CaseStudiesClient() {
                 <div className="relative">
                   <Link href={`/case-studies/${study.slug}`} aria-label={`Read full case study: ${study.title}`}>
                     <Image
-                      src={study.image || "/placeholder.svg"}
+                      src={study.image || "/images/business-growth-arrow.webp"}
                       alt={study.title}
                       width={500}
                       height={250}
@@ -171,7 +171,7 @@ export default function CaseStudiesClient() {
             <Card key={index} className="glass-card flex flex-col">
               <Link href={`/case-studies/${study.slug}`} aria-label={`View project: ${study.title}`}>
                 <Image
-                  src={study.image || "/placeholder.svg"}
+                  src={study.image || "/images/seo-marketing-analytics.webp"}
                   alt={study.title}
                   width={400}
                   height={250}

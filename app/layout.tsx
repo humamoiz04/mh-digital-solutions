@@ -1,17 +1,17 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import { Inter } from 'next/font/google'
+import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import FloatingBlobs from "@/components/floating-blobs"
 import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
-import { SocialChatWidgets } from "@/components/social-chat-widgets"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
+import { ChristmasPromoPopup } from "@/components/christmas-promo-popup"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -256,7 +256,8 @@ export default function RootLayout({
                 name: "MH Digital Solution Clients",
               },
               datePublished: new Date().toISOString().split("T")[0],
-              reviewBody: "MH Digital Solution delivers exceptional results with innovative strategies and expert execution.",
+              reviewBody:
+                "MH Digital Solution delivers exceptional results with innovative strategies and expert execution.",
               aggregateRating: {
                 "@type": "AggregateRating",
                 ratingValue: "5",
@@ -294,7 +295,7 @@ export default function RootLayout({
               <Footer />
             </div>
             <EnhancedChatWidget />
-            <SocialChatWidgets />
+            <ChristmasPromoPopup />
             <WhatsAppWidget />
             <CookieConsentBanner />
           </div>

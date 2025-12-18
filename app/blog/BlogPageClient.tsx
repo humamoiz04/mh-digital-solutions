@@ -81,7 +81,7 @@ export default function BlogPageClient() {
                 <div className="relative">
                   <Link href={`/blog/${post.slug}`}>
                     <Image
-                      src={post.image || "/placeholder.svg"}
+                      src={post.image || "/images/digital-marketing-blog.webp"}
                       alt={post.title}
                       width={400}
                       height={200}
@@ -160,7 +160,7 @@ export default function BlogPageClient() {
             <Card key={index} className="glass-card flex flex-col group scroll-fade-in">
               <Link href={`/blog/${post.slug}`}>
                 <Image
-                  src={post.image || "/placeholder.svg"}
+                  src={post.image || "/images/content-marketing-blog.webp"}
                   alt={post.title}
                   width={400}
                   height={250}

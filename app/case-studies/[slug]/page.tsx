@@ -33,7 +33,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         </Link>
         <Card className="glass-card p-6 md:p-8">
           <Image
-            src={caseStudy.image || "/placeholder.svg"}
+            src={caseStudy.image || "/images/business-consultation-analytics.webp"}
             alt={caseStudy.title}
             width={900}
             height={500}

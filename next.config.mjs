@@ -54,6 +54,17 @@ const nextConfig = {
         destination: 'https://www.mhdigitalsolution.com/:path*',
         permanent: true,
       },
+      // Duplicate blog post redirects to canonical versions
+      {
+        source: '/blog/ppc-optimization',
+        destination: '/blog/ppc-optimization-guide',
+        permanent: true,
+      },
+      {
+        source: '/blog/:clutch_profile_url',
+        destination: '/blog',
+        permanent: true,
+      },
       // Legacy HTML redirects
       {
         source: '/home',
