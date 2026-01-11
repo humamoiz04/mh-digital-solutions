@@ -1,13 +1,13 @@
 [build]
-  command = "npm run build"
+  command = "next build && next export"
   functions = "api"
-  publish = ".next/static"
+  publish = "out"
 
 [build.environment]
   NODE_VERSION = "20"
   NPM_VERSION = "10"
 
-# Redirect rules
+# Redirect rules - place specific redirects before catch-all
 [[redirects]]
   from = "/services/consultation"
   to = "/services/business-consulting"
