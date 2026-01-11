@@ -12,6 +12,9 @@ import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
 import { ChristmasPromoPopup } from "@/components/christmas-promo-popup"
+import { NewYearPromoBar } from "@/components/new-year-promo-bar"
+import { GlowingNetworkBackground } from "@/components/glowing-network-background"
+import { AIChatbot } from "@/components/ai-chatbot"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -23,11 +26,11 @@ const inter = Inter({
 })
 
 export const metadata: Metadata = {
-  title: "MH Digital Solution - AI-Powered Digital Marketing & Web Development",
+  title: "MH Digital Solution - Digital Marketing & Web Development in Vacaville, CA",
   description:
-    "Transform your business with our innovative digital marketing, web development, and AI automation solutions. Trusted by 500+ clients worldwide with proven ROI results.",
+    "Transform your Northern California business with innovative digital marketing, web development, and AI automation solutions. Trusted by 500+ clients with proven ROI results. Serving Vacaville, Fairfield, Dixon, Vallejo, and surrounding areas.",
   keywords:
-    "digital marketing, web development, AI automation, SEO services, PPC advertising, social media marketing, business consulting, e-commerce solutions, mobile app development",
+    "digital marketing Vacaville, web development California, SEO services, PPC advertising, social media marketing, business consulting, e-commerce solutions, mobile app development, Fairfield, Dixon, Vallejo",
   authors: [{ name: "MH Digital Solution", url: "https://www.mhdigitalsolution.com" }],
   creator: "MH Digital Solution",
   publisher: "MH Digital Solution",
@@ -40,9 +43,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "MH Digital Solution - AI-Powered Digital Marketing & Web Development",
+    title: "MH Digital Solution - Digital Marketing & Web Development in Vacaville, CA",
     description:
-      "Transform your business with our innovative digital marketing, web development, and AI automation solutions. Trusted by 500+ clients worldwide with proven ROI results.",
+      "Transform your Northern California business with innovative digital marketing solutions. Trusted by 500+ clients with proven ROI results.",
     url: "https://www.mhdigitalsolution.com",
     siteName: "MH Digital Solution",
     images: [
@@ -128,12 +131,12 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
-        <meta name="theme-color" content="#d946ef" />
-        <meta name="color-scheme" content="light dark" />
+        <meta name="theme-color" content="#1a1a1a" />
+        <meta name="color-scheme" content="dark light" />
         <meta name="format-detection" content="telephone=no" />
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <meta name="apple-mobile-web-app-title" content="MH Digital Solution" />
 
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -153,10 +156,14 @@ export default function RootLayout({
               telephone: "+17072491222",
               email: "info@mhdigitalsolution.com",
               areaServed: [
+                { "@type": "City", name: "Vacaville" },
+                { "@type": "City", name: "Fairfield" },
+                { "@type": "City", name: "Dixon" },
+                { "@type": "City", name: "Vallejo" },
+                { "@type": "City", name: "Concord" },
+                { "@type": "City", name: "Walnut Creek" },
+                { "@type": "State", name: "California" },
                 { "@type": "Country", name: "United States" },
-                { "@type": "Country", name: "Malta" },
-                { "@type": "State", name: "Wyoming" },
-                { "@type": "State", name: "Colorado" },
               ],
               sameAs: [
                 "https://www.facebook.com/profile.php?id=61569037172478",
@@ -282,31 +289,27 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} font-sans antialiased`}>
-        <a
-          href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-primary focus:text-primary-foreground focus:rounded-md focus:shadow-lg"
-        >
-          Skip to main content
-        </a>
+      <body className="relative bg-black text-white overflow-x-hidden">
+        <GlowingNetworkBackground />
 
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          <div className="relative min-h-screen flex flex-col">
+        {/* Content wrapper with relative positioning to appear above background */}
+        <div className="relative z-10">
+          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
             <FloatingBlobs />
-            <div className="relative z-10 backdrop-blur-sm bg-white/5 min-h-screen flex flex-col">
-              <Header />
-              <PromoBanner />
-              <main id="main-content" className="flex-1" role="main">
-                {children}
-              </main>
-              <Footer />
-            </div>
-            <EnhancedChatWidget />
-            <ChristmasPromoPopup />
-            <WhatsAppWidget />
+            <NewYearPromoBar />
+            <Header />
+            <PromoBanner />
+            <main id="main-content" className="flex-1" role="main">
+              {children}
+            </main>
+            <Footer />
             <CookieConsentBanner />
-          </div>
-        </ThemeProvider>
+            <ChristmasPromoPopup />
+            <EnhancedChatWidget />
+            <WhatsAppWidget />
+            <AIChatbot />
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   )

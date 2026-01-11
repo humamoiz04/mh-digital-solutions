@@ -36,45 +36,49 @@ export function Header() {
   }
 
   return (
-    <header className="flex items-center justify-between h-14 sm:h-16 px-3 sm:px-4 md:px-6 border-b bg-background/80 backdrop-blur-sm sticky top-0 z-50">
-      <Link className="flex items-center gap-2" href="/" aria-label="MH Digital Solution Home">
-        <Image
-          src="/images/mh-digital-solutions-logo.webp"
-          alt="MH Digital Solution Logo"
-          width={32}
-          height={32}
-          className="sm:w-10 sm:h-10"
-          priority
-        />
-        <span className="text-base sm:text-lg font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent">
-          MH Digital Solution
-        </span>
+    <header className="flex items-center justify-between h-16 sm:h-20 px-4 sm:px-6 md:px-8 bg-gradient-to-r from-slate-950 via-slate-900 to-slate-950 border-b border-slate-800 sticky top-0 z-40 shadow-lg">
+      <Link className="flex items-center gap-3" href="/" aria-label="MH Digital Solution Home">
+        <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full bg-gradient-to-br from-[#ff6b9d] via-[#e49273] to-[#a8d0d6] p-1 flex items-center justify-center shadow-lg hover:shadow-xl transition-shadow">
+          <Image
+            src="/images/mh-digital-solutions-logo.webp"
+            alt="MH Digital Solution Logo"
+            width={40}
+            height={40}
+            className="sm:w-12 sm:h-12 rounded-full"
+            priority
+          />
+        </div>
+        <span className="text-lg sm:text-xl font-black gradient-text hidden sm:inline-block">MH Digital Solution</span>
       </Link>
-      <nav className="hidden md:flex items-center gap-4 lg:gap-6" role="navigation" aria-label="Main navigation">
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/">
+
+      <nav className="hidden md:flex items-center gap-8" role="navigation" aria-label="Main navigation">
+        <Link
+          className="text-sm text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors duration-300"
+          href="/"
+        >
           Home
         </Link>
         <DropdownMenu>
           <DropdownMenuTrigger
-            className="flex items-center gap-1 text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
+            className="flex items-center gap-1 text-sm text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors duration-300"
             aria-label="Services menu"
           >
             Services <ChevronDown className="h-4 w-4" />
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-64 max-h-96 overflow-y-auto">
+          <DropdownMenuContent className="w-72 max-h-96 overflow-y-auto glass-card border-0">
             <DropdownMenuItem asChild>
-              <Link href="/services" className="font-semibold">
+              <Link href="/services" className="font-bold gradient-text">
                 All Services
               </Link>
             </DropdownMenuItem>
             {Object.entries(serviceCategories).map(([category, services]) => (
               <div key={category}>
-                <div className="px-2 py-1.5 text-sm font-semibold text-muted-foreground border-t mt-1 pt-2">
+                <div className="px-3 py-2 text-xs font-bold text-slate-400 border-t border-slate-700 mt-1 pt-3 uppercase tracking-wide">
                   {category}
                 </div>
                 {services.map((service) => (
                   <DropdownMenuItem key={service.href} asChild>
-                    <Link href={service.href} className="pl-4">
+                    <Link href={service.href} className="pl-6 text-sm text-slate-300 hover:text-[#a8d0d6]">
                       {service.name}
                     </Link>
                   </DropdownMenuItem>
@@ -83,121 +87,118 @@ export function Header() {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/about">
+        <Link
+          className="text-sm text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors duration-300"
+          href="/about"
+        >
           About
         </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/team">
+        <Link
+          className="text-sm text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors duration-300"
+          href="/team"
+        >
           Team
         </Link>
         <Link
-          className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
-          href="/the-mh-edge"
-        >
-          The MH Edge
-        </Link>
-        <Link
-          className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
+          className="text-sm text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors duration-300"
           href="/portfolio"
         >
           Portfolio
         </Link>
         <Link
-          className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors"
-          href="/case-studies"
+          className="text-sm text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors duration-300"
+          href="/blog"
         >
-          Case Studies
-        </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/blog">
           Blog
         </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/faq">
-          FAQ
-        </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/pricing">
+        <Link
+          className="text-sm text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors duration-300"
+          href="/pricing"
+        >
           Pricing
         </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/local">
-          Local Services
-        </Link>
-        <Link className="text-sm lg:text-base text-foreground hover:text-fuchsia-600 transition-colors" href="/contact">
-          <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white text-sm">
+
+        <Link href="/contact">
+          <Button className="gradient-button font-bold px-6 h-11 rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
             Contact Us
           </Button>
         </Link>
       </nav>
+
+      {/* Mobile Menu */}
       <Sheet>
         <SheetTrigger asChild>
-          <Button className="md:hidden bg-transparent" size="icon" variant="outline" aria-label="Open mobile menu">
-            <Menu className="h-5 w-5 sm:h-6 sm:w-6" />
+          <Button
+            className="md:hidden bg-transparent border border-slate-700 hover:border-[#a8d0d6]"
+            size="icon"
+            variant="outline"
+            aria-label="Open mobile menu"
+          >
+            <Menu className="h-5 w-5 text-slate-300" />
             <span className="sr-only">Toggle navigation menu</span>
           </Button>
         </SheetTrigger>
-        <SheetContent side="right" className="w-[280px] sm:w-[320px]">
+        <SheetContent side="right" className="w-[280px] sm:w-[320px] bg-slate-950 border-l border-slate-800">
           <nav
             className="flex flex-col gap-4 p-4 pt-8 max-h-full overflow-y-auto"
             role="navigation"
             aria-label="Mobile navigation"
           >
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/">
+            <Link className="text-base text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors py-2" href="/">
               Home
             </Link>
             <Link
-              className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2 font-semibold"
+              className="text-base text-slate-300 hover:text-[#a8d0d6] font-bold transition-colors py-2"
               href="/services"
             >
               All Services
             </Link>
             {Object.entries(serviceCategories).map(([category, services]) => (
               <div key={category} className="ml-4">
-                <div className="text-sm font-semibold text-muted-foreground py-1">{category}</div>
+                <div className="text-xs font-bold text-slate-500 py-2 uppercase tracking-wide">{category}</div>
                 {services.map((service) => (
                   <Link
                     key={service.href}
                     href={service.href}
-                    className="block text-sm text-foreground hover:text-fuchsia-600 transition-colors py-1 pl-2"
+                    className="block text-sm text-slate-300 hover:text-[#a8d0d6] transition-colors py-1.5 pl-2"
                   >
                     {service.name}
                   </Link>
                 ))}
               </div>
             ))}
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/about">
+            <Link
+              className="text-base text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors py-2"
+              href="/about"
+            >
               About
             </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/team">
+            <Link
+              className="text-base text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors py-2"
+              href="/team"
+            >
               Team
             </Link>
             <Link
-              className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2"
-              href="/the-mh-edge"
+              className="text-base text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors py-2"
+              href="/portfolio"
             >
-              The MH Edge
-            </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/portfolio">
               Portfolio
             </Link>
             <Link
-              className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2"
-              href="/case-studies"
+              className="text-base text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors py-2"
+              href="/blog"
             >
-              Case Studies
-            </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/blog">
               Blog
             </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/faq">
-              FAQ
-            </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/pricing">
+            <Link
+              className="text-base text-slate-300 hover:text-[#a8d0d6] font-medium transition-colors py-2"
+              href="/pricing"
+            >
               Pricing
             </Link>
-            <Link className="text-base text-foreground hover:text-fuchsia-600 transition-colors py-2" href="/local">
-              Local Services
-            </Link>
-            <Link href="/contact" className="mt-4">
-              <Button className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700 text-white w-full text-base py-3">
-                Contact Us
-              </Button>
+            <Link href="/contact" className="mt-6">
+              <Button className="gradient-button font-bold w-full h-12 rounded-lg">Contact Us</Button>
             </Link>
           </nav>
         </SheetContent>

@@ -1,15 +1,19 @@
 import type { Metadata } from "next"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, ExternalLink, TrendingUp, Calendar, Globe } from "lucide-react"
+import { ExternalLink } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Portfolio - MH Digital Solutions",
   description:
     "Explore our portfolio of successful digital projects including web development, mobile apps, and digital marketing campaigns.",
+  openGraph: {
+    title: "Portfolio - MH Digital Solutions",
+    description: "Explore our successful digital projects and case studies.",
+    url: "https://www.mhdigitalsolution.com/portfolio",
+  },
 }
 
 export default function PortfolioPage() {
@@ -121,16 +125,16 @@ export default function PortfolioPage() {
   ]
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-background via-background to-muted/20">
+    <div className="min-h-screen bg-slate-950">
       {/* Hero Section */}
       <section className="py-20 md:py-32">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <Badge className="mb-6 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white text-sm px-4 py-2">
+            <Badge className="mb-6 bg-gradient-to-r from-[#e49273] to-[#f1cea7] text-slate-900 text-sm px-4 py-2">
               Our Portfolio
             </Badge>
-            <h1 className="text-4xl md:text-6xl font-bold mb-6 gradient-text">Digital Solutions That Drive Results</h1>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <h1 className="text-4xl md:text-6xl font-bold mb-6 text-white">Digital Solutions That Drive Results</h1>
+            <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
               Explore our comprehensive portfolio of successful digital projects spanning web development, mobile
               applications, e-commerce platforms, and innovative digital solutions.
             </p>
@@ -152,81 +156,35 @@ export default function PortfolioPage() {
                     height={250}
                     className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"
                   />
-                  <div className="absolute top-4 left-4">
-                    <Badge variant="secondary" className="bg-white/90 text-gray-800">
-                      {project.category}
-                    </Badge>
-                  </div>
-                  <div className="absolute top-4 right-4">
-                    <Badge className="bg-gradient-to-r from-green-500 to-emerald-500 text-white">
-                      <TrendingUp className="w-3 h-3 mr-1" />
-                      {project.results}
-                    </Badge>
-                  </div>
                 </div>
-
                 <CardHeader>
-                  <div className="flex items-center justify-between mb-2">
-                    <Badge variant="outline" className="text-xs">
-                      <Calendar className="w-3 h-3 mr-1" />
-                      {project.year}
-                    </Badge>
-                    <Badge variant="outline" className="text-xs">
-                      {project.industry}
-                    </Badge>
+                  <div className="flex justify-between items-start mb-2">
+                    <span className="text-xs bg-slate-700 text-slate-200 px-2 py-1 rounded">{project.category}</span>
+                    <span className="text-xs text-slate-400">{project.year}</span>
                   </div>
-                  <CardTitle className="text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <p className="text-sm text-muted-foreground">{project.description}</p>
+                  <CardTitle className="text-white">{project.title}</CardTitle>
                 </CardHeader>
-
                 <CardContent className="space-y-4">
-                  <div className="space-y-2">
-                    <h4 className="font-medium text-sm text-foreground">Technologies Used:</h4>
-                    <div className="flex flex-wrap gap-1">
-                      {project.technologies.map((tech, idx) => (
-                        <Badge key={idx} variant="outline" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
+                  <p className="text-slate-300 text-sm">{project.description}</p>
+                  <div className="flex flex-wrap gap-1">
+                    {project.technologies.map((tech, i) => (
+                      <span key={i} className="text-xs bg-slate-700 text-slate-300 px-2 py-1 rounded">
+                        {tech}
+                      </span>
+                    ))}
                   </div>
-
-                  <a href={project.link} target="_blank" rel="noopener noreferrer">
-                    <Button className="w-full gradient-button group">
-                      <Globe className="mr-2 h-4 w-4" />
-                      View Live Project
-                      <ExternalLink className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </a>
+                  <Link
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-[#a8d0d6] hover:text-[#7ec8d3] font-semibold mt-4"
+                  >
+                    View Project
+                    <ExternalLink className="w-4 h-4 ml-2" />
+                  </Link>
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6 gradient-text">Ready to Start Your Project?</h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Let's discuss how we can bring your digital vision to life with our proven expertise and innovative
-            solutions.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contact">
-              <Button size="lg" className="gradient-button group">
-                Start Your Project
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-              </Button>
-            </Link>
-            <Link href="/services">
-              <Button size="lg" variant="outline" className="border-primary/20 hover:bg-primary/5 bg-transparent">
-                View Our Services
-              </Button>
-            </Link>
           </div>
         </div>
       </section>

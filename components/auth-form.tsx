@@ -5,7 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
 import { Separator } from "@/components/ui/separator"
-import { Github, Cookie as Google } from "lucide-react" // Assuming these icons are available or can be added
+import { Github, Mail } from "lucide-react" // replaced invalid Cookie alias with Mail for Google auth
 
 export function AuthForm() {
   return (
@@ -37,7 +37,7 @@ export function AuthForm() {
         </div>
         <div className="space-y-3">
           <Button variant="outline" className="w-full flex items-center gap-2 bg-background/50">
-            <Google className="h-5 w-5" />
+            <Mail className="h-5 w-5" /> {/* changed from Google to Mail icon */}
             Continue with Google
           </Button>
           <Button variant="outline" className="w-full flex items-center gap-2 bg-background/50">

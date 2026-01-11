@@ -27,11 +27,13 @@ export default function CaseStudiesClient() {
   const featuredStudies = caseStudies.filter((study) => study.featured)
 
   return (
-    <div className="relative z-10">
-      {/* removed animated section-with-blobs class */}
+    <div className="relative z-10 section-with-blobs">
       <Section className="py-16 md:py-24">
         <div className="text-center mb-12">
-          <Badge className="mb-4 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white" aria-label="Proven Results">
+          <Badge
+            className="mb-4 bg-gradient-to-r from-warm-coral to-soft-salmon-pink text-white"
+            aria-label="Proven Results"
+          >
             <span className="icon-gradient-bg w-4 h-4 mr-2" aria-hidden="true">
               <Award className="w-3 h-3" />
             </span>
@@ -73,7 +75,7 @@ export default function CaseStudiesClient() {
 
           <div className="grid gap-8 md:grid-cols-2 mb-8">
             {featuredStudies.slice(0, 4).map((study, index) => (
-              <Card key={index} className="glass-card border-2 border-fuchsia-200/20">
+              <Card key={index} className="glass-card border-2 border-mint-teal/20">
                 <div className="relative">
                   <Link href={`/case-studies/${study.slug}`} aria-label={`Read full case study: ${study.title}`}>
                     <Image
@@ -84,7 +86,7 @@ export default function CaseStudiesClient() {
                       className="w-full h-48 object-cover rounded-t-lg"
                     />
                   </Link>
-                  <Badge className="absolute top-3 left-3 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white">
+                  <Badge className="absolute top-3 left-3 bg-gradient-to-r from-warm-coral to-soft-salmon-pink text-white">
                     <TrendingUp className="w-3 h-3 mr-1" aria-hidden="true" />
                     Featured
                   </Badge>
@@ -108,15 +110,15 @@ export default function CaseStudiesClient() {
                   {/* Metrics Display */}
                   <div className="grid grid-cols-3 gap-2 mb-4">
                     {Object.entries(study.metrics).map(([key, value], idx) => (
-                      <div key={idx} className="text-center p-2 bg-fuchsia-50 rounded">
-                        <div className="text-sm font-bold text-fuchsia-600">{value}</div>
+                      <div key={idx} className="text-center p-2 bg-dusty-rose/30 rounded">
+                        <div className="text-sm font-bold text-mint-teal">{value}</div>
                         <div className="text-xs text-muted-foreground capitalize">{key}</div>
                       </div>
                     ))}
                   </div>
 
                   <Link href={`/case-studies/${study.slug}`} aria-label={`Read full case study: ${study.title}`}>
-                    <Button className="w-full">
+                    <Button className="w-full btn-mint-teal">
                       Read Full Case Study
                       <ExternalLink className="ml-2 h-4 w-4" aria-hidden="true" />
                     </Button>
@@ -136,7 +138,7 @@ export default function CaseStudiesClient() {
 
           <div className="relative max-w-md mx-auto">
             <Search
-              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4"
+              className="absolute left-3 top-1/2 -translate-y-1/2 text-muted-foreground h-4 w-4 colorful-icon"
               aria-hidden="true"
             />
             <Input
@@ -154,7 +156,9 @@ export default function CaseStudiesClient() {
               <Badge
                 key={industry}
                 variant={selectedIndustry === industry ? "default" : "outline"}
-                className="cursor-pointer"
+                className={`cursor-pointer transition-all ${
+                  selectedIndustry === industry ? "bg-mint-teal text-white" : ""
+                }`}
                 onClick={() => setSelectedIndustry(industry)}
                 aria-pressed={selectedIndustry === industry}
                 role="button"
@@ -197,7 +201,10 @@ export default function CaseStudiesClient() {
               <CardContent className="flex-1 text-muted-foreground">{study.description}</CardContent>
               <div className="p-6 pt-0">
                 <Link href={`/case-studies/${study.slug}`} aria-label={`Open project: ${study.title}`}>
-                  <Button variant="outline" className="w-full bg-transparent">
+                  <Button
+                    variant="outline"
+                    className="w-full bg-transparent border-mint-teal/50 hover:bg-mint-teal/10 hover:border-mint-teal text-charcoal-grey"
+                  >
                     View Portfolio Project <ArrowRight className="ml-2 h-4 w-4" aria-hidden="true" />
                   </Button>
                 </Link>
@@ -222,10 +229,12 @@ export default function CaseStudiesClient() {
             </p>
             <div className="flex gap-4 justify-center">
               <Link href="https://calendly.com/mhdigitalsolutionsus" rel="noopener noreferrer" target="_blank">
-                <Button>Get Your Free Strategy Session</Button>
+                <Button className="btn-mint-teal">Get Your Free Strategy Session</Button>
               </Link>
               <Link href="/contact">
-                <Button variant="outline">Contact Our Team</Button>
+                <Button variant="outline" className="border-mint-teal/50 hover:bg-mint-teal/10 bg-transparent">
+                  Contact Our Team
+                </Button>
               </Link>
             </div>
           </div>

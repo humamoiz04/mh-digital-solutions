@@ -48,10 +48,10 @@ export default function BlogPageClient() {
   const featuredPosts = blogPosts.filter((post) => post.featured)
 
   return (
-    <div className="relative z-10 section-blobs">
+    <div className="relative z-10 section-with-blobs">
       <Section className="py-16 md:py-24">
         <div className="text-center mb-12 scroll-fade-in">
-          <Badge className="mb-4 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white">
+          <Badge className="mb-4 bg-gradient-to-r from-warm-coral to-soft-salmon-pink text-white">
             <div className="icon-gradient-bg w-4 h-4 mr-2">
               <TrendingUp className="w-3 h-3" />
             </div>
@@ -75,7 +75,7 @@ export default function BlogPageClient() {
             {featuredPosts.map((post, index) => (
               <Card
                 key={index}
-                className="glass-card group border-2 border-fuchsia-200/20 scroll-fade-in"
+                className="glass-card group border-2 border-mint-teal/20 scroll-fade-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 <div className="relative">
@@ -88,7 +88,7 @@ export default function BlogPageClient() {
                       className="w-full h-40 object-cover rounded-t-lg group-hover:scale-110 transition-transform duration-300"
                     />
                   </Link>
-                  <Badge className="absolute top-3 left-3 bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white">
+                  <Badge className="absolute top-3 left-3 bg-gradient-to-r from-warm-coral to-soft-salmon-pink text-white">
                     Featured
                   </Badge>
                 </div>
@@ -144,7 +144,7 @@ export default function BlogPageClient() {
                 variant={selectedCategory === category ? "default" : "outline"}
                 className={`cursor-pointer transition-all ${
                   selectedCategory === category
-                    ? "bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white"
+                    ? "bg-gradient-to-r from-warm-coral to-soft-salmon-pink text-white"
                     : "hover:bg-primary/10"
                 }`}
                 onClick={() => setSelectedCategory(category)}

@@ -9,7 +9,7 @@ import { ClientNetworkSection } from "@/components/client-network-section"
 import { ServicesSection } from "@/components/services-section"
 import { CtaSection } from "@/components/cta-section"
 import { PortfolioShowcaseSection } from "@/components/portfolio-showcase-section"
-import { PartnerBadges } from "@/components/partner-badges" // fix wrong import path and symbol for partner badges
+import { PartnerBadges } from "@/components/partner-badges"
 import { StructuredData } from "@/components/structured-data"
 import { Card, CardContent } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -18,18 +18,15 @@ import Link from "next/link"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Digital Marketing Agency | MH Digital Solutions - AI-Powered Growth",
+  title: "Professional Web Design Vacaville & Solano | Affordable Packages from $100",
   description:
-    "Leading digital marketing agency specializing in SEO, PPC, social media, and web development. Empower your business with proven strategies and measurable ROI.",
+    "MH Digital provides enterprise-quality web design & SEO for small businesses in Vacaville and Solano County. Professional results, budget-friendly prices. Book your strategy call.",
   keywords:
-    "digital marketing agency, SEO services, PPC advertising, social media marketing, web development, AI automation, business growth",
-  alternates: {
-    canonical: "https://www.mhdigitalsolution.com",
-  },
+    "web design Vacaville, affordable web design Solano County, professional SEO services Fairfield, small business website packages, budget friendly marketing agency Vacaville",
   openGraph: {
-    title: "Digital Marketing Agency | MH Digital Solutions - AI-Powered Growth",
+    title: "Professional Web Design Vacaville & Solano | Affordable Packages from $100",
     description:
-      "Leading digital marketing agency specializing in SEO, PPC, social media, and web development. Trusted by 500+ clients worldwide.",
+      "Enterprise-quality web design & SEO for small businesses in Vacaville and Solano County. Professional results, budget-friendly prices.",
     url: "https://www.mhdigitalsolution.com",
     siteName: "MH Digital Solution",
     images: [
@@ -37,7 +34,7 @@ export const metadata: Metadata = {
         url: "https://www.mhdigitalsolution.com/images/og-image.webp",
         width: 1200,
         height: 630,
-        alt: "MH Digital Solution - Digital Marketing Agency",
+        alt: "Professional Web Design Vacaville - MH Digital Solution",
       },
     ],
     locale: "en_US",
@@ -84,7 +81,7 @@ export default function Home() {
 
       <Section glass>
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold bg-gradient-to-r from-fuchsia-600 to-pink-600 bg-clip-text text-transparent mb-4">
+          <h2 className="text-3xl font-bold bg-gradient-to-r from-[#e49273] to-[#f1cea7] bg-clip-text text-transparent mb-4">
             Latest Insights & Success Stories
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -96,7 +93,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-8 mb-12">
           <div className="space-y-6">
             <div className="flex items-center gap-2 mb-4">
-              <BookOpen className="h-5 w-5 text-fuchsia-600" />
+              <BookOpen className="h-5 w-5 text-[#e49273]" />
               <h3 className="text-xl font-semibold">Featured Articles</h3>
             </div>
             <div className="space-y-4">
@@ -104,7 +101,7 @@ export default function Home() {
                 <CardContent className="p-4">
                   <Link
                     href="/blog/ai-automation-revolution-2024"
-                    className="block hover:text-fuchsia-600 transition-colors"
+                    className="block hover:text-[#e49273] transition-colors"
                   >
                     <h4 className="font-semibold mb-2">
                       AI Automation Revolution 2024: Transform Your Business Operations
@@ -118,7 +115,7 @@ export default function Home() {
               </Card>
               <Card className="glass-card hover:shadow-lg transition-shadow">
                 <CardContent className="p-4">
-                  <Link href="/blog/seo-strategies-2024" className="block hover:text-fuchsia-600 transition-colors">
+                  <Link href="/blog/seo-strategies-2024" className="block hover:text-[#e49273] transition-colors">
                     <h4 className="font-semibold mb-2">SEO Strategies 2024: Dominate Search Rankings</h4>
                     <p className="text-sm text-muted-foreground">
                       Latest SEO techniques and strategies to boost your search engine visibility and drive organic
@@ -131,7 +128,7 @@ export default function Home() {
                 <CardContent className="p-4">
                   <Link
                     href="/blog/mobile-app-development-trends-2024"
-                    className="block hover:text-fuchsia-600 transition-colors"
+                    className="block hover:text-[#e49273] transition-colors"
                   >
                     <h4 className="font-semibold mb-2">Mobile App Development Trends 2024</h4>
                     <p className="text-sm text-muted-foreground">
@@ -145,7 +142,7 @@ export default function Home() {
 
           <div className="space-y-6">
             <div className="flex items-center gap-2 mb-4">
-              <FileText className="h-5 w-5 text-fuchsia-600" />
+              <FileText className="h-5 w-5 text-[#e49273]" />
               <h3 className="text-xl font-semibold">Success Stories</h3>
             </div>
             <div className="space-y-4">
@@ -153,7 +150,7 @@ export default function Home() {
                 <CardContent className="p-4">
                   <Link
                     href="/case-studies/techcorp-ai-automation"
-                    className="block hover:text-fuchsia-600 transition-colors"
+                    className="block hover:text-[#e49273] transition-colors"
                   >
                     <h4 className="font-semibold mb-2">TechCorp AI Automation: $2M Annual Savings</h4>
                     <p className="text-sm text-muted-foreground">
@@ -166,7 +163,7 @@ export default function Home() {
                 <CardContent className="p-4">
                   <Link
                     href="/case-studies/fitlife-gyms-scaling"
-                    className="block hover:text-fuchsia-600 transition-colors"
+                    className="block hover:text-[#e49273] transition-colors"
                   >
                     <h4 className="font-semibold mb-2">FitLife Gyms: 300% Growth Through Digital Marketing</h4>
                     <p className="text-sm text-muted-foreground">
@@ -180,7 +177,7 @@ export default function Home() {
                 <CardContent className="p-4">
                   <Link
                     href="/case-studies/healthcare-digital-transformation"
-                    className="block hover:text-fuchsia-600 transition-colors"
+                    className="block hover:text-[#e49273] transition-colors"
                   >
                     <h4 className="font-semibold mb-2">Healthcare Digital Transformation Success</h4>
                     <p className="text-sm text-muted-foreground">
@@ -198,7 +195,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               asChild
-              className="bg-gradient-to-r from-fuchsia-600 to-pink-600 hover:from-fuchsia-700 hover:to-pink-700"
+              className="bg-gradient-to-r from-[#e49273] to-[#f1cea7] hover:from-[#d17a60] hover:to-[#d9b894] text-white"
             >
               <Link href="/blog">
                 View All Articles
@@ -216,7 +213,6 @@ export default function Home() {
         <PortfolioShowcaseSection />
       </Section>
       <Section glass>
-        {/* <PartnerCertificationss /> */}
         <PartnerBadges />
       </Section>
       <Section glass>

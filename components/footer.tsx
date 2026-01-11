@@ -55,7 +55,7 @@ export function Footer() {
 
           <div className="flex space-x-4" role="list" aria-label="Social media links">
             <Link
-              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
+              className="text-muted-foreground hover:text-warm-coral transition-colors"
               href="https://www.facebook.com/profile.php?id=61569037172478"
               target="_blank"
               rel="noopener noreferrer"
@@ -64,7 +64,7 @@ export function Footer() {
               <Facebook className="h-6 w-6" />
             </Link>
             <Link
-              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
+              className="text-muted-foreground hover:text-warm-coral transition-colors"
               href="https://twitter.com/mhdigitalsol"
               target="_blank"
               rel="noopener noreferrer"
@@ -73,7 +73,7 @@ export function Footer() {
               <Twitter className="h-6 w-6" />
             </Link>
             <Link
-              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
+              className="text-muted-foreground hover:text-warm-coral transition-colors"
               href="https://linkedin.com/company/mh-digital-solution"
               target="_blank"
               rel="noopener noreferrer"
@@ -82,7 +82,7 @@ export function Footer() {
               <Linkedin className="h-6 w-6" />
             </Link>
             <Link
-              className="text-muted-foreground hover:text-fuchsia-600 transition-colors"
+              className="text-muted-foreground hover:text-warm-coral transition-colors"
               href="https://www.instagram.com/mh_digitalsolutions/"
               target="_blank"
               rel="noopener noreferrer"
@@ -94,7 +94,9 @@ export function Footer() {
         </div>
 
         <nav className="space-y-2" aria-label="Marketing services">
-          <h3 className="text-lg font-semibold text-foreground">Marketing Services</h3>
+          <h3 className="text-lg font-semibold bg-gradient-to-r from-[#FF00FF] to-[#00F0FF] text-transparent bg-clip-text">
+            Marketing Services
+          </h3>
           <ul className="space-y-1">
             <li>
               <Link
@@ -250,6 +252,14 @@ export function Footer() {
           <h3 className="text-lg font-semibold text-foreground">Areas We Serve</h3>
           <ul className="space-y-1 text-sm">
             <li>
+              <Link
+                className="text-muted-foreground hover:text-warm-coral transition-colors font-semibold text-warm-coral"
+                href="/local/rural-counties"
+              >
+                Rural Markets (25+ Counties)
+              </Link>
+            </li>
+            <li>
               <Link className="text-muted-foreground hover:text-primary transition-colors" href="/locations/nebraska">
                 Nebraska
               </Link>
@@ -342,6 +352,27 @@ export function Footer() {
             <li>
               <Link className="text-muted-foreground hover:text-primary transition-colors" href="/blog">
                 Blog
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-warm-coral transition-colors font-semibold text-warm-coral"
+                href="/offers/hundred-dollar-website"
+              >
+                $100 Website Deal
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-muted-foreground hover:text-warm-coral transition-colors"
+                href="/tools/website-cost-calculator"
+              >
+                Website Cost Calculator
+              </Link>
+            </li>
+            <li>
+              <Link className="text-muted-foreground hover:text-warm-coral transition-colors" href="/referral-rewards">
+                Referral Rewards
               </Link>
             </li>
             <li>

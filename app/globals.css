@@ -4,27 +4,35 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  /* Updated primary color from blue to fuchsia/pink */
-  --primary: 320 91.2% 59.8%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 220 14.3% 95.9%;
-  --secondary-foreground: 220.9 39.3% 11%;
-  --muted: 220 14.3% 95.9%;
-  --muted-foreground: 220 8.9% 46.1%;
-  --accent: 220 14.3% 95.9%;
-  --accent-foreground: 220.9 39.3% 11%;
+  /* Updated to jet dark black theme with vibrant accent colors */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+
+  /* Primary accent: Electric Teal */
+  --primary: 180 100% 50%;
+  --primary-foreground: 0 0% 0%;
+
+  /* Secondary accent: Luminous Magenta */
+  --secondary: 300 100% 50%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: #a0a0a0;
+
+  /* Accent color set to Electric Teal */
+  --accent: 180 100% 50%;
+  --accent-foreground: 0 0% 0%;
+
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 0 0% 98%;
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
-  /* Updated ring color to match new pink primary */
-  --ring: 320 91.2% 59.8%;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+
+  /* Ring color for focus states */
+  --ring: 180 100% 50%;
+
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -40,81 +48,86 @@
   --sidebar-border: oklch(0.922 0 0);
   --sidebar-ring: oklch(0.708 0 0);
 
-  /* Enhanced pink/fuchsia color palette with dark fuchsia additions */
-  --dark-fuchsia: 300 100% 25%;
-  --deep-fuchsia: 300 85% 35%;
-  --rich-fuchsia: 300 70% 45%;
-  --light-pink: 330 100% 85%;
-  --soft-pink: 330 80% 90%;
-  --pale-pink: 330 60% 95%;
+  /* New color palette aligned with design system */
+  --soft-salmon-pink: 350 100% 85%;
+  --dusty-rose: 340 45% 92%;
+  --mint-teal: 190 55% 70%;
+  --charcoal-grey: 0 0% 24%;
+  --medium-grey: 0 0% 50%;
+  --light-grey: 0 0% 95%;
+  --light-pink: 350 100% 90%;
+  --soft-pink: 340 80% 92%;
+  --pale-pink: 340 60% 95%;
 
-  --pastel-blue: 210 80% 85%;
-  --pastel-green: 120 60% 80%;
-  --pastel-yellow: 45 100% 80%;
-  --pastel-purple: 270 60% 85%;
-  --pastel-red: 0 80% 85%;
-  --pastel-orange: 30 90% 80%;
-  --pastel-pink: 330 80% 85%;
-  --pastel-teal: 180 70% 80%;
-  --pastel-indigo: 240 50% 85%;
-  --pastel-lime: 90 70% 80%;
-  --pastel-cyan: 180 80% 85%;
-  --pastel-fuchsia: 300 80% 85%;
+  /* New accent colors for enhanced design variety */
+  --warm-cream: 36 100% 85%;
+  --warm-coral: 12 95% 72%;
 
-  /* Enhanced dark pink/fuchsia colors for better contrast */
-  --dark-pastel-blue: 210 60% 60%;
-  --dark-pastel-green: 120 40% 55%;
-  --dark-pastel-yellow: 45 80% 55%;
-  --dark-pastel-purple: 270 40% 60%;
-  --dark-pastel-red: 0 60% 60%;
-  --dark-pastel-orange: 30 70% 55%;
-  --dark-pastel-pink: 330 70% 65%;
-  --dark-pastel-teal: 180 50% 55%;
-  --dark-pastel-indigo: 240 30% 60%;
-  --dark-pastel-lime: 90 50% 55%;
-  --dark-pastel-cyan: 180 60% 60%;
-  --dark-pastel-fuchsia: 300 70% 65%;
+  /* Enhanced peach/pink/coral palette for aesthetic redesign */
+  --aesthetic-peach: #f1cea7;
+  --aesthetic-coral: #e49273;
+  --aesthetic-dusty-rose: #d4847a;
+  --aesthetic-soft-pink: #ffc0cb;
+  --aesthetic-warm-cream: #fff5f0;
+  --aesthetic-mint-accent: #a8d0d6;
+
+  /* Added hex color variables for decorative background elements */
+  /* Decorative background color utilities */
+  --bg-aesthetic-peach: #f1cea7;
+  --bg-aesthetic-coral: #e49273;
+  --bg-aesthetic-dusty-rose: #d4847a;
+  --bg-aesthetic-soft-pink: #ffc0cb;
+  --bg-aesthetic-warm-cream: #fff5f0;
+  --bg-aesthetic-mint-accent: #a8d0d6;
+
+  /* New vibrant color variables for glassmorphic design */
+  --electric-teal: #00f0ff;
+  --luminous-magenta: #ff00ff;
+  --neon-green: #00ff41;
+  --deep-violet: #6d28d9;
+  --vibrant-cyan: #00d9ff;
+  --hot-pink: #ff006e;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.145 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.145 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  /* Updated dark mode primary to pink */
-  --primary: 320 91.2% 59.8%;
-  --primary-foreground: 0 0% 98%;
-  --secondary: 240 3.7% 15.9%;
-  --secondary-foreground: 0 0% 98%;
+  /* Dark theme colors for jet black background */
+  --background: #000000;
+  --foreground: #ffffff;
+  --card: #0a0a0a;
+  --card-foreground: #ffffff;
+  --popover: #0a0a0a;
+  --popover-foreground: #ffffff;
+
+  --primary: 180 100% 50%;
+  --primary-foreground: 0 0% 0%;
+  --secondary: 300 100% 50%;
+  --secondary-foreground: 0 0% 100%;
   --muted: 240 3.7% 15.9%;
-  --muted-foreground: 240 5% 64.9%;
-  --accent: 240 3.7% 15.9%;
-  --accent-foreground: 0 0% 98%;
+  --muted-foreground: #a0a0a0;
+  --accent: 180 100% 50%;
+  --accent-foreground: 0 0% 0%;
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 0 0% 98%;
-  --border: 240 3.7% 15.9%;
-  --input: 240 3.7% 15.9%;
-  /* Updated dark mode ring to pink */
-  --ring: 320 91.2% 59.8%;
+  --border: #1a1a1a;
+  --input: #1a1a1a;
+  --ring: 180 100% 50%;
+
   --chart-1: oklch(0.488 0.243 264.376);
   --chart-2: oklch(0.696 0.17 162.48);
   --chart-3: oklch(0.769 0.188 70.08);
   --chart-4: oklch(0.627 0.265 303.9);
   --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(0.269 0 0);
-  --sidebar-ring: oklch(0.439 0 0);
+  --sidebar: #1e293b;
+  --sidebar-foreground: #f1f5f9;
+  --sidebar-primary: 190 55% 70%;
+  --sidebar-primary-foreground: #f1f5f9;
+  --sidebar-accent: #334155;
+  --sidebar-accent-foreground: #f1f5f9;
+  --sidebar-border: #334155;
+  --sidebar-ring: #64748b;
 }
 
 @theme inline {
-  /* optional: --font-sans, --font-serif, --font-mono if they are applied in the layout.tsx */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -151,75 +164,124 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Added Tailwind color utilities for decorative elements */
+  --color-aesthetic-peach: #f1cea7;
+  --color-aesthetic-coral: #e49273;
+  --color-aesthetic-dusty-rose: #d4847a;
+  --color-aesthetic-soft-pink: #ffc0cb;
+  --color-aesthetic-warm-cream: #fff5f0;
+  --color-aesthetic-mint-accent: #a8d0d6;
 }
 
 /* Optimized font size scale for better readability */
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
-} /* 12px */
+}
 .text-sm {
   font-size: 0.875rem;
   line-height: 1.25rem;
-} /* 14px */
+}
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
-} /* 16px */
+}
 .text-lg {
   font-size: 1.125rem;
   line-height: 1.75rem;
-} /* 18px */
+}
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-} /* 20px */
+}
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
-} /* 24px */
+}
 .text-3xl {
   font-size: 1.875rem;
   line-height: 2.25rem;
-} /* 30px */
+}
 .text-4xl {
   font-size: 2.25rem;
   line-height: 2.5rem;
-} /* 36px */
+}
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
-} /* 48px */
+}
 .text-6xl {
   font-size: 3.75rem;
   line-height: 1;
-} /* 60px */
-
-/* Mobile-optimized font sizes */
-@media (max-width: 640px) {
-  .text-2xl {
-    font-size: 1.375rem;
-    line-height: 1.875rem;
-  } /* 22px on mobile */
-  .text-3xl {
-    font-size: 1.75rem;
-    line-height: 2rem;
-  } /* 28px on mobile */
-  .text-4xl {
-    font-size: 2rem;
-    line-height: 2.25rem;
-  } /* 32px on mobile */
-  .text-5xl {
-    font-size: 2.5rem;
-    line-height: 1.1;
-  } /* 40px on mobile */
-  .text-6xl {
-    font-size: 3rem;
-    line-height: 1.1;
-  } /* 48px on mobile */
 }
 
-/* Improved line heights for better readability */
+@media (max-width: 640px) {
+  .text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  .text-3xl {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+  .text-4xl {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+  .text-5xl {
+    font-size: 2.75rem;
+    line-height: 1.2;
+  }
+  .text-6xl {
+    font-size: 3.25rem;
+    line-height: 1.2;
+  }
+
+  .px-4 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+
+  /* Better mobile button spacing */
+  .gap-4 {
+    gap: 1rem;
+  }
+
+  /* Improved touch target sizing on mobile */
+  button,
+  a[role="button"] {
+    min-height: 48px;
+    min-width: 48px;
+  }
+
+  /* Enhanced mobile card padding */
+  .glass-card {
+    padding: 1.5rem 1rem;
+  }
+
+  .section-with-blobs::before {
+    background: radial-gradient(circle at 15% 85%, hsl(var(--soft-salmon-pink) / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 85% 15%, hsl(var(--mint-teal) / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 35% 45%, hsl(var(--dusty-rose) / 0.35) 0%, transparent 45%),
+      radial-gradient(circle at 65% 75%, hsl(var(--soft-salmon-pink) / 0.35) 0%, transparent 45%),
+      radial-gradient(circle at 50% 30%, hsl(var(--light-pink) / 0.3) 0%, transparent 40%),
+      /* Added new warm colors for enhanced mobile blob visibility */
+      radial-gradient(circle at 25% 25%, hsl(var(--warm-cream) / 0.25) 0%, transparent 45%),
+      radial-gradient(circle at 75% 65%, hsl(var(--warm-coral) / 0.28) 0%, transparent 45%);
+  }
+}
+
 .leading-none {
   line-height: 1;
 }
@@ -241,28 +303,34 @@
 
 @layer base {
   * {
-    /* using tokens directly to avoid Tailwind unknown-utility crashes */
     border-color: hsl(var(--border));
     outline-color: hsl(var(--ring) / 0.5);
   }
+  /* Updated background to pure jet black */
   body {
-    /* keep themed background/foreground */
-    /* @apply bg-background text-foreground; replaced with explicit to avoid apply pitfalls */
-    background-color: hsl(var(--background));
-    color: hsl(var(--foreground));
+    background: #000000;
+    color: #ffffff;
   }
-  /* Emphasize headings with a distinct palette color site-wide */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    color: hsl(var(--rich-fuchsia));
+    color: #ffffff;
+    font-weight: 700;
+  }
+  p {
+    color: #e0e0e0;
+  }
+  a {
+    color: #00f0ff;
+  }
+  a:hover {
+    color: #00d9ff;
   }
 }
 
-/* Secondary icon/button helpers without @apply */
 .icon-secondary {
   color: hsl(var(--secondary-foreground));
 }
@@ -272,66 +340,130 @@
   border-color: hsl(var(--border));
 }
 
-/* Glassmorphism effect */
+/* Enhanced glassmorphism with modern aesthetic and improved depth */
+/* Enhanced glassmorphism for dark jet black theme with vibrant borders */
 .glass-card {
-  background-color: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, rgba(15, 240, 255, 0.08) 0%, rgba(255, 0, 255, 0.05) 100%);
+  backdrop-filter: blur(25px) saturate(150%);
+  -webkit-backdrop-filter: blur(25px) saturate(150%);
+  border: 1px solid rgba(0, 240, 255, 0.3);
+  border-radius: 1.25rem;
+  box-shadow: 0 8px 32px rgba(0, 240, 255, 0.15), inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
+.glass-card:hover {
+  background: linear-gradient(135deg, rgba(15, 240, 255, 0.12) 0%, rgba(255, 0, 255, 0.08) 100%);
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 12px 48px rgba(0, 240, 255, 0.25), inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  transform: translateY(-8px);
+}
+
+/* Updated glass-section to be fully transparent so floating blobs are visible */
 .glass-section {
-  background-color: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-/* Simplified gradient text without animations */
-.gradient-text {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--dark-fuchsia)),
-    hsl(var(--deep-fuchsia)),
-    hsl(var(--light-pink)),
-    hsl(var(--soft-pink))
-  );
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-}
-
-/* Simplified gradient button without animations */
-.gradient-button {
-  background: linear-gradient(135deg, hsl(var(--dark-fuchsia)), hsl(var(--deep-fuchsia)), hsl(var(--light-pink)));
-  color: hsl(var(--primary-foreground));
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   border: none;
+  box-shadow: none;
+}
+
+/* Added new transparent-section class for full transparency with floating blobs */
+.transparent-section {
+  background: transparent;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
+  position: relative;
+}
+
+/* Updated button styles with mint teal CTA */
+.glass-button {
+  background-color: hsl(var(--mint-teal));
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 500;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-.gradient-button:hover {
-  background: linear-gradient(135deg, hsl(var(--deep-fuchsia)), hsl(var(--rich-fuchsia)), hsl(var(--soft-pink)));
-  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.3);
+.glass-button:hover {
+  background-color: hsl(190 60% 65%);
+  box-shadow: 0 6px 16px hsl(var(--mint-teal) / 0.4);
   transform: translateY(-2px);
 }
 
-/* Simplified gradient icon without animations */
+.btn-mint-teal {
+  background-color: hsl(var(--mint-teal));
+  color: #ffffff;
+  border: none;
+  border-radius: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px hsl(var(--mint-teal) / 0.3);
+}
+
+.btn-mint-teal:hover {
+  background-color: hsl(190 60% 65%);
+  box-shadow: 0 8px 16px hsl(var(--mint-teal) / 0.5);
+  transform: translateY(-2px);
+}
+
+.accent-pink {
+  color: hsl(var(--soft-salmon-pink));
+}
+.bg-accent-pink {
+  background-color: hsl(var(--soft-salmon-pink) / 0.15);
+}
+.border-accent-pink {
+  border-color: hsl(var(--soft-salmon-pink));
+}
+
+/* Modern gradient text with enhanced vibrancy */
+/* Vibrant gradient text for headings */
+.gradient-text {
+  background: linear-gradient(135deg, #00f0ff 0%, #ff00ff 50%, #00ff41 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+  font-weight: 800;
+}
+
+/* Enhanced gradient buttons with modern feel */
+/* Vibrant gradient button with teal-magenta combination */
+.gradient-button {
+  background: linear-gradient(135deg, #00f0ff 0%, #ff00ff 50%, #00f0ff 100%);
+  color: #000000;
+  border: none;
+  font-weight: 600;
+  transition: all 0.4s ease;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.4), 0 0 40px rgba(255, 0, 255, 0.2);
+}
+
+.gradient-button:hover {
+  box-shadow: 0 0 30px rgba(0, 240, 255, 0.6), 0 0 60px rgba(255, 0, 255, 0.4);
+  transform: translateY(-4px) scale(1.05);
+}
+
 .gradient-icon {
-  background: linear-gradient(135deg, hsl(var(--dark-fuchsia)), hsl(var(--deep-fuchsia)), hsl(var(--light-pink)));
+  background: linear-gradient(135deg, hsl(var(--soft-salmon-pink)), hsl(var(--mint-teal)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent;
 }
 
-/* SCROLL FADE ANIMATIONS - Mobile-friendly scroll animations */
 .scroll-fade-in {
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s ease-out;
 }
-
 .scroll-fade-in.visible {
   opacity: 1;
   transform: translateY(0);
@@ -342,13 +474,33 @@
   transform: translateY(50px);
   transition: all 1s ease-out;
 }
-
 .scroll-fade-up.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Shimmer animation for loading states */
+/* Added animation delay utilities for staggered blob animations */
+.animation-delay-0 {
+  animation-delay: 0s;
+}
+.animation-delay-1 {
+  animation-delay: 0.5s;
+}
+.animation-delay-2 {
+  animation-delay: 1s;
+}
+.animation-delay-3 {
+  animation-delay: 1.5s;
+}
+.animation-delay-4 {
+  animation-delay: 2s;
+}
+
+/* Added blur-3xl utility for softer blob effect */
+.blur-3xl {
+  filter: blur(80px);
+}
+
 @keyframes shimmer {
   0% {
     transform: translateX(-100%);
@@ -375,30 +527,23 @@
   animation: shimmer 2s infinite;
 }
 
-/* FLOATING BLOBS ONLY - Enhanced floating blobs with more sophisticated background patterns */
 .section-with-blobs {
   position: relative;
   overflow: hidden;
 }
 
+/* Updated section blobs to be fewer and larger for dark theme */
 .section-with-blobs::before {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: radial-gradient(circle at 15% 85%, rgba(139, 69, 19, 0.12) 0%, transparent 45%),
-    radial-gradient(circle at 85% 15%, rgba(219, 39, 119, 0.1) 0%, transparent 45%),
-    radial-gradient(circle at 35% 45%, rgba(244, 114, 182, 0.08) 0%, transparent 40%),
-    radial-gradient(circle at 65% 75%, rgba(168, 85, 247, 0.06) 0%, transparent 40%),
-    radial-gradient(circle at 50% 30%, rgba(251, 207, 232, 0.05) 0%, transparent 35%);
+  inset: 0;
+  background: radial-gradient(circle at 5% 95%, rgba(241, 206, 167, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 95% 5%, rgba(168, 208, 214, 0.06) 0%, transparent 60%),
+    radial-gradient(circle at 50% 50%, rgba(228, 146, 115, 0.04) 0%, transparent 55%);
   pointer-events: none;
   z-index: -1;
-  animation: blob-background-enhanced 25s ease-in-out infinite;
 }
 
-/* Enhanced blob background animation */
 @keyframes blob-background-enhanced {
   0%,
   100% {
@@ -419,7 +564,6 @@
   }
 }
 
-/* Enhanced floating blob animations with gentler movement */
 @keyframes float-gentle {
   0%,
   100% {
@@ -475,16 +619,38 @@
 .animate-float-gentle {
   animation: float-gentle 20s ease-in-out infinite;
 }
-
 .animate-float-smooth {
   animation: float-smooth 25s ease-in-out infinite;
 }
-
 .animate-float-particle {
   animation: float-particle 30s linear infinite;
 }
 
-/* Mobile-optimized floating animations with reduced GPU usage */
+/* Floating blob animations with enhanced colors and opacity */
+@keyframes float-blob-enhanced {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1) rotate(0deg);
+    opacity: 0.5;
+  }
+  25% {
+    transform: translate(50px, -100px) scale(1.2) rotate(90deg);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate(-60px, -120px) scale(0.9) rotate(180deg);
+    opacity: 0.4;
+  }
+  75% {
+    transform: translate(-100px, 60px) scale(1.15) rotate(270deg);
+    opacity: 0.6;
+  }
+}
+
+.animate-blob-enhanced {
+  animation: float-blob-enhanced 30s ease-in-out infinite;
+}
+
 @keyframes float-mobile {
   0%,
   100% {
@@ -499,7 +665,6 @@
   animation: float-mobile 25s ease-in-out infinite;
 }
 
-/* Custom illustration icons and emojis */
 .custom-icon {
   display: inline-flex;
   align-items: center;
@@ -507,73 +672,52 @@
   font-size: 1.5rem;
   transition: transform 0.3s ease;
 }
-
 .custom-icon:hover {
   transform: scale(1.1);
 }
-
 .emoji-icon {
   font-size: 2rem;
   filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
 }
-
 .service-icon {
   font-size: 3rem;
   margin-bottom: 1rem;
   filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
 }
 
-/* Enhanced icon gradient background with dark fuchsia - no animations */
 .icon-gradient-bg {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--dark-fuchsia)),
-    hsl(var(--deep-fuchsia)),
-    hsl(var(--light-pink)),
-    #f97316,
-    #8b5cf6
-  );
+  background: linear-gradient(135deg, hsl(var(--soft-salmon-pink)), hsl(var(--dusty-rose)), hsl(var(--mint-teal)));
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
-  box-shadow: 0 6px 20px rgba(139, 69, 19, 0.4);
+  box-shadow: 0 6px 20px hsl(var(--soft-salmon-pink) / 0.4);
   transition: all 0.3s ease;
 }
 
 .icon-gradient-bg:hover {
   transform: scale(1.1);
-  box-shadow: 0 8px 25px rgba(139, 69, 19, 0.5);
+  box-shadow: 0 8px 25px hsl(var(--soft-salmon-pink) / 0.5);
 }
 
-/* Enhanced colorful icon with dark fuchsia gradients - no animations */
 .colorful-icon {
-  background: linear-gradient(
-    135deg,
-    hsl(var(--dark-fuchsia)),
-    hsl(var(--deep-fuchsia)),
-    hsl(var(--light-pink)),
-    #f97316,
-    #8b5cf6
-  );
+  background: linear-gradient(135deg, hsl(var(--soft-salmon-pink)), hsl(var(--dusty-rose)), hsl(var(--mint-teal)));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  filter: drop-shadow(0 3px 6px rgba(139, 69, 19, 0.4));
+  filter: drop-shadow(0 3px 6px hsl(var(--soft-salmon-pink) / 0.4));
   transition: all 0.3s ease;
 }
 
 .colorful-icon:hover {
   transform: scale(1.1);
-  filter: drop-shadow(0 6px 12px rgba(139, 69, 19, 0.6));
+  filter: drop-shadow(0 6px 12px hsl(var(--soft-salmon-pink) / 0.6));
 }
 
-/* Simple hover effects without complex animations */
 .hover-scale {
   transition: transform 0.3s ease;
 }
-
 .hover-scale:hover {
   transform: scale(1.05);
 }
@@ -581,47 +725,38 @@
 .hover-lift {
   transition: all 0.3s ease;
 }
-
 .hover-lift:hover {
   transform: translateY(-4px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* Enhanced pink-themed effects with dark fuchsia - no animations */
 .pink-glow {
-  box-shadow: 0 0 20px rgba(139, 69, 19, 0.3);
+  box-shadow: 0 0 20px hsl(var(--soft-salmon-pink) / 0.3);
 }
-
 .dark-fuchsia-glow {
-  box-shadow: 0 0 25px rgba(139, 69, 19, 0.4);
+  box-shadow: 0 0 25px hsl(var(--soft-salmon-pink) / 0.4);
 }
-
 .pink-border {
-  border: 2px solid hsl(var(--deep-fuchsia));
+  border: 2px solid hsl(var(--soft-salmon-pink));
 }
 
-/* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
 }
 
-/* Optimized image loading without complex animations */
 .image-container {
   position: relative;
   overflow: hidden;
   background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
 }
-
 .image-blur-load {
   filter: blur(5px);
   transition: filter 0.3s ease;
 }
-
 .image-blur-load.loaded {
   filter: blur(0);
 }
 
-/* Accessibility and reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -630,18 +765,15 @@ html {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-
   .animate-float-mobile,
   .animate-float-gentle,
   .animate-float-smooth,
   .animate-float-particle {
     animation: none;
   }
-
   .section-with-blobs::before {
     animation: none;
   }
-
   .scroll-fade-in,
   .scroll-fade-up {
     opacity: 1;
@@ -649,32 +781,17 @@ html {
   }
 }
 
-/* Mobile optimization - disable floating blobs on small screens for performance */
 @media (max-width: 768px) {
   .animate-float-gentle,
   .animate-float-smooth,
-  .animate-float-particle {
+  .animate-float-particle,
+  .animate-blob-enhanced {
     animation: none;
   }
 
-  .section-with-blobs::before {
-    background: radial-gradient(circle at 15% 85%, rgba(139, 69, 19, 0.25) 0%, transparent 50%),
-      radial-gradient(circle at 85% 15%, rgba(219, 39, 119, 0.22) 0%, transparent 50%),
-      radial-gradient(circle at 35% 45%, rgba(244, 114, 182, 0.18) 0%, transparent 45%),
-      radial-gradient(circle at 65% 75%, rgba(168, 85, 247, 0.15) 0%, transparent 45%),
-      radial-gradient(circle at 50% 30%, rgba(251, 207, 232, 0.12) 0%, transparent 40%);
-    animation: blob-background-enhanced 30s ease-in-out infinite;
+  .glass-card {
+    padding: 1.25rem;
   }
 }
 
-/* Added enhanced mobile blob visibility at smaller breakpoint */
-@media (max-width: 640px) {
-  .section-with-blobs::before {
-    background: radial-gradient(circle at 20% 80%, rgba(139, 69, 19, 0.3) 0%, transparent 55%),
-      radial-gradient(circle at 80% 20%, rgba(219, 39, 119, 0.28) 0%, transparent 55%),
-      radial-gradient(circle at 40% 50%, rgba(244, 114, 182, 0.22) 0%, transparent 50%),
-      radial-gradient(circle at 60% 70%, rgba(168, 85, 247, 0.2) 0%, transparent 50%),
-      radial-gradient(circle at 50% 35%, rgba(251, 207, 232, 0.18) 0%, transparent 45%);
-    opacity: 1;
-  }
-}
+/* Reduced and enlarged */

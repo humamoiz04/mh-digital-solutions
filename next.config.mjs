@@ -60,182 +60,73 @@ const nextConfig = {
         permanent: true,
       },
       
-      // These are from broken local service pages that don't match new structure
+      // Wyoming location redirects - direct to final URLs
       {
-        source: '/local/jackson/seo',
+        source: '/local/jackson/:path*',
         destination: '/locations/wyoming/jackson-hole',
         permanent: true,
       },
       {
-        source: '/local/jackson/web-design',
-        destination: '/locations/wyoming/jackson-hole',
-        permanent: true,
-      },
-      {
-        source: '/local/jackson/digital-marketing',
-        destination: '/locations/wyoming/jackson-hole',
-        permanent: true,
-      },
-      {
-        source: '/local/jackson/near-me',
-        destination: '/locations/wyoming/jackson-hole',
-        permanent: true,
-      },
-      {
-        source: '/local/cheyenne/seo',
+        source: '/local/cheyenne/:path*',
         destination: '/locations/wyoming/cheyenne',
         permanent: true,
       },
       {
-        source: '/local/cheyenne/web-design',
-        destination: '/locations/wyoming/cheyenne',
-        permanent: true,
-      },
-      {
-        source: '/local/cheyenne/digital-marketing',
-        destination: '/locations/wyoming/cheyenne',
-        permanent: true,
-      },
-      {
-        source: '/local/cheyenne/near-me',
-        destination: '/locations/wyoming/cheyenne',
-        permanent: true,
-      },
-      {
-        source: '/local/casper/seo',
+        source: '/local/casper/:path*',
         destination: '/locations/wyoming/casper',
         permanent: true,
       },
       {
-        source: '/local/casper/web-design',
-        destination: '/locations/wyoming/casper',
-        permanent: true,
-      },
-      {
-        source: '/local/casper/digital-marketing',
-        destination: '/locations/wyoming/casper',
-        permanent: true,
-      },
-      {
-        source: '/local/casper/near-me',
-        destination: '/locations/wyoming/casper',
-        permanent: true,
-      },
-      {
-        source: '/local/laramie/web-design',
+        source: '/local/laramie/:path*',
         destination: '/locations/wyoming/laramie',
         permanent: true,
       },
       {
-        source: '/local/laramie/seo',
-        destination: '/locations/wyoming/laramie',
-        permanent: true,
-      },
-      {
-        source: '/local/laramie/near-me',
-        destination: '/locations/wyoming/laramie',
-        permanent: true,
-      },
-      {
-        source: '/local/gillette/:service*',
+        source: '/local/gillette/:path*',
         destination: '/locations/wyoming',
         permanent: true,
       },
       {
-        source: '/local/sheridan/:service*',
+        source: '/local/sheridan/:path*',
         destination: '/locations/wyoming',
         permanent: true,
       },
       {
-        source: '/local/rock-springs/:service*',
+        source: '/local/rock-springs/:path*',
         destination: '/locations/wyoming',
         permanent: true,
       },
-      // Montana cities
+      
+      // West Virginia location redirects
       {
-        source: '/local/bozeman/:service*',
-        destination: '/locations',
-        permanent: true,
-      },
-      {
-        source: '/local/missoula/:service*',
-        destination: '/locations',
-        permanent: true,
-      },
-      {
-        source: '/local/helena/:service*',
-        destination: '/locations',
-        permanent: true,
-      },
-      {
-        source: '/local/billings/:service*',
-        destination: '/locations',
-        permanent: true,
-      },
-      {
-        source: '/local/butte/:service*',
-        destination: '/locations',
-        permanent: true,
-      },
-      {
-        source: '/local/great-falls/:service*',
-        destination: '/locations',
-        permanent: true,
-      },
-      // West Virginia cities
-      {
-        source: '/local/morgantown/seo',
+        source: '/local/morgantown/:path*',
         destination: '/locations/west-virginia/morgantown',
         permanent: true,
       },
       {
-        source: '/local/morgantown/web-design',
-        destination: '/locations/west-virginia/morgantown',
-        permanent: true,
-      },
-      {
-        source: '/local/morgantown/digital-marketing',
-        destination: '/locations/west-virginia/morgantown',
-        permanent: true,
-      },
-      {
-        source: '/local/morgantown/near-me',
-        destination: '/locations/west-virginia/morgantown',
-        permanent: true,
-      },
-      {
-        source: '/local/charleston/:service*',
+        source: '/local/charleston/:path*',
         destination: '/locations/west-virginia/charleston',
         permanent: true,
       },
       {
-        source: '/local/huntington/:service*',
+        source: '/local/huntington/:path*',
         destination: '/locations/west-virginia/huntington',
         permanent: true,
       },
       {
-        source: '/local/wheeling/:service*',
+        source: '/local/wheeling/:path*',
         destination: '/locations/west-virginia',
         permanent: true,
       },
-      {
-        source: '/local/fairmont/:service*',
-        destination: '/locations/west-virginia',
-        permanent: true,
-      },
-      {
-        source: '/local/martinsburg/:service*',
-        destination: '/locations/west-virginia',
-        permanent: true,
-      },
-      // Catch-all for any remaining /local/ routes
+      
+      // Other location redirects - direct to locations index
       {
         source: '/local/:path*',
         destination: '/locations',
         permanent: true,
       },
 
-      // Duplicate blog post redirects to canonical versions
+      // Blog and content redirects
       {
         source: '/blog/ppc-optimization',
         destination: '/blog/ppc-optimization-guide',
@@ -246,37 +137,25 @@ const nextConfig = {
         destination: '/blog',
         permanent: true,
       },
-      // Legacy HTML redirects
+      
+      // Legacy HTML to final pages
       {
         source: '/home',
         destination: '/',
         permanent: true,
       },
       {
-        source: '/services.html',
-        destination: '/services',
+        source: '/:page.html',
+        destination: '/:page',
         permanent: true,
       },
       {
-        source: '/contact.html',
-        destination: '/contact',
+        source: '/services/:service.html',
+        destination: '/services/:service',
         permanent: true,
       },
-      {
-        source: '/about.html',
-        destination: '/about',
-        permanent: true,
-      },
-      {
-        source: '/blog.html',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/portfolio.html',
-        destination: '/portfolio',
-        permanent: true,
-      },
+      
+      // Service slug redirects - direct to canonical URLs
       {
         source: '/services/digital',
         destination: '/services/digital-marketing',
@@ -299,7 +178,12 @@ const nextConfig = {
       },
       {
         source: '/services/consultation',
-        destination: '/contact',
+        destination: '/services/business-consulting',
+        permanent: true,
+      },
+      {
+        source: '/services/web-design-consultation',
+        destination: '/services/web-design',
         permanent: true,
       },
       {
@@ -317,21 +201,15 @@ const nextConfig = {
         destination: '/services/business-consulting',
         permanent: true,
       },
+      
+      // Tag redirects
       {
-        source: '/tag/optimization/:path*',
+        source: '/tag/:tag/:path*',
         destination: '/blog',
         permanent: true,
       },
-      {
-        source: '/tag/analytics/:path*',
-        destination: '/blog',
-        permanent: true,
-      },
-      {
-        source: '/tag/planning/:path*',
-        destination: '/blog',
-        permanent: true,
-      },
+      
+      // Other legacy redirects
       {
         source: '/find-developers/:path*',
         destination: '/services/web-development',
@@ -357,30 +235,306 @@ const nextConfig = {
         destination: '/services/seo-services',
         permanent: true,
       },
+      
       {
-        source: '/pricing.html',
-        destination: '/pricing',
+        source: '/local/huntington/digital-marketing',
+        destination: '/local/huntington/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/rock-springs/near-me',
+        destination: '/local/rock-springs/digital-marketing',
         permanent: true,
       },
       {
-        source: '/case-studies.html',
-        destination: '/case-studies',
+        source: '/local/wichita/seo',
+        destination: '/local/wichita/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/huntington/seo',
+        destination: '/local/huntington/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/sheridan/web-design',
+        destination: '/local/sheridan/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/billings/web-design',
+        destination: '/local/billings/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/morgantown/seo',
+        destination: '/local/morgantown/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/glasgow/digital-marketing',
+        destination: '/local/glasgow/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/jackson/digital-marketing',
+        destination: '/local/jackson/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/jackson/near-me',
+        destination: '/local/jackson/digital-marketing',
         permanent: true,
       },
       {
-        source: '/services/ai-automation.html',
-        destination: '/services/ai-automation',
+        source: '/local/fairmont/web-design',
+        destination: '/local/fairmont/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/laramie/digital-marketing',
+        destination: '/local/laramie/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/morgantown/digital-marketing',
+        destination: '/local/morgantown/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/lewistown/digital-marketing',
+        destination: '/local/lewistown/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/fairmont/seo',
+        destination: '/local/fairmont/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/great-falls/web-design',
+        destination: '/local/great-falls/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/butte/web-design',
+        destination: '/local/butte/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/wichita/near-me',
+        destination: '/local/wichita/digital-marketing',
         permanent: true,
       },
       {
-        source: '/services/mobile-app.html',
-        destination: '/services/mobile-app-development',
+        source: '/local/fairmont/near-me',
+        destination: '/local/fairmont/digital-marketing',
         permanent: true,
       },
       {
-        source: '/services/seo.html',
-        destination: '/services/seo-services',
+        source: '/local/glendive/digital-marketing',
+        destination: '/local/glendive/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/martinsburg/digital-marketing',
+        destination: '/local/martinsburg/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/martinsburg/seo',
+        destination: '/local/martinsburg/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/laramie/near-me',
+        destination: '/local/laramie/digital-marketing',
         permanent: true,
+      },
+      {
+        source: '/local/rock-springs/web-design',
+        destination: '/local/rock-springs/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/wheeling/near-me',
+        destination: '/local/wheeling/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/olathe/near-me',
+        destination: '/local/olathe/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/big-timber/web-design',
+        destination: '/local/big-timber/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/gillette/near-me',
+        destination: '/local/gillette/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/missoula/digital-marketing',
+        destination: '/local/missoula/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/missoula/web-design',
+        destination: '/local/missoula/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/olathe/digital-marketing',
+        destination: '/local/olathe/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/charleston/near-me',
+        destination: '/local/charleston/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/charleston/seo',
+        destination: '/local/charleston/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/cheyenne/near-me',
+        destination: '/local/cheyenne/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/huntington/near-me',
+        destination: '/local/huntington/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/red-lodge/digital-marketing',
+        destination: '/local/red-lodge/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/cheyenne/digital-marketing',
+        destination: '/local/cheyenne/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/laramie/web-design',
+        destination: '/local/laramie/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/martinsburg/near-me',
+        destination: '/local/martinsburg/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/casper/near-me',
+        destination: '/local/casper/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/cheyenne/seo',
+        destination: '/local/cheyenne/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/olathe/web-design',
+        destination: '/local/olathe/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/casper/seo',
+        destination: '/local/casper/seo',
+        permanent: false,
+      },
+      {
+        source: '/local/wheeling/digital-marketing',
+        destination: '/local/wheeling/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/casper/web-design',
+        destination: '/local/casper/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/lewistown/web-design',
+        destination: '/local/lewistown/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/round-up/digital-marketing',
+        destination: '/local/round-up/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/cheyenne/web-design',
+        destination: '/local/cheyenne/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/havre/digital-marketing',
+        destination: '/local/havre/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/martinsburg/web-design',
+        destination: '/local/martinsburg/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/wichita/digital-marketing',
+        destination: '/local/wichita/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/gillette/web-design',
+        destination: '/local/gillette/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/miles-city/web-design',
+        destination: '/local/miles-city/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/morgantown/near-me',
+        destination: '/local/morgantown/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/local/round-up/web-design',
+        destination: '/local/round-up/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/bozeman/web-design',
+        destination: '/local/bozeman/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/butte/digital-marketing',
+        destination: '/local/butte/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/bozeman/digital-marketing',
+        destination: '/local/bozeman/digital-marketing',
+        permanent: false,
+      },
+      {
+        source: '/local/wichita/web-design',
+        destination: '/local/wichita/web-design',
+        permanent: false,
+      },
+      {
+        source: '/local/big-timber/digital-marketing',
+        destination: '/local/big-timber/digital-marketing',
+        permanent: false,
       },
     ]
   },

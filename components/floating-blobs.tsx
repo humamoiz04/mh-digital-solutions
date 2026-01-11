@@ -17,17 +17,9 @@ export function FloatingBlobs() {
   const [isMobile, setIsMobile] = useState(false)
 
   const colors = [
-    "hsl(var(--dark-pastel-yellow))",
-    "hsl(var(--dark-pastel-purple))",
-    "hsl(var(--dark-pastel-red))",
-    "hsl(var(--dark-pastel-orange))",
-    "hsl(var(--dark-pastel-pink))",
-    "hsl(var(--dark-pastel-teal))",
-    "hsl(var(--dark-pastel-indigo))",
-    "hsl(var(--dark-pastel-lime))",
-    "hsl(var(--dark-pastel-cyan))",
-    "hsl(var(--dark-pastel-fuchsia))",
-    "#b8eac7",
+    "rgba(0, 240, 255, 0.25)", // Electric Teal
+    "rgba(255, 0, 255, 0.2)", // Luminous Magenta
+    "rgba(0, 255, 65, 0.15)", // Neon Green
   ]
 
   useEffect(() => {
@@ -38,16 +30,22 @@ export function FloatingBlobs() {
 
     const generateBlobs = () => {
       const newBlobs: Blob[] = []
-      const numberOfBlobs = 27
+      const numberOfBlobs = 3
+      const positions = [
+        { x: 5, y: 95 },
+        { x: 95, y: 5 },
+        { x: 50, y: 50 },
+      ]
+
       for (let i = 0; i < numberOfBlobs; i++) {
         newBlobs.push({
           id: i,
-          size: Math.random() * (200 - 80) + 80,
-          x: Math.random() * 100,
-          y: Math.random() * 100,
+          size: 450 + Math.random() * 100, // Increased blob sizes to 450-550px for more impact
+          x: positions[i].x,
+          y: positions[i].y,
           color: colors[i % colors.length],
-          animationDuration: Math.random() * (30 - 15) + 15,
-          animationDelay: Math.random() * 10,
+          animationDuration: 25 + i * 5,
+          animationDelay: i * 2,
         })
       }
       setBlobs(newBlobs)
@@ -55,7 +53,6 @@ export function FloatingBlobs() {
 
     generateBlobs()
 
-    // Optional: regenerate blobs on window resize to adjust positions
     const handleResize = () => {
       generateBlobs()
       checkMobile()
@@ -69,31 +66,25 @@ export function FloatingBlobs() {
       {blobs.map((blob) => (
         <div
           key={blob.id}
-          className="absolute rounded-full mix-blend-multiply blur-xl"
+          className="absolute rounded-full mix-blend-screen blur-3xl"
           style={{
             width: `${blob.size}px`,
             height: `${blob.size}px`,
             left: `${blob.x}%`,
             top: `${blob.y}%`,
-            backgroundColor: colors[blob.id % colors.length],
-            opacity: isMobile ? 0.18 : 0.08,
-            animation: `blob ${blob.animationDuration}s ease-in-out ${blob.animationDelay}s infinite`,
+            backgroundColor: blob.color,
+            animation: `blob-float ${blob.animationDuration}s ease-in-out ${blob.animationDelay}s infinite`,
+            transform: "translate(-50%, -50%)",
           }}
         />
       ))}
       <style jsx>{`
-        @keyframes blob {
-          0% {
-            transform: translate(0, 0) scale(1);
+        @keyframes blob-float {
+          0%, 100% {
+            transform: translate(-50%, -50%) scale(1);
           }
-          33% {
-            transform: translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px) scale(1.05);
-          }
-          66% {
-            transform: translate(${Math.random() * 40 - 20}px, ${Math.random() * 40 - 20}px) scale(0.95);
-          }
-          100% {
-            transform: translate(0, 0) scale(1);
+          50% {
+            transform: translate(-50%, -50%) scale(1.08);
           }
         }
       `}</style>

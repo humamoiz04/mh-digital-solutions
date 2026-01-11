@@ -9,7 +9,6 @@ import Link from "next/link"
 import { EmailGate } from "@/components/email-gate"
 import { Badge } from "@/components/ui/badge"
 
-
 export default function PricingPage() {
   const [hasAccess, setHasAccess] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
@@ -27,39 +26,47 @@ export default function PricingPage() {
       packages: [
         {
           name: "Starter Website",
-          price: "$199",
+          price: "$99",
           originalPrice: "$499",
+          newYearOffer: true,
+          discount: "80% OFF - New Year Special",
           features: [
             "5-page responsive website",
             "Mobile-optimized design",
-            "Contact form integration",
+            "Contact form integration with FormSubmit.co",
             "Basic SEO setup",
             "1 month free maintenance",
             "FREE: SSL certificate",
             "FREE: Domain setup",
+            "FREE: New Year bonus - Social media optimization",
           ],
         },
         {
           name: "Business Website",
-          price: "$299",
+          price: "$199",
           originalPrice: "$999",
+          newYearOffer: true,
+          discount: "80% OFF - New Year Special",
           popular: true,
           features: [
             "10-page custom website",
             "CMS integration",
             "E-commerce ready",
             "Advanced SEO optimization",
-            "Analytics setup",
+            "Analytics setup with Google Business Profile",
             "3 months free maintenance",
             "FREE: Logo design",
             "FREE: Social media integration",
-            "FREE: **Local Organic Search Audit**", 
+            "FREE: Local Organic Search Audit",
+            "FREE: New Year bonus - Email marketing setup",
           ],
         },
         {
           name: "Enterprise Solution",
-          price: "$599",
+          price: "$399",
           originalPrice: "$1999",
+          newYearOffer: true,
+          discount: "80% OFF - New Year Special",
           features: [
             "Unlimited pages",
             "Custom web application",
@@ -69,7 +76,8 @@ export default function PricingPage() {
             "6 months free maintenance",
             "FREE: Mobile app",
             "FREE: Cloud hosting setup",
-            "FREE: **Quarterly Organic Growth Strategy**", 
+            "FREE: Quarterly Organic Growth Strategy",
+            "FREE: New Year bonus - Business automation consultation",
           ],
         },
       ],
@@ -160,7 +168,7 @@ export default function PricingPage() {
             "Landing page copy",
             "FREE: Brand voice guide",
             "FREE: Content audit",
-            "FREE: **Content Repurposing (3 formats)**", 
+            "FREE: **Content Repurposing (3 formats)**",
           ],
         },
         {
@@ -248,7 +256,7 @@ export default function PricingPage() {
             "Basic Google Analytics setup",
             "FREE: 1 Hour Strategy Session",
             "FREE: Brand Style Guide",
-            "FREE: **Initial Organic Keyword Research**", 
+            "FREE: **Initial Organic Keyword Research**",
           ],
         },
         {
@@ -265,7 +273,7 @@ export default function PricingPage() {
             "Monthly Conversion Rate Report",
             "FREE: PPC Ad Copy Refinement",
             "FREE: A/B Testing Setup for 1 Page",
-            "FREE: **Monthly Organic Traffic Analysis**", 
+            "FREE: **Monthly Organic Traffic Analysis**",
           ],
         },
         {
@@ -281,56 +289,117 @@ export default function PricingPage() {
             "Quarterly Strategy Review Meeting",
             "FREE: Custom AI Chatbot Setup",
             "FREE: Quarterly Security Audit",
-            "FREE: **Dedicated Organic Marketing Specialist**", 
+            "FREE: **Dedicated Organic Marketing Specialist**",
           ],
         },
       ],
     },
     // NEW À LA CARTE ORGANIC ADD-ONS
     organicAddons: [
+      {
+        name: "Premium Blog Post (1000 words)",
+        description: "Fully SEO-optimized, includes royalty-free images.",
+        price: "$149",
+        frequency: "one‑time",
+        variant: "default",
+      },
+      {
+        name: "High-DA Guest Post Placement",
+        description: "Guaranteed backlink from a domain authority 30+ site.",
+        price: "$199",
+        frequency: "one‑time",
+        variant: "default",
+      },
+      {
+        name: "Conversion Copy Refresh",
+        description: "Homepage + 1 Landing Page, focused on sales copy.",
+        price: "$399",
+        frequency: "one‑time",
+        variant: "default",
+      },
+      {
+        name: "Backlink Audit & Cleanup",
+        description: "Full analysis and disavow of toxic backlinks.",
+        price: "$99",
+        frequency: "one‑time",
+        variant: "outline",
+      },
+      {
+        name: "Priority Support",
+        description: "24/7 Slack channel + 4h SLA for critical issues.",
+        price: "$99",
+        frequency: "mo",
+        variant: "outline",
+      },
+      {
+        name: "Advanced Analytics Setup",
+        description: "GA4 + Tag Manager + Custom Dashboards setup.",
+        price: "$299",
+        frequency: "one‑time",
+        variant: "default",
+      },
+    ],
+    // NEW PERFORMANCE MARKETING & ZERO TO HERO PACKAGE
+    performanceMarketing: {
+      title: "Performance Marketing & Zero to Hero Package",
+      icon: Megaphone,
+      color: "from-orange-500 to-red-500",
+      packages: [
         {
-            name: "Premium Blog Post (1000 words)",
-            description: "Fully SEO-optimized, includes royalty-free images.",
-            price: "$149",
-            frequency: "one‑time",
-            variant: "default"
+          name: "Performance Marketing Starter",
+          price: "$299/mo",
+          originalPrice: "$799/mo",
+          features: [
+            "Google Ads (PPC) management",
+            "Ad copy and landing page optimization",
+            "Conversion tracking setup",
+            "Monthly performance reports",
+            "Budget optimization",
+            "FREE: Competitor analysis",
+            "FREE: Keyword research",
+          ],
         },
         {
-            name: "High-DA Guest Post Placement",
-            description: "Guaranteed backlink from a domain authority 30+ site.",
-            price: "$199",
-            frequency: "one‑time",
-            variant: "default"
+          name: "Zero to Hero Package",
+          price: "$599/mo",
+          originalPrice: "$1999/mo",
+          popular: true,
+          newYearOffer: true,
+          discount: "70% OFF - Complete Business Launch",
+          features: [
+            "Professional website (5-10 pages)",
+            "Business logo design",
+            "Business cards & flyers design",
+            "Business plan development",
+            "Social Media Management (4 platforms)",
+            "SEO optimization & GMB setup",
+            "Google Business Profile optimization",
+            "PPC & Performance marketing campaign",
+            "AI chatbot integration",
+            "Email marketing setup",
+            "Monthly analytics & strategy",
+            "Dedicated account manager",
+            "FREE: Brand guidelines",
+            "FREE: 3 months premium support",
+          ],
         },
         {
-            name: "Conversion Copy Refresh",
-            description: "Homepage + 1 Landing Page, focused on sales copy.",
-            price: "$399",
-            frequency: "one‑time",
-            variant: "default"
+          name: "Performance Marketing Pro",
+          price: "$799/mo",
+          originalPrice: "$1599/mo",
+          features: [
+            "Multi-channel advertising (Google, Facebook, Instagram)",
+            "Conversion rate optimization",
+            "A/B testing & funnel analysis",
+            "Retargeting campaigns",
+            "Advanced analytics dashboard",
+            "Weekly optimization reports",
+            "FREE: Landing page design",
+            "FREE: Sales funnel consultation",
+          ],
         },
-        {
-            name: "Backlink Audit & Cleanup",
-            description: "Full analysis and disavow of toxic backlinks.",
-            price: "$99",
-            frequency: "one‑time",
-            variant: "outline"
-        },
-        {
-            name: "Priority Support",
-            description: "24/7 Slack channel + 4h SLA for critical issues.",
-            price: "$99",
-            frequency: "mo",
-            variant: "outline"
-        },
-        {
-            name: "Advanced Analytics Setup",
-            description: "GA4 + Tag Manager + Custom Dashboards setup.",
-            price: "$299",
-            frequency: "one‑time",
-            variant: "default"
-        },
-    ]
+      ],
+    },
   }
 
   // ... existing useEffects for access and timer ...
@@ -418,116 +487,121 @@ export default function PricingPage() {
         </div>
 
         {/* MAPPING THROUGH ALL SERVICE CATEGORIES */}
-        {Object.entries(servicePricing).filter(([key]) => key !== 'organicAddons').map(([key, service]) => (
-          <div key={key} className="mb-16">
-            <div className="text-center mb-8">
-              <div
-                className={`inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r ${service.color} text-white mb-4`}
-              >
-                <service.icon className="h-6 w-6" />
-                <h2 className="text-2xl font-bold">{service.title}</h2>
+        {Object.entries(servicePricing)
+          .filter(([key]) => key !== "organicAddons")
+          .map(([key, service]) => (
+            <div key={key} className="mb-16">
+              <div className="text-center mb-8">
+                <div
+                  className={`inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gradient-to-r ${service.color} text-white mb-4`}
+                >
+                  <service.icon className="h-6 w-6" />
+                  <h2 className="text-2xl font-bold">{service.title}</h2>
+                </div>
+              </div>
+
+              <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
+                {service.packages.map((pkg, index) => (
+                  <Card
+                    key={index}
+                    className={`glass-card flex flex-col relative transition-all duration-300 hover:scale-105 ${
+                      pkg.popular ? "border-fuchsia-500 shadow-2xl shadow-fuchsia-500/20 scale-105" : "hover:shadow-xl"
+                    } ${pkg.tag === "BEST VALUE" ? "border-green-500 shadow-2xl shadow-green-500/30 scale-105" : ""}`}
+                    style={{ animationDelay: `${index * 0.1}s` }}
+                  >
+                    {(pkg.popular || pkg.tag) && (
+                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <Badge
+                          className={`px-4 py-1 ${
+                            pkg.tag === "BEST VALUE"
+                              ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white"
+                              : "bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white"
+                          }`}
+                        >
+                          {pkg.tag || "MOST POPULAR"}
+                        </Badge>
+                      </div>
+                    )}
+
+                    <CardHeader className="text-center pb-4">
+                      <CardTitle className="text-2xl font-bold text-foreground">{pkg.name}</CardTitle>
+                      <CardDescription className="text-muted-foreground">
+                        {pkg.originalPrice && (
+                          <span className="text-lg text-red-500 line-through mr-2">{pkg.originalPrice}</span>
+                        )}
+                        <span className="text-4xl font-extrabold text-foreground">{pkg.price}</span>
+                      </CardDescription>
+                    </CardHeader>
+
+                    <CardContent className="flex-1 space-y-4">
+                      <ul className="space-y-2">
+                        {pkg.features.map((feature, featureIndex) => (
+                          <li key={featureIndex} className="flex items-center gap-2 text-muted-foreground">
+                            <CheckCircle
+                              className={`h-5 w-5 ${feature.startsWith("FREE:") ? "text-green-500" : "text-fuchsia-500"} colorful-icon`}
+                            />
+                            <span className={feature.startsWith("FREE:") ? "font-semibold text-green-600" : ""}>
+                              {feature}
+                            </span>
+                          </li>
+                        ))}
+                      </ul>
+                    </CardContent>
+
+                    <CardFooter className="pt-4">
+                      <Link href="/contact" className="w-full">
+                        <Button className="gradient-button w-full text-lg py-3 hover:shadow-lg transition-all duration-300">
+                          {pkg.tag === "BEST VALUE" ? "Activate Best Value Deal!" : "Get Started - SAVE 70%!"}
+                        </Button>
+                      </Link>
+                    </CardFooter>
+                  </Card>
+                ))}
               </div>
             </div>
-
-            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3 mb-12">
-              {service.packages.map((pkg, index) => (
-                <Card
-                  key={index}
-                  className={`glass-card flex flex-col relative transition-all duration-300 hover:scale-105 ${
-                    pkg.popular ? "border-fuchsia-500 shadow-2xl shadow-fuchsia-500/20 scale-105" : "hover:shadow-xl"
-                  } ${
-                    pkg.tag === "BEST VALUE" ? "border-green-500 shadow-2xl shadow-green-500/30 scale-105" : ""
-                  }`}
-                  style={{ animationDelay: `${index * 0.1}s` }}
-                >
-                  {(pkg.popular || pkg.tag) && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <Badge 
-                          className={`px-4 py-1 ${
-                              pkg.tag === "BEST VALUE" 
-                                ? "bg-gradient-to-r from-green-500 to-emerald-500 text-white" 
-                                : "bg-gradient-to-r from-fuchsia-500 to-pink-500 text-white"
-                          }`}
-                      >
-                        {pkg.tag || "MOST POPULAR"}
-                      </Badge>
-                    </div>
-                  )}
-
-                  <CardHeader className="text-center pb-4">
-                    <CardTitle className="text-2xl font-bold text-foreground">{pkg.name}</CardTitle>
-                    <CardDescription className="text-muted-foreground">
-                      {pkg.originalPrice && (
-                        <span className="text-lg text-red-500 line-through mr-2">{pkg.originalPrice}</span>
-                      )}
-                      <span className="text-4xl font-extrabold text-foreground">{pkg.price}</span>
-                    </CardDescription>
-                  </CardHeader>
-
-                  <CardContent className="flex-1 space-y-4">
-                    <ul className="space-y-2">
-                      {pkg.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-center gap-2 text-muted-foreground">
-                          <CheckCircle
-                            className={`h-5 w-5 ${feature.startsWith("FREE:") ? "text-green-500" : "text-fuchsia-500"} colorful-icon`}
-                          />
-                          <span className={feature.startsWith("FREE:") ? "font-semibold text-green-600" : ""}>
-                            {feature}
-                          </span>
-                        </li>
-                      ))}
-                    </ul>
-                  </CardContent>
-
-                  <CardFooter className="pt-4">
-                    <Link href="/contact" className="w-full">
-                      <Button className="gradient-button w-full text-lg py-3 hover:shadow-lg transition-all duration-300">
-                        {pkg.tag === "BEST VALUE" ? "Activate Best Value Deal!" : "Get Started - SAVE 70%!"}
-                      </Button>
-                    </Link>
-                  </CardFooter>
-                </Card>
-              ))}
-            </div>
-          </div>
-        ))}
+          ))}
 
         {/* NEW: SOCIAL PROOF / TESTIMONIALS SECTION */}
         <div className="text-center mt-24">
-            <h3 className="text-3xl font-bold text-foreground mb-6">Our Clients Speak For Themselves</h3>
-            <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
-                {/* Testimonial Card 1 */}
-                <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
-                    <p className="italic text-lg text-muted-foreground">"The Growth Engine combo paid for itself within the first month. Incredible speed and value!"</p>
-                    <CardFooter className="pt-4 px-0 text-left font-semibold">
-                        <span className="text-fuchsia-600">- Sarah L., CEO of TechStart</span>
-                    </CardFooter>
-                </Card>
-                {/* Testimonial Card 2 */}
-                <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
-                    <p className="italic text-lg text-muted-foreground">"Professional, fast, and the web development package was exactly what our small business needed."</p>
-                    <CardFooter className="pt-4 px-0 text-left font-semibold">
-                        <span className="text-fuchsia-600">- Alex R., Founder of Local Goods</span>
-                    </CardFooter>
-                </Card>
-                {/* Testimonial Card 3 */}
-                <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
-                    <p className="italic text-lg text-muted-foreground">"The free organic audit led to immediate changes that boosted our search ranking. Highly recommend!"</p>
-                    <CardFooter className="pt-4 px-0 text-left font-semibold">
-                        <span className="text-fuchsia-600">- Maria K., Marketing Manager</span>
-                    </CardFooter>
-                </Card>
-            </div>
+          <h3 className="text-3xl font-bold text-foreground mb-6">Our Clients Speak For Themselves</h3>
+          <div className="grid gap-6 md:grid-cols-3 max-w-6xl mx-auto">
+            {/* Testimonial Card 1 */}
+            <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
+              <p className="italic text-lg text-muted-foreground">
+                "The Growth Engine combo paid for itself within the first month. Incredible speed and value!"
+              </p>
+              <CardFooter className="pt-4 px-0 text-left font-semibold">
+                <span className="text-fuchsia-600">- Sarah L., CEO of TechStart</span>
+              </CardFooter>
+            </Card>
+            {/* Testimonial Card 2 */}
+            <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
+              <p className="italic text-lg text-muted-foreground">
+                "Professional, fast, and the web development package was exactly what our small business needed."
+              </p>
+              <CardFooter className="pt-4 px-0 text-left font-semibold">
+                <span className="text-fuchsia-600">- Alex R., Founder of Local Goods</span>
+              </CardFooter>
+            </Card>
+            {/* Testimonial Card 3 */}
+            <Card className="glass-card p-6 border-l-4 border-fuchsia-500">
+              <p className="italic text-lg text-muted-foreground">
+                "The free organic audit led to immediate changes that boosted our search ranking. Highly recommend!"
+              </p>
+              <CardFooter className="pt-4 px-0 text-left font-semibold">
+                <span className="text-fuchsia-600">- Maria K., Marketing Manager</span>
+              </CardFooter>
+            </Card>
+          </div>
         </div>
         {/* END SOCIAL PROOF */}
-
 
         {/* UPDATED À LA CARTE ADD-ONS SECTION */}
         <div className="text-center mt-16">
           <div className="max-w-5xl mx-auto">
             <h3 className="text-2xl font-bold text-foreground mb-4">🎯 À La Carte Organic Add-ons</h3>
             <p className="text-muted-foreground mb-8">
-                Boost your current package with high-impact, one-time organic marketing services.
+              Boost your current package with high-impact, one-time organic marketing services.
             </p>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {servicePricing.organicAddons.map((addon, index) => (
@@ -538,7 +612,7 @@ export default function PricingPage() {
                   </CardHeader>
                   <CardContent className="p-0">
                     <div className="text-2xl font-bold text-foreground mb-4">
-                        {addon.price} {addon.frequency !== 'mo' ? addon.frequency : `/ ${addon.frequency}`}
+                      {addon.price} {addon.frequency !== "mo" ? addon.frequency : `/ ${addon.frequency}`}
                     </div>
                     <Link href="/contact">
                       <Button className="w-full" variant={addon.variant as "default" | "outline"}>
@@ -555,18 +629,22 @@ export default function PricingPage() {
 
         {/* NEW: FINAL CTA/CONSULTATION BANNER */}
         <div className="text-center mt-16">
-            <div className="bg-gradient-to-r from-fuchsia-500/10 to-pink-500/10 rounded-2xl p-8 border border-fuchsia-500/30 max-w-4xl mx-auto">
-                <h3 className="text-3xl font-bold text-fuchsia-600 mb-2">Still Unsure Which Plan is Right?</h3>
-                <p className="text-lg text-muted-foreground mb-6">Book your **FREE 30-Minute Strategy Call** to find your perfect fit and unlock maximum savings.</p>
-                <Link href="/contact">
-                    <Button size="lg" className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white shadow-lg shadow-fuchsia-500/50">
-                        Book My Free Strategy Call Now
-                    </Button>
-                </Link>
-            </div>
+          <div className="bg-gradient-to-r from-fuchsia-500/10 to-pink-500/10 rounded-2xl p-8 border border-fuchsia-500/30 max-w-4xl mx-auto">
+            <h3 className="text-3xl font-bold text-fuchsia-600 mb-2">Still Unsure Which Plan is Right?</h3>
+            <p className="text-lg text-muted-foreground mb-6">
+              Book your **FREE 30-Minute Strategy Call** to find your perfect fit and unlock maximum savings.
+            </p>
+            <Link href="/contact">
+              <Button
+                size="lg"
+                className="bg-fuchsia-600 hover:bg-fuchsia-700 text-white shadow-lg shadow-fuchsia-500/50"
+              >
+                Book My Free Strategy Call Now
+              </Button>
+            </Link>
+          </div>
         </div>
         {/* END NEW CTA */}
-
 
         {/* Guarantee Section (No Change) */}
         <div className="text-center mt-16">
