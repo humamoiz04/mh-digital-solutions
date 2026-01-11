@@ -1,3 +1,5 @@
+"use client"
+
 import Image from "next/image"
 import { Section } from "@/components/Section"
 
@@ -38,9 +40,6 @@ export function ClientNetworkSection() {
                   width={150}
                   height={80}
                   className="object-contain grayscale hover:grayscale-0 transition-all duration-300 max-w-full max-h-full"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none"
-                  }}
                 />
               </div>
             </div>
