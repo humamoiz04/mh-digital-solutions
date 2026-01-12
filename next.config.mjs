@@ -6,7 +6,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-  output: 'standalone',
+  output: 'export',
   images: {
     unoptimized: false,
     formats: ['image/webp', 'image/avif'],

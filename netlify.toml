@@ -1,7 +1,7 @@
 [build]
-  command = "next build && next export"
+  command = "next build"
   functions = "api"
-  publish = "out"
+  publish = ".next"
 
 [build.environment]
   NODE_VERSION = "20"
