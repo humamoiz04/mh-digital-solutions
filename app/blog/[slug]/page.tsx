@@ -7,6 +7,16 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { blogPosts } from "@/lib/content-data"
 
+// 1. ADD THIS: Tell Next.js which paths to pre-render
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+// 2. ADD THIS: Ensure it doesn't try to render non-existent slugs at runtime
+export const dynamicParams = false
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug)
 
