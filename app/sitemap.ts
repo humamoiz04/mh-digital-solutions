@@ -1,3 +1,5 @@
+export const dynamic = 'force-static';
+
 import type { MetadataRoute } from "next"
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,6 +36,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     `/local/${city}/digital-marketing`,
     `/local/${city}/near-me`,
   ])
+
+
 
   const paths = [
     "/",
