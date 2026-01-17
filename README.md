@@ -1,30 +1,40 @@
-# New Project
+# MH Digital Solutions
 
-*Automatically synced with your [v0.dev](https://v0.dev) deployments*
+Professional digital marketing and web development services for businesses in Northern California.
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/tuflihoons-projects/v0-new-project-rjdaoy1hofb)
-[![Built with v0](https://img.shields.io/badge/Built%20with-v0.dev-black?style=for-the-badge)](https://v0.dev/chat/projects/rjDAOY1HofB)
+## About
 
-## Overview
+MH Digital Solutions is a full-service digital marketing agency specializing in:
+- Web Design & Development
+- SEO & Local Marketing
+- Social Media Management
+- PPC & Performance Marketing
+- AI Automation Solutions
 
-This repository will stay in sync with your deployed chats on [v0.dev](https://v0.dev).
-Any changes you make to your deployed app will be automatically pushed to this repository from [v0.dev](https://v0.dev).
+## Services
 
-## Deployment
+Serving businesses across Northern California with proven digital marketing strategies that drive real results.
 
-Your project is live at:
+Visit our website at [https://www.mhdigitalsolution.com](https://www.mhdigitalsolution.com)
 
-**[https://vercel.com/tuflihoons-projects/v0-new-project-rjdaoy1hofb](https://vercel.com/tuflihoons-projects/v0-new-project-rjdaoy1hofb)**
+## Getting Started
 
-## Build your app
+This is a Next.js project. To get started locally:
 
-Continue building your app on:
+```bash
+npm install
+npm run dev
+```
 
-**[https://v0.dev/chat/projects/rjDAOY1HofB](https://v0.dev/chat/projects/rjDAOY1HofB)**
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-## How It Works
+## Build
 
-1. Create and modify your project using [v0.dev](https://v0.dev)
-2. Deploy your chats from the v0 interface
-3. Changes are automatically pushed to this repository
-4. Vercel deploys the latest version from this repository
+```bash
+npm run build
+npm start
+```
+
+## Support
+
+For inquiries, contact us at info@mhdigitalsolution.com or call (707) 249-1222
