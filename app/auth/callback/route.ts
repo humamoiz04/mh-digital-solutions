@@ -1,9 +1,17 @@
-import { NextResponse } from "next/server"
+// Handling dynamic redirects
 
-export async function GET(request: Request) {
-  return NextResponse.redirect(new URL("/", request.url))
+export async function getStaticProps() {
+  // Your dynamic redirect logic here
+
+  return {
+    redirect: {
+      destination: '/new-path', // Change this to where you want to redirect
+      permanent: false,
+    },
+  };
 }
 
-export async function POST(request: Request) {
-  return NextResponse.redirect(new URL("/", request.url))
+export default function StaticPage() {
+  // Content of your static page
+  return <div>Welcome to the static page!</div>;
 }
