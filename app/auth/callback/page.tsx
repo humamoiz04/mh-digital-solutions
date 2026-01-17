@@ -1,15 +1,14 @@
-import { useEffect } from 'react';
-import { useRouter } from 'next/router';
+'use client';
 
-const Callback = () => {
+import { useEffect } from 'react';
+import { useRouter } from 'next/navigation';
+
+export default function Callback() {
   const router = useRouter();
 
   useEffect(() => {
-    // Redirect to the home page
     router.push('/');
   }, [router]);
 
   return null;
-};
-
-export default Callback;
+}
