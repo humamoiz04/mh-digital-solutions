@@ -9,9 +9,20 @@ import type { Metadata } from "next"
 import { generateCaseStudyMetadata } from "@/lib/metadata"
 import { caseStudies } from "@/lib/content-data"
 
+// 1. FIX: Added generateStaticParams to enable static export
+export async function generateStaticParams() {
+  return caseStudies.map((cs) => ({
+    slug: cs.slug,
+  }))
+}
+
+// 2. FIX: Force a 404 if the slug doesn't exist (required for output: 'export')
+export const dynamicParams = false
+
 export default function CaseStudyPage({ params }: { params: { slug: string } }) {
   const caseStudy = caseStudies.find((cs) => cs.slug === params.slug)
 
+  // Proper "if missing" check
   if (!caseStudy) {
     return (
       <Section className="py-16 md:py-24 text-center">
@@ -38,6 +49,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             width={900}
             height={500}
             className="rounded-lg mb-6 w-full h-auto object-cover"
+            priority // Added priority for SEO/LCP as this is the main image
           />
           <CardHeader className="p-0 mb-4">
             <CardTitle className="text-4xl font-bold text-foreground mb-2">{caseStudy.title}</CardTitle>
@@ -48,25 +60,31 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
             <p>{caseStudy.challenge}</p>
             <h3>Our Solution</h3>
             <p>{caseStudy.solution}</p>
+            
             <h3>The Results</h3>
             <ul className="list-none p-0 space-y-2">
-              {caseStudy.results.map((result, index) => (
+              {caseStudy.results?.map((result, index) => (
                 <li key={index} className="flex items-start gap-2">
                   <CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" />
                   <span>{result}</span>
                 </li>
-              ))}
+              )) || <li>No results specified.</li>}
             </ul>
+
             <h3>Key Metrics</h3>
             <ul className="list-none p-0 space-y-2">
-              {Object.entries(caseStudy.metrics).map(([key, value], idx) => (
-                <li key={idx} className="flex items-start gap-2">
-                  <CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" />
-                  <span>
-                    <strong>{key}:</strong> {value}
-                  </span>
-                </li>
-              ))}
+              {caseStudy.metrics ? (
+                Object.entries(caseStudy.metrics).map(([key, value], idx) => (
+                  <li key={idx} className="flex items-start gap-2">
+                    <CheckCircle className="h-5 w-5 text-primary mt-1 shrink-0" />
+                    <span>
+                      <strong>{key}:</strong> {value}
+                    </span>
+                  </li>
+                ))
+              ) : (
+                <li>No metrics available.</li>
+              )}
             </ul>
             <p className="text-muted-foreground mt-6">{caseStudy.description}</p>
           </CardContent>
