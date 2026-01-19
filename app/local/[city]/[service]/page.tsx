@@ -5,12 +5,35 @@ import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { MapPin, CheckCircle, ArrowRight } from "lucide-react"
 import Link from "next/link"
+import { locations } from "@/lib/content-data"
 
 interface LocalServicePageProps {
   params: {
     city: string
     service: string
   }
+}
+
+export const dynamicParams = false
+
+export async function generateStaticParams() {
+  const services = ["seo", "web-design", "digital-marketing", "ppc-advertising"]
+  const paths: Array<{ city: string; service: string }> = []
+
+  Object.values(locations).forEach((state: any) => {
+    if (state.cities && Array.isArray(state.cities)) {
+      state.cities.forEach((city: any) => {
+        services.forEach((service) => {
+          paths.push({
+            city: city.slug,
+            service: service,
+          })
+        })
+      })
+    }
+  })
+
+  return paths
 }
 
 export async function generateMetadata({ params }: LocalServicePageProps): Promise<Metadata> {

@@ -34,6 +34,10 @@ export const metadata: Metadata = {
   authors: [{ name: "MH Digital Solution", url: "https://www.mhdigitalsolution.com" }],
   creator: "MH Digital Solution",
   publisher: "MH Digital Solution",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
   alternates: {
     canonical: "https://www.mhdigitalsolution.com",
     languages: {
@@ -89,7 +93,7 @@ export const metadata: Metadata = {
     "msapplication-TileColor": "#d946ef",
     "msapplication-config": "/browserconfig.xml",
   },
-  // generator: 'v0.app' has been removed
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

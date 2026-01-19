@@ -39,9 +39,8 @@ export function SeoBenefitsSection() {
           <Image
             src="/images/digital-marketing-overview.webp"
             alt="SEO Benefits Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
         <div className="space-y-6">

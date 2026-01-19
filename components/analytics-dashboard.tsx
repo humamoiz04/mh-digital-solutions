@@ -11,9 +11,8 @@ export function AnalyticsDashboard() {
         <Image
           src="/images/business-analytics-3d.webp"
           alt="Business Analytics Background"
-          layout="fill"
-          objectFit="cover"
-          className="rounded-lg"
+          fill
+          className="rounded-lg object-cover"
         />
       </div>
       <CardHeader className="flex flex-row items-center justify-between space-y-0 pb-2">

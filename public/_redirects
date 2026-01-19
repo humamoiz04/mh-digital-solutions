@@ -1,65 +1,72 @@
-# --- DOMAIN & PROTOCOL ---
-# Note: Netlify usually handles WWW/HTTPS automatically in site settings.
-# These are fallback rules.
-https://mhdigitalsolution.com/* https://www.mhdigitalsolution.com/:splat  301!
+# HTTP to HTTPS redirect
+http://www.mhdigitalsolution.com/* https://www.mhdigitalsolution.com/:splat 301
+http://mhdigitalsolution.com/* https://www.mhdigitalsolution.com/:splat 301
+https://mhdigitalsolution.com/* https://www.mhdigitalsolution.com/:splat 301
 
-# --- CORE PAGE REDIRECTS ---
-/home                              /                                       301
-/mt                                /                                       301
-/web-design                        /services/web-design                   301
-/web-development                   /services/web-development               301
-/digital-marketing                 /services/digital-marketing            301
-/seo                               /services/seo-services                 301
-/pricing                           /pricing                                301
+# Home redirects
+/home   /   301
 
-# --- LEGACY HTML & TAGS ---
-/*.html                            /:splat                                 301
-/tag/* /blog                                   301
-/find-developers/* /services/web-development               301
+# Service redirects
+/services/digital                             /services/digital-marketing 301
+/services/legal                               /services/business-consulting 301
+/services/premium                             /pricing 301
+/services/strategic-business-consulting       /services/business-consulting 301
+/services/consultation                        /services/business-consulting 301
+/services/web-design-consultation             /services/web-design 301
+/services/operational-efficiency              /services/business-consulting 301
+/services/sales-process-optimization          /services/business-consulting 301
+/services/business-process-reengineering      /services/business-consulting 301
 
-# --- WYOMING LOCATION REDIRECTS ---
-/local/jackson/* /locations/wyoming/jackson-hole        301
-/local/cheyenne/* /locations/wyoming/cheyenne            301
-/local/casper/* /locations/wyoming/casper              301
-/local/laramie/* /locations/wyoming/laramie              301
-/local/gillette/* /locations/wyoming                     301
-/local/sheridan/* /locations/wyoming                     301
-/local/rock-springs/* /locations/wyoming                     301
+# Legacy redirects
+/web-design                                   /services/web-design 301
+/web-development                              /services/web-development 301
+/digital-marketing                            /services/digital-marketing 301
+/seo                                          /services/seo-services 301
+/find-developers/*                            /services/web-development 301
 
-# --- WEST VIRGINIA LOCATION REDIRECTS ---
-/local/morgantown/* /locations/west-virginia/morgantown     301
-/local/charleston/* /locations/west-virginia/charleston     301
-/local/huntington/* /locations/west-virginia/huntington     301
-/local/wheeling/* /locations/west-virginia                301
+# Blog/tag redirects
+/tag/:tag/*                                   /blog 301
+/blog/ppc-optimization                        /blog/ppc-optimization-guide 301
+/blog/:clutch_profile_url                     /blog 301
 
-# --- SERVICE SLUG & CONSULTATION REDIRECTS ---
-/services/digital                  /services/digital-marketing            301
-/services/legal                    /services/business-consulting          301
-/services/premium                  /pricing                                301
-/services/strategic-business-consulting /services/business-consulting      301
-/services/consultation             /services/business-consulting          301
-/services/web-design-consultation  /services/web-design                   301
-/services/operational-efficiency   /services/business-consulting          301
-/services/sales-process-optimization /services/business-consulting        301
-/services/business-process-reengineering /services/business-consulting     301
+# HTML to non-HTML redirects
+/:page.html                                   /:page 301
+/services/:service.html                       /services/:service 301
 
-# --- SPECIFIC LOCAL SERVICE MAPPINGS ---
-/local/rock-springs/near-me        /local/rock-springs/digital-marketing  301
-/local/jackson/near-me             /local/jackson/digital-marketing       301
-/local/wichita/near-me             /local/wichita/digital-marketing       301
-/local/fairmont/near-me            /local/fairmont/digital-marketing      301
-/local/wheeling/near-me            /local/wheeling/digital-marketing      301
-/local/olathe/near-me              /local/olathe/digital-marketing        301
-/local/gillette/near-me            /local/gillette/digital-marketing      301
-/local/charleston/near-me          /local/charleston/digital-marketing    301
-/local/cheyenne/near-me            /local/cheyenne/digital-marketing      301
-/local/huntington/near-me          /local/huntington/digital-marketing    301
-/local/martinsburg/near-me         /local/martinsburg/digital-marketing   301
-/local/casper/near-me              /local/casper/digital-marketing        301
-/local/morgantown/near-me          /local/morgantown/digital-marketing    301
+# Wyoming location redirects
+/local/jackson/*                              /local/jackson/digital-marketing 301
+/local/cheyenne/*                             /local/cheyenne/digital-marketing 301
+/local/casper/*                               /local/casper/digital-marketing 301
+/local/laramie/*                              /local/laramie/digital-marketing 301
+/local/gillette/*                             /local/gillette/digital-marketing 301
+/local/sheridan/*                             /local/sheridan/digital-marketing 301
+/local/rock-springs/*                         /local/rock-springs/digital-marketing 301
 
-# --- CATCH-ALL FOR REMAINING LOCAL ROUTES ---
-/local/* /locations                              301
+# West Virginia location redirects
+/local/morgantown/*                           /local/morgantown/digital-marketing 301
+/local/charleston/*                           /local/charleston/digital-marketing 301
+/local/huntington/*                           /local/huntington/digital-marketing 301
+/local/wheeling/*                             /local/wheeling/digital-marketing 301
+/local/martinsburg/*                          /local/martinsburg/digital-marketing 301
 
-# --- SPA FALLBACK (CRITICAL FOR NEXT.JS ON NETLIFY) ---
-/* /index.html                             200
+# Other location redirects - direct to locations index
+/local/*                                      /locations 301
+
+# "near-me" redirects to digital-marketing
+/local/rock-springs/near-me                   /local/rock-springs/digital-marketing 301
+/local/wichita/near-me                        /local/wichita/digital-marketing 301
+/local/fairmont/near-me                       /local/fairmont/digital-marketing 301
+/local/laramie/near-me                        /local/laramie/digital-marketing 301
+/local/jackson/near-me                        /local/jackson/digital-marketing 301
+/local/gillette/near-me                       /local/gillette/digital-marketing 301
+/local/wheeling/near-me                       /local/wheeling/digital-marketing 301
+/local/olathe/near-me                         /local/olathe/digital-marketing 301
+/local/charleston/near-me                     /local/charleston/digital-marketing 301
+/local/cheyenne/near-me                       /local/cheyenne/digital-marketing 301
+/local/huntington/near-me                     /local/huntington/digital-marketing 301
+/local/martinsburg/near-me                    /local/martinsburg/digital-marketing 301
+/local/casper/near-me                         /local/casper/digital-marketing 301
+/local/morgantown/near-me                     /local/morgantown/digital-marketing 301
+
+# SPA fallback - serve index.html for all unmatched routes
+/*                                            /index.html 200

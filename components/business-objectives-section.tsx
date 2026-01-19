@@ -58,9 +58,8 @@ export function BusinessObjectivesSection() {
           <Image
             src="/images/design-mode/business-process-optimization.webp"
             alt="Business Objectives Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>
