@@ -68,9 +68,8 @@ export function BusinessAnalyticsDetail() {
           <Image
             src="/images/design-mode/business-analytics-3d.webp"
             alt="Business Analytics 3D Visualization"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

@@ -70,9 +70,8 @@ export function EmailMarketingDetail() {
           <Image
             src="/images/email-marketing-illustration.webp"
             alt="Email Marketing Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

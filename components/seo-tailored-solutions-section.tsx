@@ -59,9 +59,8 @@ export function SeoTailoredSolutionsSection() {
           <Image
             src="/images/digital-marketing-laptop.webp"
             alt="Tailored SEO Solutions"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

@@ -66,11 +66,10 @@ export function DevOpsSolutionsSection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/gradient-devops-illustration_23-2149373211-TTO6m.webp"
+            src="/images/gradient-devops-illustration-23-2149373211-tto6m.webp"
             alt="DevOps Solutions Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

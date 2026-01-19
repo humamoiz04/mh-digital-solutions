@@ -68,11 +68,10 @@ export function AutomationSolutionsSection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="/images/design-mode/automation-analytics.webp" // Added automation analytics image
+            src="/images/design-mode/automation-analytics.webp"
             alt="Automation and Analytics Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

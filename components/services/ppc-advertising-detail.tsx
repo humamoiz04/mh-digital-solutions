@@ -68,9 +68,8 @@ export function PpcAdvertisingDetail() {
           <Image
             src="/images/ppc-advertising.webp"
             alt="PPC Advertising Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

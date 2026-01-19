@@ -23,8 +23,7 @@ export function SeoPartnersSection() {
               alt={partner.name}
               width={150}
               height={80}
-              objectFit="contain"
-              className="grayscale hover:grayscale-0 transition-all duration-300"
+              className="grayscale hover:grayscale-0 transition-all duration-300 object-contain"
             />
           </div>
         ))}

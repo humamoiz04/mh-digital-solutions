@@ -36,12 +36,10 @@ export function ProblemsWeSolveSection() {
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="/images/team-analytics-dashboard.webp
-" // New image added
+            src="/images/team-analytics-dashboard.webp"
             alt="Innovation Team Solving Problems"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
         <div className="space-y-6">

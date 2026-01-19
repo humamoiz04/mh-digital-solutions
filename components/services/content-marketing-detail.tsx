@@ -68,9 +68,8 @@ export function ContentMarketingDetail() {
           <Image
             src="/images/design-mode/download%20%281%29.jpeg"
             alt="Content Marketing Strategy Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

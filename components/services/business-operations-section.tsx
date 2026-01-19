@@ -68,11 +68,10 @@ export function BusinessOperationsSection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="/images/design-mode/business-operations.webp" // Added business operations image
+            src="/images/design-mode/business-operations.webp"
             alt="Business Operations Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

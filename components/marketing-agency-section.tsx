@@ -57,11 +57,10 @@ export function MarketingAgencySection() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="/images/design-mode/global-business-concept-management-strategy-business-communication-human-resources_679557-2389.webp" // Updated to use global business concept image
+            src="/images/design-mode/global-business-concept-management-strategy-business-communication-human-resources_679557-2389.webp"
             alt="Digital Marketing Team"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

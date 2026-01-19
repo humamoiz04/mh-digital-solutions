@@ -68,9 +68,8 @@ export function BusinessConsultingDetail() {
           <Image
             src="/images/design-mode/download%20%285%29.jpeg"
             alt="Creative Business Strategy Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

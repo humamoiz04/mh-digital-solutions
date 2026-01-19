@@ -70,9 +70,8 @@ export function SeoSolutionsSection() {
           <Image
             src="/images/design-mode/download%20%283%29.jpeg"
             alt="SEO Optimization Process Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>

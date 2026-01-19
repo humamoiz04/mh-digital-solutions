@@ -68,11 +68,10 @@ export function LeadGenerationDetail() {
         </div>
         <div className="relative h-[400px] md:h-[600px] flex items-center justify-center">
           <Image
-            src="/images/lead-generation-funnel (2).webp" // Updated image path
+            src="/images/lead-generation-funnel (2).webp"
             alt="Lead Generation Funnel Illustration"
-            layout="fill"
-            objectFit="contain"
-            className="z-10"
+            fill
+            className="z-10 object-contain"
           />
         </div>
       </div>
