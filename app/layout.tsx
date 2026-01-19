@@ -11,10 +11,11 @@ import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
-import { ChristmasPromoPopup } from "@/components/christmas-promo-popup"
 import { NewYearPromoBar } from "@/components/new-year-promo-bar"
 import { GlowingNetworkBackground } from "@/components/glowing-network-background"
 import { AIChatbot } from "@/components/ai-chatbot"
+import { PromotionalPopup } from "@/components/promotional-popup"
+import { ChristmasPromoPopup } from "@/components/christmas-promo-popup"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -308,7 +309,7 @@ export default function RootLayout({
             </main>
             <Footer />
             <CookieConsentBanner />
-            <ChristmasPromoPopup />
+            <PromotionalPopup />
             <EnhancedChatWidget />
             <WhatsAppWidget />
             <AIChatbot />
