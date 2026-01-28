@@ -1,0 +1,35 @@
+name = "mhdigitalsolution"
+type = "javascript"
+account_id = ""  # Add your Cloudflare account ID
+workers_dev = true
+route = ""  # Leave empty for Cloudflare Pages
+zone_id = ""  # Add your zone ID if using with a domain
+
+# Cloudflare Pages configuration
+[build]
+command = "npm run build"
+cwd = "./"
+watch_paths = ["**/*.tsx", "**/*.ts", "**/*.jsx", "**/*.js"]
+
+[build.upload]
+format = "service-worker"
+
+# Environment variables
+[env.production]
+name = "mhdigitalsolution"
+routes = [
+  { pattern = "mhdigitalsolution.com", zone_name = "mhdigitalsolution.com" },
+  { pattern = "www.mhdigitalsolution.com", zone_name = "mhdigitalsolution.com" }
+]
+
+# Minify settings
+[env.production.build]
+command = "npm run build"
+
+# Environment configuration
+[vars]
+NEXT_PUBLIC_SITE_URL = "https://www.mhdigitalsolution.com"
+
+# Analytics Engine binding (optional)
+[analytics]
+enabled = true

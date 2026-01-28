@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "deploy:cloudflare": "next build && wrangler pages deploy out",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
