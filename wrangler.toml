@@ -1,34 +1,22 @@
+# Cloudflare Pages configuration for Next.js static export
 name = "mhdigitalsolution"
 type = "javascript"
-account_id = "1f6ffa2b33d6caaf1692c0266cfaff7c" 
-workers_dev = true
-route = ""  # Leave empty for Cloudflare Pages
-zone_id = "ca9fd6307dccac512d389285dd7c2480" 
-# Cloudflare Pages configuration
+account_id = "1f6ffa2b33d6caaf1692c0266cfaff7c"
+zone_id = "ca9fd6307dccac512d389285dd7c2480"
+
+# Build configuration
 [build]
 command = "npm run build"
 cwd = "./"
-watch_paths = ["**/*.tsx", "**/*.ts", "**/*.jsx", "**/*.js"]
+# Output directory - Next.js exports to 'out' directory
+output_dir = "out"
 
-[build.upload]
-format = "service-worker"
-
-# Environment variables
+# Environment variables for Pages
 [env.production]
-name = "mhdigitalsolution"
-routes = [
-  { pattern = "mhdigitalsolution.com", zone_name = "mhdigitalsolution.com" },
-  { pattern = "www.mhdigitalsolution.com", zone_name = "mhdigitalsolution.com" }
-]
+vars = { NEXT_PUBLIC_SITE_URL = "https://www.mhdigitalsolution.com" }
 
-# Minify settings
-[env.production.build]
-command = "npm run build"
+[env.development]
+vars = { NEXT_PUBLIC_SITE_URL = "http://localhost:3000" }
 
-# Environment configuration
-[vars]
-NEXT_PUBLIC_SITE_URL = "https://www.mhdigitalsolution.com"
-
-# Analytics Engine binding (optional)
-[analytics]
-enabled = true
+# Compatibility flags for Pages
+compatibility_flags = ["nodejs_compat"]
