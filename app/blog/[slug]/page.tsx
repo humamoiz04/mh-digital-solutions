@@ -7,6 +7,14 @@ import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { blogPosts } from "@/lib/content-data"
 
+export async function generateStaticParams() {
+  return blogPosts.map((post) => ({
+    slug: post.slug,
+  }))
+}
+
+export const dynamicParams = false
+
 export default function BlogPostPage({ params }: { params: { slug: string } }) {
   const post = blogPosts.find((p) => p.slug === params.slug)
 
