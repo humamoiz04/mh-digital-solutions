@@ -1,6 +1,6 @@
 name = "mhdigitalsolution"
 type = "javascript"
-account_id = ""  # Add your Cloudflare account ID
+account_id = "1f6ffa2b33d6caaf1692c0266cfaff7c" 
 workers_dev = true
 route = ""  # Leave empty for Cloudflare Pages
 zone_id = ""  # Add your zone ID if using with a domain
