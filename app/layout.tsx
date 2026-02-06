@@ -5,7 +5,6 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
@@ -293,7 +292,6 @@ export default function RootLayout({
       <body className="relative bg-black text-white overflow-x-hidden">
         <GlowingNetworkBackground />
 
-        {/* Content wrapper with relative positioning to appear above background */}
         <div className="relative z-10">
           <NewYearPromoBar />
           <Header />
@@ -304,7 +302,6 @@ export default function RootLayout({
           <Footer />
           <CookieConsentBanner />
           <PromotionalPopup />
-          <EnhancedChatWidget />
           <WhatsAppWidget />
         </div>
       </body>
