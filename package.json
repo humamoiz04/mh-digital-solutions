@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "deploy:cloudflare": "next build && wrangler pages deploy out",
+    "deploy": "vercel deploy --prod",
     "dev": "next dev",
     "lint": "next lint",
     "start": "next start"
