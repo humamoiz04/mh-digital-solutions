@@ -11,6 +11,12 @@ export interface Analytics {
   }[]
 }
 
+declare global {
+  interface Window {
+    dataLayer?: unknown[]
+  }
+}
+
 const STORAGE_KEY = 'mh_analytics'
 
 export function initializeAnalytics() {
@@ -23,8 +29,10 @@ export function initializeAnalytics() {
     document.head.appendChild(script)
 
     window.dataLayer = window.dataLayer || []
-    function gtag(...args: any[]) {
-      window.dataLayer.push(args)
+    function gtag(...args: (string | Date | Record<string, unknown>)[]): void {
+      if (window.dataLayer) {
+        window.dataLayer.push(args)
+      }
     }
     gtag('js', new Date())
     gtag('config', 'G-YOUR_GA_ID')
