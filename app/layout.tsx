@@ -5,14 +5,12 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
-import FloatingBlobs from "@/components/floating-blobs"
 import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
 import { NewYearPromoBar } from "@/components/new-year-promo-bar"
 import { GlowingNetworkBackground } from "@/components/glowing-network-background"
-import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
 
 const inter = Inter({
@@ -297,7 +295,6 @@ export default function RootLayout({
 
         {/* Content wrapper with relative positioning to appear above background */}
         <div className="relative z-10">
-          <FloatingBlobs />
           <NewYearPromoBar />
           <Header />
           <PromoBanner />
@@ -309,7 +306,6 @@ export default function RootLayout({
           <PromotionalPopup />
           <EnhancedChatWidget />
           <WhatsAppWidget />
-          <AIChatbot />
         </div>
       </body>
     </html>
