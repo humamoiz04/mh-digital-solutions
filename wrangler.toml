@@ -1,10 +1,7 @@
 # Cloudflare Pages configuration for Next.js static export
 name = "mhdigitalsolution"
-type = "javascript"
-account_id = "1f6ffa2b33d6caaf1692c0266cfaff7c"
-zone_id = "ca9fd6307dccac512d389285dd7c2480"
 
-# Build configuration
+# Build configuration  
 [build]
 command = "npm run build"
 cwd = "./"
@@ -18,5 +15,4 @@ vars = { NEXT_PUBLIC_SITE_URL = "https://www.mhdigitalsolution.com" }
 [env.development]
 vars = { NEXT_PUBLIC_SITE_URL = "http://localhost:3000" }
 
-# Compatibility flags for Pages
-compatibility_flags = ["nodejs_compat"]
+# Routes and redirects are handled by _redirects file in public directory

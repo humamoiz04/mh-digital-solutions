@@ -37,6 +37,7 @@ export function ValidatedLink({
         "/",
         "/about",
         "/team",
+        "/the-mh-edge",
         "/services",
         "/services/digital-marketing",
         "/services/seo-services",
@@ -66,6 +67,14 @@ export function ValidatedLink({
         "/portfolio",
         "/privacy-policy",
         "/terms-of-service",
+        "/cookie-settings",
+        "/offers/hundred-dollar-website",
+        "/tools/website-cost-calculator",
+        "/referral-rewards",
+        "/local",
+        "/local/rural-counties",
+        "/locations",
+        "/resources",
       ]
 
       if (internalRoutes.includes(href)) {

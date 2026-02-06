@@ -14,7 +14,6 @@ import { NewYearPromoBar } from "@/components/new-year-promo-bar"
 import { GlowingNetworkBackground } from "@/components/glowing-network-background"
 import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
-import { ThemeProvider } from "@/components/theme-provider"
 
 const inter = Inter({
   subsets: ["latin"],
