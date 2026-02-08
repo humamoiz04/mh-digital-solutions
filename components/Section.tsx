@@ -7,7 +7,12 @@ interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   glass?: boolean
 }
 
-export function Section({ children, className, glass, ...props }: SectionProps) {
+export function Section({
+  children,
+  className,
+  glass,
+  ...props
+}: SectionProps) {
   return (
     <section
       className={cn(
