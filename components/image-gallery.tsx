@@ -98,7 +98,7 @@ export function ImageGallery({ images, className = "" }: ImageGalleryProps) {
               height={images[selectedImage].height}
               className="max-w-full max-h-full object-contain"
               priority
-              quality={95}
+              quality={75}
             />
             <p className="text-white text-center mt-4 text-lg">
               {images[selectedImage].title || images[selectedImage].alt}

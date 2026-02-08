@@ -60,6 +60,7 @@ export function BusinessObjectivesSection() {
             alt="Business Objectives Illustration"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

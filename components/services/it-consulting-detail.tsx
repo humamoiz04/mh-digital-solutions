@@ -72,6 +72,7 @@ export function ITConsultingDetail() {
             alt="IT Consulting and Web Analytics Team"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

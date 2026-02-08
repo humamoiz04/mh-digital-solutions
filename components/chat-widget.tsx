@@ -55,23 +55,10 @@ export function ChatWidget() {
       setError(null)
 
       try {
-        const response = await fetch("/api/chat", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ message: currentInput }),
-        })
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`)
-        }
-
-        const data = await response.json()
-
+        // Static export: API routes not available, show helpful message
         const botMessage: Message = {
           id: Date.now() + 1,
-          text: data.response,
+          text: "📧 Thanks for your message! Our team is available 24/7. For faster response, please contact us directly at contact@mhdigitalsolutions.com or call our support line.",
           sender: "bot",
           timestamp: new Date(),
         }

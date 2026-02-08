@@ -24,7 +24,7 @@ export function OptimizedImage({
   className = "",
   priority = false,
   sizes = "(max-width: 640px) 100vw, (max-width: 768px) 80vw, (max-width: 1024px) 60vw, 50vw",
-  quality = 90,
+  quality = 75,
   title,
   loading = "lazy",
 }: OptimizedImageProps) {

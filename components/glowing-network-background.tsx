@@ -20,44 +20,42 @@ export const GlowingNetworkBackground = () => {
     resizeCanvas()
     window.addEventListener("resize", resizeCanvas)
 
-    // Network nodes - refined for sophisticated look
+    // Network nodes
     interface Node {
       x: number
       y: number
       vx: number
       vy: number
       color: string
-      size: number
     }
 
     const nodes: Node[] = []
-    const nodeCount = 35 // Very sparse for clean look
-    const colors = ["rgba(236, 72, 153, 0.6)", "rgba(59, 130, 246, 0.6)"] // Pink and blue
+    const nodeCount = 80 // reduced from 150 to 80 nodes for cleaner appearance
+    const colors = ["rgba(255, 0, 255, 0.8)", "rgba(0, 240, 255, 0.8)"]
 
-    // Initialize nodes with calculated positions for balance
+    // Initialize nodes
     for (let i = 0; i < nodeCount; i++) {
       nodes.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.15, // Very slow movement
-        vy: (Math.random() - 0.5) * 0.15,
+        vx: (Math.random() - 0.5) * 0.35, // increased velocity from 0.18 to 0.35
+        vy: (Math.random() - 0.5) * 0.35, // increased velocity from 0.18 to 0.35
         color: colors[Math.floor(Math.random() * colors.length)],
-        size: Math.random() * 0.8 + 0.2, // Varying sizes for depth
       })
     }
 
     const animate = () => {
-      // Clear with very subtle fade
-      ctx.fillStyle = "rgba(0, 0, 0, 0.02)"
+      // Clear with dark background
+      ctx.fillStyle = "rgba(0, 0, 0, 0.05)"
       ctx.fillRect(0, 0, canvas.width, canvas.height)
 
       // Update and draw nodes
       nodes.forEach((node, i) => {
-        // Update position with soft movement
+        // Update position
         node.x += node.vx
         node.y += node.vy
 
-        // Bounce off edges smoothly
+        // Bounce off edges
         if (node.x < 0 || node.x > canvas.width) node.vx *= -1
         if (node.y < 0 || node.y > canvas.height) node.vy *= -1
 
@@ -65,19 +63,29 @@ export const GlowingNetworkBackground = () => {
         node.x = Math.max(0, Math.min(canvas.width, node.x))
         node.y = Math.max(0, Math.min(canvas.height, node.y))
 
-        // Draw connections only to nearest neighbors
         for (let j = i + 1; j < nodes.length; j++) {
           const dx = nodes[j].x - node.x
           const dy = nodes[j].y - node.y
           const distance = Math.sqrt(dx * dx + dy * dy)
-          const connectionDistance = 280 // Slightly larger range
+          const connectionDistance = 250 // increased from 150 to 250 for more spacious network
 
           if (distance < connectionDistance) {
-            const opacity = (1 - distance / connectionDistance) * 0.08 // Much more subtle
-            
-            // Single elegant line
-            ctx.strokeStyle = `rgba(100, 150, 255, ${opacity * 0.7})`
-            ctx.lineWidth = 0.5
+            const opacity = (1 - distance / connectionDistance) * 0.2
+            const gradient = ctx.createLinearGradient(node.x, node.y, nodes[j].x, nodes[j].y)
+            gradient.addColorStop(0, `rgba(255, 0, 255, ${opacity})`)
+            gradient.addColorStop(0.5, `rgba(0, 240, 255, ${opacity * 0.6})`)
+            gradient.addColorStop(1, `rgba(0, 240, 255, ${opacity})`)
+
+            ctx.strokeStyle = gradient
+            ctx.lineWidth = 0.3
+            ctx.beginPath()
+            ctx.moveTo(node.x, node.y)
+            ctx.lineTo(nodes[j].x, nodes[j].y)
+            ctx.stroke()
+
+            // Add subtle glow
+            ctx.strokeStyle = `rgba(255, 0, 255, ${opacity * 0.25})`
+            ctx.lineWidth = 1.5
             ctx.beginPath()
             ctx.moveTo(node.x, node.y)
             ctx.lineTo(nodes[j].x, nodes[j].y)
@@ -85,29 +93,25 @@ export const GlowingNetworkBackground = () => {
           }
         }
 
-        // Draw refined node
-        const isBlue = node.color.includes("59, 130, 246")
-        const opacity = 0.5
+        // Draw node with subtle glow
+        const isMagenta = Math.random() > 0.5
+        const nodeR = isMagenta ? 255 : 0
+        const nodeG = isMagenta ? 0 : 240
+        const nodeB = isMagenta ? 255 : 255
 
-        // Subtle glow
-        const glowGradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, 3)
-        if (isBlue) {
-          glowGradient.addColorStop(0, `rgba(59, 130, 246, ${opacity * 0.2})`)
-          glowGradient.addColorStop(1, `rgba(59, 130, 246, 0)`)
-        } else {
-          glowGradient.addColorStop(0, `rgba(236, 72, 153, ${opacity * 0.2})`)
-          glowGradient.addColorStop(1, `rgba(236, 72, 153, 0)`)
-        }
+        const glowGradient = ctx.createRadialGradient(node.x, node.y, 0, node.x, node.y, 2)
+        glowGradient.addColorStop(0, `rgba(${nodeR}, ${nodeG}, ${nodeB}, 0.25)`)
+        glowGradient.addColorStop(1, `rgba(${nodeR}, ${nodeG}, ${nodeB}, 0)`)
 
         ctx.fillStyle = glowGradient
         ctx.beginPath()
-        ctx.arc(node.x, node.y, 3, 0, Math.PI * 2)
+        ctx.arc(node.x, node.y, 2, 0, Math.PI * 2)
         ctx.fill()
 
-        // Core node - very small and refined
-        ctx.fillStyle = isBlue ? `rgba(59, 130, 246, ${opacity})` : `rgba(236, 72, 153, ${opacity})`
+        // Core node - very tiny at 0.3px
+        ctx.fillStyle = `rgba(${nodeR}, ${nodeG}, ${nodeB}, 0.7)`
         ctx.beginPath()
-        ctx.arc(node.x, node.y, node.size, 0, Math.PI * 2)
+        ctx.arc(node.x, node.y, 0.3, 0, Math.PI * 2)
         ctx.fill()
       })
 
@@ -126,7 +130,7 @@ export const GlowingNetworkBackground = () => {
       ref={canvasRef}
       className="fixed inset-0 w-full h-full pointer-events-none z-0"
       style={{
-        background: "radial-gradient(ellipse at center, rgba(15, 23, 42, 0.8) 0%, rgba(0, 0, 0, 1) 100%)",
+        background: "radial-gradient(ellipse at center, #0a0a0a 0%, #000000 100%)",
       }}
     />
   )

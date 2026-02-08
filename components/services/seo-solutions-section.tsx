@@ -72,6 +72,7 @@ export function SeoSolutionsSection() {
             alt="SEO Optimization Process Illustration"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

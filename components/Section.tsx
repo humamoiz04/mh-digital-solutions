@@ -11,7 +11,7 @@ export function Section({ children, className, glass, ...props }: SectionProps) 
   return (
     <section
       className={cn(
-        "container mx-auto px-4 py-8 min-h-[200px] relative z-10",
+        "container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 min-h-[200px] relative z-10 w-full max-w-full",
         className,
         glass && "transparent-section",
       )}

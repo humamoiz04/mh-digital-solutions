@@ -72,6 +72,7 @@ export function AutomationSolutionsSection() {
             alt="Automation and Analytics Illustration"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

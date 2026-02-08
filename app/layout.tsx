@@ -5,11 +5,13 @@ import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
+import FloatingBlobs from "@/components/floating-blobs"
+import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
 import { NewYearPromoBar } from "@/components/new-year-promo-bar"
-import { GlowingNetworkBackground } from "@/components/glowing-network-background"
+import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
 
 const inter = Inter({
@@ -122,7 +124,6 @@ export default function RootLayout({
         />
 
         <link rel="preload" href="/images/mh-digital-solutions-logo.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/images/colorful-chatbot-icon.png" as="image" type="image/png" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -130,7 +131,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1" />
         <meta name="theme-color" content="#1a1a1a" />
         <meta name="color-scheme" content="dark light" />
         <meta name="format-detection" content="telephone=no" />
@@ -289,10 +290,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="relative bg-black text-white overflow-x-hidden">
-        <GlowingNetworkBackground />
-
+      <body className="relative bg-black text-white overflow-x-hidden w-full max-w-full">{/* Added max-w-full and w-full to prevent horizontal scroll */}
+        {/* Content wrapper with relative positioning */}
         <div className="relative z-10">
+          <FloatingBlobs />
           <NewYearPromoBar />
           <Header />
           <PromoBanner />
@@ -302,7 +303,9 @@ export default function RootLayout({
           <Footer />
           <CookieConsentBanner />
           <PromotionalPopup />
+          <EnhancedChatWidget />
           <WhatsAppWidget />
+          <AIChatbot />
         </div>
       </body>
     </html>

@@ -5,7 +5,7 @@ import { Section } from "@/components/Section"
 
 export function ClientNetworkSection() {
   const clients = [
-    { name: "Prestige Marine & Auto Care", logo: "/images/prestige-marine-logo.webp" },
+    { name: "Prestige Marine & Auto Care", logo: "/images/client-platinum-builders.webp" },
     { name: "Platinum City Cleaning (UK)", logo: "/images/client-platinum-cleaning.webp" },
     { name: "Cesar Car Wash", logo: "/images/cesar-car-wash.webp" },
     { name: "Rags2Riches", logo: "/images/client-rags2riches.webp" },

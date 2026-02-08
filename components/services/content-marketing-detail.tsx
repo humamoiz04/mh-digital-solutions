@@ -70,6 +70,7 @@ export function ContentMarketingDetail() {
             alt="Content Marketing Strategy Illustration"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

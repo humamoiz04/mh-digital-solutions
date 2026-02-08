@@ -16,6 +16,7 @@ export function TestimonialsSection() {
           width={120}
           height={120}
           className="object-contain"
+          unoptimized
         />
       </div>
       <TestimonialCarousel />
