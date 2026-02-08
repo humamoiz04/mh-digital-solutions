@@ -7,16 +7,11 @@ interface SectionProps extends React.HTMLAttributes<HTMLDivElement> {
   glass?: boolean
 }
 
-export function Section({
-  children,
-  className,
-  glass,
-  ...props
-}: SectionProps) {
+export function Section({ children, className, glass, ...props }: SectionProps) {
   return (
     <section
       className={cn(
-        "container mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12 md:py-16 min-h-[200px] relative z-10 w-full max-w-full",
+        "container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-12 lg:py-16 min-h-[200px] relative z-10 w-full",
         className,
         glass && "transparent-section",
       )}

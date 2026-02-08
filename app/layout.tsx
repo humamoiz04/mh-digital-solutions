@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
+import dynamic from "next/dynamic"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
@@ -13,6 +14,11 @@ import { PromoBanner } from "@/components/promo-banner"
 import { NewYearPromoBar } from "@/components/new-year-promo-bar"
 import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
+
+const GlowingNetworkBackground = dynamic(
+  () => import("@/components/glowing-network-background").then((mod) => mod.GlowingNetworkBackground),
+  { ssr: false }
+)
 
 const inter = Inter({
   subsets: ["latin"],
@@ -131,7 +137,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, minimum-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5" />
         <meta name="theme-color" content="#1a1a1a" />
         <meta name="color-scheme" content="dark light" />
         <meta name="format-detection" content="telephone=no" />
@@ -290,8 +296,10 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className="relative bg-black text-white overflow-x-hidden w-full max-w-full">{/* Added max-w-full and w-full to prevent horizontal scroll */}
-        {/* Content wrapper with relative positioning */}
+      <body className="relative bg-black text-white overflow-x-hidden">
+        <GlowingNetworkBackground />
+
+        {/* Content wrapper with relative positioning to appear above background */}
         <div className="relative z-10">
           <FloatingBlobs />
           <NewYearPromoBar />
