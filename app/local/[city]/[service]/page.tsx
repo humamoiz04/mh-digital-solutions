@@ -14,15 +14,29 @@ interface LocalServicePageProps {
   }
 }
 
+interface State {
+  state: string
+  cities: Array<{
+    name: string
+    slug: string
+    population: string
+    keywords: string[]
+  }>
+}
+
+interface LocationData {
+  [key: string]: State
+}
+
 export const dynamicParams = false
 
 export async function generateStaticParams() {
   const services = ["seo", "web-design", "digital-marketing", "ppc-advertising"]
   const paths: Array<{ city: string; service: string }> = []
 
-  Object.values(locations).forEach((state: any) => {
+  Object.values(locations as LocationData).forEach((state: State) => {
     if (state.cities && Array.isArray(state.cities)) {
-      state.cities.forEach((city: any) => {
+      state.cities.forEach((city) => {
         services.forEach((service) => {
           paths.push({
             city: city.slug,

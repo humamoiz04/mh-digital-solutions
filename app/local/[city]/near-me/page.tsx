@@ -28,25 +28,7 @@ interface NearMePageProps {
   }
 }
 
-export async function generateMetadata({ params }: NearMePageProps): Promise<Metadata> {
-  const city = montanaCities[params.city as keyof typeof montanaCities]
-
-  if (!city) {
-    return { title: "Not Found" }
-  }
-
-  const title = `Digital Marketing Near Me in ${city.name}, ${city.state}`
-  const description = `Looking for digital marketing services near you in ${city.name}? MH Digital Solution offers local expertise with proven results. Call today!`
-
-  return {
-    title,
-    description,
-    keywords: `digital marketing near me ${city.name}, services near me, local digital agency, ${city.name} marketing`,
-    alternates: {
-      canonical: `https://www.mhdigitalsolution.com/local/${params.city}/near-me`,
-    },
-  }
-}
+export const dynamicParams = false
 
 export async function generateStaticParams() {
   return Object.keys(montanaCities).map((city) => ({

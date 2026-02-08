@@ -1,0 +1,29 @@
+{
+  "buildCommand": "next build",
+  "devCommand": "next dev",
+  "installCommand": "npm install",
+  "framework": "nextjs",
+  "outputDirectory": ".next",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/"
+    }
+  ],
+  "env": {
+    "NEXT_PUBLIC_SITE_URL": "@next_public_site_url"
+  },
+  "github": {
+    "enabled": true,
+    "silent": false,
+    "autoAlias": true,
+    "autoJobCancelation": true
+  },
+  "regions": ["sfo1"],
+  "functions": {
+    "api/**": {
+      "maxDuration": 10
+    }
+  },
+  "crons": []
+}

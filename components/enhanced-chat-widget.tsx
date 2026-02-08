@@ -76,24 +76,11 @@ export function EnhancedChatWidget() {
     setIsLoading(true)
 
     try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message: inputValue }),
-      })
-
-      if (!response.ok) {
-        throw new Error(`Chat API error: ${response.status}`)
-      }
-
-      const data = await safeJson(response)
-
+      // Static export: API routes not available, show helpful message
       const botMessage: Message = {
         id: (Date.now() + 1).toString(),
         content:
-          typeof data.response === "string" && data.response.trim().length > 0
-            ? data.response
-            : "👋 Hi! I'm your AI assistant. Ask me about our services (web, SEO, PPC, apps, automation), pricing & packages, process & timelines, industries we serve in the USA and Malta, or local SEO strategies. I'll give you clear, helpful answers.",
+          "📧 Thanks for your message! Our team is available 24/7. For faster response, please contact us directly at contact@mhdigitalsolutions.com or call our support line.",
         sender: "bot",
         timestamp: new Date(),
       }

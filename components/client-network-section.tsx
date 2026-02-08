@@ -5,21 +5,15 @@ import { Section } from "@/components/Section"
 
 export function ClientNetworkSection() {
   const clients = [
-    { name: "Prestige Marine & Auto Care", logo: "/images/prestige-20marine-20logo.webp" },
+    { name: "Prestige Marine & Auto Care", logo: "/images/client-platinum-builders.webp" },
     { name: "Platinum City Cleaning (UK)", logo: "/images/client-platinum-cleaning.webp" },
     { name: "Cesar Car Wash", logo: "/images/cesar-car-wash.webp" },
     { name: "Rags2Riches", logo: "/images/client-rags2riches.webp" },
     { name: "Squeaky Clean", logo: "/images/client-squeaky-clean.webp" },
     { name: "Platinum Builders", logo: "/images/client-platinum-builders.webp" },
     { name: "Said's Plumbing", logo: "/images/client-saids-plumbing.webp" },
-    {
-      name: "Nebraska Auto Detailing",
-      logo: "/images/nebraska-20auto-20detailing.webp",
-    },
-    {
-      name: "Luxury Finesse Detail",
-      logo: "/images/logo-luxury-finesse.webp",
-    },
+    { name: "Nebraska Auto Detailing", logo: "/images/nebraska-auto-detailing.webp" },
+    { name: "Luxury Finesse Detail", logo: "/images/logo-luxury-finesse.webp" },
     { name: "Exclusive Detail", logo: "/images/exclusive-auto-detailing.webp" },
   ]
 

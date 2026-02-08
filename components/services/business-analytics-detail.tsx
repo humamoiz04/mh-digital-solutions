@@ -70,6 +70,7 @@ export function BusinessAnalyticsDetail() {
             alt="Business Analytics 3D Visualization"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

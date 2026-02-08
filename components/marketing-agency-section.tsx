@@ -61,6 +61,7 @@ export function MarketingAgencySection() {
             alt="Digital Marketing Team"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

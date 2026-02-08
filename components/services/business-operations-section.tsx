@@ -72,6 +72,7 @@ export function BusinessOperationsSection() {
             alt="Business Operations Illustration"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

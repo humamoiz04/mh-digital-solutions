@@ -70,6 +70,7 @@ export function BusinessConsultingDetail() {
             alt="Creative Business Strategy Illustration"
             fill
             className="z-10 object-contain"
+            unoptimized
           />
         </div>
       </div>

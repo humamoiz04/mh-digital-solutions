@@ -48,6 +48,8 @@ export async function generateMetadata({ params }: SEOPageProps): Promise<Metada
   }
 }
 
+export const dynamicParams = false
+
 export async function generateStaticParams() {
   return Object.keys(montanaCities).map((city) => ({
     city,

@@ -1,9 +1,9 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
+import dynamic from "next/dynamic"
 import { Inter } from "next/font/google"
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import FloatingBlobs from "@/components/floating-blobs"
@@ -12,10 +12,13 @@ import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
 import { NewYearPromoBar } from "@/components/new-year-promo-bar"
-import { GlowingNetworkBackground } from "@/components/glowing-network-background"
 import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
-import { ChristmasPromoPopup } from "@/components/christmas-promo-popup"
+
+const GlowingNetworkBackground = dynamic(
+  () => import("@/components/glowing-network-background").then((mod) => mod.GlowingNetworkBackground),
+  { ssr: false }
+)
 
 const inter = Inter({
   subsets: ["latin"],
@@ -127,7 +130,6 @@ export default function RootLayout({
         />
 
         <link rel="preload" href="/images/mh-digital-solutions-logo.webp" as="image" type="image/webp" />
-        <link rel="preload" href="/fonts/inter-var.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
         <link rel="preload" href="/images/colorful-chatbot-icon.png" as="image" type="image/png" />
         <link rel="dns-prefetch" href="//fonts.googleapis.com" />
         <link rel="dns-prefetch" href="//fonts.gstatic.com" />
@@ -299,21 +301,19 @@ export default function RootLayout({
 
         {/* Content wrapper with relative positioning to appear above background */}
         <div className="relative z-10">
-          <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-            <FloatingBlobs />
-            <NewYearPromoBar />
-            <Header />
-            <PromoBanner />
-            <main id="main-content" className="flex-1" role="main">
-              {children}
-            </main>
-            <Footer />
-            <CookieConsentBanner />
-            <PromotionalPopup />
-            <EnhancedChatWidget />
-            <WhatsAppWidget />
-            <AIChatbot />
-          </ThemeProvider>
+          <FloatingBlobs />
+          <NewYearPromoBar />
+          <Header />
+          <PromoBanner />
+          <main id="main-content" className="flex-1" role="main">
+            {children}
+          </main>
+          <Footer />
+          <CookieConsentBanner />
+          <PromotionalPopup />
+          <EnhancedChatWidget />
+          <WhatsAppWidget />
+          <AIChatbot />
         </div>
       </body>
     </html>
