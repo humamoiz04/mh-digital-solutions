@@ -16,7 +16,7 @@ import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
 
 const GlowingNetworkBackground = dynamic(
-  () => import("@/components/glowing-network-background").then((mod) => mod.GlowingNetworkBackground),
+  () => import("@/components/glowing-network-background").then((mod) => ({ default: mod.GlowingNetworkBackground })),
   { ssr: false }
 )
 
