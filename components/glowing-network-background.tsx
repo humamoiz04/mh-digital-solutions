@@ -1,5 +1,4 @@
 "use client"
 
-export function GlowingNetworkBackground() {
-  return null
-}
+// Empty stub component - background removed
+export const GlowingNetworkBackground = () => null
