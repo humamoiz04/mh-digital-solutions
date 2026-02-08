@@ -28,11 +28,11 @@ This guide walks through deploying the MH Digital Solution website from Netlify 
 
 Set these in Cloudflare Pages project settings (**Settings** → **Environment variables**):
 
-```
+\`\`\`
 NODE_VERSION=20
 NPM_VERSION=10
 NEXT_PUBLIC_SITE_URL=https://www.mhdigitalsolution.com
-```
+\`\`\`
 
 ## Step 3: Redirects and Headers
 
@@ -60,10 +60,10 @@ Update your domain nameservers to point to Cloudflare:
 
 1. In Cloudflare Dashboard, go to **DNS** → **Nameservers**
 2. Get Cloudflare nameservers (typically):
-   ```
+   \`\`\`
    ns1.cloudflare.com
    ns2.cloudflare.com
-   ```
+   \`\`\`
 3. Update domain registrar to use these nameservers
 4. Wait for DNS propagation (5-48 hours)
 
@@ -94,7 +94,7 @@ Update your domain nameservers to point to Cloudflare:
 3. Monitor build progress in **Deployments** tab
 
 ### Option B: Manual Deployment
-```bash
+\`\`\`bash
 # Install Wrangler if not already installed
 npm install -g @cloudflare/wrangler
 
@@ -103,7 +103,7 @@ npm run build
 
 # Deploy to Cloudflare Pages
 wrangler pages deploy out --project-name=mhdigitalsolution
-```
+\`\`\`
 
 ### Monitor Deployment
 1. Go to **Deployments** tab
@@ -113,7 +113,7 @@ wrangler pages deploy out --project-name=mhdigitalsolution
 ## Step 7: Verify Deployment
 
 ### Test Redirects
-```bash
+\`\`\`bash
 # Test service redirects
 curl -L https://www.mhdigitalsolution.com/services/consultation
 
@@ -122,16 +122,16 @@ curl -L https://www.mhdigitalsolution.com/home
 
 # Test "near-me" redirects
 curl -L https://www.mhdigitalsolution.com/local/jackson/near-me
-```
+\`\`\`
 
 ### Test Headers
-```bash
+\`\`\`bash
 # Check cache headers
 curl -i https://www.mhdigitalsolution.com/images/logo.webp | grep Cache-Control
 
 # Check security headers
 curl -i https://www.mhdigitalsolution.com | grep "X-Content-Type-Options"
-```
+\`\`\`
 
 ### Check SSL
 Visit https://www.mhdigitalsolution.com and verify:
@@ -144,11 +144,11 @@ Visit https://www.mhdigitalsolution.com and verify:
 ### Enable Caching
 1. **Caching** → **Cache Rules**
 2. Create rules to cache static assets longer:
-   ```
+   \`\`\`
    Path: /images/* → Cache for 1 year
    Path: /_next/static/* → Cache for 1 year
    Path: /fonts/* → Cache for 1 year
-   ```
+   \`\`\`
 
 ### Enable Rate Limiting (DDoS Protection)
 1. **Security** → **Rate Limiting**
@@ -170,13 +170,13 @@ Add Cloudflare CNAME records:
 - Add: `<project-name>.pages.dev`
 
 ### Verify DNS Propagation
-```bash
+\`\`\`bash
 # Check DNS resolution
 nslookup www.mhdigitalsolution.com
 
 # Should resolve to Cloudflare nameservers
 # Should have CNAME pointing to pages.dev
-```
+\`\`\`
 
 ## Step 10: Test Full Site
 

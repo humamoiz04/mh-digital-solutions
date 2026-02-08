@@ -10,10 +10,10 @@ The `wrangler.toml` was configured as a Cloudflare Worker instead of Cloudflare 
 
 ### Step 1: Verify Build Output
 The Next.js static export outputs to the `out/` directory. Verify it's being generated:
-```bash
+\`\`\`bash
 npm run build
 ls -la out/
-```
+\`\`\`
 
 You should see:
 - `out/index.html` (home page)
@@ -49,13 +49,13 @@ You should see:
 3. Check deployment status in Pages dashboard
 
 **Option B: Via Wrangler CLI**
-```bash
+\`\`\`bash
 # Install Wrangler if not already installed
 npm install -D wrangler
 
 # Deploy to Cloudflare Pages
 wrangler pages deploy out
-```
+\`\`\`
 
 ### Step 4: DNS Configuration
 
@@ -65,12 +65,12 @@ wrangler pages deploy out
    - Ensure CNAME record for `@` (root domain) also points to `<project>.pages.dev`
 
 2. **Example DNS Setup**
-   ```
+   \`\`\`
    Type  | Name | Content
    ------|------|-------------------------------------
    CNAME | www  | mhdigitalsolution.pages.dev
    CNAME | @    | mhdigitalsolution.pages.dev (or use ALIAS if available)
-   ```
+   \`\`\`
 
 ### Step 5: Verify Deployment
 

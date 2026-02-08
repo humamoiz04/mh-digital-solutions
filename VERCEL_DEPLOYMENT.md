@@ -32,9 +32,9 @@ The site has been migrated from Cloudflare Pages static export to Vercel with se
 6. Click "Deploy"
 
 ### Option 2: CLI Deployment
-```bash
+\`\`\`bash
 vercel deploy --prod
-```
+\`\`\`
 
 ### Option 3: Git Auto-Deploy
 1. Connect GitHub repo to Vercel dashboard
@@ -57,10 +57,10 @@ To add in Vercel Dashboard:
 4. For non-www domain (`mhdigitalsolution.com`), add A record to Vercel's IP
 
 ### DNS Records
-```
+\`\`\`
 www.mhdigitalsolution.com  CNAME  cname.vercel-dns.com
 mhdigitalsolution.com      A      76.76.19.5 (or latest Vercel IP)
-```
+\`\`\`
 
 The site automatically redirects non-www to www, and HTTP to HTTPS.
 
