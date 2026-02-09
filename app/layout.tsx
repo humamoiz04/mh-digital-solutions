@@ -15,10 +15,7 @@ import { NewYearPromoBar } from "@/components/new-year-promo-bar"
 import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
 
-const GlowingNetworkBackground = dynamic(
-  () => import("@/components/glowing-network-background").then((mod) => ({ default: mod.GlowingNetworkBackground })),
-  { ssr: false }
-)
+const GlowingNetworkBackground = dynamic(() => import("@/components/glowing-network-background").then(mod => mod.GlowingNetworkBackground), { ssr: false })
 
 const inter = Inter({
   subsets: ["latin"],
