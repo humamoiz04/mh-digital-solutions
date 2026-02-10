@@ -31,9 +31,9 @@ export function ClientNetworkSection() {
                 <Image
                   src={client.logo || "/placeholder.svg"}
                   alt={client.name}
-                  width={150}
-                  height={80}
-                  className="object-contain grayscale hover:grayscale-0 transition-all duration-300 max-w-full max-h-full"
+                  width={90}
+                  height={90}
+                  className="w-full h-full object-contain grayscale hover:grayscale-0 transition-all duration-300"
                 />
               </div>
             </div>

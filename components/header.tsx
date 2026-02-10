@@ -42,9 +42,9 @@ export function Header() {
           <Image
             src="/images/mh-digital-solutions-logo.webp"
             alt="MH Digital Solution Logo"
-            width={40}
-            height={40}
-            className="sm:w-12 sm:h-12 rounded-full"
+            width={48}
+            height={48}
+            className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
             priority
           />
         </div>
