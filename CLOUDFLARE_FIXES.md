@@ -36,7 +36,7 @@
 ## Cloudflare Pages Configuration
 
 ### Current Setup
-```toml
+\`\`\`toml
 name = "mhdigitalsolution"
 
 [build]
@@ -46,7 +46,7 @@ output_dir = "out"
 
 [env.production]
 vars = { NEXT_PUBLIC_SITE_URL = "https://www.mhdigitalsolution.com" }
-```
+\`\`\`
 
 ### DNS Configuration Required
 1. Go to Cloudflare Dashboard
@@ -127,7 +127,7 @@ Cloudflare automatically processes this file for Pages deployments.
 ## Performance Optimization (Optional)
 
 Add to Cloudflare Dashboard > Caching Rules:
-```
+\`\`\`
 Path: /images/*
 Cache TTL: 1 year
 
@@ -139,7 +139,7 @@ Cache TTL: 1 year
 
 Path: /favicon.ico, /robots.txt, /sitemap.xml
 Cache TTL: 1 day
-```
+\`\`\`
 
 ## Rollback Plan
 

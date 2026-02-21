@@ -3,7 +3,7 @@
 ## Pre-Deployment Verification (Local)
 
 ### 1. Build Verification
-```bash
+\`\`\`bash
 # Clean install
 rm -rf node_modules package-lock.json
 npm install
@@ -12,21 +12,21 @@ npm install
 npm run build
 
 # Expected output: ✓ Compiled successfully
-```
+\`\`\`
 
 ### 2. Type Checking
-```bash
+\`\`\`bash
 # Check for TypeScript errors
 npm run type-check  # or npx tsc --noEmit
-```
+\`\`\`
 
 ### 3. Local Testing
-```bash
+\`\`\`bash
 # Start preview server
 npm run start
 
 # Expected: Server running on http://localhost:3000
-```
+\`\`\`
 
 ### 4. Manual Testing Checklist
 - [ ] Homepage loads without errors
@@ -42,13 +42,13 @@ npm run start
 - [ ] Analytics tracking is initialized
 
 ### 5. SEO Verification
-```bash
+\`\`\`bash
 # Check page source for metadata
 curl http://localhost:3000 | grep -E 'og:|twitter:|canonical'
 
 # Verify structured data
 curl http://localhost:3000 | grep -E 'application/ld\+json'
-```
+\`\`\`
 
 ### 6. Lighthouse Audit
 - [ ] Performance: > 75
@@ -63,11 +63,11 @@ curl http://localhost:3000 | grep -E 'application/ld\+json'
 ### Option 1: Automatic Deployment (GitHub Connected)
 
 1. **Push to main branch**
-   ```bash
+   \`\`\`bash
    git add .
    git commit -m "feat: website improvements and fixes"
    git push origin main
-   ```
+   \`\`\`
 
 2. **Monitor deployment**
    - Go to: https://app.netlify.com/teams/YOUR_TEAM/builds
@@ -81,31 +81,31 @@ curl http://localhost:3000 | grep -E 'application/ld\+json'
 ### Option 2: Manual Netlify Deployment
 
 1. **Install Netlify CLI**
-   ```bash
+   \`\`\`bash
    npm install -g netlify-cli
-   ```
+   \`\`\`
 
 2. **Build locally**
-   ```bash
+   \`\`\`bash
    npm run build
-   ```
+   \`\`\`
 
 3. **Deploy**
-   ```bash
+   \`\`\`bash
    netlify deploy --prod --dir=.next
-   ```
+   \`\`\`
 
 ---
 
 ## Post-Deployment Verification
 
 ### 1. Site Accessibility
-```bash
+\`\`\`bash
 # Test homepage load time
 curl -w "@curl-format.txt" -o /dev/null -s https://www.mhdigitalsolution.com
 
 # Expected: HTTP 200, < 2 second load time
-```
+\`\`\`
 
 ### 2. Browser Testing
 - [ ] Chrome: Test all features
@@ -126,7 +126,7 @@ curl -w "@curl-format.txt" -o /dev/null -s https://www.mhdigitalsolution.com
 - [ ] No console errors in DevTools
 
 ### 4. SEO Verification
-```bash
+\`\`\`bash
 # Check if site is indexed
 site:mhdigitalsolution.com
 
@@ -138,7 +138,7 @@ curl https://www.mhdigitalsolution.com/robots.txt
 
 # Verify sitemap
 curl https://www.mhdigitalsolution.com/sitemap.xml
-```
+\`\`\`
 
 ### 5. Analytics Setup
 - [ ] Google Analytics is tracking page views
@@ -207,7 +207,7 @@ curl https://www.mhdigitalsolution.com/sitemap.xml
 4. Click "Publish"
 
 ### Git Rollback
-```bash
+\`\`\`bash
 # Revert last commit
 git revert HEAD
 
@@ -216,16 +216,16 @@ git reset --hard COMMIT_HASH
 
 # Push to trigger new deployment
 git push origin main
-```
+\`\`\`
 
 ---
 
 ## Common Issues & Solutions
 
 ### Issue: Build Fails
-```
+\`\`\`
 Error: "export const dynamic" not configured on route "/auth/callback"
-```
+\`\`\`
 **Solution**: Server routes should already be removed. If error persists:
 1. Delete `/app/auth/callback/route.ts`
 2. Convert any `/app/api/*/route.ts` files to stubs

@@ -21,19 +21,19 @@ Visit our website at [https://www.mhdigitalsolution.com](https://www.mhdigitalso
 
 This is a Next.js project. To get started locally:
 
-```bash
+\`\`\`bash
 npm install
 npm run dev
-```
+\`\`\`
 
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## Build
 
-```bash
+\`\`\`bash
 npm run build
 npm start
-```
+\`\`\`
 
 ## Support
 

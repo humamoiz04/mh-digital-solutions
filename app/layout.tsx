@@ -1,7 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Script from "next/script"
-import dynamic from "next/dynamic"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { Header } from "@/components/header"
@@ -14,11 +13,8 @@ import { PromoBanner } from "@/components/promo-banner"
 import { NewYearPromoBar } from "@/components/new-year-promo-bar"
 import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
-
-const GlowingNetworkBackground = dynamic(
-  () => import("@/components/glowing-network-background").then((mod) => mod.GlowingNetworkBackground),
-  { ssr: false }
-)
+import { GlowingBackgroundWrapper } from "@/components/glowing-background-wrapper"
+import GlowingNetworkBackground from "@/components/glowing-network-background" // Added import
 
 const inter = Inter({
   subsets: ["latin"],
@@ -97,7 +93,7 @@ export const metadata: Metadata = {
     "msapplication-TileColor": "#d946ef",
     "msapplication-config": "/browserconfig.xml",
   },
-    generator: 'v0.app'
+  generator: 'v0.app'
 }
 
 export default function RootLayout({
@@ -115,7 +111,7 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
 
-        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-JQ9GMD3G1C" strategy="afterInteractive" />
+        <Script async src="https://www.googletagmanager.com/gtag/js?id=G-84K4BK63V9" strategy="afterInteractive" />
         <Script
           id="google-analytics"
           strategy="afterInteractive"
@@ -124,7 +120,7 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', 'G-JQ9GMD3G1C');
+              gtag('config', 'G-84K4BK63V9');
             `,
           }}
         />
@@ -297,7 +293,7 @@ export default function RootLayout({
         />
       </head>
       <body className="relative bg-black text-white overflow-x-hidden">
-        <GlowingNetworkBackground />
+        <GlowingBackgroundWrapper />
 
         {/* Content wrapper with relative positioning to appear above background */}
         <div className="relative z-10">

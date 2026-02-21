@@ -38,7 +38,7 @@ The site was failing to build on Netlify due to a conflict between:
 ✅ **Privacy-Friendly** - No server-side data collection required
 
 ### Usage
-```typescript
+\`\`\`typescript
 import { trackPageView, trackEvent, getAnalytics } from '@/lib/client-analytics'
 
 // Track page views
@@ -49,7 +49,7 @@ trackEvent('serviceSelected', { service: 'seo', package: 'premium' })
 
 // Get analytics data
 const analytics = getAnalytics()
-```
+\`\`\`
 
 ---
 
@@ -226,13 +226,13 @@ Each service page now includes:
 ## 8. New Utility Libraries
 
 ### Client Analytics (`lib/client-analytics.ts`)
-```typescript
+\`\`\`typescript
 - initializeAnalytics() - Initialize Google Analytics
 - trackPageView(page) - Track page navigation
 - trackEvent(name, data) - Track custom events
 - getAnalytics() - Retrieve stored analytics
 - resetAnalytics() - Clear analytics data
-```
+\`\`\`
 
 ---
 
@@ -277,7 +277,7 @@ All components include:
 - [x] Verify all imports resolve
 
 ### Deployment Commands
-```bash
+\`\`\`bash
 # Test build
 npm run build
 
@@ -286,7 +286,7 @@ npm run start
 
 # Deploy to Netlify (automatic on push to main)
 git push origin main
-```
+\`\`\`
 
 ### Post-Deployment
 - [ ] Verify site deploys successfully
@@ -365,10 +365,10 @@ git push origin main
 ## 15. Testing & Validation
 
 ### Build Verification
-```bash
+\`\`\`bash
 npm run build  # Should complete without errors
 npm run start  # Should start preview server successfully
-```
+\`\`\`
 
 ### SEO Validation
 - [ ] All pages render proper metadata
