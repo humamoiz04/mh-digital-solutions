@@ -301,22 +301,22 @@ export default function AboutPage() {
             <CardContent className="p-6">
               <div className="relative w-full h-[100px] mb-4">
                 <Image
-                  src="/images/exclusive-auto-detailing.webp"
-                  alt="Exclusive Auto Detailing - Digital marketing client success story"
+                  src="/images/ai-automation-new.webp"
+                  alt="AI Automation Solutions - Workflow optimization and business efficiency"
                   fill
                   className="object-contain opacity-80"
-                  title="Automotive Industry Client Success"
+                  title="AI Automation Industry Leadership"
                 />
               </div>
-              <h3 className="font-semibold text-lg mb-2">Automotive Industry</h3>
+              <h3 className="font-semibold text-lg mb-2">AI & Automation</h3>
               <p className="text-muted-foreground text-sm mb-3">
-                Premium detailing services with digital marketing excellence
+                Business automation with AI-powered workflow optimization
               </p>
               <Link
-                href="/case-studies/premium-auto-detailing-expansion"
+                href="/services/ai-automation"
                 className="text-[#e49273] hover:text-[#d48264] text-sm font-medium inline-flex items-center"
               >
-                View Success Story <ArrowRight className="ml-1 h-4 w-4" />
+                View AI Solutions <ArrowRight className="ml-1 h-4 w-4" />
               </Link>
             </CardContent>
           </Card>

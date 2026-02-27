@@ -6,15 +6,12 @@ import "./globals.css"
 import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import FloatingBlobs from "@/components/floating-blobs"
-import { EnhancedChatWidget } from "@/components/enhanced-chat-widget"
 import { WhatsAppWidget } from "@/components/whatsapp-widget"
 import { CookieConsentBanner } from "@/components/cookie-consent-banner"
 import { PromoBanner } from "@/components/promo-banner"
 import { NewYearPromoBar } from "@/components/new-year-promo-bar"
-import { AIChatbot } from "@/components/ai-chatbot"
 import { PromotionalPopup } from "@/components/promotional-popup"
-import { GlowingBackgroundWrapper } from "@/components/glowing-background-wrapper"
-import GlowingNetworkBackground from "@/components/glowing-network-background" // Added import
+import GlowingNetworkBackground from "@/components/glowing-network-background"
 
 const inter = Inter({
   subsets: ["latin"],
@@ -296,9 +293,7 @@ export default function RootLayout({
         />
       </head>
       <body className="relative bg-black text-white overflow-x-hidden">
-        <GlowingBackgroundWrapper />
-
-        {/* Content wrapper with relative positioning to appear above background */}
+        {/* Content wrapper with relative positioning */}
         <div className="relative z-10">
           <FloatingBlobs />
           <NewYearPromoBar />
@@ -310,9 +305,7 @@ export default function RootLayout({
           <Footer />
           <CookieConsentBanner />
           <PromotionalPopup />
-          <EnhancedChatWidget />
           <WhatsAppWidget />
-          <AIChatbot />
         </div>
       </body>
     </html>

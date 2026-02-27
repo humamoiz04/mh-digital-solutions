@@ -11,7 +11,7 @@ export function Hero() {
       <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 text-center lg:text-left order-2 lg:order-1">
         <div className="space-y-3 sm:space-y-4 md:space-y-6">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[#ff6b9d]/20 via-[#e49273]/20 to-[#a8d0d6]/20 border border-[#e49273]/40 w-fit mx-auto lg:mx-0 text-xs sm:text-sm">
-            <Sparkles size={14} className="text-[#ff6b9d] animate-pulse" />
+            <Sparkles size={16} className="text-[#ff6b9d] animate-pulse" />
             <span className="font-semibold bg-gradient-to-r from-[#ff6b9d] to-[#a8d0d6] bg-clip-text text-transparent">
               Transforming Digital Presence
             </span>
@@ -44,9 +44,9 @@ export function Hero() {
               size="lg"
               className="gradient-button text-white font-bold h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base rounded-lg shadow-2xl hover:shadow-3xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 w-full sm:w-auto"
             >
-              <Rocket size={14} className="sm:size-16 md:size-18 mr-1.5 sm:mr-2" />
+              <Rocket size={16} className="mr-1.5 sm:mr-2" />
               Book Free Strategy Call
-              <ArrowRight size={14} className="sm:size-16 md:size-18 ml-1.5 sm:ml-2" />
+              <ArrowRight size={16} className="ml-1.5 sm:ml-2" />
             </Button>
           </Link>
           <Link href="/services" passHref>
@@ -55,7 +55,7 @@ export function Hero() {
               className="border-2 border-[#a8d0d6] text-[#a8d0d6] hover:bg-[#a8d0d6]/20 bg-transparent font-bold h-10 sm:h-12 md:h-14 px-4 sm:px-6 md:px-8 text-xs sm:text-sm md:text-base rounded-lg transition-all duration-300 hover:border-[#a8d0d6] hover:scale-105 hover:-translate-y-1 w-full sm:w-auto"
             >
               Explore Services
-              <ArrowRight size={14} className="sm:size-16 md:size-18 ml-1.5 sm:ml-2" />
+              <ArrowRight size={16} className="ml-1.5 sm:ml-2" />
             </Button>
           </Link>
         </div>

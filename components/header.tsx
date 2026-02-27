@@ -45,6 +45,7 @@ export function Header() {
             width={48}
             height={48}
             className="w-10 h-10 sm:w-12 sm:h-12 rounded-full"
+            style={{ width: "auto", height: "auto" }}
             priority
           />
         </div>
