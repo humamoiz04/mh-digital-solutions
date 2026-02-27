@@ -11,7 +11,7 @@ export function Hero() {
       <div className="space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-10 text-center lg:text-left order-2 lg:order-1">
         <div className="space-y-3 sm:space-y-4 md:space-y-6">
           <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[#ff6b9d]/20 via-[#e49273]/20 to-[#a8d0d6]/20 border border-[#e49273]/40 w-fit mx-auto lg:mx-0 text-xs sm:text-sm">
-            <Sparkles size={14} className="text-[#ff6b9d] animate-pulse" />
+            <Sparkles size={16} className="text-[#ff6b9d] animate-pulse" />
             <span className="font-semibold bg-gradient-to-r from-[#ff6b9d] to-[#a8d0d6] bg-clip-text text-transparent">
               Transforming Digital Presence
             </span>
