@@ -95,7 +95,7 @@ export function ServicesSection() {
     <>
       <div className="text-center mb-8 sm:mb-12 md:mb-16">
         <div className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 rounded-full bg-gradient-to-r from-[#ff6b9d]/20 via-[#e49273]/20 to-[#a8d0d6]/20 border border-[#e49273]/40 mb-4 sm:mb-6 text-xs sm:text-sm">
-          <Zap size={14} className="sm:size-16 text-[#ff6b9d]" />
+          <Zap size={16} className="text-[#ff6b9d]" />
           <span className="font-semibold bg-gradient-to-r from-[#ff6b9d] to-[#a8d0d6] bg-clip-text text-transparent">
             Industry Leading Solutions
           </span>
